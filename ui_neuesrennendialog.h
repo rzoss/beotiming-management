@@ -11,20 +11,20 @@
 #define UI_NEUESRENNENDIALOG_H
 
 #include <QtCore/QVariant>
-#include <QtGui/QAction>
-#include <QtGui/QApplication>
-#include <QtGui/QButtonGroup>
-#include <QtGui/QComboBox>
-#include <QtGui/QDateEdit>
-#include <QtGui/QDialog>
-#include <QtGui/QGridLayout>
-#include <QtGui/QGroupBox>
-#include <QtGui/QHBoxLayout>
-#include <QtGui/QLabel>
-#include <QtGui/QLineEdit>
-#include <QtGui/QPushButton>
-#include <QtGui/QSpacerItem>
-#include <QtGui/QTextEdit>
+#include <QAction>
+#include <QApplication>
+#include <QButtonGroup>
+#include <QComboBox>
+#include <QDateEdit>
+#include <QDialog>
+#include <QGridLayout>
+#include <QGroupBox>
+#include <QHBoxLayout>
+#include <QLabel>
+#include <QLineEdit>
+#include <QPushButton>
+#include <QSpacerItem>
+#include <QTextEdit>
 
 QT_BEGIN_NAMESPACE
 
@@ -150,16 +150,16 @@ public:
 
     void retranslateUi(QDialog *NeuesRennenDialogClass)
     {
-    NeuesRennenDialogClass->setWindowTitle(QApplication::translate("NeuesRennenDialogClass", "NeuesRennenDialog", 0, QApplication::UnicodeUTF8));
-    groupBox->setTitle(QApplication::translate("NeuesRennenDialogClass", "Neues Rennen", 0, QApplication::UnicodeUTF8));
-    label->setText(QApplication::translate("NeuesRennenDialogClass", "Name:", 0, QApplication::UnicodeUTF8));
-    label_2->setText(QApplication::translate("NeuesRennenDialogClass", "Startdatum:", 0, QApplication::UnicodeUTF8));
-    label_3->setText(QApplication::translate("NeuesRennenDialogClass", "Enddatum:", 0, QApplication::UnicodeUTF8));
-    label_4->setText(QApplication::translate("NeuesRennenDialogClass", "Streckentyp:", 0, QApplication::UnicodeUTF8));
-    enddatumDateEdit->setDisplayFormat(QApplication::translate("NeuesRennenDialogClass", "dd.MM.yyyy", 0, QApplication::UnicodeUTF8));
-    label_5->setText(QApplication::translate("NeuesRennenDialogClass", "Beschreibung (optional):", 0, QApplication::UnicodeUTF8));
-    okButton->setText(QApplication::translate("NeuesRennenDialogClass", "Ok", 0, QApplication::UnicodeUTF8));
-    canButton->setText(QApplication::translate("NeuesRennenDialogClass", "Abbrechen", 0, QApplication::UnicodeUTF8));
+    NeuesRennenDialogClass->setWindowTitle(QApplication::translate("NeuesRennenDialogClass", "NeuesRennenDialog", 0));
+    groupBox->setTitle(QApplication::translate("NeuesRennenDialogClass", "Neues Rennen", 0));
+    label->setText(QApplication::translate("NeuesRennenDialogClass", "Name:", 0));
+    label_2->setText(QApplication::translate("NeuesRennenDialogClass", "Startdatum:", 0));
+    label_3->setText(QApplication::translate("NeuesRennenDialogClass", "Enddatum:", 0));
+    label_4->setText(QApplication::translate("NeuesRennenDialogClass", "Streckentyp:", 0));
+    enddatumDateEdit->setDisplayFormat(QApplication::translate("NeuesRennenDialogClass", "dd.MM.yyyy", 0));
+    label_5->setText(QApplication::translate("NeuesRennenDialogClass", "Beschreibung (optional):", 0));
+    okButton->setText(QApplication::translate("NeuesRennenDialogClass", "Ok", 0));
+    canButton->setText(QApplication::translate("NeuesRennenDialogClass", "Abbrechen", 0));
     Q_UNUSED(NeuesRennenDialogClass);
     } // retranslateUi
 

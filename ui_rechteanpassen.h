@@ -11,20 +11,20 @@
 #define UI_RECHTEANPASSEN_H
 
 #include <QtCore/QVariant>
-#include <QtGui/QAction>
-#include <QtGui/QApplication>
-#include <QtGui/QButtonGroup>
-#include <QtGui/QCheckBox>
-#include <QtGui/QComboBox>
-#include <QtGui/QDialog>
-#include <QtGui/QGridLayout>
-#include <QtGui/QGroupBox>
-#include <QtGui/QHBoxLayout>
-#include <QtGui/QLabel>
-#include <QtGui/QPushButton>
-#include <QtGui/QSpacerItem>
-#include <QtGui/QTreeWidget>
-#include <QtGui/QVBoxLayout>
+#include <QAction>
+#include <QApplication>
+#include <QButtonGroup>
+#include <QCheckBox>
+#include <QComboBox>
+#include <QDialog>
+#include <QGridLayout>
+#include <QGroupBox>
+#include <QHBoxLayout>
+#include <QLabel>
+#include <QPushButton>
+#include <QSpacerItem>
+#include <QTreeWidget>
+#include <QVBoxLayout>
 
 QT_BEGIN_NAMESPACE
 
@@ -128,15 +128,15 @@ public:
 
     void retranslateUi(QDialog *RechteAnpassenClass)
     {
-    RechteAnpassenClass->setWindowTitle(QApplication::translate("RechteAnpassenClass", "RechteAnpassen", 0, QApplication::UnicodeUTF8));
-    groupBox->setTitle(QApplication::translate("RechteAnpassenClass", "Benutzerrechte \303\244ndern", 0, QApplication::UnicodeUTF8));
-    label->setText(QApplication::translate("RechteAnpassenClass", "Benutzer (ohne Administratoren):", 0, QApplication::UnicodeUTF8));
-    label_6->setText(QApplication::translate("RechteAnpassenClass", "neue Berechtigungen:", 0, QApplication::UnicodeUTF8));
-    label_7->setText(QApplication::translate("RechteAnpassenClass", "(mehrfachauswahl m\303\266glich)", 0, QApplication::UnicodeUTF8));
-    altCheckBox->setText(QApplication::translate("RechteAnpassenClass", "Alte Berechtigungen l\303\266schen", 0, QApplication::UnicodeUTF8));
-    streckenTreeWidget->headerItem()->setText(0, QApplication::translate("RechteAnpassenClass", "1", 0, QApplication::UnicodeUTF8));
-    okButton->setText(QApplication::translate("RechteAnpassenClass", "Ok", 0, QApplication::UnicodeUTF8));
-    canButton->setText(QApplication::translate("RechteAnpassenClass", "Abbrechen", 0, QApplication::UnicodeUTF8));
+    RechteAnpassenClass->setWindowTitle(QApplication::translate("RechteAnpassenClass", "RechteAnpassen", 0));
+    groupBox->setTitle(QApplication::translate("RechteAnpassenClass", "Benutzerrechte \303\244ndern", 0));
+    label->setText(QApplication::translate("RechteAnpassenClass", "Benutzer (ohne Administratoren):", 0));
+    label_6->setText(QApplication::translate("RechteAnpassenClass", "neue Berechtigungen:", 0));
+    label_7->setText(QApplication::translate("RechteAnpassenClass", "(mehrfachauswahl m\303\266glich)", 0));
+    altCheckBox->setText(QApplication::translate("RechteAnpassenClass", "Alte Berechtigungen l\303\266schen", 0));
+    streckenTreeWidget->headerItem()->setText(0, QApplication::translate("RechteAnpassenClass", "1", 0));
+    okButton->setText(QApplication::translate("RechteAnpassenClass", "Ok", 0));
+    canButton->setText(QApplication::translate("RechteAnpassenClass", "Abbrechen", 0));
     Q_UNUSED(RechteAnpassenClass);
     } // retranslateUi
 

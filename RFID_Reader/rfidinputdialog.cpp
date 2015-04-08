@@ -33,6 +33,7 @@
 #include "RFID_CR500.h"
 #include <QtSql>
 #include <QtGui>
+#include <QMessageBox>
 /*!
  * \brief Konstruktor
  * \param pRfid Pointer zur RFID-Leser Klasse

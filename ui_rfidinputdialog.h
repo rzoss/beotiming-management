@@ -11,21 +11,21 @@
 #define UI_RFIDINPUTDIALOG_H
 
 #include <QtCore/QVariant>
-#include <QtGui/QAction>
-#include <QtGui/QApplication>
-#include <QtGui/QButtonGroup>
-#include <QtGui/QCheckBox>
-#include <QtGui/QComboBox>
-#include <QtGui/QDialog>
-#include <QtGui/QGridLayout>
-#include <QtGui/QGroupBox>
-#include <QtGui/QHBoxLayout>
-#include <QtGui/QLabel>
-#include <QtGui/QLineEdit>
-#include <QtGui/QPushButton>
-#include <QtGui/QRadioButton>
-#include <QtGui/QSpacerItem>
-#include <QtGui/QSpinBox>
+#include <QAction>
+#include <QApplication>
+#include <QButtonGroup>
+#include <QCheckBox>
+#include <QComboBox>
+#include <QDialog>
+#include <QGridLayout>
+#include <QGroupBox>
+#include <QHBoxLayout>
+#include <QLabel>
+#include <QLineEdit>
+#include <QPushButton>
+#include <QRadioButton>
+#include <QSpacerItem>
+#include <QSpinBox>
 
 QT_BEGIN_NAMESPACE
 
@@ -314,112 +314,112 @@ public:
 
     void retranslateUi(QDialog *RFIDInputDialogClass)
     {
-    RFIDInputDialogClass->setWindowTitle(QApplication::translate("RFIDInputDialogClass", "RFIDInputDialog", 0, QApplication::UnicodeUTF8));
-    groupBox_2->setTitle(QApplication::translate("RFIDInputDialogClass", "Renndaten", 0, QApplication::UnicodeUTF8));
+    RFIDInputDialogClass->setWindowTitle(QApplication::translate("RFIDInputDialogClass", "RFIDInputDialog", 0));
+    groupBox_2->setTitle(QApplication::translate("RFIDInputDialogClass", "Renndaten", 0));
 
 #ifndef QT_NO_WHATSTHIS
-    StarttimeLabel->setWhatsThis(QApplication::translate("RFIDInputDialogClass", "Startzeit", 0, QApplication::UnicodeUTF8));
+    StarttimeLabel->setWhatsThis(QApplication::translate("RFIDInputDialogClass", "Startzeit", 0));
 #endif // QT_NO_WHATSTHIS
 
-    StarttimeLabel->setText(QApplication::translate("RFIDInputDialogClass", "<Starttime>", 0, QApplication::UnicodeUTF8));
+    StarttimeLabel->setText(QApplication::translate("RFIDInputDialogClass", "<Starttime>", 0));
 
 #ifndef QT_NO_WHATSTHIS
-    EndtimeLabel->setWhatsThis(QApplication::translate("RFIDInputDialogClass", "Endzeit", 0, QApplication::UnicodeUTF8));
+    EndtimeLabel->setWhatsThis(QApplication::translate("RFIDInputDialogClass", "Endzeit", 0));
 #endif // QT_NO_WHATSTHIS
 
-    EndtimeLabel->setText(QApplication::translate("RFIDInputDialogClass", "<Endtime>", 0, QApplication::UnicodeUTF8));
+    EndtimeLabel->setText(QApplication::translate("RFIDInputDialogClass", "<Endtime>", 0));
 
 #ifndef QT_NO_WHATSTHIS
-    FahrzeitLabel->setWhatsThis(QApplication::translate("RFIDInputDialogClass", "Fahrzeit", 0, QApplication::UnicodeUTF8));
+    FahrzeitLabel->setWhatsThis(QApplication::translate("RFIDInputDialogClass", "Fahrzeit", 0));
 #endif // QT_NO_WHATSTHIS
 
-    FahrzeitLabel->setText(QApplication::translate("RFIDInputDialogClass", "<Racetime>", 0, QApplication::UnicodeUTF8));
+    FahrzeitLabel->setText(QApplication::translate("RFIDInputDialogClass", "<Racetime>", 0));
 
 #ifndef QT_NO_WHATSTHIS
-    rfidsnrLabel->setWhatsThis(QApplication::translate("RFIDInputDialogClass", "Seriennummer der RFID-Karte", 0, QApplication::UnicodeUTF8));
+    rfidsnrLabel->setWhatsThis(QApplication::translate("RFIDInputDialogClass", "Seriennummer der RFID-Karte", 0));
 #endif // QT_NO_WHATSTHIS
 
-    rfidsnrLabel->setText(QApplication::translate("RFIDInputDialogClass", "<RFID_SNR>", 0, QApplication::UnicodeUTF8));
-    StreckennameLabel->setText(QApplication::translate("RFIDInputDialogClass", "<StreckenName>", 0, QApplication::UnicodeUTF8));
-    StreckenTypLabel->setText(QApplication::translate("RFIDInputDialogClass", "<SteckenTyp>", 0, QApplication::UnicodeUTF8));
-    label_14->setText(QApplication::translate("RFIDInputDialogClass", "Kategorie:", 0, QApplication::UnicodeUTF8));
-    groupBox->setTitle(QApplication::translate("RFIDInputDialogClass", "Kontaktdaten", 0, QApplication::UnicodeUTF8));
-    label->setText(QApplication::translate("RFIDInputDialogClass", "Name:", 0, QApplication::UnicodeUTF8));
+    rfidsnrLabel->setText(QApplication::translate("RFIDInputDialogClass", "<RFID_SNR>", 0));
+    StreckennameLabel->setText(QApplication::translate("RFIDInputDialogClass", "<StreckenName>", 0));
+    StreckenTypLabel->setText(QApplication::translate("RFIDInputDialogClass", "<SteckenTyp>", 0));
+    label_14->setText(QApplication::translate("RFIDInputDialogClass", "Kategorie:", 0));
+    groupBox->setTitle(QApplication::translate("RFIDInputDialogClass", "Kontaktdaten", 0));
+    label->setText(QApplication::translate("RFIDInputDialogClass", "Name:", 0));
 
 #ifndef QT_NO_WHATSTHIS
-    nameLineEdit->setWhatsThis(QApplication::translate("RFIDInputDialogClass", "Name des Teilnehmers", 0, QApplication::UnicodeUTF8));
+    nameLineEdit->setWhatsThis(QApplication::translate("RFIDInputDialogClass", "Name des Teilnehmers", 0));
 #endif // QT_NO_WHATSTHIS
 
-    label_2->setText(QApplication::translate("RFIDInputDialogClass", "Vorname:", 0, QApplication::UnicodeUTF8));
+    label_2->setText(QApplication::translate("RFIDInputDialogClass", "Vorname:", 0));
 
 #ifndef QT_NO_WHATSTHIS
-    vornameLineEdit->setWhatsThis(QApplication::translate("RFIDInputDialogClass", "Vorname des Teilnehmers", 0, QApplication::UnicodeUTF8));
+    vornameLineEdit->setWhatsThis(QApplication::translate("RFIDInputDialogClass", "Vorname des Teilnehmers", 0));
 #endif // QT_NO_WHATSTHIS
 
-    label_3->setText(QApplication::translate("RFIDInputDialogClass", "Adresse:", 0, QApplication::UnicodeUTF8));
+    label_3->setText(QApplication::translate("RFIDInputDialogClass", "Adresse:", 0));
 
 #ifndef QT_NO_WHATSTHIS
-    adresseLineEdit->setWhatsThis(QApplication::translate("RFIDInputDialogClass", "Adresse des Teilnehmers", 0, QApplication::UnicodeUTF8));
+    adresseLineEdit->setWhatsThis(QApplication::translate("RFIDInputDialogClass", "Adresse des Teilnehmers", 0));
 #endif // QT_NO_WHATSTHIS
 
-    maenlichRadioButton->setText(QApplication::translate("RFIDInputDialogClass", "M\303\244nnlich", 0, QApplication::UnicodeUTF8));
-    weiblichRadioButton->setText(QApplication::translate("RFIDInputDialogClass", "Weiblich", 0, QApplication::UnicodeUTF8));
-    label_4->setText(QApplication::translate("RFIDInputDialogClass", "PLZ:", 0, QApplication::UnicodeUTF8));
+    maenlichRadioButton->setText(QApplication::translate("RFIDInputDialogClass", "M\303\244nnlich", 0));
+    weiblichRadioButton->setText(QApplication::translate("RFIDInputDialogClass", "Weiblich", 0));
+    label_4->setText(QApplication::translate("RFIDInputDialogClass", "PLZ:", 0));
 
 #ifndef QT_NO_WHATSTHIS
-    plzLineEdit->setWhatsThis(QApplication::translate("RFIDInputDialogClass", "Postleitzahl des Teilnehmers", 0, QApplication::UnicodeUTF8));
+    plzLineEdit->setWhatsThis(QApplication::translate("RFIDInputDialogClass", "Postleitzahl des Teilnehmers", 0));
 #endif // QT_NO_WHATSTHIS
 
-    label_5->setText(QApplication::translate("RFIDInputDialogClass", "Wohnort:", 0, QApplication::UnicodeUTF8));
+    label_5->setText(QApplication::translate("RFIDInputDialogClass", "Wohnort:", 0));
 
 #ifndef QT_NO_WHATSTHIS
-    ortLineEdit->setWhatsThis(QApplication::translate("RFIDInputDialogClass", "Wohnort des Teilnehmers", 0, QApplication::UnicodeUTF8));
+    ortLineEdit->setWhatsThis(QApplication::translate("RFIDInputDialogClass", "Wohnort des Teilnehmers", 0));
 #endif // QT_NO_WHATSTHIS
 
-    label_6->setText(QApplication::translate("RFIDInputDialogClass", "Nationalit\303\244t:", 0, QApplication::UnicodeUTF8));
+    label_6->setText(QApplication::translate("RFIDInputDialogClass", "Nationalit\303\244t:", 0));
 
 #ifndef QT_NO_WHATSTHIS
-    nationalitaetComboBox->setWhatsThis(QApplication::translate("RFIDInputDialogClass", "Liste der Nationalit\303\244ten", 0, QApplication::UnicodeUTF8));
+    nationalitaetComboBox->setWhatsThis(QApplication::translate("RFIDInputDialogClass", "Liste der Nationalit\303\244ten", 0));
 #endif // QT_NO_WHATSTHIS
 
-    label_11->setText(QApplication::translate("RFIDInputDialogClass", "Jahrgang:", 0, QApplication::UnicodeUTF8));
-    label_8->setText(QApplication::translate("RFIDInputDialogClass", "Telefon:", 0, QApplication::UnicodeUTF8));
+    label_11->setText(QApplication::translate("RFIDInputDialogClass", "Jahrgang:", 0));
+    label_8->setText(QApplication::translate("RFIDInputDialogClass", "Telefon:", 0));
 
 #ifndef QT_NO_WHATSTHIS
-    telephonLineEdit->setWhatsThis(QApplication::translate("RFIDInputDialogClass", "Telefon des Teilnehmers", 0, QApplication::UnicodeUTF8));
+    telephonLineEdit->setWhatsThis(QApplication::translate("RFIDInputDialogClass", "Telefon des Teilnehmers", 0));
 #endif // QT_NO_WHATSTHIS
 
-    label_9->setText(QApplication::translate("RFIDInputDialogClass", "Mobile:", 0, QApplication::UnicodeUTF8));
+    label_9->setText(QApplication::translate("RFIDInputDialogClass", "Mobile:", 0));
 
 #ifndef QT_NO_WHATSTHIS
-    mobileLineEdit->setWhatsThis(QApplication::translate("RFIDInputDialogClass", "Mobile des Teilnehmers", 0, QApplication::UnicodeUTF8));
+    mobileLineEdit->setWhatsThis(QApplication::translate("RFIDInputDialogClass", "Mobile des Teilnehmers", 0));
 #endif // QT_NO_WHATSTHIS
 
-    label_10->setText(QApplication::translate("RFIDInputDialogClass", "Email:", 0, QApplication::UnicodeUTF8));
+    label_10->setText(QApplication::translate("RFIDInputDialogClass", "Email:", 0));
 
 #ifndef QT_NO_WHATSTHIS
-    emailLineEdit->setWhatsThis(QApplication::translate("RFIDInputDialogClass", "Email des Teilnehmers", 0, QApplication::UnicodeUTF8));
+    emailLineEdit->setWhatsThis(QApplication::translate("RFIDInputDialogClass", "Email des Teilnehmers", 0));
 #endif // QT_NO_WHATSTHIS
 
-    label_7->setText(QApplication::translate("RFIDInputDialogClass", "Team / Club:", 0, QApplication::UnicodeUTF8));
+    label_7->setText(QApplication::translate("RFIDInputDialogClass", "Team / Club:", 0));
 
 #ifndef QT_NO_WHATSTHIS
-    clubLineEdit->setWhatsThis(QApplication::translate("RFIDInputDialogClass", "Team / Club des Teilnehmers", 0, QApplication::UnicodeUTF8));
+    clubLineEdit->setWhatsThis(QApplication::translate("RFIDInputDialogClass", "Team / Club des Teilnehmers", 0));
 #endif // QT_NO_WHATSTHIS
 
-    autoCheckBox->setText(QApplication::translate("RFIDInputDialogClass", "automatisches Vervollst\303\244ndigen (Standardm\303\244ssig aktiviert)", 0, QApplication::UnicodeUTF8));
+    autoCheckBox->setText(QApplication::translate("RFIDInputDialogClass", "automatisches Vervollst\303\244ndigen (Standardm\303\244ssig aktiviert)", 0));
 
 #ifndef QT_NO_WHATSTHIS
-    okButton->setWhatsThis(QApplication::translate("RFIDInputDialogClass", "Mit Ok werden die Information zur Datenbank hinzugef\303\274gt", 0, QApplication::UnicodeUTF8));
+    okButton->setWhatsThis(QApplication::translate("RFIDInputDialogClass", "Mit Ok werden die Information zur Datenbank hinzugef\303\274gt", 0));
 #endif // QT_NO_WHATSTHIS
 
-    okButton->setText(QApplication::translate("RFIDInputDialogClass", "Ok", 0, QApplication::UnicodeUTF8));
+    okButton->setText(QApplication::translate("RFIDInputDialogClass", "Ok", 0));
 
 #ifndef QT_NO_WHATSTHIS
-    canButton->setWhatsThis(QApplication::translate("RFIDInputDialogClass", "Verl\303\244sst diesen Dialog ohne \303\204nderungen", 0, QApplication::UnicodeUTF8));
+    canButton->setWhatsThis(QApplication::translate("RFIDInputDialogClass", "Verl\303\244sst diesen Dialog ohne \303\204nderungen", 0));
 #endif // QT_NO_WHATSTHIS
 
-    canButton->setText(QApplication::translate("RFIDInputDialogClass", "Abbrechen", 0, QApplication::UnicodeUTF8));
+    canButton->setText(QApplication::translate("RFIDInputDialogClass", "Abbrechen", 0));
     Q_UNUSED(RFIDInputDialogClass);
     } // retranslateUi
 

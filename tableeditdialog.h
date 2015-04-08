@@ -31,7 +31,7 @@
 #ifndef TABLEEDITDIALOG_H
 #define TABLEEDITDIALOG_H
 
-#include <QtGui/QDialog>
+#include <QDialog>
 #include <QtSql>
 #include "ui_tableeditdialog.h"
 #include "User.h"

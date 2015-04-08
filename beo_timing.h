@@ -33,6 +33,7 @@
 #define BEOTIMING_H
 
 #include <QtGui>
+#include <QSplashScreen>
 #include "ui_beo_timing.h"
 #include "beo_timing.h"
 #include "RFID_Reader/rfidinputdialog.h"

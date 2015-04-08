@@ -11,17 +11,17 @@
 #define UI_LOGFILELESENDIALOG_H
 
 #include <QtCore/QVariant>
-#include <QtGui/QAction>
-#include <QtGui/QApplication>
-#include <QtGui/QButtonGroup>
-#include <QtGui/QCheckBox>
-#include <QtGui/QDialog>
-#include <QtGui/QGridLayout>
-#include <QtGui/QGroupBox>
-#include <QtGui/QHBoxLayout>
-#include <QtGui/QListWidget>
-#include <QtGui/QPushButton>
-#include <QtGui/QSpacerItem>
+#include <QAction>
+#include <QApplication>
+#include <QButtonGroup>
+#include <QCheckBox>
+#include <QDialog>
+#include <QGridLayout>
+#include <QGroupBox>
+#include <QHBoxLayout>
+#include <QListWidget>
+#include <QPushButton>
+#include <QSpacerItem>
 
 QT_BEGIN_NAMESPACE
 
@@ -117,13 +117,13 @@ public:
 
     void retranslateUi(QDialog *LogfileLesenDialogClass)
     {
-    LogfileLesenDialogClass->setWindowTitle(QApplication::translate("LogfileLesenDialogClass", "LogfileLesenDialog", 0, QApplication::UnicodeUTF8));
-    groupBox->setTitle(QApplication::translate("LogfileLesenDialogClass", "Neue Zeiten", 0, QApplication::UnicodeUTF8));
-    neuCheckBox->setText(QApplication::translate("LogfileLesenDialogClass", "Alle Zeiten ausw\303\244hlen", 0, QApplication::UnicodeUTF8));
-    groupBox_2->setTitle(QApplication::translate("LogfileLesenDialogClass", "Zu l\303\266schende Zeiten", 0, QApplication::UnicodeUTF8));
-    delCheckBox->setText(QApplication::translate("LogfileLesenDialogClass", "Alle Zeiten ausw\303\244hlen", 0, QApplication::UnicodeUTF8));
-    okButton->setText(QApplication::translate("LogfileLesenDialogClass", "Datenbank \303\244ndern", 0, QApplication::UnicodeUTF8));
-    canButton->setText(QApplication::translate("LogfileLesenDialogClass", "Abbrechen", 0, QApplication::UnicodeUTF8));
+    LogfileLesenDialogClass->setWindowTitle(QApplication::translate("LogfileLesenDialogClass", "LogfileLesenDialog", 0));
+    groupBox->setTitle(QApplication::translate("LogfileLesenDialogClass", "Neue Zeiten", 0));
+    neuCheckBox->setText(QApplication::translate("LogfileLesenDialogClass", "Alle Zeiten ausw\303\244hlen", 0));
+    groupBox_2->setTitle(QApplication::translate("LogfileLesenDialogClass", "Zu l\303\266schende Zeiten", 0));
+    delCheckBox->setText(QApplication::translate("LogfileLesenDialogClass", "Alle Zeiten ausw\303\244hlen", 0));
+    okButton->setText(QApplication::translate("LogfileLesenDialogClass", "Datenbank \303\244ndern", 0));
+    canButton->setText(QApplication::translate("LogfileLesenDialogClass", "Abbrechen", 0));
     Q_UNUSED(LogfileLesenDialogClass);
     } // retranslateUi
 

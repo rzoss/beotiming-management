@@ -31,7 +31,7 @@
 #ifndef RECHTEANPASSEN_H
 #define RECHTEANPASSEN_H
 
-#include <QtGui/QDialog>
+#include <QDialog>
 #include "ui_rechteanpassen.h"
 #include "User.h"
 

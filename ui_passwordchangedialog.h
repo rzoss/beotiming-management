@@ -11,17 +11,17 @@
 #define UI_PASSWORDCHANGEDIALOG_H
 
 #include <QtCore/QVariant>
-#include <QtGui/QAction>
-#include <QtGui/QApplication>
-#include <QtGui/QButtonGroup>
-#include <QtGui/QGridLayout>
-#include <QtGui/QHBoxLayout>
-#include <QtGui/QLabel>
-#include <QtGui/QLineEdit>
-#include <QtGui/QProgressBar>
-#include <QtGui/QPushButton>
-#include <QtGui/QSpacerItem>
-#include <QtGui/QWidget>
+#include <QAction>
+#include <QApplication>
+#include <QButtonGroup>
+#include <QGridLayout>
+#include <QHBoxLayout>
+#include <QLabel>
+#include <QLineEdit>
+#include <QProgressBar>
+#include <QPushButton>
+#include <QSpacerItem>
+#include <QWidget>
 
 QT_BEGIN_NAMESPACE
 
@@ -125,13 +125,13 @@ public:
 
     void retranslateUi(QWidget *PasswordChangeDialogClass)
     {
-    PasswordChangeDialogClass->setWindowTitle(QApplication::translate("PasswordChangeDialogClass", "PasswordChangeDialog", 0, QApplication::UnicodeUTF8));
-    label->setText(QApplication::translate("PasswordChangeDialogClass", "Altes Passwort:", 0, QApplication::UnicodeUTF8));
-    label_2->setText(QApplication::translate("PasswordChangeDialogClass", "Neues Passwort:", 0, QApplication::UnicodeUTF8));
-    label_3->setText(QApplication::translate("PasswordChangeDialogClass", "Passwort wiederholen:", 0, QApplication::UnicodeUTF8));
-    label_4->setText(QApplication::translate("PasswordChangeDialogClass", "Passwort st\303\244rke:", 0, QApplication::UnicodeUTF8));
-    okButton->setText(QApplication::translate("PasswordChangeDialogClass", "Ok", 0, QApplication::UnicodeUTF8));
-    canButton->setText(QApplication::translate("PasswordChangeDialogClass", "Abbrechen", 0, QApplication::UnicodeUTF8));
+    PasswordChangeDialogClass->setWindowTitle(QApplication::translate("PasswordChangeDialogClass", "PasswordChangeDialog", 0));
+    label->setText(QApplication::translate("PasswordChangeDialogClass", "Altes Passwort:", 0));
+    label_2->setText(QApplication::translate("PasswordChangeDialogClass", "Neues Passwort:", 0));
+    label_3->setText(QApplication::translate("PasswordChangeDialogClass", "Passwort wiederholen:", 0));
+    label_4->setText(QApplication::translate("PasswordChangeDialogClass", "Passwort st\303\244rke:", 0));
+    okButton->setText(QApplication::translate("PasswordChangeDialogClass", "Ok", 0));
+    canButton->setText(QApplication::translate("PasswordChangeDialogClass", "Abbrechen", 0));
     Q_UNUSED(PasswordChangeDialogClass);
     } // retranslateUi
 

@@ -30,7 +30,7 @@
 #ifndef HARDWAREKONFIGURATION_H
 #define HARDWAREKONFIGURATION_H
 
-#include <QtGui/QDialog>
+#include <QDialog>
 #include "ui_hardwarekonfiguration.h"
 #include "User.h"
 

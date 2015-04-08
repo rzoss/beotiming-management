@@ -11,19 +11,19 @@
 #define UI_BEO_TIMING_H
 
 #include <QtCore/QVariant>
-#include <QtGui/QAction>
-#include <QtGui/QApplication>
-#include <QtGui/QButtonGroup>
-#include <QtGui/QGridLayout>
-#include <QtGui/QMainWindow>
-#include <QtGui/QMenu>
-#include <QtGui/QMenuBar>
-#include <QtGui/QSpacerItem>
-#include <QtGui/QStatusBar>
-#include <QtGui/QTableView>
-#include <QtGui/QTreeWidget>
-#include <QtGui/QVBoxLayout>
-#include <QtGui/QWidget>
+#include <QAction>
+#include <QApplication>
+#include <QButtonGroup>
+#include <QGridLayout>
+#include <QMainWindow>
+#include <QMenu>
+#include <QMenuBar>
+#include <QSpacerItem>
+#include <QStatusBar>
+#include <QTableView>
+#include <QTreeWidget>
+#include <QVBoxLayout>
+#include <QWidget>
 
 QT_BEGIN_NAMESPACE
 
@@ -247,36 +247,36 @@ public:
 
     void retranslateUi(QMainWindow *BEO_TimingClass)
     {
-    BEO_TimingClass->setWindowTitle(QApplication::translate("BEO_TimingClass", "MainWindow", 0, QApplication::UnicodeUTF8));
-    actionAktualisieren->setText(QApplication::translate("BEO_TimingClass", "Ansicht aktualisieren", 0, QApplication::UnicodeUTF8));
-    actionBeenden->setText(QApplication::translate("BEO_TimingClass", "Beenden", 0, QApplication::UnicodeUTF8));
-    actionNeues_Rennen_erfassen->setText(QApplication::translate("BEO_TimingClass", "Neues Rennen erfassen", 0, QApplication::UnicodeUTF8));
-    actionAbout->setText(QApplication::translate("BEO_TimingClass", "About", 0, QApplication::UnicodeUTF8));
-    actionEintrag_Editieren->setText(QApplication::translate("BEO_TimingClass", "Eintrag Editieren", 0, QApplication::UnicodeUTF8));
-    actionExportieren_als_CSV->setText(QApplication::translate("BEO_TimingClass", "Exportieren als CSV", 0, QApplication::UnicodeUTF8));
-    actionPasswort_ndern->setText(QApplication::translate("BEO_TimingClass", "Passwort \303\244ndern", 0, QApplication::UnicodeUTF8));
-    actionNeuer_Benutzer_erstellen->setText(QApplication::translate("BEO_TimingClass", "Neuer Benutzer erstellen", 0, QApplication::UnicodeUTF8));
-    actionNeuer_Benutzer_erstellen_2->setText(QApplication::translate("BEO_TimingClass", "Neuer Benutzer erstellen", 0, QApplication::UnicodeUTF8));
-    actionKonfiguration_erstellen->setText(QApplication::translate("BEO_TimingClass", "Konfiguration erstellen", 0, QApplication::UnicodeUTF8));
-    actionLog_Datei_auslesen->setText(QApplication::translate("BEO_TimingClass", "Log-Datei auslesen", 0, QApplication::UnicodeUTF8));
-    actionBenutzerrechte_ndern->setText(QApplication::translate("BEO_TimingClass", "Benutzerrechte \303\244ndern", 0, QApplication::UnicodeUTF8));
-    actionRFID_Leser->setText(QApplication::translate("BEO_TimingClass", "RFID-Leser Verbindung", 0, QApplication::UnicodeUTF8));
-    actionDatenbank->setText(QApplication::translate("BEO_TimingClass", "Datenbank", 0, QApplication::UnicodeUTF8));
-    actionAbout_Qt->setText(QApplication::translate("BEO_TimingClass", "About Qt", 0, QApplication::UnicodeUTF8));
-    actionVerwaiste_Eintr_ge_entfernen->setText(QApplication::translate("BEO_TimingClass", "Verwaiste Eintr\303\244ge entfernen", 0, QApplication::UnicodeUTF8));
-    actionDatenbank_optimieren->setText(QApplication::translate("BEO_TimingClass", "Datenbank optimieren", 0, QApplication::UnicodeUTF8));
-    actionNeuer_Benutzer_erstellen_3->setText(QApplication::translate("BEO_TimingClass", "Neuer Benutzer erstellen", 0, QApplication::UnicodeUTF8));
-    actionRFID_Leser_verbinden->setText(QApplication::translate("BEO_TimingClass", "RFID-Leser verbinden", 0, QApplication::UnicodeUTF8));
-    actionKarten_zur_cksetzen_unpers_nlich->setText(QApplication::translate("BEO_TimingClass", "Karten zur\303\274cksetzen (unpers\303\266nlich)", 0, QApplication::UnicodeUTF8));
-    actionKarten_zur_cksetzen_pers_nlich->setText(QApplication::translate("BEO_TimingClass", "Karten zur\303\274cksetzen (pers\303\266nlich)", 0, QApplication::UnicodeUTF8));
-    actionNeue_Karten_initialisieren_unpers_nlich->setText(QApplication::translate("BEO_TimingClass", "Neue Karten initialisieren (unpers\303\266nlich)", 0, QApplication::UnicodeUTF8));
-    actionNeue_Karten_initialisieren_pers_nlich->setText(QApplication::translate("BEO_TimingClass", "Neue Karten initialisieren (pers\303\266nlich)", 0, QApplication::UnicodeUTF8));
-    RennenTreeWidget->headerItem()->setText(0, QApplication::translate("BEO_TimingClass", "1", 0, QApplication::UnicodeUTF8));
-    menuDatei->setTitle(QApplication::translate("BEO_TimingClass", "Datei", 0, QApplication::UnicodeUTF8));
-    menuRennadministration->setTitle(QApplication::translate("BEO_TimingClass", "Rennadministration", 0, QApplication::UnicodeUTF8));
-    menuHilfe->setTitle(QApplication::translate("BEO_TimingClass", "Hilfe", 0, QApplication::UnicodeUTF8));
-    menuVerbindungen->setTitle(QApplication::translate("BEO_TimingClass", "Verbindungen", 0, QApplication::UnicodeUTF8));
-    menuBenutzerverwaltung->setTitle(QApplication::translate("BEO_TimingClass", "Benutzerverwaltung", 0, QApplication::UnicodeUTF8));
+    BEO_TimingClass->setWindowTitle(QApplication::translate("BEO_TimingClass", "MainWindow", 0));
+    actionAktualisieren->setText(QApplication::translate("BEO_TimingClass", "Ansicht aktualisieren", 0));
+    actionBeenden->setText(QApplication::translate("BEO_TimingClass", "Beenden", 0));
+    actionNeues_Rennen_erfassen->setText(QApplication::translate("BEO_TimingClass", "Neues Rennen erfassen", 0));
+    actionAbout->setText(QApplication::translate("BEO_TimingClass", "About", 0));
+    actionEintrag_Editieren->setText(QApplication::translate("BEO_TimingClass", "Eintrag Editieren", 0));
+    actionExportieren_als_CSV->setText(QApplication::translate("BEO_TimingClass", "Exportieren als CSV", 0));
+    actionPasswort_ndern->setText(QApplication::translate("BEO_TimingClass", "Passwort \303\244ndern", 0));
+    actionNeuer_Benutzer_erstellen->setText(QApplication::translate("BEO_TimingClass", "Neuer Benutzer erstellen", 0));
+    actionNeuer_Benutzer_erstellen_2->setText(QApplication::translate("BEO_TimingClass", "Neuer Benutzer erstellen", 0));
+    actionKonfiguration_erstellen->setText(QApplication::translate("BEO_TimingClass", "Konfiguration erstellen", 0));
+    actionLog_Datei_auslesen->setText(QApplication::translate("BEO_TimingClass", "Log-Datei auslesen", 0));
+    actionBenutzerrechte_ndern->setText(QApplication::translate("BEO_TimingClass", "Benutzerrechte \303\244ndern", 0));
+    actionRFID_Leser->setText(QApplication::translate("BEO_TimingClass", "RFID-Leser Verbindung", 0));
+    actionDatenbank->setText(QApplication::translate("BEO_TimingClass", "Datenbank", 0));
+    actionAbout_Qt->setText(QApplication::translate("BEO_TimingClass", "About Qt", 0));
+    actionVerwaiste_Eintr_ge_entfernen->setText(QApplication::translate("BEO_TimingClass", "Verwaiste Eintr\303\244ge entfernen", 0));
+    actionDatenbank_optimieren->setText(QApplication::translate("BEO_TimingClass", "Datenbank optimieren", 0));
+    actionNeuer_Benutzer_erstellen_3->setText(QApplication::translate("BEO_TimingClass", "Neuer Benutzer erstellen", 0));
+    actionRFID_Leser_verbinden->setText(QApplication::translate("BEO_TimingClass", "RFID-Leser verbinden", 0));
+    actionKarten_zur_cksetzen_unpers_nlich->setText(QApplication::translate("BEO_TimingClass", "Karten zur\303\274cksetzen (unpers\303\266nlich)", 0));
+    actionKarten_zur_cksetzen_pers_nlich->setText(QApplication::translate("BEO_TimingClass", "Karten zur\303\274cksetzen (pers\303\266nlich)", 0));
+    actionNeue_Karten_initialisieren_unpers_nlich->setText(QApplication::translate("BEO_TimingClass", "Neue Karten initialisieren (unpers\303\266nlich)", 0));
+    actionNeue_Karten_initialisieren_pers_nlich->setText(QApplication::translate("BEO_TimingClass", "Neue Karten initialisieren (pers\303\266nlich)", 0));
+    RennenTreeWidget->headerItem()->setText(0, QApplication::translate("BEO_TimingClass", "1", 0));
+    menuDatei->setTitle(QApplication::translate("BEO_TimingClass", "Datei", 0));
+    menuRennadministration->setTitle(QApplication::translate("BEO_TimingClass", "Rennadministration", 0));
+    menuHilfe->setTitle(QApplication::translate("BEO_TimingClass", "Hilfe", 0));
+    menuVerbindungen->setTitle(QApplication::translate("BEO_TimingClass", "Verbindungen", 0));
+    menuBenutzerverwaltung->setTitle(QApplication::translate("BEO_TimingClass", "Benutzerverwaltung", 0));
     } // retranslateUi
 
 };

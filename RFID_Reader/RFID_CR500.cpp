@@ -34,6 +34,7 @@
 #include "MasterRD.h"
 #include <QtGui>
 #include <QtSql>
+#include <QMessageBox>
 #include "RFID_CR500.h"
 
 

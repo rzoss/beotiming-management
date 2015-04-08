@@ -31,7 +31,7 @@
 #ifndef PASSWORDCHANGEDIALOG_H
 #define PASSWORDCHANGEDIALOG_H
 
-#include <QtGui/QDialog>
+#include <QDialog>
 #include "ui_passwordchangedialog.h"
 #include "User.h"
 

@@ -31,6 +31,7 @@
 #include "KontaktDelegate.h"
 #include <QtSql>
 #include <QtGui>
+#include <QSpinBox>
 
 /*!
  * \brief Konstruktor

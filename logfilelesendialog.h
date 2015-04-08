@@ -31,7 +31,7 @@
 #ifndef LOGFILELESENDIALOG_H
 #define LOGFILELESENDIALOG_H
 
-#include <QtGui/QDialog>
+#include <QDialog>
 #include "ui_logfilelesendialog.h"
 /*!
  * \brief Dieser Dialog sucht eine Log-Datei einer Zielstation nach nicht 

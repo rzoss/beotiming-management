@@ -30,7 +30,7 @@
 #ifndef LOGONDIALOG_H
 #define LOGONDIALOG_H
 
-#include <QtGui/QDialog>
+#include <QDialog>
 #include "ui_logondialog.h"
 #include "Database.h"
 #include "beo_timing.h"

@@ -11,21 +11,21 @@
 #define UI_HARDWAREKONFIGURATION_H
 
 #include <QtCore/QVariant>
-#include <QtGui/QAction>
-#include <QtGui/QApplication>
-#include <QtGui/QButtonGroup>
-#include <QtGui/QCheckBox>
-#include <QtGui/QComboBox>
-#include <QtGui/QDialog>
-#include <QtGui/QGridLayout>
-#include <QtGui/QGroupBox>
-#include <QtGui/QHBoxLayout>
-#include <QtGui/QLabel>
-#include <QtGui/QLineEdit>
-#include <QtGui/QPushButton>
-#include <QtGui/QSpacerItem>
-#include <QtGui/QSpinBox>
-#include <QtGui/QTreeWidget>
+#include <QAction>
+#include <QApplication>
+#include <QButtonGroup>
+#include <QCheckBox>
+#include <QComboBox>
+#include <QDialog>
+#include <QGridLayout>
+#include <QGroupBox>
+#include <QHBoxLayout>
+#include <QLabel>
+#include <QLineEdit>
+#include <QPushButton>
+#include <QSpacerItem>
+#include <QSpinBox>
+#include <QTreeWidget>
 
 QT_BEGIN_NAMESPACE
 
@@ -208,23 +208,23 @@ public:
 
     void retranslateUi(QDialog *HardwareKonfigurationClass)
     {
-    HardwareKonfigurationClass->setWindowTitle(QApplication::translate("HardwareKonfigurationClass", "HardwareKonfiguration", 0, QApplication::UnicodeUTF8));
-    groupBox->setTitle(QApplication::translate("HardwareKonfigurationClass", "Allgemein", 0, QApplication::UnicodeUTF8));
-    label->setText(QApplication::translate("HardwareKonfigurationClass", "Station Nr.:", 0, QApplication::UnicodeUTF8));
-    Strecken->setText(QApplication::translate("HardwareKonfigurationClass", "Strecken: ", 0, QApplication::UnicodeUTF8));
-    streckenTreeWidget->headerItem()->setText(0, QApplication::translate("HardwareKonfigurationClass", "1", 0, QApplication::UnicodeUTF8));
-    gprsCheckBox->setText(QApplication::translate("HardwareKonfigurationClass", "Verwende GPRS", 0, QApplication::UnicodeUTF8));
-    groupBox_3->setTitle(QApplication::translate("HardwareKonfigurationClass", "Energiesparoptionen", 0, QApplication::UnicodeUTF8));
-    label_3->setText(QApplication::translate("HardwareKonfigurationClass", "Einschaltzeit (Stunde):", 0, QApplication::UnicodeUTF8));
-    label_4->setText(QApplication::translate("HardwareKonfigurationClass", "Ausschaltzeit (Stunde):", 0, QApplication::UnicodeUTF8));
-    groupBox_2->setTitle(QApplication::translate("HardwareKonfigurationClass", "Verbindungsdaten", 0, QApplication::UnicodeUTF8));
-    label_11->setText(QApplication::translate("HardwareKonfigurationClass", "Nummer f\303\274r SMS:", 0, QApplication::UnicodeUTF8));
-    label_6->setText(QApplication::translate("HardwareKonfigurationClass", "FTP-Server:", 0, QApplication::UnicodeUTF8));
-    ftpserverLabel->setText(QApplication::translate("HardwareKonfigurationClass", "<ftp.xy.com>", 0, QApplication::UnicodeUTF8));
-    label_7->setText(QApplication::translate("HardwareKonfigurationClass", "FTP-User:", 0, QApplication::UnicodeUTF8));
-    ftpuserLabel->setText(QApplication::translate("HardwareKonfigurationClass", "<xy@xy.com>", 0, QApplication::UnicodeUTF8));
-    okButton->setText(QApplication::translate("HardwareKonfigurationClass", "Ok", 0, QApplication::UnicodeUTF8));
-    canButton->setText(QApplication::translate("HardwareKonfigurationClass", "Abbrechen", 0, QApplication::UnicodeUTF8));
+    HardwareKonfigurationClass->setWindowTitle(QApplication::translate("HardwareKonfigurationClass", "HardwareKonfiguration", 0));
+    groupBox->setTitle(QApplication::translate("HardwareKonfigurationClass", "Allgemein", 0));
+    label->setText(QApplication::translate("HardwareKonfigurationClass", "Station Nr.:", 0));
+    Strecken->setText(QApplication::translate("HardwareKonfigurationClass", "Strecken: ", 0));
+    streckenTreeWidget->headerItem()->setText(0, QApplication::translate("HardwareKonfigurationClass", "1", 0));
+    gprsCheckBox->setText(QApplication::translate("HardwareKonfigurationClass", "Verwende GPRS", 0));
+    groupBox_3->setTitle(QApplication::translate("HardwareKonfigurationClass", "Energiesparoptionen", 0));
+    label_3->setText(QApplication::translate("HardwareKonfigurationClass", "Einschaltzeit (Stunde):", 0));
+    label_4->setText(QApplication::translate("HardwareKonfigurationClass", "Ausschaltzeit (Stunde):", 0));
+    groupBox_2->setTitle(QApplication::translate("HardwareKonfigurationClass", "Verbindungsdaten", 0));
+    label_11->setText(QApplication::translate("HardwareKonfigurationClass", "Nummer f\303\274r SMS:", 0));
+    label_6->setText(QApplication::translate("HardwareKonfigurationClass", "FTP-Server:", 0));
+    ftpserverLabel->setText(QApplication::translate("HardwareKonfigurationClass", "<ftp.xy.com>", 0));
+    label_7->setText(QApplication::translate("HardwareKonfigurationClass", "FTP-User:", 0));
+    ftpuserLabel->setText(QApplication::translate("HardwareKonfigurationClass", "<xy@xy.com>", 0));
+    okButton->setText(QApplication::translate("HardwareKonfigurationClass", "Ok", 0));
+    canButton->setText(QApplication::translate("HardwareKonfigurationClass", "Abbrechen", 0));
     Q_UNUSED(HardwareKonfigurationClass);
     } // retranslateUi
 

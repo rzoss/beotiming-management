@@ -29,7 +29,7 @@
 #ifndef NEUESRENNENDIALOG_H
 #define NEUESRENNENDIALOG_H
 
-#include <QtGui/QDialog>
+#include <QDialog>
 #include "ui_neuesrennendialog.h"
 
 

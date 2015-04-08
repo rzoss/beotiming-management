@@ -11,19 +11,19 @@
 #define UI_NEUERUSERDIALOG_H
 
 #include <QtCore/QVariant>
-#include <QtGui/QAction>
-#include <QtGui/QApplication>
-#include <QtGui/QButtonGroup>
-#include <QtGui/QComboBox>
-#include <QtGui/QDialog>
-#include <QtGui/QGridLayout>
-#include <QtGui/QGroupBox>
-#include <QtGui/QHBoxLayout>
-#include <QtGui/QLabel>
-#include <QtGui/QLineEdit>
-#include <QtGui/QPushButton>
-#include <QtGui/QSpacerItem>
-#include <QtGui/QTreeWidget>
+#include <QAction>
+#include <QApplication>
+#include <QButtonGroup>
+#include <QComboBox>
+#include <QDialog>
+#include <QGridLayout>
+#include <QGroupBox>
+#include <QHBoxLayout>
+#include <QLabel>
+#include <QLineEdit>
+#include <QPushButton>
+#include <QSpacerItem>
+#include <QTreeWidget>
 
 QT_BEGIN_NAMESPACE
 
@@ -176,19 +176,19 @@ public:
 
     void retranslateUi(QDialog *NeuerUserDialogClass)
     {
-    NeuerUserDialogClass->setWindowTitle(QApplication::translate("NeuerUserDialogClass", "NeuerUserDialog", 0, QApplication::UnicodeUTF8));
-    groupBox->setTitle(QApplication::translate("NeuerUserDialogClass", "Neuer Benutzer", 0, QApplication::UnicodeUTF8));
-    label->setText(QApplication::translate("NeuerUserDialogClass", "Benutzername:", 0, QApplication::UnicodeUTF8));
-    label_8->setText(QApplication::translate("NeuerUserDialogClass", "Name / Vorname:", 0, QApplication::UnicodeUTF8));
-    label_2->setText(QApplication::translate("NeuerUserDialogClass", "Passwort:", 0, QApplication::UnicodeUTF8));
-    label_3->setText(QApplication::translate("NeuerUserDialogClass", "Passwort wiederholen:", 0, QApplication::UnicodeUTF8));
-    label_4->setText(QApplication::translate("NeuerUserDialogClass", "Email:", 0, QApplication::UnicodeUTF8));
-    label_5->setText(QApplication::translate("NeuerUserDialogClass", "Typ:", 0, QApplication::UnicodeUTF8));
-    label_6->setText(QApplication::translate("NeuerUserDialogClass", "Berechtigungen:", 0, QApplication::UnicodeUTF8));
-    streckenTreeWidget->headerItem()->setText(0, QApplication::translate("NeuerUserDialogClass", "1", 0, QApplication::UnicodeUTF8));
-    label_7->setText(QApplication::translate("NeuerUserDialogClass", "(mehrfachauswahl m\303\266glich)", 0, QApplication::UnicodeUTF8));
-    okButton->setText(QApplication::translate("NeuerUserDialogClass", "Ok", 0, QApplication::UnicodeUTF8));
-    canButton->setText(QApplication::translate("NeuerUserDialogClass", "Abbrechen", 0, QApplication::UnicodeUTF8));
+    NeuerUserDialogClass->setWindowTitle(QApplication::translate("NeuerUserDialogClass", "NeuerUserDialog", 0));
+    groupBox->setTitle(QApplication::translate("NeuerUserDialogClass", "Neuer Benutzer", 0));
+    label->setText(QApplication::translate("NeuerUserDialogClass", "Benutzername:", 0));
+    label_8->setText(QApplication::translate("NeuerUserDialogClass", "Name / Vorname:", 0));
+    label_2->setText(QApplication::translate("NeuerUserDialogClass", "Passwort:", 0));
+    label_3->setText(QApplication::translate("NeuerUserDialogClass", "Passwort wiederholen:", 0));
+    label_4->setText(QApplication::translate("NeuerUserDialogClass", "Email:", 0));
+    label_5->setText(QApplication::translate("NeuerUserDialogClass", "Typ:", 0));
+    label_6->setText(QApplication::translate("NeuerUserDialogClass", "Berechtigungen:", 0));
+    streckenTreeWidget->headerItem()->setText(0, QApplication::translate("NeuerUserDialogClass", "1", 0));
+    label_7->setText(QApplication::translate("NeuerUserDialogClass", "(mehrfachauswahl m\303\266glich)", 0));
+    okButton->setText(QApplication::translate("NeuerUserDialogClass", "Ok", 0));
+    canButton->setText(QApplication::translate("NeuerUserDialogClass", "Abbrechen", 0));
     Q_UNUSED(NeuerUserDialogClass);
     } // retranslateUi
 

@@ -30,7 +30,7 @@
 #ifndef NEUERUSERDIALOG_H
 #define NEUERUSERDIALOG_H
 
-#include <QtGui/QDialog>
+#include <QDialog>
 #include "ui_neueruserdialog.h"
 #include "User.h"
 /*!
