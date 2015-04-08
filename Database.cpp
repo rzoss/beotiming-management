@@ -30,7 +30,7 @@
  */
 #include <QSqlDatabase>
 #include <QtSql>
-#include <QtGui>
+#include <QMessageBox>
 #include "Database.h"
 
 /*!
@@ -41,10 +41,10 @@ Database::Database()
 	qDebug() << "MySQL-Test";
 	
 	db = QSqlDatabase::addDatabase("QMYSQL");
-	db.setHostName("www.rrc-thun.ch"); // "www.rrc-thun.ch"
-	db.setDatabaseName("web92-time");
-	db.setUserName("web92-time");
-	db.setPassword("time07");
+    db.setHostName("ricozo6.mysql.db.hostpoint.ch"); // "www.rrc-thun.ch"
+    db.setDatabaseName("ricozo6_beotimingtime");
+    db.setUserName("ricozo6_beotim");
+    db.setPassword("KGloQyRd");
 	// Versuche eine SSL-Verschlüsselung zu initialisieren
 	db.setConnectOptions("CLIENT_SSL");
 	// Daten Komprimiert senden

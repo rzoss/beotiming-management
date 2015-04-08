@@ -43,8 +43,8 @@ public:
 	User();
 	virtual ~User();
 	int getUsertype();
-	void User::Init(QString username, QString password) throw (QString);
-	void User::Init(QString username);
+    void Init(QString username, QString password) throw (QString);
+    void Init(QString username);
 	bool checkPassword(QString password);
 	bool getRaceAuthority(int race);
 	bool getLogonSuccess();

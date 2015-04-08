@@ -2,7 +2,8 @@ TEMPLATE = app
 TARGET = BEO_Timing
 QT += core \
     gui \
-    sql
+    sql \
+    widgets
 HEADERS += Database.h \
     RFID_Reader/MasterRD.h \
     RFID_Reader/RFID_CR500.h \
