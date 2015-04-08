@@ -1,0 +1,349 @@
+\hypertarget{class_r_f_i_d___c_r500}{
+\section{RFID\_\-CR500 Class Reference}
+\label{class_r_f_i_d___c_r500}\index{RFID\_\-CR500@{RFID\_\-CR500}}
+}
+Enthält alle Eigenschaften des RFID-Lesers CR500-USB.  
+
+
+{\tt \#include $<$RFID\_\-CR500.h$>$}
+
+Collaboration diagram for RFID\_\-CR500:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=86pt]{class_r_f_i_d___c_r500__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{CompactItemize}
+\item 
+\hyperlink{class_r_f_i_d___c_r500_2d028be0db1277a8feca1cfbd4f5619e}{RFID\_\-CR500} ()
+\begin{CompactList}\small\item\em Konstruktor. \item\end{CompactList}\item 
+virtual \hyperlink{class_r_f_i_d___c_r500_766c86b545f284a11e285305e88cd97a}{$\sim$RFID\_\-CR500} ()
+\begin{CompactList}\small\item\em Destruktor. \item\end{CompactList}\item 
+bool \hyperlink{class_r_f_i_d___c_r500_7d3f44b888f7da7cea83111f41bb6d95}{findCard} ()
+\begin{CompactList}\small\item\em Karte im Feld suchen. \item\end{CompactList}\item 
+bool \hyperlink{class_r_f_i_d___c_r500_0ff3f9ea5a0d59d36532bcdd21854755}{readData} ()
+\begin{CompactList}\small\item\em Lesen der gefundenen Karte. \item\end{CompactList}\item 
+bool \hyperlink{class_r_f_i_d___c_r500_2062849e5d875fb74e71c631468e40c1}{clearValidFlag} ()
+\begin{CompactList}\small\item\em Löschen der Flags, um die Karte als ausgewertet kennzuzeichnen. \item\end{CompactList}\item 
+void \hyperlink{class_r_f_i_d___c_r500_c72b02ffc4c4b42cfdb97fbed3a2eb97}{greenLED} ()
+\begin{CompactList}\small\item\em Stellt die LED des Lesers auf Grün. \item\end{CompactList}\item 
+bool \hyperlink{class_r_f_i_d___c_r500_b349b713f9636e8f3c04ca4295bc3248}{isConnected} ()
+\begin{CompactList}\small\item\em Funktion zum Testen der Verbindung zum Leser. \item\end{CompactList}\end{CompactItemize}
+\subsection*{Private Member Functions}
+\begin{CompactItemize}
+\item 
+void \hyperlink{class_r_f_i_d___c_r500_04bf682d670036b022d674c96a855140}{myStrcat} (TCHAR $\ast$op, int size)
+\begin{CompactList}\small\item\em Strcat für UTF-8. \item\end{CompactList}\item 
+void \hyperlink{class_r_f_i_d___c_r500_45353483301fecf71b2c2d0c386e30e2}{myCout} (TCHAR $\ast$op, int size)
+\begin{CompactList}\small\item\em Ausgabe für UTF-8 String. \item\end{CompactList}\item 
+void \hyperlink{class_r_f_i_d___c_r500_ce1fec5794623260b5e697762899bc73}{init\_\-RFID} ()
+\begin{CompactList}\small\item\em Initialisieren des RFID-Lesers. \item\end{CompactList}\end{CompactItemize}
+\subsection*{Private Attributes}
+\begin{CompactItemize}
+\item 
+bool \hyperlink{class_r_f_i_d___c_r500_40862a8ca6eeaf91bb5974f17641285a}{connected}
+\item 
+unsigned short \hyperlink{class_r_f_i_d___c_r500_db93e027f9415df3008e43478a9bdaed}{icdev}
+\item 
+QString \hyperlink{class_r_f_i_d___c_r500_80434957a623b58350ddd0b0eea45133}{serial}
+\item 
+QString \hyperlink{class_r_f_i_d___c_r500_92b6e6199e3e40cdeddceafe64707af9}{oldSerial}
+\item 
+qint16 \hyperlink{class_r_f_i_d___c_r500_2fa7bc6f3433a1acf060356166d591a6}{strecke}
+\item 
+struct \hyperlink{struct_m_y_d_a_t_e}{MYDATE} startdate \hyperlink{class_r_f_i_d___c_r500_a833f1ef40098bd9f9d07787bfe45271}{enddate}
+\item 
+struct \hyperlink{struct_m_y_t_i_m_e}{MYTIME} \hyperlink{class_r_f_i_d___c_r500_1790d6c17d8367723c96ad74515bd709}{racetime}
+\end{CompactItemize}
+\subsection*{Friends}
+\begin{CompactItemize}
+\item 
+class \hyperlink{class_r_f_i_d___c_r500_3700c0c9e8357fc4d1f1014315681074}{RFIDInputDialog}
+\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+Enthält alle Eigenschaften des RFID-Lesers CR500-USB. 
+
+Definition at line 90 of file RFID\_\-CR500.h.
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_r_f_i_d___c_r500_2d028be0db1277a8feca1cfbd4f5619e}{
+\index{RFID\_\-CR500@{RFID\_\-CR500}!RFID\_\-CR500@{RFID\_\-CR500}}
+\index{RFID\_\-CR500@{RFID\_\-CR500}!RFID_CR500@{RFID\_\-CR500}}
+\subsubsection[RFID\_\-CR500]{\setlength{\rightskip}{0pt plus 5cm}RFID\_\-CR500::RFID\_\-CR500 ()}}
+\label{class_r_f_i_d___c_r500_2d028be0db1277a8feca1cfbd4f5619e}
+
+
+Konstruktor. 
+
+
+
+Definition at line 42 of file RFID\_\-CR500.cpp.
+
+References connected, GREEN\_\-LED, icdev, init\_\-RFID(), LIB\_\-SUCCESS, BEO\_\-Timing::updateMessage(), and BEO\_\-Timing::updateRFID().
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=258pt]{class_r_f_i_d___c_r500_2d028be0db1277a8feca1cfbd4f5619e_cgraph}
+\end{center}
+\end{figure}
+\hypertarget{class_r_f_i_d___c_r500_766c86b545f284a11e285305e88cd97a}{
+\index{RFID\_\-CR500@{RFID\_\-CR500}!$\sim$RFID\_\-CR500@{$\sim$RFID\_\-CR500}}
+\index{$\sim$RFID\_\-CR500@{$\sim$RFID\_\-CR500}!RFID_CR500@{RFID\_\-CR500}}
+\subsubsection[$\sim$RFID\_\-CR500]{\setlength{\rightskip}{0pt plus 5cm}RFID\_\-CR500::$\sim$RFID\_\-CR500 ()\hspace{0.3cm}{\tt  \mbox{[}virtual\mbox{]}}}}
+\label{class_r_f_i_d___c_r500_766c86b545f284a11e285305e88cd97a}
+
+
+Destruktor. 
+
+
+
+Definition at line 91 of file RFID\_\-CR500.cpp.
+
+\subsection{Member Function Documentation}
+\hypertarget{class_r_f_i_d___c_r500_7d3f44b888f7da7cea83111f41bb6d95}{
+\index{RFID\_\-CR500@{RFID\_\-CR500}!findCard@{findCard}}
+\index{findCard@{findCard}!RFID_CR500@{RFID\_\-CR500}}
+\subsubsection[findCard]{\setlength{\rightskip}{0pt plus 5cm}bool RFID\_\-CR500::findCard ()}}
+\label{class_r_f_i_d___c_r500_7d3f44b888f7da7cea83111f41bb6d95}
+
+
+Karte im Feld suchen. 
+
+
+
+Definition at line 259 of file RFID\_\-CR500.cpp.
+
+References bcnt, connected, GREEN\_\-LED, icdev, mode, NO\_\-LED, oldSerial, serial, Snr, TagType, BEO\_\-Timing::updateMessage(), and YELLOW\_\-LED.
+
+Referenced by BEO\_\-Timing::checkRFID(), and clearValidFlag().
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=170pt]{class_r_f_i_d___c_r500_7d3f44b888f7da7cea83111f41bb6d95_cgraph}
+\end{center}
+\end{figure}
+\hypertarget{class_r_f_i_d___c_r500_0ff3f9ea5a0d59d36532bcdd21854755}{
+\index{RFID\_\-CR500@{RFID\_\-CR500}!readData@{readData}}
+\index{readData@{readData}!RFID_CR500@{RFID\_\-CR500}}
+\subsubsection[readData]{\setlength{\rightskip}{0pt plus 5cm}bool RFID\_\-CR500::readData ()}}
+\label{class_r_f_i_d___c_r500_0ff3f9ea5a0d59d36532bcdd21854755}
+
+
+Lesen der gefundenen Karte. 
+
+
+
+Definition at line 300 of file RFID\_\-CR500.cpp.
+
+References connected, enddate, icdev, oldSerial, pData, racetime, RFID\_\-ADR\_\-ENDTIME, RFID\_\-ADR\_\-STATUS, serial, strecke, TAG\_\-STATUS\_\-ENDVALID, TAG\_\-STATUS\_\-MANUALCLEARED, TAG\_\-STATUS\_\-REGISTERED, TAG\_\-STATUS\_\-STARTVALID, and TAG\_\-STATUS\_\-STRECKENVALID.
+
+Referenced by BEO\_\-Timing::checkRFID().\hypertarget{class_r_f_i_d___c_r500_2062849e5d875fb74e71c631468e40c1}{
+\index{RFID\_\-CR500@{RFID\_\-CR500}!clearValidFlag@{clearValidFlag}}
+\index{clearValidFlag@{clearValidFlag}!RFID_CR500@{RFID\_\-CR500}}
+\subsubsection[clearValidFlag]{\setlength{\rightskip}{0pt plus 5cm}bool RFID\_\-CR500::clearValidFlag ()}}
+\label{class_r_f_i_d___c_r500_2062849e5d875fb74e71c631468e40c1}
+
+
+Löschen der Flags, um die Karte als ausgewertet kennzuzeichnen. 
+
+
+
+Definition at line 392 of file RFID\_\-CR500.cpp.
+
+References connected, findCard(), GREEN\_\-LED, icdev, oldSerial, pData, RFID\_\-ADR\_\-STATUS, serial, TAG\_\-STATUS\_\-ENDVALID, TAG\_\-STATUS\_\-STARTVALID, and TAG\_\-STATUS\_\-STRECKENVALID.
+
+Referenced by RFIDInputDialog::clearValidFlag().
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=258pt]{class_r_f_i_d___c_r500_2062849e5d875fb74e71c631468e40c1_cgraph}
+\end{center}
+\end{figure}
+\hypertarget{class_r_f_i_d___c_r500_c72b02ffc4c4b42cfdb97fbed3a2eb97}{
+\index{RFID\_\-CR500@{RFID\_\-CR500}!greenLED@{greenLED}}
+\index{greenLED@{greenLED}!RFID_CR500@{RFID\_\-CR500}}
+\subsubsection[greenLED]{\setlength{\rightskip}{0pt plus 5cm}void RFID\_\-CR500::greenLED ()}}
+\label{class_r_f_i_d___c_r500_c72b02ffc4c4b42cfdb97fbed3a2eb97}
+
+
+Stellt die LED des Lesers auf Grün. 
+
+
+
+Definition at line 424 of file RFID\_\-CR500.cpp.
+
+References GREEN\_\-LED, and icdev.
+
+Referenced by RFIDInputDialog::on\_\-canButton\_\-released().\hypertarget{class_r_f_i_d___c_r500_b349b713f9636e8f3c04ca4295bc3248}{
+\index{RFID\_\-CR500@{RFID\_\-CR500}!isConnected@{isConnected}}
+\index{isConnected@{isConnected}!RFID_CR500@{RFID\_\-CR500}}
+\subsubsection[isConnected]{\setlength{\rightskip}{0pt plus 5cm}bool RFID\_\-CR500::isConnected ()}}
+\label{class_r_f_i_d___c_r500_b349b713f9636e8f3c04ca4295bc3248}
+
+
+Funktion zum Testen der Verbindung zum Leser. 
+
+
+
+Definition at line 431 of file RFID\_\-CR500.cpp.
+
+References connected, and icdev.
+
+Referenced by BEO\_\-Timing::checkRFID(), and BEO\_\-Timing::CR500\_\-verbinden().\hypertarget{class_r_f_i_d___c_r500_04bf682d670036b022d674c96a855140}{
+\index{RFID\_\-CR500@{RFID\_\-CR500}!myStrcat@{myStrcat}}
+\index{myStrcat@{myStrcat}!RFID_CR500@{RFID\_\-CR500}}
+\subsubsection[myStrcat]{\setlength{\rightskip}{0pt plus 5cm}void RFID\_\-CR500::myStrcat (TCHAR $\ast$ {\em op}, \/  int {\em size})\hspace{0.3cm}{\tt  \mbox{[}private\mbox{]}}}}
+\label{class_r_f_i_d___c_r500_04bf682d670036b022d674c96a855140}
+
+
+Strcat für UTF-8. 
+
+
+
+Definition at line 98 of file RFID\_\-CR500.cpp.
+
+Referenced by init\_\-RFID().\hypertarget{class_r_f_i_d___c_r500_45353483301fecf71b2c2d0c386e30e2}{
+\index{RFID\_\-CR500@{RFID\_\-CR500}!myCout@{myCout}}
+\index{myCout@{myCout}!RFID_CR500@{RFID\_\-CR500}}
+\subsubsection[myCout]{\setlength{\rightskip}{0pt plus 5cm}void RFID\_\-CR500::myCout (TCHAR $\ast$ {\em op}, \/  int {\em size})\hspace{0.3cm}{\tt  \mbox{[}private\mbox{]}}}}
+\label{class_r_f_i_d___c_r500_45353483301fecf71b2c2d0c386e30e2}
+
+
+Ausgabe für UTF-8 String. 
+
+
+
+Definition at line 122 of file RFID\_\-CR500.cpp.
+
+Referenced by init\_\-RFID().\hypertarget{class_r_f_i_d___c_r500_ce1fec5794623260b5e697762899bc73}{
+\index{RFID\_\-CR500@{RFID\_\-CR500}!init\_\-RFID@{init\_\-RFID}}
+\index{init\_\-RFID@{init\_\-RFID}!RFID_CR500@{RFID\_\-CR500}}
+\subsubsection[init\_\-RFID]{\setlength{\rightskip}{0pt plus 5cm}void RFID\_\-CR500::init\_\-RFID ()\hspace{0.3cm}{\tt  \mbox{[}private\mbox{]}}}}
+\label{class_r_f_i_d___c_r500_ce1fec5794623260b5e697762899bc73}
+
+
+Initialisieren des RFID-Lesers. 
+
+
+
+Definition at line 135 of file RFID\_\-CR500.cpp.
+
+References myCout(), and myStrcat().
+
+Referenced by RFID\_\-CR500().
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=158pt]{class_r_f_i_d___c_r500_ce1fec5794623260b5e697762899bc73_cgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Friends And Related Function Documentation}
+\hypertarget{class_r_f_i_d___c_r500_3700c0c9e8357fc4d1f1014315681074}{
+\index{RFID\_\-CR500@{RFID\_\-CR500}!RFIDInputDialog@{RFIDInputDialog}}
+\index{RFIDInputDialog@{RFIDInputDialog}!RFID_CR500@{RFID\_\-CR500}}
+\subsubsection[RFIDInputDialog]{\setlength{\rightskip}{0pt plus 5cm}friend class {\bf RFIDInputDialog}\hspace{0.3cm}{\tt  \mbox{[}friend\mbox{]}}}}
+\label{class_r_f_i_d___c_r500_3700c0c9e8357fc4d1f1014315681074}
+
+
+
+
+Definition at line 112 of file RFID\_\-CR500.h.
+
+\subsection{Member Data Documentation}
+\hypertarget{class_r_f_i_d___c_r500_40862a8ca6eeaf91bb5974f17641285a}{
+\index{RFID\_\-CR500@{RFID\_\-CR500}!connected@{connected}}
+\index{connected@{connected}!RFID_CR500@{RFID\_\-CR500}}
+\subsubsection[connected]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf RFID\_\-CR500::connected}\hspace{0.3cm}{\tt  \mbox{[}private\mbox{]}}}}
+\label{class_r_f_i_d___c_r500_40862a8ca6eeaf91bb5974f17641285a}
+
+
+
+
+Definition at line 105 of file RFID\_\-CR500.h.
+
+Referenced by clearValidFlag(), findCard(), isConnected(), readData(), and RFID\_\-CR500().\hypertarget{class_r_f_i_d___c_r500_db93e027f9415df3008e43478a9bdaed}{
+\index{RFID\_\-CR500@{RFID\_\-CR500}!icdev@{icdev}}
+\index{icdev@{icdev}!RFID_CR500@{RFID\_\-CR500}}
+\subsubsection[icdev]{\setlength{\rightskip}{0pt plus 5cm}unsigned short {\bf RFID\_\-CR500::icdev}\hspace{0.3cm}{\tt  \mbox{[}private\mbox{]}}}}
+\label{class_r_f_i_d___c_r500_db93e027f9415df3008e43478a9bdaed}
+
+
+
+
+Definition at line 106 of file RFID\_\-CR500.h.
+
+Referenced by clearValidFlag(), findCard(), greenLED(), isConnected(), readData(), and RFID\_\-CR500().\hypertarget{class_r_f_i_d___c_r500_80434957a623b58350ddd0b0eea45133}{
+\index{RFID\_\-CR500@{RFID\_\-CR500}!serial@{serial}}
+\index{serial@{serial}!RFID_CR500@{RFID\_\-CR500}}
+\subsubsection[serial]{\setlength{\rightskip}{0pt plus 5cm}QString {\bf RFID\_\-CR500::serial}\hspace{0.3cm}{\tt  \mbox{[}private\mbox{]}}}}
+\label{class_r_f_i_d___c_r500_80434957a623b58350ddd0b0eea45133}
+
+
+
+
+Definition at line 107 of file RFID\_\-CR500.h.
+
+Referenced by clearValidFlag(), findCard(), readData(), and RFIDInputDialog::RFIDInputDialog().\hypertarget{class_r_f_i_d___c_r500_92b6e6199e3e40cdeddceafe64707af9}{
+\index{RFID\_\-CR500@{RFID\_\-CR500}!oldSerial@{oldSerial}}
+\index{oldSerial@{oldSerial}!RFID_CR500@{RFID\_\-CR500}}
+\subsubsection[oldSerial]{\setlength{\rightskip}{0pt plus 5cm}QString {\bf RFID\_\-CR500::oldSerial}\hspace{0.3cm}{\tt  \mbox{[}private\mbox{]}}}}
+\label{class_r_f_i_d___c_r500_92b6e6199e3e40cdeddceafe64707af9}
+
+
+
+
+Definition at line 108 of file RFID\_\-CR500.h.
+
+Referenced by clearValidFlag(), findCard(), and readData().\hypertarget{class_r_f_i_d___c_r500_2fa7bc6f3433a1acf060356166d591a6}{
+\index{RFID\_\-CR500@{RFID\_\-CR500}!strecke@{strecke}}
+\index{strecke@{strecke}!RFID_CR500@{RFID\_\-CR500}}
+\subsubsection[strecke]{\setlength{\rightskip}{0pt plus 5cm}qint16 {\bf RFID\_\-CR500::strecke}\hspace{0.3cm}{\tt  \mbox{[}private\mbox{]}}}}
+\label{class_r_f_i_d___c_r500_2fa7bc6f3433a1acf060356166d591a6}
+
+
+
+
+Definition at line 109 of file RFID\_\-CR500.h.
+
+Referenced by RFIDInputDialog::insertRacetime(), readData(), and RFIDInputDialog::RFIDInputDialog().\hypertarget{class_r_f_i_d___c_r500_a833f1ef40098bd9f9d07787bfe45271}{
+\index{RFID\_\-CR500@{RFID\_\-CR500}!enddate@{enddate}}
+\index{enddate@{enddate}!RFID_CR500@{RFID\_\-CR500}}
+\subsubsection[enddate]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf MYDATE} startdate {\bf RFID\_\-CR500::enddate}\hspace{0.3cm}{\tt  \mbox{[}read, private\mbox{]}}}}
+\label{class_r_f_i_d___c_r500_a833f1ef40098bd9f9d07787bfe45271}
+
+
+
+
+Definition at line 110 of file RFID\_\-CR500.h.
+
+Referenced by RFIDInputDialog::insertRacetime(), readData(), and RFIDInputDialog::RFIDInputDialog().\hypertarget{class_r_f_i_d___c_r500_1790d6c17d8367723c96ad74515bd709}{
+\index{RFID\_\-CR500@{RFID\_\-CR500}!racetime@{racetime}}
+\index{racetime@{racetime}!RFID_CR500@{RFID\_\-CR500}}
+\subsubsection[racetime]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf MYTIME} {\bf RFID\_\-CR500::racetime}\hspace{0.3cm}{\tt  \mbox{[}read, private\mbox{]}}}}
+\label{class_r_f_i_d___c_r500_1790d6c17d8367723c96ad74515bd709}
+
+
+
+
+Definition at line 111 of file RFID\_\-CR500.h.
+
+Referenced by RFIDInputDialog::insertRacetime(), readData(), and RFIDInputDialog::RFIDInputDialog().
+
+The documentation for this class was generated from the following files:\begin{CompactItemize}
+\item 
+RFID\_\-Reader/\hyperlink{_r_f_i_d___c_r500_8h}{RFID\_\-CR500.h}\item 
+RFID\_\-Reader/\hyperlink{_r_f_i_d___c_r500_8cpp}{RFID\_\-CR500.cpp}\end{CompactItemize}

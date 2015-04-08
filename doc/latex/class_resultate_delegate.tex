@@ -1,0 +1,161 @@
+\hypertarget{class_resultate_delegate}{
+\section{ResultateDelegate Class Reference}
+\label{class_resultate_delegate}\index{ResultateDelegate@{ResultateDelegate}}
+}
+Diese Klasse bildet die Schnittstelle zwischen der Resultateeditiertabelle und der Datenbank. Sie schränkt die Eingabemöglichkeiten ein.  
+
+
+{\tt \#include $<$ResultateDelegate.h$>$}
+
+\subsection*{Public Types}
+\begin{CompactItemize}
+\item 
+enum \{ \par
+\hyperlink{class_resultate_delegate_cef2aa28999e59742b93b9a8774516963bc6397929f5f2f6d0a35295cafb2614}{TimeKey}, 
+\hyperlink{class_resultate_delegate_cef2aa28999e59742b93b9a87745169605db24fd1f47cc14ca301b6f37a1565e}{Eintrag}, 
+\hyperlink{class_resultate_delegate_cef2aa28999e59742b93b9a877451696896b8c90061da1c9abba99193c4d64e0}{Startzeit}, 
+\hyperlink{class_resultate_delegate_cef2aa28999e59742b93b9a87745169620732dcb13192649e836ef44c64679c7}{Endzeit}, 
+\par
+\hyperlink{class_resultate_delegate_cef2aa28999e59742b93b9a8774516964cf54f9bba6ed5955c505a52099d5af2}{StreckenKey}, 
+\hyperlink{class_resultate_delegate_cef2aa28999e59742b93b9a877451696b98fff8564c80d289708ea3a28e4ed15}{TeilnehmerKey2}, 
+\hyperlink{class_resultate_delegate_cef2aa28999e59742b93b9a877451696d15aede73b5491d1b1767c60d4120969}{Kategorie}, 
+\hyperlink{class_resultate_delegate_cef2aa28999e59742b93b9a877451696f49c1d5ed4b5d962fa935b3b065ea083}{Fahrzeit}, 
+\par
+\hyperlink{class_resultate_delegate_cef2aa28999e59742b93b9a8774516966cc87a8e8f7476fb00292b3aa581a3f4}{SNR\_\-RFID}, 
+\hyperlink{class_resultate_delegate_cef2aa28999e59742b93b9a877451696d030167b37a6f4a3f6a925805b25f3cb}{TimeID}
+ \}
+\end{CompactItemize}
+\subsection*{Public Member Functions}
+\begin{CompactItemize}
+\item 
+\hyperlink{class_resultate_delegate_3798be83d90e144dad0a2b031873a6b9}{ResultateDelegate} (QObject $\ast$parent=0)
+\begin{CompactList}\small\item\em Konstruktor. \item\end{CompactList}\item 
+QWidget $\ast$ \hyperlink{class_resultate_delegate_edeae75738a99f9b2fb524daddec21fe}{createEditor} (QWidget $\ast$parent, const QStyleOptionViewItem \&option, const QModelIndex \&index) const 
+\begin{CompactList}\small\item\em Einstellungen für die Anzeige und Manipulation. \item\end{CompactList}\item 
+void \hyperlink{class_resultate_delegate_9091c5a7c22a6041062625fba1ab5c70}{setEditorData} (QWidget $\ast$editor, const QModelIndex \&index) const 
+\begin{CompactList}\small\item\em Einstellungen für die Anzeige und Manipulation. \item\end{CompactList}\item 
+void \hyperlink{class_resultate_delegate_b005b8316a221b63baf1f6a153b74e35}{setModelData} (QWidget $\ast$editor, QAbstractItemModel $\ast$\hyperlink{_master_r_d_8h_234be45c406c2d8d2489673913eecfd4}{model}, const QModelIndex \&index) const 
+\begin{CompactList}\small\item\em Setzen der spezifischen Typen gemäss den Daten im Modell. \item\end{CompactList}\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+Diese Klasse bildet die Schnittstelle zwischen der Resultateeditiertabelle und der Datenbank. Sie schränkt die Eingabemöglichkeiten ein. 
+
+Definition at line 42 of file ResultateDelegate.h.
+
+\subsection{Member Enumeration Documentation}
+\hypertarget{class_resultate_delegate_cef2aa28999e59742b93b9a877451696}{
+\subsubsection["@1]{\setlength{\rightskip}{0pt plus 5cm}anonymous enum}}
+\label{class_resultate_delegate_cef2aa28999e59742b93b9a877451696}
+
+
+\begin{Desc}
+\item[Enumerator: ]\par
+\begin{description}
+\index{TimeKey@{TimeKey}!ResultateDelegate@{ResultateDelegate}}\index{ResultateDelegate@{ResultateDelegate}!TimeKey@{TimeKey}}\item[{\em 
+\hypertarget{class_resultate_delegate_cef2aa28999e59742b93b9a8774516963bc6397929f5f2f6d0a35295cafb2614}{
+TimeKey}
+\label{class_resultate_delegate_cef2aa28999e59742b93b9a8774516963bc6397929f5f2f6d0a35295cafb2614}
+}]\index{Eintrag@{Eintrag}!ResultateDelegate@{ResultateDelegate}}\index{ResultateDelegate@{ResultateDelegate}!Eintrag@{Eintrag}}\item[{\em 
+\hypertarget{class_resultate_delegate_cef2aa28999e59742b93b9a87745169605db24fd1f47cc14ca301b6f37a1565e}{
+Eintrag}
+\label{class_resultate_delegate_cef2aa28999e59742b93b9a87745169605db24fd1f47cc14ca301b6f37a1565e}
+}]\index{Startzeit@{Startzeit}!ResultateDelegate@{ResultateDelegate}}\index{ResultateDelegate@{ResultateDelegate}!Startzeit@{Startzeit}}\item[{\em 
+\hypertarget{class_resultate_delegate_cef2aa28999e59742b93b9a877451696896b8c90061da1c9abba99193c4d64e0}{
+Startzeit}
+\label{class_resultate_delegate_cef2aa28999e59742b93b9a877451696896b8c90061da1c9abba99193c4d64e0}
+}]\index{Endzeit@{Endzeit}!ResultateDelegate@{ResultateDelegate}}\index{ResultateDelegate@{ResultateDelegate}!Endzeit@{Endzeit}}\item[{\em 
+\hypertarget{class_resultate_delegate_cef2aa28999e59742b93b9a87745169620732dcb13192649e836ef44c64679c7}{
+Endzeit}
+\label{class_resultate_delegate_cef2aa28999e59742b93b9a87745169620732dcb13192649e836ef44c64679c7}
+}]\index{StreckenKey@{StreckenKey}!ResultateDelegate@{ResultateDelegate}}\index{ResultateDelegate@{ResultateDelegate}!StreckenKey@{StreckenKey}}\item[{\em 
+\hypertarget{class_resultate_delegate_cef2aa28999e59742b93b9a8774516964cf54f9bba6ed5955c505a52099d5af2}{
+StreckenKey}
+\label{class_resultate_delegate_cef2aa28999e59742b93b9a8774516964cf54f9bba6ed5955c505a52099d5af2}
+}]\index{TeilnehmerKey2@{TeilnehmerKey2}!ResultateDelegate@{ResultateDelegate}}\index{ResultateDelegate@{ResultateDelegate}!TeilnehmerKey2@{TeilnehmerKey2}}\item[{\em 
+\hypertarget{class_resultate_delegate_cef2aa28999e59742b93b9a877451696b98fff8564c80d289708ea3a28e4ed15}{
+TeilnehmerKey2}
+\label{class_resultate_delegate_cef2aa28999e59742b93b9a877451696b98fff8564c80d289708ea3a28e4ed15}
+}]\index{Kategorie@{Kategorie}!ResultateDelegate@{ResultateDelegate}}\index{ResultateDelegate@{ResultateDelegate}!Kategorie@{Kategorie}}\item[{\em 
+\hypertarget{class_resultate_delegate_cef2aa28999e59742b93b9a877451696d15aede73b5491d1b1767c60d4120969}{
+Kategorie}
+\label{class_resultate_delegate_cef2aa28999e59742b93b9a877451696d15aede73b5491d1b1767c60d4120969}
+}]\index{Fahrzeit@{Fahrzeit}!ResultateDelegate@{ResultateDelegate}}\index{ResultateDelegate@{ResultateDelegate}!Fahrzeit@{Fahrzeit}}\item[{\em 
+\hypertarget{class_resultate_delegate_cef2aa28999e59742b93b9a877451696f49c1d5ed4b5d962fa935b3b065ea083}{
+Fahrzeit}
+\label{class_resultate_delegate_cef2aa28999e59742b93b9a877451696f49c1d5ed4b5d962fa935b3b065ea083}
+}]\index{SNR\_\-RFID@{SNR\_\-RFID}!ResultateDelegate@{ResultateDelegate}}\index{ResultateDelegate@{ResultateDelegate}!SNR\_\-RFID@{SNR\_\-RFID}}\item[{\em 
+\hypertarget{class_resultate_delegate_cef2aa28999e59742b93b9a8774516966cc87a8e8f7476fb00292b3aa581a3f4}{
+SNR\_\-RFID}
+\label{class_resultate_delegate_cef2aa28999e59742b93b9a8774516966cc87a8e8f7476fb00292b3aa581a3f4}
+}]\index{TimeID@{TimeID}!ResultateDelegate@{ResultateDelegate}}\index{ResultateDelegate@{ResultateDelegate}!TimeID@{TimeID}}\item[{\em 
+\hypertarget{class_resultate_delegate_cef2aa28999e59742b93b9a877451696d030167b37a6f4a3f6a925805b25f3cb}{
+TimeID}
+\label{class_resultate_delegate_cef2aa28999e59742b93b9a877451696d030167b37a6f4a3f6a925805b25f3cb}
+}]\end{description}
+\end{Desc}
+
+
+
+Definition at line 53 of file ResultateDelegate.h.
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_resultate_delegate_3798be83d90e144dad0a2b031873a6b9}{
+\index{ResultateDelegate@{ResultateDelegate}!ResultateDelegate@{ResultateDelegate}}
+\index{ResultateDelegate@{ResultateDelegate}!ResultateDelegate@{ResultateDelegate}}
+\subsubsection[ResultateDelegate]{\setlength{\rightskip}{0pt plus 5cm}ResultateDelegate::ResultateDelegate (QObject $\ast$ {\em parent} = {\tt 0})}}
+\label{class_resultate_delegate_3798be83d90e144dad0a2b031873a6b9}
+
+
+Konstruktor. 
+
+
+
+Definition at line 38 of file ResultateDelegate.cpp.
+
+\subsection{Member Function Documentation}
+\hypertarget{class_resultate_delegate_edeae75738a99f9b2fb524daddec21fe}{
+\index{ResultateDelegate@{ResultateDelegate}!createEditor@{createEditor}}
+\index{createEditor@{createEditor}!ResultateDelegate@{ResultateDelegate}}
+\subsubsection[createEditor]{\setlength{\rightskip}{0pt plus 5cm}QWidget $\ast$ ResultateDelegate::createEditor (QWidget $\ast$ {\em parent}, \/  const QStyleOptionViewItem \& {\em option}, \/  const QModelIndex \& {\em index}) const}}
+\label{class_resultate_delegate_edeae75738a99f9b2fb524daddec21fe}
+
+
+Einstellungen für die Anzeige und Manipulation. 
+
+
+
+Definition at line 44 of file ResultateDelegate.cpp.
+
+References Eintrag, Endzeit, Fahrzeit, Kategorie, and Startzeit.\hypertarget{class_resultate_delegate_9091c5a7c22a6041062625fba1ab5c70}{
+\index{ResultateDelegate@{ResultateDelegate}!setEditorData@{setEditorData}}
+\index{setEditorData@{setEditorData}!ResultateDelegate@{ResultateDelegate}}
+\subsubsection[setEditorData]{\setlength{\rightskip}{0pt plus 5cm}void ResultateDelegate::setEditorData (QWidget $\ast$ {\em editor}, \/  const QModelIndex \& {\em index}) const}}
+\label{class_resultate_delegate_9091c5a7c22a6041062625fba1ab5c70}
+
+
+Einstellungen für die Anzeige und Manipulation. 
+
+
+
+Definition at line 80 of file ResultateDelegate.cpp.
+
+References Fahrzeit.\hypertarget{class_resultate_delegate_b005b8316a221b63baf1f6a153b74e35}{
+\index{ResultateDelegate@{ResultateDelegate}!setModelData@{setModelData}}
+\index{setModelData@{setModelData}!ResultateDelegate@{ResultateDelegate}}
+\subsubsection[setModelData]{\setlength{\rightskip}{0pt plus 5cm}void ResultateDelegate::setModelData (QWidget $\ast$ {\em editor}, \/  QAbstractItemModel $\ast$ {\em model}, \/  const QModelIndex \& {\em index}) const}}
+\label{class_resultate_delegate_b005b8316a221b63baf1f6a153b74e35}
+
+
+Setzen der spezifischen Typen gemäss den Daten im Modell. 
+
+
+
+Definition at line 102 of file ResultateDelegate.cpp.
+
+References Fahrzeit.
+
+The documentation for this class was generated from the following files:\begin{CompactItemize}
+\item 
+delegates/\hyperlink{_resultate_delegate_8h}{ResultateDelegate.h}\item 
+delegates/\hyperlink{_resultate_delegate_8cpp}{ResultateDelegate.cpp}\end{CompactItemize}

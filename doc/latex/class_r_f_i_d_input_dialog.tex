@@ -1,0 +1,751 @@
+\hypertarget{class_r_f_i_d_input_dialog}{
+\section{RFIDInputDialog Class Reference}
+\label{class_r_f_i_d_input_dialog}\index{RFIDInputDialog@{RFIDInputDialog}}
+}
+Stellt die Eingabemaske, sowie die benötigten Funktionen zum auswerten von RFID-Tags eines beliebigen Lesers zur Verfügung.  
+
+
+{\tt \#include $<$rfidinputdialog.h$>$}
+
+Collaboration diagram for RFIDInputDialog:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=159pt]{class_r_f_i_d_input_dialog__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{CompactItemize}
+\item 
+\hyperlink{class_r_f_i_d_input_dialog_cf018ae029903a460da1d2e8a6b4ab01}{RFIDInputDialog} (\hyperlink{class_r_f_i_d___c_r500}{RFID\_\-CR500} $\ast$\hyperlink{class_r_f_i_d_input_dialog_2fffb8807b878f9debba8d9b13046854}{pRfid}, QWidget $\ast$parent=0)
+\begin{CompactList}\small\item\em Konstruktor. \item\end{CompactList}\item 
+\hyperlink{class_r_f_i_d_input_dialog_59bcd5df12daee4281cdfbe451e11853}{$\sim$RFIDInputDialog} ()
+\begin{CompactList}\small\item\em Destruktor. \item\end{CompactList}\end{CompactItemize}
+\subsection*{Private Types}
+\begin{CompactItemize}
+\item 
+enum \hyperlink{class_r_f_i_d_input_dialog_711253f6ca49fde7b5e812a485d27a6c}{strecken} \{ \par
+\hyperlink{class_r_f_i_d_input_dialog_711253f6ca49fde7b5e812a485d27a6c030de95b670036f36a9b0ee9913dc5bf}{StreckenKey}, 
+\hyperlink{class_r_f_i_d_input_dialog_711253f6ca49fde7b5e812a485d27a6c2981910722bf19eb35d5917d5345770e}{Streckenname}, 
+\hyperlink{class_r_f_i_d_input_dialog_711253f6ca49fde7b5e812a485d27a6cab2fab405b2f30350f946afb18357b2c}{Startdatum}, 
+\hyperlink{class_r_f_i_d_input_dialog_711253f6ca49fde7b5e812a485d27a6cd147f8827762c9e65c3210d6f2348638}{Enddatum}, 
+\par
+\hyperlink{class_r_f_i_d_input_dialog_711253f6ca49fde7b5e812a485d27a6c96421ef2d4936dc598eb1b8b59fff049}{Jahr}, 
+\hyperlink{class_r_f_i_d_input_dialog_711253f6ca49fde7b5e812a485d27a6cad8e5268e7b955194cc3c0eeb61f6400}{StreckentypKey}
+ \}
+\item 
+enum \hyperlink{class_r_f_i_d_input_dialog_3f9e936d6e5691d8ab946beebddc946c}{teilnehmer} \{ \par
+\hyperlink{class_r_f_i_d_input_dialog_3f9e936d6e5691d8ab946beebddc946cd61473368c59e70a4a582e1fa4d85560}{TeilnehmerKey}, 
+\hyperlink{class_r_f_i_d_input_dialog_3f9e936d6e5691d8ab946beebddc946c5b7740d0d9a7e0775d8caf2f249de06c}{Name}, 
+\hyperlink{class_r_f_i_d_input_dialog_3f9e936d6e5691d8ab946beebddc946c02a6306c324a449f8af8af056bb0648a}{Vorname}, 
+\hyperlink{class_r_f_i_d_input_dialog_3f9e936d6e5691d8ab946beebddc946c9ea466e2f9aa34e7bb77a110e63d81d6}{Adresse}, 
+\par
+\hyperlink{class_r_f_i_d_input_dialog_3f9e936d6e5691d8ab946beebddc946cf957fc05e2d57e4842319e4343902047}{PLZ}, 
+\hyperlink{class_r_f_i_d_input_dialog_3f9e936d6e5691d8ab946beebddc946c560b673e73be5ac12263638979c6d0f5}{Ort}, 
+\hyperlink{class_r_f_i_d_input_dialog_3f9e936d6e5691d8ab946beebddc946c78a38fa4ba1ef16bede3f6049b713347}{Jahrgang}, 
+\hyperlink{class_r_f_i_d_input_dialog_3f9e936d6e5691d8ab946beebddc946c8929715c51e09dbcb1a194a6fe1537f1}{Geschlecht}, 
+\par
+\hyperlink{class_r_f_i_d_input_dialog_3f9e936d6e5691d8ab946beebddc946cbf81876361ac3a49db8331ae278c7782}{Nationalitaet}, 
+\hyperlink{class_r_f_i_d_input_dialog_3f9e936d6e5691d8ab946beebddc946cec585219326830d06a20a4be740c4877}{Team\_\-Club}, 
+\hyperlink{class_r_f_i_d_input_dialog_3f9e936d6e5691d8ab946beebddc946cf4333f273355e25c371716c814066ba6}{Email}, 
+\hyperlink{class_r_f_i_d_input_dialog_3f9e936d6e5691d8ab946beebddc946c5d1284d8792796682e668e50df23450b}{Telefon}, 
+\par
+\hyperlink{class_r_f_i_d_input_dialog_3f9e936d6e5691d8ab946beebddc946c29e9f511ddc4f107c171b3dd4c5facdc}{Mobile}, 
+\hyperlink{class_r_f_i_d_input_dialog_3f9e936d6e5691d8ab946beebddc946c594e7b111105de979a41ff840022dd12}{RFID\_\-SNR}
+ \}
+\end{CompactItemize}
+\subsection*{Private Slots}
+\begin{CompactItemize}
+\item 
+void \hyperlink{class_r_f_i_d_input_dialog_bfc414e920d8c099a56c253ec07a6fa7}{on\_\-okButton\_\-released} ()
+\begin{CompactList}\small\item\em Slot für Ok-Button. \item\end{CompactList}\item 
+void \hyperlink{class_r_f_i_d_input_dialog_8f58e254774a1995a54ed0be10183ad9}{on\_\-canButton\_\-released} ()
+\begin{CompactList}\small\item\em Slot für Abbrechen-Button. \item\end{CompactList}\item 
+void \hyperlink{class_r_f_i_d_input_dialog_02ecbebd64e8e4d176f9da497366dede}{checkSingularity} ()
+\begin{CompactList}\small\item\em überprüfen, ob der bisherige Eintrag einzigartig ist. \item\end{CompactList}\item 
+void \hyperlink{class_r_f_i_d_input_dialog_5318d27b73bdd6b480d2bd7e4393d9b3}{on\_\-nameLineEdit\_\-textEdited} ()
+\begin{CompactList}\small\item\em Slot für Textänderungen. \item\end{CompactList}\item 
+void \hyperlink{class_r_f_i_d_input_dialog_dbd5b406b288c271329508dff10de89e}{on\_\-vornameLineEdit\_\-textEdited} ()
+\begin{CompactList}\small\item\em Slot für Textänderungen. \item\end{CompactList}\item 
+void \hyperlink{class_r_f_i_d_input_dialog_088462e0b153f91f99f4cd076cdb014d}{on\_\-adresseLineEdit\_\-textEdited} ()
+\begin{CompactList}\small\item\em Slot für Textänderungen. \item\end{CompactList}\item 
+void \hyperlink{class_r_f_i_d_input_dialog_6136d9ac2c0400239d01f06269fb1865}{on\_\-plzLineEdit\_\-textEdited} ()
+\begin{CompactList}\small\item\em Slot für Textänderungen. \item\end{CompactList}\item 
+void \hyperlink{class_r_f_i_d_input_dialog_159c213b7684ba916d9c047c76fab2e5}{on\_\-ortLineEdit\_\-textEdited} ()
+\begin{CompactList}\small\item\em Slot für Textänderungen. \item\end{CompactList}\item 
+void \hyperlink{class_r_f_i_d_input_dialog_ca45d88bae73e41a219177aeb471b789}{on\_\-telephonLineEdit\_\-textEdited} ()
+\begin{CompactList}\small\item\em Slot für Textänderungen. \item\end{CompactList}\item 
+void \hyperlink{class_r_f_i_d_input_dialog_0d12ce25f1a516e1c219400e176c3955}{on\_\-mobileLineEdit\_\-textEdited} ()
+\begin{CompactList}\small\item\em Slot für Textänderungen. \item\end{CompactList}\item 
+void \hyperlink{class_r_f_i_d_input_dialog_e5e5058e55f652dab0d33f9e7ea563ae}{on\_\-emailLineEdit\_\-textEdited} ()
+\begin{CompactList}\small\item\em Slot für Textänderungen. \item\end{CompactList}\item 
+void \hyperlink{class_r_f_i_d_input_dialog_833c3a68aeee5cfc0ecdd420e2a13a89}{on\_\-clubLineEdit\_\-textEdited} ()
+\begin{CompactList}\small\item\em Slot für Textänderungen. \item\end{CompactList}\item 
+void \hyperlink{class_r_f_i_d_input_dialog_34a7d69970ebded23245a780906fd893}{on\_\-nationalitaetComboBox\_\-currentIndexChanged} ()
+\begin{CompactList}\small\item\em Slot für Textänderungen. \item\end{CompactList}\item 
+void \hyperlink{class_r_f_i_d_input_dialog_814026b0c5b8a24cb6a97e1eefd0284a}{on\_\-jahrgangSpinBox\_\-valueChanged} ()
+\begin{CompactList}\small\item\em Slot für Jahrgangsänderungen (aktualisieren der Kategorie). \item\end{CompactList}\item 
+void \hyperlink{class_r_f_i_d_input_dialog_46a201754a6bffc77cb0bdcd3f696a48}{on\_\-autoCheckBox\_\-stateChanged} ()
+\begin{CompactList}\small\item\em Slot für CheckBox \char`\"{}automatisches Vervollständigen\char`\"{}. \item\end{CompactList}\end{CompactItemize}
+\subsection*{Private Member Functions}
+\begin{CompactItemize}
+\item 
+QString \hyperlink{class_r_f_i_d_input_dialog_f4cc582a23571818a7fa8c796806107f}{toDateString} (struct \hyperlink{struct_m_y_t_i_m_e}{MYTIME} $\ast$time, QString format=\char`\"{}hh:mm:ss\char`\"{})
+\begin{CompactList}\small\item\em Zeiten aus der Struktur zur anzeige vorbereiten. \item\end{CompactList}\item 
+QString \hyperlink{class_r_f_i_d_input_dialog_20e43f0e0b5830c72b04031d80ed4f08}{toDateString} (struct \hyperlink{struct_m_y_d_a_t_e}{MYDATE} $\ast$date, QString format=\char`\"{}dd. MMMM yyyy hh:mm:ss\char`\"{})
+\begin{CompactList}\small\item\em Zeiten aus der Struktur zur anzeige vorbereiten. \item\end{CompactList}\item 
+QStringList \hyperlink{class_r_f_i_d_input_dialog_a39510d98f5b5fb27dedf20efb7cf415}{getStreckenNameTyp} (int StreckenKey)
+\begin{CompactList}\small\item\em Informationen zum Streckentyp aus der Datenbank abrufen. \item\end{CompactList}\item 
+bool \hyperlink{class_r_f_i_d_input_dialog_3f2a6693dd90d3a2308decf4dcd122dd}{insertRacetime} (int \hyperlink{class_r_f_i_d_input_dialog_557be7292bf8509e793dc17e79d18e75}{TeilnehmerKeyInt})
+\begin{CompactList}\small\item\em Einfügen der Fahrzeit in die Datenbank. \item\end{CompactList}\item 
+bool \hyperlink{class_r_f_i_d_input_dialog_5213121582a03ad6c9e78d1915729937}{insertPersonAndTime} ()
+\begin{CompactList}\small\item\em Eintragen des neuen Teilnehmers und der Zeit. \item\end{CompactList}\item 
+bool \hyperlink{class_r_f_i_d_input_dialog_cfbdcec5da0cd09b10edbb23bfd9a185}{updatePerson} (int \hyperlink{class_r_f_i_d_input_dialog_557be7292bf8509e793dc17e79d18e75}{TeilnehmerKeyInt})
+\begin{CompactList}\small\item\em Änderungen der Benutzerdaten in die Datenbank übertragen. \item\end{CompactList}\item 
+void \hyperlink{class_r_f_i_d_input_dialog_7ed5355f398c29b79d81c4a4cd7b7c11}{fillForm} (QSqlQuery $\ast$query)
+\begin{CompactList}\small\item\em Ausfüllen des gewählten Vorschlags in die Textfelder. \item\end{CompactList}\item 
+QString \hyperlink{class_r_f_i_d_input_dialog_d034adfda34da3b178582a7aa17ae059}{calculateKategorie} (int jahrgang)
+\begin{CompactList}\small\item\em Berechne die Kategorie aufgrund der Altersbereiche in der Datenbank. \item\end{CompactList}\item 
+bool \hyperlink{class_r_f_i_d_input_dialog_ebed3331b476fb984343d6b3cef19a5a}{validation} ()
+\begin{CompactList}\small\item\em Validierung der Einträge. \item\end{CompactList}\item 
+bool \hyperlink{class_r_f_i_d_input_dialog_a466a7c7bb57d2c3163ce2d400b9f6af}{clearValidFlag} ()
+\begin{CompactList}\small\item\em Löschen der Statusbits der Karte nach dem Auswerten. \item\end{CompactList}\end{CompactItemize}
+\subsection*{Private Attributes}
+\begin{CompactItemize}
+\item 
+\hyperlink{class_ui_1_1_r_f_i_d_input_dialog_class}{Ui::RFIDInputDialogClass} \hyperlink{class_r_f_i_d_input_dialog_e717744327dda404390c6be01b77180a}{ui}
+\item 
+QSqlTableModel $\ast$ \hyperlink{class_r_f_i_d_input_dialog_23e23da528d95589aec6670ef8b0b067}{teilnehmer}
+\item 
+QString \hyperlink{class_r_f_i_d_input_dialog_58508d18fe39d28748cbaea39b24d50b}{text}
+\item 
+int \hyperlink{class_r_f_i_d_input_dialog_557be7292bf8509e793dc17e79d18e75}{TeilnehmerKeyInt}
+\item 
+int \hyperlink{class_r_f_i_d_input_dialog_251579065abb62a0421867aafa5b275c}{index}
+\item 
+\hyperlink{class_r_f_i_d___c_r500}{RFID\_\-CR500} $\ast$ \hyperlink{class_r_f_i_d_input_dialog_2fffb8807b878f9debba8d9b13046854}{pRfid}
+\item 
+bool \hyperlink{class_r_f_i_d_input_dialog_2c4dff3a7602a6bca4d967b5a561942d}{autoInsert}
+\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+Stellt die Eingabemaske, sowie die benötigten Funktionen zum auswerten von RFID-Tags eines beliebigen Lesers zur Verfügung. 
+
+Definition at line 48 of file rfidinputdialog.h.
+
+\subsection{Member Enumeration Documentation}
+\hypertarget{class_r_f_i_d_input_dialog_711253f6ca49fde7b5e812a485d27a6c}{
+\index{RFIDInputDialog@{RFIDInputDialog}!strecken@{strecken}}
+\index{strecken@{strecken}!RFIDInputDialog@{RFIDInputDialog}}
+\subsubsection[strecken]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf RFIDInputDialog::strecken}\hspace{0.3cm}{\tt  \mbox{[}private\mbox{]}}}}
+\label{class_r_f_i_d_input_dialog_711253f6ca49fde7b5e812a485d27a6c}
+
+
+\begin{Desc}
+\item[Enumerator: ]\par
+\begin{description}
+\index{StreckenKey@{StreckenKey}!RFIDInputDialog@{RFIDInputDialog}}\index{RFIDInputDialog@{RFIDInputDialog}!StreckenKey@{StreckenKey}}\item[{\em 
+\hypertarget{class_r_f_i_d_input_dialog_711253f6ca49fde7b5e812a485d27a6c030de95b670036f36a9b0ee9913dc5bf}{
+StreckenKey}
+\label{class_r_f_i_d_input_dialog_711253f6ca49fde7b5e812a485d27a6c030de95b670036f36a9b0ee9913dc5bf}
+}]\index{Streckenname@{Streckenname}!RFIDInputDialog@{RFIDInputDialog}}\index{RFIDInputDialog@{RFIDInputDialog}!Streckenname@{Streckenname}}\item[{\em 
+\hypertarget{class_r_f_i_d_input_dialog_711253f6ca49fde7b5e812a485d27a6c2981910722bf19eb35d5917d5345770e}{
+Streckenname}
+\label{class_r_f_i_d_input_dialog_711253f6ca49fde7b5e812a485d27a6c2981910722bf19eb35d5917d5345770e}
+}]\index{Startdatum@{Startdatum}!RFIDInputDialog@{RFIDInputDialog}}\index{RFIDInputDialog@{RFIDInputDialog}!Startdatum@{Startdatum}}\item[{\em 
+\hypertarget{class_r_f_i_d_input_dialog_711253f6ca49fde7b5e812a485d27a6cab2fab405b2f30350f946afb18357b2c}{
+Startdatum}
+\label{class_r_f_i_d_input_dialog_711253f6ca49fde7b5e812a485d27a6cab2fab405b2f30350f946afb18357b2c}
+}]\index{Enddatum@{Enddatum}!RFIDInputDialog@{RFIDInputDialog}}\index{RFIDInputDialog@{RFIDInputDialog}!Enddatum@{Enddatum}}\item[{\em 
+\hypertarget{class_r_f_i_d_input_dialog_711253f6ca49fde7b5e812a485d27a6cd147f8827762c9e65c3210d6f2348638}{
+Enddatum}
+\label{class_r_f_i_d_input_dialog_711253f6ca49fde7b5e812a485d27a6cd147f8827762c9e65c3210d6f2348638}
+}]\index{Jahr@{Jahr}!RFIDInputDialog@{RFIDInputDialog}}\index{RFIDInputDialog@{RFIDInputDialog}!Jahr@{Jahr}}\item[{\em 
+\hypertarget{class_r_f_i_d_input_dialog_711253f6ca49fde7b5e812a485d27a6c96421ef2d4936dc598eb1b8b59fff049}{
+Jahr}
+\label{class_r_f_i_d_input_dialog_711253f6ca49fde7b5e812a485d27a6c96421ef2d4936dc598eb1b8b59fff049}
+}]\index{StreckentypKey@{StreckentypKey}!RFIDInputDialog@{RFIDInputDialog}}\index{RFIDInputDialog@{RFIDInputDialog}!StreckentypKey@{StreckentypKey}}\item[{\em 
+\hypertarget{class_r_f_i_d_input_dialog_711253f6ca49fde7b5e812a485d27a6cad8e5268e7b955194cc3c0eeb61f6400}{
+StreckentypKey}
+\label{class_r_f_i_d_input_dialog_711253f6ca49fde7b5e812a485d27a6cad8e5268e7b955194cc3c0eeb61f6400}
+}]\end{description}
+\end{Desc}
+
+
+
+Definition at line 69 of file rfidinputdialog.h.\hypertarget{class_r_f_i_d_input_dialog_3f9e936d6e5691d8ab946beebddc946c}{
+\index{RFIDInputDialog@{RFIDInputDialog}!teilnehmer@{teilnehmer}}
+\index{teilnehmer@{teilnehmer}!RFIDInputDialog@{RFIDInputDialog}}
+\subsubsection[teilnehmer]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf RFIDInputDialog::teilnehmer}\hspace{0.3cm}{\tt  \mbox{[}private\mbox{]}}}}
+\label{class_r_f_i_d_input_dialog_3f9e936d6e5691d8ab946beebddc946c}
+
+
+\begin{Desc}
+\item[Enumerator: ]\par
+\begin{description}
+\index{TeilnehmerKey@{TeilnehmerKey}!RFIDInputDialog@{RFIDInputDialog}}\index{RFIDInputDialog@{RFIDInputDialog}!TeilnehmerKey@{TeilnehmerKey}}\item[{\em 
+\hypertarget{class_r_f_i_d_input_dialog_3f9e936d6e5691d8ab946beebddc946cd61473368c59e70a4a582e1fa4d85560}{
+TeilnehmerKey}
+\label{class_r_f_i_d_input_dialog_3f9e936d6e5691d8ab946beebddc946cd61473368c59e70a4a582e1fa4d85560}
+}]\index{Name@{Name}!RFIDInputDialog@{RFIDInputDialog}}\index{RFIDInputDialog@{RFIDInputDialog}!Name@{Name}}\item[{\em 
+\hypertarget{class_r_f_i_d_input_dialog_3f9e936d6e5691d8ab946beebddc946c5b7740d0d9a7e0775d8caf2f249de06c}{
+Name}
+\label{class_r_f_i_d_input_dialog_3f9e936d6e5691d8ab946beebddc946c5b7740d0d9a7e0775d8caf2f249de06c}
+}]\index{Vorname@{Vorname}!RFIDInputDialog@{RFIDInputDialog}}\index{RFIDInputDialog@{RFIDInputDialog}!Vorname@{Vorname}}\item[{\em 
+\hypertarget{class_r_f_i_d_input_dialog_3f9e936d6e5691d8ab946beebddc946c02a6306c324a449f8af8af056bb0648a}{
+Vorname}
+\label{class_r_f_i_d_input_dialog_3f9e936d6e5691d8ab946beebddc946c02a6306c324a449f8af8af056bb0648a}
+}]\index{Adresse@{Adresse}!RFIDInputDialog@{RFIDInputDialog}}\index{RFIDInputDialog@{RFIDInputDialog}!Adresse@{Adresse}}\item[{\em 
+\hypertarget{class_r_f_i_d_input_dialog_3f9e936d6e5691d8ab946beebddc946c9ea466e2f9aa34e7bb77a110e63d81d6}{
+Adresse}
+\label{class_r_f_i_d_input_dialog_3f9e936d6e5691d8ab946beebddc946c9ea466e2f9aa34e7bb77a110e63d81d6}
+}]\index{PLZ@{PLZ}!RFIDInputDialog@{RFIDInputDialog}}\index{RFIDInputDialog@{RFIDInputDialog}!PLZ@{PLZ}}\item[{\em 
+\hypertarget{class_r_f_i_d_input_dialog_3f9e936d6e5691d8ab946beebddc946cf957fc05e2d57e4842319e4343902047}{
+PLZ}
+\label{class_r_f_i_d_input_dialog_3f9e936d6e5691d8ab946beebddc946cf957fc05e2d57e4842319e4343902047}
+}]\index{Ort@{Ort}!RFIDInputDialog@{RFIDInputDialog}}\index{RFIDInputDialog@{RFIDInputDialog}!Ort@{Ort}}\item[{\em 
+\hypertarget{class_r_f_i_d_input_dialog_3f9e936d6e5691d8ab946beebddc946c560b673e73be5ac12263638979c6d0f5}{
+Ort}
+\label{class_r_f_i_d_input_dialog_3f9e936d6e5691d8ab946beebddc946c560b673e73be5ac12263638979c6d0f5}
+}]\index{Jahrgang@{Jahrgang}!RFIDInputDialog@{RFIDInputDialog}}\index{RFIDInputDialog@{RFIDInputDialog}!Jahrgang@{Jahrgang}}\item[{\em 
+\hypertarget{class_r_f_i_d_input_dialog_3f9e936d6e5691d8ab946beebddc946c78a38fa4ba1ef16bede3f6049b713347}{
+Jahrgang}
+\label{class_r_f_i_d_input_dialog_3f9e936d6e5691d8ab946beebddc946c78a38fa4ba1ef16bede3f6049b713347}
+}]\index{Geschlecht@{Geschlecht}!RFIDInputDialog@{RFIDInputDialog}}\index{RFIDInputDialog@{RFIDInputDialog}!Geschlecht@{Geschlecht}}\item[{\em 
+\hypertarget{class_r_f_i_d_input_dialog_3f9e936d6e5691d8ab946beebddc946c8929715c51e09dbcb1a194a6fe1537f1}{
+Geschlecht}
+\label{class_r_f_i_d_input_dialog_3f9e936d6e5691d8ab946beebddc946c8929715c51e09dbcb1a194a6fe1537f1}
+}]\index{Nationalitaet@{Nationalitaet}!RFIDInputDialog@{RFIDInputDialog}}\index{RFIDInputDialog@{RFIDInputDialog}!Nationalitaet@{Nationalitaet}}\item[{\em 
+\hypertarget{class_r_f_i_d_input_dialog_3f9e936d6e5691d8ab946beebddc946cbf81876361ac3a49db8331ae278c7782}{
+Nationalitaet}
+\label{class_r_f_i_d_input_dialog_3f9e936d6e5691d8ab946beebddc946cbf81876361ac3a49db8331ae278c7782}
+}]\index{Team\_\-Club@{Team\_\-Club}!RFIDInputDialog@{RFIDInputDialog}}\index{RFIDInputDialog@{RFIDInputDialog}!Team\_\-Club@{Team\_\-Club}}\item[{\em 
+\hypertarget{class_r_f_i_d_input_dialog_3f9e936d6e5691d8ab946beebddc946cec585219326830d06a20a4be740c4877}{
+Team\_\-Club}
+\label{class_r_f_i_d_input_dialog_3f9e936d6e5691d8ab946beebddc946cec585219326830d06a20a4be740c4877}
+}]\index{Email@{Email}!RFIDInputDialog@{RFIDInputDialog}}\index{RFIDInputDialog@{RFIDInputDialog}!Email@{Email}}\item[{\em 
+\hypertarget{class_r_f_i_d_input_dialog_3f9e936d6e5691d8ab946beebddc946cf4333f273355e25c371716c814066ba6}{
+Email}
+\label{class_r_f_i_d_input_dialog_3f9e936d6e5691d8ab946beebddc946cf4333f273355e25c371716c814066ba6}
+}]\index{Telefon@{Telefon}!RFIDInputDialog@{RFIDInputDialog}}\index{RFIDInputDialog@{RFIDInputDialog}!Telefon@{Telefon}}\item[{\em 
+\hypertarget{class_r_f_i_d_input_dialog_3f9e936d6e5691d8ab946beebddc946c5d1284d8792796682e668e50df23450b}{
+Telefon}
+\label{class_r_f_i_d_input_dialog_3f9e936d6e5691d8ab946beebddc946c5d1284d8792796682e668e50df23450b}
+}]\index{Mobile@{Mobile}!RFIDInputDialog@{RFIDInputDialog}}\index{RFIDInputDialog@{RFIDInputDialog}!Mobile@{Mobile}}\item[{\em 
+\hypertarget{class_r_f_i_d_input_dialog_3f9e936d6e5691d8ab946beebddc946c29e9f511ddc4f107c171b3dd4c5facdc}{
+Mobile}
+\label{class_r_f_i_d_input_dialog_3f9e936d6e5691d8ab946beebddc946c29e9f511ddc4f107c171b3dd4c5facdc}
+}]\index{RFID\_\-SNR@{RFID\_\-SNR}!RFIDInputDialog@{RFIDInputDialog}}\index{RFIDInputDialog@{RFIDInputDialog}!RFID\_\-SNR@{RFID\_\-SNR}}\item[{\em 
+\hypertarget{class_r_f_i_d_input_dialog_3f9e936d6e5691d8ab946beebddc946c594e7b111105de979a41ff840022dd12}{
+RFID\_\-SNR}
+\label{class_r_f_i_d_input_dialog_3f9e936d6e5691d8ab946beebddc946c594e7b111105de979a41ff840022dd12}
+}]\end{description}
+\end{Desc}
+
+
+
+Definition at line 71 of file rfidinputdialog.h.
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_r_f_i_d_input_dialog_cf018ae029903a460da1d2e8a6b4ab01}{
+\index{RFIDInputDialog@{RFIDInputDialog}!RFIDInputDialog@{RFIDInputDialog}}
+\index{RFIDInputDialog@{RFIDInputDialog}!RFIDInputDialog@{RFIDInputDialog}}
+\subsubsection[RFIDInputDialog]{\setlength{\rightskip}{0pt plus 5cm}RFIDInputDialog::RFIDInputDialog ({\bf RFID\_\-CR500} $\ast$ {\em pRfid}, \/  QWidget $\ast$ {\em parent} = {\tt 0})}}
+\label{class_r_f_i_d_input_dialog_cf018ae029903a460da1d2e8a6b4ab01}
+
+
+Konstruktor. 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em pRfid}]Pointer zur RFID-Leser Klasse \item[{\em parent}]Pointer auf das aufrufende Objekt \end{description}
+\end{Desc}
+
+
+Definition at line 41 of file rfidinputdialog.cpp.
+
+References Ui\_\-RFIDInputDialogClass::adresseLineEdit, autoInsert, calculateKategorie(), checkSingularity(), Ui\_\-RFIDInputDialogClass::clubLineEdit, Ui\_\-RFIDInputDialogClass::emailLineEdit, RFID\_\-CR500::enddate, Ui\_\-RFIDInputDialogClass::EndtimeLabel, Ui\_\-RFIDInputDialogClass::FahrzeitLabel, getStreckenNameTyp(), Ui\_\-RFIDInputDialogClass::jahrgangSpinBox, Ui\_\-RFIDInputDialogClass::KategoriecomboBox, Ui\_\-RFIDInputDialogClass::maenlichRadioButton, Ui\_\-RFIDInputDialogClass::mobileLineEdit, Ui\_\-RFIDInputDialogClass::nameLineEdit, Ui\_\-RFIDInputDialogClass::nationalitaetComboBox, Ui\_\-RFIDInputDialogClass::ortLineEdit, Ui\_\-RFIDInputDialogClass::plzLineEdit, RFID\_\-CR500::racetime, Ui\_\-RFIDInputDialogClass::rfidsnrLabel, RFID\_\-CR500::serial, Ui\_\-RFIDInputDialogClass::setupUi(), Ui\_\-RFIDInputDialogClass::StarttimeLabel, RFID\_\-CR500::strecke, Ui\_\-RFIDInputDialogClass::StreckennameLabel, Ui\_\-RFIDInputDialogClass::StreckenTypLabel, TeilnehmerKeyInt, Ui\_\-RFIDInputDialogClass::telephonLineEdit, toDateString(), ui, Ui\_\-RFIDInputDialogClass::vornameLineEdit, and Ui\_\-RFIDInputDialogClass::weiblichRadioButton.
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=325pt]{class_r_f_i_d_input_dialog_cf018ae029903a460da1d2e8a6b4ab01_cgraph}
+\end{center}
+\end{figure}
+\hypertarget{class_r_f_i_d_input_dialog_59bcd5df12daee4281cdfbe451e11853}{
+\index{RFIDInputDialog@{RFIDInputDialog}!$\sim$RFIDInputDialog@{$\sim$RFIDInputDialog}}
+\index{$\sim$RFIDInputDialog@{$\sim$RFIDInputDialog}!RFIDInputDialog@{RFIDInputDialog}}
+\subsubsection[$\sim$RFIDInputDialog]{\setlength{\rightskip}{0pt plus 5cm}RFIDInputDialog::$\sim$RFIDInputDialog ()}}
+\label{class_r_f_i_d_input_dialog_59bcd5df12daee4281cdfbe451e11853}
+
+
+Destruktor. 
+
+
+
+Definition at line 133 of file rfidinputdialog.cpp.
+
+\subsection{Member Function Documentation}
+\hypertarget{class_r_f_i_d_input_dialog_f4cc582a23571818a7fa8c796806107f}{
+\index{RFIDInputDialog@{RFIDInputDialog}!toDateString@{toDateString}}
+\index{toDateString@{toDateString}!RFIDInputDialog@{RFIDInputDialog}}
+\subsubsection[toDateString]{\setlength{\rightskip}{0pt plus 5cm}QString RFIDInputDialog::toDateString (struct {\bf MYTIME} $\ast$ {\em time}, \/  QString {\em format} = {\tt \char`\"{}hh:mm:ss\char`\"{}})\hspace{0.3cm}{\tt  \mbox{[}private\mbox{]}}}}
+\label{class_r_f_i_d_input_dialog_f4cc582a23571818a7fa8c796806107f}
+
+
+Zeiten aus der Struktur zur anzeige vorbereiten. 
+
+
+
+Definition at line 140 of file rfidinputdialog.cpp.
+
+References MYTIME::hour, MYTIME::minute, and MYTIME::second.
+
+Referenced by insertRacetime(), and RFIDInputDialog().\hypertarget{class_r_f_i_d_input_dialog_20e43f0e0b5830c72b04031d80ed4f08}{
+\index{RFIDInputDialog@{RFIDInputDialog}!toDateString@{toDateString}}
+\index{toDateString@{toDateString}!RFIDInputDialog@{RFIDInputDialog}}
+\subsubsection[toDateString]{\setlength{\rightskip}{0pt plus 5cm}QString RFIDInputDialog::toDateString (struct {\bf MYDATE} $\ast$ {\em date}, \/  QString {\em format} = {\tt \char`\"{}dd.~MMMM~yyyy~hh:mm:ss\char`\"{}})\hspace{0.3cm}{\tt  \mbox{[}private\mbox{]}}}}
+\label{class_r_f_i_d_input_dialog_20e43f0e0b5830c72b04031d80ed4f08}
+
+
+Zeiten aus der Struktur zur anzeige vorbereiten. 
+
+
+
+Definition at line 150 of file rfidinputdialog.cpp.
+
+References MYDATE::day, MYDATE::hour, MYDATE::minute, MYDATE::month, MYDATE::second, and MYDATE::year.\hypertarget{class_r_f_i_d_input_dialog_a39510d98f5b5fb27dedf20efb7cf415}{
+\index{RFIDInputDialog@{RFIDInputDialog}!getStreckenNameTyp@{getStreckenNameTyp}}
+\index{getStreckenNameTyp@{getStreckenNameTyp}!RFIDInputDialog@{RFIDInputDialog}}
+\subsubsection[getStreckenNameTyp]{\setlength{\rightskip}{0pt plus 5cm}QStringList RFIDInputDialog::getStreckenNameTyp (int {\em StreckenKey})\hspace{0.3cm}{\tt  \mbox{[}private\mbox{]}}}}
+\label{class_r_f_i_d_input_dialog_a39510d98f5b5fb27dedf20efb7cf415}
+
+
+Informationen zum Streckentyp aus der Datenbank abrufen. 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em StreckenKey}]Nummer der Strecke \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]Liste mit den Informationen \end{Desc}
+
+
+Definition at line 165 of file rfidinputdialog.cpp.
+
+References Streckenname, and StreckentypKey.
+
+Referenced by RFIDInputDialog().\hypertarget{class_r_f_i_d_input_dialog_3f2a6693dd90d3a2308decf4dcd122dd}{
+\index{RFIDInputDialog@{RFIDInputDialog}!insertRacetime@{insertRacetime}}
+\index{insertRacetime@{insertRacetime}!RFIDInputDialog@{RFIDInputDialog}}
+\subsubsection[insertRacetime]{\setlength{\rightskip}{0pt plus 5cm}bool RFIDInputDialog::insertRacetime (int {\em TeilnehmerKeyInt})\hspace{0.3cm}{\tt  \mbox{[}private\mbox{]}}}}
+\label{class_r_f_i_d_input_dialog_3f2a6693dd90d3a2308decf4dcd122dd}
+
+
+Einfügen der Fahrzeit in die Datenbank. 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em TeilnehmerKeyInt}]Nummer des Teilnehmers \end{description}
+\end{Desc}
+
+
+Definition at line 344 of file rfidinputdialog.cpp.
+
+References RFID\_\-CR500::enddate, Ui\_\-RFIDInputDialogClass::KategoriecomboBox, pRfid, RFID\_\-CR500::racetime, RFID\_\-CR500::strecke, toDateString(), and ui.
+
+Referenced by checkSingularity(), insertPersonAndTime(), and on\_\-okButton\_\-released().
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=192pt]{class_r_f_i_d_input_dialog_3f2a6693dd90d3a2308decf4dcd122dd_cgraph}
+\end{center}
+\end{figure}
+\hypertarget{class_r_f_i_d_input_dialog_5213121582a03ad6c9e78d1915729937}{
+\index{RFIDInputDialog@{RFIDInputDialog}!insertPersonAndTime@{insertPersonAndTime}}
+\index{insertPersonAndTime@{insertPersonAndTime}!RFIDInputDialog@{RFIDInputDialog}}
+\subsubsection[insertPersonAndTime]{\setlength{\rightskip}{0pt plus 5cm}bool RFIDInputDialog::insertPersonAndTime ()\hspace{0.3cm}{\tt  \mbox{[}private\mbox{]}}}}
+\label{class_r_f_i_d_input_dialog_5213121582a03ad6c9e78d1915729937}
+
+
+Eintragen des neuen Teilnehmers und der Zeit. 
+
+
+
+Definition at line 392 of file rfidinputdialog.cpp.
+
+References Ui\_\-RFIDInputDialogClass::adresseLineEdit, Ui\_\-RFIDInputDialogClass::clubLineEdit, Ui\_\-RFIDInputDialogClass::emailLineEdit, insertRacetime(), Ui\_\-RFIDInputDialogClass::jahrgangSpinBox, Ui\_\-RFIDInputDialogClass::maenlichRadioButton, Ui\_\-RFIDInputDialogClass::mobileLineEdit, Ui\_\-RFIDInputDialogClass::nameLineEdit, Ui\_\-RFIDInputDialogClass::nationalitaetComboBox, Ui\_\-RFIDInputDialogClass::ortLineEdit, Ui\_\-RFIDInputDialogClass::plzLineEdit, Ui\_\-RFIDInputDialogClass::telephonLineEdit, ui, and Ui\_\-RFIDInputDialogClass::vornameLineEdit.
+
+Referenced by on\_\-okButton\_\-released().
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=303pt]{class_r_f_i_d_input_dialog_5213121582a03ad6c9e78d1915729937_cgraph}
+\end{center}
+\end{figure}
+\hypertarget{class_r_f_i_d_input_dialog_cfbdcec5da0cd09b10edbb23bfd9a185}{
+\index{RFIDInputDialog@{RFIDInputDialog}!updatePerson@{updatePerson}}
+\index{updatePerson@{updatePerson}!RFIDInputDialog@{RFIDInputDialog}}
+\subsubsection[updatePerson]{\setlength{\rightskip}{0pt plus 5cm}bool RFIDInputDialog::updatePerson (int {\em TeilnehmerKeyInt})\hspace{0.3cm}{\tt  \mbox{[}private\mbox{]}}}}
+\label{class_r_f_i_d_input_dialog_cfbdcec5da0cd09b10edbb23bfd9a185}
+
+
+Änderungen der Benutzerdaten in die Datenbank übertragen. 
+
+
+
+Definition at line 449 of file rfidinputdialog.cpp.
+
+References Ui\_\-RFIDInputDialogClass::adresseLineEdit, Ui\_\-RFIDInputDialogClass::clubLineEdit, Ui\_\-RFIDInputDialogClass::emailLineEdit, Ui\_\-RFIDInputDialogClass::jahrgangSpinBox, Ui\_\-RFIDInputDialogClass::maenlichRadioButton, Ui\_\-RFIDInputDialogClass::mobileLineEdit, Ui\_\-RFIDInputDialogClass::nameLineEdit, Ui\_\-RFIDInputDialogClass::nationalitaetComboBox, Ui\_\-RFIDInputDialogClass::ortLineEdit, Ui\_\-RFIDInputDialogClass::plzLineEdit, Ui\_\-RFIDInputDialogClass::telephonLineEdit, ui, and Ui\_\-RFIDInputDialogClass::vornameLineEdit.
+
+Referenced by on\_\-okButton\_\-released().\hypertarget{class_r_f_i_d_input_dialog_7ed5355f398c29b79d81c4a4cd7b7c11}{
+\index{RFIDInputDialog@{RFIDInputDialog}!fillForm@{fillForm}}
+\index{fillForm@{fillForm}!RFIDInputDialog@{RFIDInputDialog}}
+\subsubsection[fillForm]{\setlength{\rightskip}{0pt plus 5cm}void RFIDInputDialog::fillForm (QSqlQuery $\ast$ {\em query})\hspace{0.3cm}{\tt  \mbox{[}private\mbox{]}}}}
+\label{class_r_f_i_d_input_dialog_7ed5355f398c29b79d81c4a4cd7b7c11}
+
+
+Ausfüllen des gewählten Vorschlags in die Textfelder. 
+
+
+
+Definition at line 319 of file rfidinputdialog.cpp.
+
+References Adresse, Ui\_\-RFIDInputDialogClass::adresseLineEdit, Ui\_\-RFIDInputDialogClass::clubLineEdit, Email, Ui\_\-RFIDInputDialogClass::emailLineEdit, Geschlecht, Jahrgang, Ui\_\-RFIDInputDialogClass::jahrgangSpinBox, Ui\_\-RFIDInputDialogClass::maenlichRadioButton, Mobile, Ui\_\-RFIDInputDialogClass::mobileLineEdit, Name, Ui\_\-RFIDInputDialogClass::nameLineEdit, Nationalitaet, Ui\_\-RFIDInputDialogClass::nationalitaetComboBox, Ort, Ui\_\-RFIDInputDialogClass::ortLineEdit, PLZ, Ui\_\-RFIDInputDialogClass::plzLineEdit, Team\_\-Club, Telefon, Ui\_\-RFIDInputDialogClass::telephonLineEdit, ui, Vorname, Ui\_\-RFIDInputDialogClass::vornameLineEdit, and Ui\_\-RFIDInputDialogClass::weiblichRadioButton.
+
+Referenced by checkSingularity().\hypertarget{class_r_f_i_d_input_dialog_d034adfda34da3b178582a7aa17ae059}{
+\index{RFIDInputDialog@{RFIDInputDialog}!calculateKategorie@{calculateKategorie}}
+\index{calculateKategorie@{calculateKategorie}!RFIDInputDialog@{RFIDInputDialog}}
+\subsubsection[calculateKategorie]{\setlength{\rightskip}{0pt plus 5cm}QString RFIDInputDialog::calculateKategorie (int {\em jahrgang})\hspace{0.3cm}{\tt  \mbox{[}private\mbox{]}}}}
+\label{class_r_f_i_d_input_dialog_d034adfda34da3b178582a7aa17ae059}
+
+
+Berechne die Kategorie aufgrund der Altersbereiche in der Datenbank. 
+
+
+
+Definition at line 606 of file rfidinputdialog.cpp.
+
+Referenced by checkSingularity(), on\_\-jahrgangSpinBox\_\-valueChanged(), and RFIDInputDialog().\hypertarget{class_r_f_i_d_input_dialog_ebed3331b476fb984343d6b3cef19a5a}{
+\index{RFIDInputDialog@{RFIDInputDialog}!validation@{validation}}
+\index{validation@{validation}!RFIDInputDialog@{RFIDInputDialog}}
+\subsubsection[validation]{\setlength{\rightskip}{0pt plus 5cm}bool RFIDInputDialog::validation ()\hspace{0.3cm}{\tt  \mbox{[}private\mbox{]}}}}
+\label{class_r_f_i_d_input_dialog_ebed3331b476fb984343d6b3cef19a5a}
+
+
+Validierung der Einträge. 
+
+
+
+Definition at line 656 of file rfidinputdialog.cpp.
+
+References Ui\_\-RFIDInputDialogClass::adresseLineEdit, Ui\_\-RFIDInputDialogClass::maenlichRadioButton, Ui\_\-RFIDInputDialogClass::nameLineEdit, Ui\_\-RFIDInputDialogClass::ortLineEdit, Ui\_\-RFIDInputDialogClass::plzLineEdit, ui, Ui\_\-RFIDInputDialogClass::vornameLineEdit, and Ui\_\-RFIDInputDialogClass::weiblichRadioButton.
+
+Referenced by on\_\-okButton\_\-released().\hypertarget{class_r_f_i_d_input_dialog_a466a7c7bb57d2c3163ce2d400b9f6af}{
+\index{RFIDInputDialog@{RFIDInputDialog}!clearValidFlag@{clearValidFlag}}
+\index{clearValidFlag@{clearValidFlag}!RFIDInputDialog@{RFIDInputDialog}}
+\subsubsection[clearValidFlag]{\setlength{\rightskip}{0pt plus 5cm}bool RFIDInputDialog::clearValidFlag ()\hspace{0.3cm}{\tt  \mbox{[}private\mbox{]}}}}
+\label{class_r_f_i_d_input_dialog_a466a7c7bb57d2c3163ce2d400b9f6af}
+
+
+Löschen der Statusbits der Karte nach dem Auswerten. 
+
+
+
+Definition at line 693 of file rfidinputdialog.cpp.
+
+References RFID\_\-CR500::clearValidFlag(), and pRfid.
+
+Referenced by checkSingularity(), and on\_\-okButton\_\-released().
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=353pt]{class_r_f_i_d_input_dialog_a466a7c7bb57d2c3163ce2d400b9f6af_cgraph}
+\end{center}
+\end{figure}
+\hypertarget{class_r_f_i_d_input_dialog_bfc414e920d8c099a56c253ec07a6fa7}{
+\index{RFIDInputDialog@{RFIDInputDialog}!on\_\-okButton\_\-released@{on\_\-okButton\_\-released}}
+\index{on\_\-okButton\_\-released@{on\_\-okButton\_\-released}!RFIDInputDialog@{RFIDInputDialog}}
+\subsubsection[on\_\-okButton\_\-released]{\setlength{\rightskip}{0pt plus 5cm}void RFIDInputDialog::on\_\-okButton\_\-released ()\hspace{0.3cm}{\tt  \mbox{[}private, slot\mbox{]}}}}
+\label{class_r_f_i_d_input_dialog_bfc414e920d8c099a56c253ec07a6fa7}
+
+
+Slot für Ok-Button. 
+
+
+
+Definition at line 631 of file rfidinputdialog.cpp.
+
+References clearValidFlag(), insertPersonAndTime(), insertRacetime(), TeilnehmerKeyInt, updatePerson(), and validation().\hypertarget{class_r_f_i_d_input_dialog_8f58e254774a1995a54ed0be10183ad9}{
+\index{RFIDInputDialog@{RFIDInputDialog}!on\_\-canButton\_\-released@{on\_\-canButton\_\-released}}
+\index{on\_\-canButton\_\-released@{on\_\-canButton\_\-released}!RFIDInputDialog@{RFIDInputDialog}}
+\subsubsection[on\_\-canButton\_\-released]{\setlength{\rightskip}{0pt plus 5cm}void RFIDInputDialog::on\_\-canButton\_\-released ()\hspace{0.3cm}{\tt  \mbox{[}private, slot\mbox{]}}}}
+\label{class_r_f_i_d_input_dialog_8f58e254774a1995a54ed0be10183ad9}
+
+
+Slot für Abbrechen-Button. 
+
+
+
+Definition at line 705 of file rfidinputdialog.cpp.
+
+References RFID\_\-CR500::greenLED(), and pRfid.\hypertarget{class_r_f_i_d_input_dialog_02ecbebd64e8e4d176f9da497366dede}{
+\index{RFIDInputDialog@{RFIDInputDialog}!checkSingularity@{checkSingularity}}
+\index{checkSingularity@{checkSingularity}!RFIDInputDialog@{RFIDInputDialog}}
+\subsubsection[checkSingularity]{\setlength{\rightskip}{0pt plus 5cm}void RFIDInputDialog::checkSingularity ()\hspace{0.3cm}{\tt  \mbox{[}private, slot\mbox{]}}}}
+\label{class_r_f_i_d_input_dialog_02ecbebd64e8e4d176f9da497366dede}
+
+
+überprüfen, ob der bisherige Eintrag einzigartig ist. 
+
+
+
+Definition at line 186 of file rfidinputdialog.cpp.
+
+References Adresse, Ui\_\-RFIDInputDialogClass::adresseLineEdit, Ui\_\-RFIDInputDialogClass::autoCheckBox, autoInsert, calculateKategorie(), clearValidFlag(), Ui\_\-RFIDInputDialogClass::clubLineEdit, Email, Ui\_\-RFIDInputDialogClass::emailLineEdit, fillForm(), Geschlecht, insertRacetime(), Jahrgang, Ui\_\-RFIDInputDialogClass::KategoriecomboBox, Mobile, Ui\_\-RFIDInputDialogClass::mobileLineEdit, Name, Ui\_\-RFIDInputDialogClass::nameLineEdit, Nationalitaet, Ort, Ui\_\-RFIDInputDialogClass::ortLineEdit, PLZ, Ui\_\-RFIDInputDialogClass::plzLineEdit, Team\_\-Club, TeilnehmerKey, TeilnehmerKeyInt, Telefon, Ui\_\-RFIDInputDialogClass::telephonLineEdit, ui, Vorname, and Ui\_\-RFIDInputDialogClass::vornameLineEdit.
+
+Referenced by on\_\-adresseLineEdit\_\-textEdited(), on\_\-autoCheckBox\_\-stateChanged(), on\_\-clubLineEdit\_\-textEdited(), on\_\-emailLineEdit\_\-textEdited(), on\_\-mobileLineEdit\_\-textEdited(), on\_\-nameLineEdit\_\-textEdited(), on\_\-ortLineEdit\_\-textEdited(), on\_\-plzLineEdit\_\-textEdited(), on\_\-telephonLineEdit\_\-textEdited(), on\_\-vornameLineEdit\_\-textEdited(), and RFIDInputDialog().\hypertarget{class_r_f_i_d_input_dialog_5318d27b73bdd6b480d2bd7e4393d9b3}{
+\index{RFIDInputDialog@{RFIDInputDialog}!on\_\-nameLineEdit\_\-textEdited@{on\_\-nameLineEdit\_\-textEdited}}
+\index{on\_\-nameLineEdit\_\-textEdited@{on\_\-nameLineEdit\_\-textEdited}!RFIDInputDialog@{RFIDInputDialog}}
+\subsubsection[on\_\-nameLineEdit\_\-textEdited]{\setlength{\rightskip}{0pt plus 5cm}void RFIDInputDialog::on\_\-nameLineEdit\_\-textEdited ()\hspace{0.3cm}{\tt  \mbox{[}private, slot\mbox{]}}}}
+\label{class_r_f_i_d_input_dialog_5318d27b73bdd6b480d2bd7e4393d9b3}
+
+
+Slot für Textänderungen. 
+
+
+
+Definition at line 525 of file rfidinputdialog.cpp.
+
+References checkSingularity().\hypertarget{class_r_f_i_d_input_dialog_dbd5b406b288c271329508dff10de89e}{
+\index{RFIDInputDialog@{RFIDInputDialog}!on\_\-vornameLineEdit\_\-textEdited@{on\_\-vornameLineEdit\_\-textEdited}}
+\index{on\_\-vornameLineEdit\_\-textEdited@{on\_\-vornameLineEdit\_\-textEdited}!RFIDInputDialog@{RFIDInputDialog}}
+\subsubsection[on\_\-vornameLineEdit\_\-textEdited]{\setlength{\rightskip}{0pt plus 5cm}void RFIDInputDialog::on\_\-vornameLineEdit\_\-textEdited ()\hspace{0.3cm}{\tt  \mbox{[}private, slot\mbox{]}}}}
+\label{class_r_f_i_d_input_dialog_dbd5b406b288c271329508dff10de89e}
+
+
+Slot für Textänderungen. 
+
+
+
+Definition at line 532 of file rfidinputdialog.cpp.
+
+References checkSingularity().\hypertarget{class_r_f_i_d_input_dialog_088462e0b153f91f99f4cd076cdb014d}{
+\index{RFIDInputDialog@{RFIDInputDialog}!on\_\-adresseLineEdit\_\-textEdited@{on\_\-adresseLineEdit\_\-textEdited}}
+\index{on\_\-adresseLineEdit\_\-textEdited@{on\_\-adresseLineEdit\_\-textEdited}!RFIDInputDialog@{RFIDInputDialog}}
+\subsubsection[on\_\-adresseLineEdit\_\-textEdited]{\setlength{\rightskip}{0pt plus 5cm}void RFIDInputDialog::on\_\-adresseLineEdit\_\-textEdited ()\hspace{0.3cm}{\tt  \mbox{[}private, slot\mbox{]}}}}
+\label{class_r_f_i_d_input_dialog_088462e0b153f91f99f4cd076cdb014d}
+
+
+Slot für Textänderungen. 
+
+
+
+Definition at line 539 of file rfidinputdialog.cpp.
+
+References checkSingularity().\hypertarget{class_r_f_i_d_input_dialog_6136d9ac2c0400239d01f06269fb1865}{
+\index{RFIDInputDialog@{RFIDInputDialog}!on\_\-plzLineEdit\_\-textEdited@{on\_\-plzLineEdit\_\-textEdited}}
+\index{on\_\-plzLineEdit\_\-textEdited@{on\_\-plzLineEdit\_\-textEdited}!RFIDInputDialog@{RFIDInputDialog}}
+\subsubsection[on\_\-plzLineEdit\_\-textEdited]{\setlength{\rightskip}{0pt plus 5cm}void RFIDInputDialog::on\_\-plzLineEdit\_\-textEdited ()\hspace{0.3cm}{\tt  \mbox{[}private, slot\mbox{]}}}}
+\label{class_r_f_i_d_input_dialog_6136d9ac2c0400239d01f06269fb1865}
+
+
+Slot für Textänderungen. 
+
+
+
+Definition at line 546 of file rfidinputdialog.cpp.
+
+References checkSingularity().\hypertarget{class_r_f_i_d_input_dialog_159c213b7684ba916d9c047c76fab2e5}{
+\index{RFIDInputDialog@{RFIDInputDialog}!on\_\-ortLineEdit\_\-textEdited@{on\_\-ortLineEdit\_\-textEdited}}
+\index{on\_\-ortLineEdit\_\-textEdited@{on\_\-ortLineEdit\_\-textEdited}!RFIDInputDialog@{RFIDInputDialog}}
+\subsubsection[on\_\-ortLineEdit\_\-textEdited]{\setlength{\rightskip}{0pt plus 5cm}void RFIDInputDialog::on\_\-ortLineEdit\_\-textEdited ()\hspace{0.3cm}{\tt  \mbox{[}private, slot\mbox{]}}}}
+\label{class_r_f_i_d_input_dialog_159c213b7684ba916d9c047c76fab2e5}
+
+
+Slot für Textänderungen. 
+
+
+
+Definition at line 553 of file rfidinputdialog.cpp.
+
+References checkSingularity().\hypertarget{class_r_f_i_d_input_dialog_ca45d88bae73e41a219177aeb471b789}{
+\index{RFIDInputDialog@{RFIDInputDialog}!on\_\-telephonLineEdit\_\-textEdited@{on\_\-telephonLineEdit\_\-textEdited}}
+\index{on\_\-telephonLineEdit\_\-textEdited@{on\_\-telephonLineEdit\_\-textEdited}!RFIDInputDialog@{RFIDInputDialog}}
+\subsubsection[on\_\-telephonLineEdit\_\-textEdited]{\setlength{\rightskip}{0pt plus 5cm}void RFIDInputDialog::on\_\-telephonLineEdit\_\-textEdited ()\hspace{0.3cm}{\tt  \mbox{[}private, slot\mbox{]}}}}
+\label{class_r_f_i_d_input_dialog_ca45d88bae73e41a219177aeb471b789}
+
+
+Slot für Textänderungen. 
+
+
+
+Definition at line 560 of file rfidinputdialog.cpp.
+
+References checkSingularity().\hypertarget{class_r_f_i_d_input_dialog_0d12ce25f1a516e1c219400e176c3955}{
+\index{RFIDInputDialog@{RFIDInputDialog}!on\_\-mobileLineEdit\_\-textEdited@{on\_\-mobileLineEdit\_\-textEdited}}
+\index{on\_\-mobileLineEdit\_\-textEdited@{on\_\-mobileLineEdit\_\-textEdited}!RFIDInputDialog@{RFIDInputDialog}}
+\subsubsection[on\_\-mobileLineEdit\_\-textEdited]{\setlength{\rightskip}{0pt plus 5cm}void RFIDInputDialog::on\_\-mobileLineEdit\_\-textEdited ()\hspace{0.3cm}{\tt  \mbox{[}private, slot\mbox{]}}}}
+\label{class_r_f_i_d_input_dialog_0d12ce25f1a516e1c219400e176c3955}
+
+
+Slot für Textänderungen. 
+
+
+
+Definition at line 567 of file rfidinputdialog.cpp.
+
+References checkSingularity().\hypertarget{class_r_f_i_d_input_dialog_e5e5058e55f652dab0d33f9e7ea563ae}{
+\index{RFIDInputDialog@{RFIDInputDialog}!on\_\-emailLineEdit\_\-textEdited@{on\_\-emailLineEdit\_\-textEdited}}
+\index{on\_\-emailLineEdit\_\-textEdited@{on\_\-emailLineEdit\_\-textEdited}!RFIDInputDialog@{RFIDInputDialog}}
+\subsubsection[on\_\-emailLineEdit\_\-textEdited]{\setlength{\rightskip}{0pt plus 5cm}void RFIDInputDialog::on\_\-emailLineEdit\_\-textEdited ()\hspace{0.3cm}{\tt  \mbox{[}private, slot\mbox{]}}}}
+\label{class_r_f_i_d_input_dialog_e5e5058e55f652dab0d33f9e7ea563ae}
+
+
+Slot für Textänderungen. 
+
+
+
+Definition at line 574 of file rfidinputdialog.cpp.
+
+References checkSingularity().\hypertarget{class_r_f_i_d_input_dialog_833c3a68aeee5cfc0ecdd420e2a13a89}{
+\index{RFIDInputDialog@{RFIDInputDialog}!on\_\-clubLineEdit\_\-textEdited@{on\_\-clubLineEdit\_\-textEdited}}
+\index{on\_\-clubLineEdit\_\-textEdited@{on\_\-clubLineEdit\_\-textEdited}!RFIDInputDialog@{RFIDInputDialog}}
+\subsubsection[on\_\-clubLineEdit\_\-textEdited]{\setlength{\rightskip}{0pt plus 5cm}void RFIDInputDialog::on\_\-clubLineEdit\_\-textEdited ()\hspace{0.3cm}{\tt  \mbox{[}private, slot\mbox{]}}}}
+\label{class_r_f_i_d_input_dialog_833c3a68aeee5cfc0ecdd420e2a13a89}
+
+
+Slot für Textänderungen. 
+
+
+
+Definition at line 581 of file rfidinputdialog.cpp.
+
+References checkSingularity().\hypertarget{class_r_f_i_d_input_dialog_34a7d69970ebded23245a780906fd893}{
+\index{RFIDInputDialog@{RFIDInputDialog}!on\_\-nationalitaetComboBox\_\-currentIndexChanged@{on\_\-nationalitaetComboBox\_\-currentIndexChanged}}
+\index{on\_\-nationalitaetComboBox\_\-currentIndexChanged@{on\_\-nationalitaetComboBox\_\-currentIndexChanged}!RFIDInputDialog@{RFIDInputDialog}}
+\subsubsection[on\_\-nationalitaetComboBox\_\-currentIndexChanged]{\setlength{\rightskip}{0pt plus 5cm}void RFIDInputDialog::on\_\-nationalitaetComboBox\_\-currentIndexChanged ()\hspace{0.3cm}{\tt  \mbox{[}private, slot\mbox{]}}}}
+\label{class_r_f_i_d_input_dialog_34a7d69970ebded23245a780906fd893}
+
+
+Slot für Textänderungen. 
+
+
+
+Definition at line 588 of file rfidinputdialog.cpp.\hypertarget{class_r_f_i_d_input_dialog_814026b0c5b8a24cb6a97e1eefd0284a}{
+\index{RFIDInputDialog@{RFIDInputDialog}!on\_\-jahrgangSpinBox\_\-valueChanged@{on\_\-jahrgangSpinBox\_\-valueChanged}}
+\index{on\_\-jahrgangSpinBox\_\-valueChanged@{on\_\-jahrgangSpinBox\_\-valueChanged}!RFIDInputDialog@{RFIDInputDialog}}
+\subsubsection[on\_\-jahrgangSpinBox\_\-valueChanged]{\setlength{\rightskip}{0pt plus 5cm}void RFIDInputDialog::on\_\-jahrgangSpinBox\_\-valueChanged ()\hspace{0.3cm}{\tt  \mbox{[}private, slot\mbox{]}}}}
+\label{class_r_f_i_d_input_dialog_814026b0c5b8a24cb6a97e1eefd0284a}
+
+
+Slot für Jahrgangsänderungen (aktualisieren der Kategorie). 
+
+
+
+Definition at line 595 of file rfidinputdialog.cpp.
+
+References calculateKategorie(), Ui\_\-RFIDInputDialogClass::jahrgangSpinBox, Ui\_\-RFIDInputDialogClass::KategoriecomboBox, and ui.\hypertarget{class_r_f_i_d_input_dialog_46a201754a6bffc77cb0bdcd3f696a48}{
+\index{RFIDInputDialog@{RFIDInputDialog}!on\_\-autoCheckBox\_\-stateChanged@{on\_\-autoCheckBox\_\-stateChanged}}
+\index{on\_\-autoCheckBox\_\-stateChanged@{on\_\-autoCheckBox\_\-stateChanged}!RFIDInputDialog@{RFIDInputDialog}}
+\subsubsection[on\_\-autoCheckBox\_\-stateChanged]{\setlength{\rightskip}{0pt plus 5cm}void RFIDInputDialog::on\_\-autoCheckBox\_\-stateChanged ()\hspace{0.3cm}{\tt  \mbox{[}private, slot\mbox{]}}}}
+\label{class_r_f_i_d_input_dialog_46a201754a6bffc77cb0bdcd3f696a48}
+
+
+Slot für CheckBox \char`\"{}automatisches Vervollständigen\char`\"{}. 
+
+
+
+Definition at line 622 of file rfidinputdialog.cpp.
+
+References Ui\_\-RFIDInputDialogClass::autoCheckBox, autoInsert, checkSingularity(), and ui.
+
+\subsection{Member Data Documentation}
+\hypertarget{class_r_f_i_d_input_dialog_e717744327dda404390c6be01b77180a}{
+\index{RFIDInputDialog@{RFIDInputDialog}!ui@{ui}}
+\index{ui@{ui}!RFIDInputDialog@{RFIDInputDialog}}
+\subsubsection[ui]{\setlength{\rightskip}{0pt plus 5cm}{\bf Ui::RFIDInputDialogClass} {\bf RFIDInputDialog::ui}\hspace{0.3cm}{\tt  \mbox{[}private\mbox{]}}}}
+\label{class_r_f_i_d_input_dialog_e717744327dda404390c6be01b77180a}
+
+
+
+
+Definition at line 57 of file rfidinputdialog.h.
+
+Referenced by checkSingularity(), fillForm(), insertPersonAndTime(), insertRacetime(), on\_\-autoCheckBox\_\-stateChanged(), on\_\-jahrgangSpinBox\_\-valueChanged(), RFIDInputDialog(), updatePerson(), and validation().\hypertarget{class_r_f_i_d_input_dialog_23e23da528d95589aec6670ef8b0b067}{
+\index{RFIDInputDialog@{RFIDInputDialog}!teilnehmer@{teilnehmer}}
+\index{teilnehmer@{teilnehmer}!RFIDInputDialog@{RFIDInputDialog}}
+\subsubsection[teilnehmer]{\setlength{\rightskip}{0pt plus 5cm}QSqlTableModel$\ast$ {\bf RFIDInputDialog::teilnehmer}\hspace{0.3cm}{\tt  \mbox{[}private\mbox{]}}}}
+\label{class_r_f_i_d_input_dialog_23e23da528d95589aec6670ef8b0b067}
+
+
+
+
+Definition at line 68 of file rfidinputdialog.h.\hypertarget{class_r_f_i_d_input_dialog_58508d18fe39d28748cbaea39b24d50b}{
+\index{RFIDInputDialog@{RFIDInputDialog}!text@{text}}
+\index{text@{text}!RFIDInputDialog@{RFIDInputDialog}}
+\subsubsection[text]{\setlength{\rightskip}{0pt plus 5cm}QString {\bf RFIDInputDialog::text}\hspace{0.3cm}{\tt  \mbox{[}private\mbox{]}}}}
+\label{class_r_f_i_d_input_dialog_58508d18fe39d28748cbaea39b24d50b}
+
+
+
+
+Definition at line 73 of file rfidinputdialog.h.\hypertarget{class_r_f_i_d_input_dialog_557be7292bf8509e793dc17e79d18e75}{
+\index{RFIDInputDialog@{RFIDInputDialog}!TeilnehmerKeyInt@{TeilnehmerKeyInt}}
+\index{TeilnehmerKeyInt@{TeilnehmerKeyInt}!RFIDInputDialog@{RFIDInputDialog}}
+\subsubsection[TeilnehmerKeyInt]{\setlength{\rightskip}{0pt plus 5cm}int {\bf RFIDInputDialog::TeilnehmerKeyInt}\hspace{0.3cm}{\tt  \mbox{[}private\mbox{]}}}}
+\label{class_r_f_i_d_input_dialog_557be7292bf8509e793dc17e79d18e75}
+
+
+
+
+Definition at line 74 of file rfidinputdialog.h.
+
+Referenced by checkSingularity(), on\_\-okButton\_\-released(), and RFIDInputDialog().\hypertarget{class_r_f_i_d_input_dialog_251579065abb62a0421867aafa5b275c}{
+\index{RFIDInputDialog@{RFIDInputDialog}!index@{index}}
+\index{index@{index}!RFIDInputDialog@{RFIDInputDialog}}
+\subsubsection[index]{\setlength{\rightskip}{0pt plus 5cm}int {\bf RFIDInputDialog::index}\hspace{0.3cm}{\tt  \mbox{[}private\mbox{]}}}}
+\label{class_r_f_i_d_input_dialog_251579065abb62a0421867aafa5b275c}
+
+
+
+
+Definition at line 75 of file rfidinputdialog.h.\hypertarget{class_r_f_i_d_input_dialog_2fffb8807b878f9debba8d9b13046854}{
+\index{RFIDInputDialog@{RFIDInputDialog}!pRfid@{pRfid}}
+\index{pRfid@{pRfid}!RFIDInputDialog@{RFIDInputDialog}}
+\subsubsection[pRfid]{\setlength{\rightskip}{0pt plus 5cm}{\bf RFID\_\-CR500}$\ast$ {\bf RFIDInputDialog::pRfid}\hspace{0.3cm}{\tt  \mbox{[}private\mbox{]}}}}
+\label{class_r_f_i_d_input_dialog_2fffb8807b878f9debba8d9b13046854}
+
+
+
+
+Definition at line 76 of file rfidinputdialog.h.
+
+Referenced by clearValidFlag(), insertRacetime(), and on\_\-canButton\_\-released().\hypertarget{class_r_f_i_d_input_dialog_2c4dff3a7602a6bca4d967b5a561942d}{
+\index{RFIDInputDialog@{RFIDInputDialog}!autoInsert@{autoInsert}}
+\index{autoInsert@{autoInsert}!RFIDInputDialog@{RFIDInputDialog}}
+\subsubsection[autoInsert]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf RFIDInputDialog::autoInsert}\hspace{0.3cm}{\tt  \mbox{[}private\mbox{]}}}}
+\label{class_r_f_i_d_input_dialog_2c4dff3a7602a6bca4d967b5a561942d}
+
+
+
+
+Definition at line 77 of file rfidinputdialog.h.
+
+Referenced by checkSingularity(), on\_\-autoCheckBox\_\-stateChanged(), and RFIDInputDialog().
+
+The documentation for this class was generated from the following files:\begin{CompactItemize}
+\item 
+RFID\_\-Reader/\hyperlink{rfidinputdialog_8h}{rfidinputdialog.h}\item 
+RFID\_\-Reader/\hyperlink{rfidinputdialog_8cpp}{rfidinputdialog.cpp}\end{CompactItemize}

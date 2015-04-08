@@ -1,0 +1,17 @@
+25-08-2008:
+- Funktionen für Reset und Initialisierung von RFID-Tags ausgebaut. Neu kann gewählt
+  werden, ob die Karte als Persönlich oder Unpersönlich zurückgesetzt werden soll.
+  Dasselbe gilt für neue Karten (Page 4 = 0xFFFFFFFF)
+  beo_timing.cpp : Neue Funktion "tag_initialisieren()", weitere Menüpunkte im Menü 
+                   "Verbindung". Enumeration mit 4 Zusänden für die Übergabe an die
+                   RFID-Klasse.
+  RFID_CR500.cpp : Ausbau des Entscheidungskonzept ab Zeile 362. Änderung des Konstruktors,
+                   neu Übergabe des Pointers auf die aktuelle Menüwahl. 
+
+07-08-2008:
+- Funktion zum automatischen Erkennen von neuen RFID-Karten hinzugefügt. 
+  RFID_CR500.cpp : 362 ff
+  
+31-06-2008:
+- Release v 1.0 bei der Abgabe der Thesis
+ 

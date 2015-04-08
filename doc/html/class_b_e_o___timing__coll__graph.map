@@ -1,0 +1,27 @@
+<area shape="rect" href="$class_neuer_user_dialog.html" title="Dieser Dialog dient zum erstellen eines neuen Benutzers." alt="" coords="677,42,795,69">
+<area shape="rect" href="$class_ui_1_1_neuer_user_dialog_class.html" title="Ui::NeuerUserDialogClass" alt="" coords="336,5,507,32">
+<area shape="rect" href="$class_ui___neuer_user_dialog_class.html" title="Ui_NeuerUserDialogClass" alt="" coords="25,5,196,32">
+<area shape="rect" href="$class_user.html" title="Diese Klasse symbolisiert einen Benutzer und stellt Funktionen bereit." alt="" coords="397,114,445,141">
+<area shape="rect" href="$class_password_change_dialog.html" title="Dieser Dialog dient zum aendern des Passworts des angemeldeten Benutzers." alt="" coords="657,220,815,246">
+<area shape="rect" href="$class_rechte_anpassen.html" title="Dieser Dialog dient zum anpassen der Rechte eines beliebigen Benutzers." alt="" coords="676,270,796,297">
+<area shape="rect" href="$class_hardware_konfiguration.html" title="Dieser Dialog erstellt eine Konfiguration fuer eine Anlage." alt="" coords="661,321,811,348">
+<area shape="rect" href="$class_ui_1_1_hardware_konfiguration_class.html" title="Ui::HardwareKonfigurationClass" alt="" coords="320,338,523,365">
+<area shape="rect" href="$class_ui___hardware_konfiguration_class.html" title="Ui_HardwareKonfigurationClass" alt="" coords="9,338,212,365">
+<area shape="rect" href="$class_ui_1_1_password_change_dialog_class.html" title="Ui::PasswordChangeDialogClass" alt="" coords="316,237,527,264">
+<area shape="rect" href="$class_ui___password_change_dialog_class.html" title="Ui_PasswordChangeDialogClass" alt="" coords="5,237,216,264">
+<area shape="rect" href="$class_r_f_i_d___c_r500.html" title="Enthält alle Eigenschaften des RFID&#45;Lesers CR500&#45;USB." alt="" coords="373,406,469,433">
+<area shape="rect" href="$class_r_f_i_d___thread.html" title="Erstellt einen Thread, welcher alle 0.5 Sekunden prüft ob eine Karte im Feld des..." alt="" coords="688,372,784,398">
+<area shape="rect" href="$struct_m_y_t_i_m_e.html" title="Struktur fuer die Fahrzeit (Groesse 4 Byte)." alt="" coords="75,406,147,433">
+<area shape="rect" href="$struct_m_y_d_a_t_e.html" title="Struktur fuer die Start&#45; und Endzeit (Groesse 7 Byte)." alt="" coords="73,457,148,484">
+<area shape="rect" href="$class_d_b___thread.html" title="Dieser Thread ueberprueft alle 5 Sekunden die Verbindung zur Datenbank." alt="" coords="693,486,779,513">
+<area shape="rect" href="$class_database.html" title="Diese Klasse symbolisiert die Datenbank. Sie erstellt die Verbindung und stellt verschiedene..." alt="" coords="384,517,459,544">
+<area shape="rect" href="$class_ui_1_1_b_e_o___timing_class.html" title="Ui::BEO_TimingClass" alt="" coords="663,601,809,628">
+<area shape="rect" href="$class_ui___b_e_o___timing_class.html" title="Ui_BEO_TimingClass" alt="" coords="348,601,495,628">
+<area shape="rect" href="$class_logfile_lesen_dialog.html" title="Dieser Dialog sucht eine Log&#45;Datei einer Zielstation nach nicht uebermittelten Eintraegen..." alt="" coords="672,652,800,678">
+<area shape="rect" href="$class_ui_1_1_logfile_lesen_dialog_class.html" title="Ui::LogfileLesenDialogClass" alt="" coords="331,652,512,678">
+<area shape="rect" href="$class_ui___logfile_lesen_dialog_class.html" title="Ui_LogfileLesenDialogClass" alt="" coords="20,652,201,678">
+<area shape="rect" href="$class_ui_1_1_rechte_anpassen_class.html" title="Ui::RechteAnpassenClass" alt="" coords="335,288,508,314">
+<area shape="rect" href="$class_ui___rechte_anpassen_class.html" title="Ui_RechteAnpassenClass" alt="" coords="25,288,196,314">
+<area shape="rect" href="$class_neues_rennen_dialog.html" title="Dieser Dialog dient zum erstellen eines neunen Rennens." alt="" coords="667,702,805,729">
+<area shape="rect" href="$class_ui_1_1_neues_rennen_dialog_class.html" title="Ui::NeuesRennenDialogClass" alt="" coords="325,702,517,729">
+<area shape="rect" href="$class_ui___neues_rennen_dialog_class.html" title="Ui_NeuesRennenDialogClass" alt="" coords="16,702,205,729">

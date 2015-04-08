@@ -1,0 +1,144 @@
+\hypertarget{class_database}{
+\section{Database Class Reference}
+\label{class_database}\index{Database@{Database}}
+}
+Diese Klasse symbolisiert die Datenbank. Sie erstellt die Verbindung und stellt verschiedene Servicefunktionen bereit.  
+
+
+{\tt \#include $<$Database.h$>$}
+
+\subsection*{Public Member Functions}
+\begin{CompactItemize}
+\item 
+\hyperlink{class_database_4703c80e6969d33565ea340f768fdadf}{Database} ()
+\begin{CompactList}\small\item\em Konstruktor für standard DB. \item\end{CompactList}\item 
+\hyperlink{class_database_00afd5df356bd7a1f65f7e5f097486ae}{Database} (QString host, QString dbname, QString user, QString password)
+\begin{CompactList}\small\item\em Konstruktor mit Paramtern für beliebige DB. \item\end{CompactList}\item 
+virtual \hyperlink{class_database_84d399a2ad58d69daab9b05330e1316d}{$\sim$Database} ()
+\begin{CompactList}\small\item\em Destruktor. \item\end{CompactList}\item 
+void \hyperlink{class_database_e2ef309eea700ffc9c6339b6cb6ee37c}{TestWrite} ()
+\item 
+void \hyperlink{class_database_d399b899bae6d747b8cb0108f1cb188b}{TestRead} ()
+\item 
+QSqlDatabase $\ast$ \hyperlink{class_database_b480eca23d1bf71206cab822da9b0246}{getDb} ()
+\item 
+bool \hyperlink{class_database_2ba851b65f3382496d35cd70de21bfff}{getDbStatus} ()
+\end{CompactItemize}
+\subsection*{Protected Attributes}
+\begin{CompactItemize}
+\item 
+QSqlDatabase \hyperlink{class_database_ea64d7d99483faec8f049cdd817bb693}{db}
+\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+Diese Klasse symbolisiert die Datenbank. Sie erstellt die Verbindung und stellt verschiedene Servicefunktionen bereit. 
+
+Definition at line 41 of file Database.h.
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_database_4703c80e6969d33565ea340f768fdadf}{
+\index{Database@{Database}!Database@{Database}}
+\index{Database@{Database}!Database@{Database}}
+\subsubsection[Database]{\setlength{\rightskip}{0pt plus 5cm}Database::Database ()}}
+\label{class_database_4703c80e6969d33565ea340f768fdadf}
+
+
+Konstruktor für standard DB. 
+
+
+
+Definition at line 39 of file Database.cpp.
+
+References db.\hypertarget{class_database_00afd5df356bd7a1f65f7e5f097486ae}{
+\index{Database@{Database}!Database@{Database}}
+\index{Database@{Database}!Database@{Database}}
+\subsubsection[Database]{\setlength{\rightskip}{0pt plus 5cm}Database::Database (QString {\em host}, \/  QString {\em dbname}, \/  QString {\em user}, \/  QString {\em password})}}
+\label{class_database_00afd5df356bd7a1f65f7e5f097486ae}
+
+
+Konstruktor mit Paramtern für beliebige DB. 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em host}]Hostname der Datenbank \item[{\em dbname}]Name der Datenbank \item[{\em user}]Benutzer für die Datenbank \item[{\em password}]Passwort für den Benutzer \end{description}
+\end{Desc}
+
+
+Definition at line 63 of file Database.cpp.
+
+References db.\hypertarget{class_database_84d399a2ad58d69daab9b05330e1316d}{
+\index{Database@{Database}!$\sim$Database@{$\sim$Database}}
+\index{$\sim$Database@{$\sim$Database}!Database@{Database}}
+\subsubsection[$\sim$Database]{\setlength{\rightskip}{0pt plus 5cm}Database::$\sim$Database ()\hspace{0.3cm}{\tt  \mbox{[}virtual\mbox{]}}}}
+\label{class_database_84d399a2ad58d69daab9b05330e1316d}
+
+
+Destruktor. 
+
+
+
+Definition at line 85 of file Database.cpp.
+
+References db.
+
+\subsection{Member Function Documentation}
+\hypertarget{class_database_e2ef309eea700ffc9c6339b6cb6ee37c}{
+\index{Database@{Database}!TestWrite@{TestWrite}}
+\index{TestWrite@{TestWrite}!Database@{Database}}
+\subsubsection[TestWrite]{\setlength{\rightskip}{0pt plus 5cm}void Database::TestWrite ()}}
+\label{class_database_e2ef309eea700ffc9c6339b6cb6ee37c}
+
+
+\hypertarget{class_database_d399b899bae6d747b8cb0108f1cb188b}{
+\index{Database@{Database}!TestRead@{TestRead}}
+\index{TestRead@{TestRead}!Database@{Database}}
+\subsubsection[TestRead]{\setlength{\rightskip}{0pt plus 5cm}void Database::TestRead ()}}
+\label{class_database_d399b899bae6d747b8cb0108f1cb188b}
+
+
+\hypertarget{class_database_b480eca23d1bf71206cab822da9b0246}{
+\index{Database@{Database}!getDb@{getDb}}
+\index{getDb@{getDb}!Database@{Database}}
+\subsubsection[getDb]{\setlength{\rightskip}{0pt plus 5cm}QSqlDatabase$\ast$ Database::getDb ()\hspace{0.3cm}{\tt  \mbox{[}inline\mbox{]}}}}
+\label{class_database_b480eca23d1bf71206cab822da9b0246}
+
+
+
+
+Definition at line 51 of file Database.h.
+
+References db.
+
+Referenced by BEO\_\-Timing::BEO\_\-Timing(), and BEO\_\-Timing::checkDB().\hypertarget{class_database_2ba851b65f3382496d35cd70de21bfff}{
+\index{Database@{Database}!getDbStatus@{getDbStatus}}
+\index{getDbStatus@{getDbStatus}!Database@{Database}}
+\subsubsection[getDbStatus]{\setlength{\rightskip}{0pt plus 5cm}bool Database::getDbStatus ()\hspace{0.3cm}{\tt  \mbox{[}inline\mbox{]}}}}
+\label{class_database_2ba851b65f3382496d35cd70de21bfff}
+
+
+
+
+Definition at line 52 of file Database.h.
+
+References db.
+
+\subsection{Member Data Documentation}
+\hypertarget{class_database_ea64d7d99483faec8f049cdd817bb693}{
+\index{Database@{Database}!db@{db}}
+\index{db@{db}!Database@{Database}}
+\subsubsection[db]{\setlength{\rightskip}{0pt plus 5cm}QSqlDatabase {\bf Database::db}\hspace{0.3cm}{\tt  \mbox{[}protected\mbox{]}}}}
+\label{class_database_ea64d7d99483faec8f049cdd817bb693}
+
+
+
+
+Definition at line 52 of file Database.h.
+
+Referenced by Database(), getDb(), getDbStatus(), and $\sim$Database().
+
+The documentation for this class was generated from the following files:\begin{CompactItemize}
+\item 
+\hyperlink{_database_8h}{Database.h}\item 
+\hyperlink{_database_8cpp}{Database.cpp}\end{CompactItemize}

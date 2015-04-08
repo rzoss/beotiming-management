@@ -1,0 +1,267 @@
+\hypertarget{class_logfile_lesen_dialog}{
+\section{LogfileLesenDialog Class Reference}
+\label{class_logfile_lesen_dialog}\index{LogfileLesenDialog@{LogfileLesenDialog}}
+}
+Dieser Dialog sucht eine Log-Datei einer Zielstation nach nicht uebermittelten Eintraegen ab.  
+
+
+{\tt \#include $<$logfilelesendialog.h$>$}
+
+Collaboration diagram for LogfileLesenDialog:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=90pt]{class_logfile_lesen_dialog__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{CompactItemize}
+\item 
+\hyperlink{class_logfile_lesen_dialog_dcec514ae2ecb97a1a753a0e12335229}{LogfileLesenDialog} (QWidget $\ast$parent=0)
+\begin{CompactList}\small\item\em Konstruktor. \item\end{CompactList}\item 
+\hyperlink{class_logfile_lesen_dialog_6688d3b86807c1f62ae679ae1870a6b2}{$\sim$LogfileLesenDialog} ()
+\begin{CompactList}\small\item\em Destruktor. \item\end{CompactList}\end{CompactItemize}
+\subsection*{Private Types}
+\begin{CompactItemize}
+\item 
+enum \hyperlink{class_logfile_lesen_dialog_f385013205b5ac8ad353d598e3ea4662}{streckentypen} \{ \par
+\hyperlink{class_logfile_lesen_dialog_f385013205b5ac8ad353d598e3ea4662771375c879ad9d49391a189e9615efc4}{Rennvelo} = 1, 
+\hyperlink{class_logfile_lesen_dialog_f385013205b5ac8ad353d598e3ea46625ae6fb671052ec288e1376b14877ba5b}{Mountainbike} = 2, 
+\hyperlink{class_logfile_lesen_dialog_f385013205b5ac8ad353d598e3ea4662ad9e15143bc96d0edf1ca75908fb5921}{Laufen} = 3, 
+\hyperlink{class_logfile_lesen_dialog_f385013205b5ac8ad353d598e3ea4662f904b39e902869ed6d57fddc4afab35f}{Walking} = 4, 
+\par
+\hyperlink{class_logfile_lesen_dialog_f385013205b5ac8ad353d598e3ea46626e82677f8ad67277e8220a3dc24c1cee}{Langlauf} = 5, 
+\hyperlink{class_logfile_lesen_dialog_f385013205b5ac8ad353d598e3ea4662d388b1716741ed4655d837a38989e861}{Inline} = 6
+ \}
+\end{CompactItemize}
+\subsection*{Private Slots}
+\begin{CompactItemize}
+\item 
+void \hyperlink{class_logfile_lesen_dialog_3ec935f830a6ab5cbab8a26f472df991}{on\_\-okButton\_\-released} ()
+\begin{CompactList}\small\item\em Slot für den Ok-Button. \item\end{CompactList}\item 
+void \hyperlink{class_logfile_lesen_dialog_bb7a15f0816b93d9ef3c8f044952d3f9}{on\_\-canButton\_\-released} ()
+\begin{CompactList}\small\item\em Slot für den Abbrechen-Button. \item\end{CompactList}\item 
+void \hyperlink{class_logfile_lesen_dialog_04e5cfc7ccc5a9e9f3b085de0f1f2bce}{on\_\-neuCheckBox\_\-stateChanged} (int state)
+\begin{CompactList}\small\item\em Slot für die Reaktion auf Änderungen der CheckBox. \item\end{CompactList}\item 
+void \hyperlink{class_logfile_lesen_dialog_bb303eb1d6f62d71c020c155de3e2f96}{on\_\-delCheckBox\_\-stateChanged} (int state)
+\begin{CompactList}\small\item\em Slot für die Reaktion auf Änderungen der CheckBox. \item\end{CompactList}\end{CompactItemize}
+\subsection*{Private Member Functions}
+\begin{CompactItemize}
+\item 
+QListWidgetItem $\ast$ \hyperlink{class_logfile_lesen_dialog_da2f3f4ae517455882e9a2e596e7c3ed}{createItem} (QString line)
+\begin{CompactList}\small\item\em Inhalt der Listen erstellen. \item\end{CompactList}\end{CompactItemize}
+\subsection*{Private Attributes}
+\begin{CompactItemize}
+\item 
+\hyperlink{class_ui_1_1_logfile_lesen_dialog_class}{Ui::LogfileLesenDialogClass} \hyperlink{class_logfile_lesen_dialog_ae3b0fc39f6af7f8fcb4b84920cacaea}{ui}
+\item 
+QStringList \hyperlink{class_logfile_lesen_dialog_c600d0c7f2c2e328ecdbdae3fa12bee2}{add}
+\item 
+QStringList \hyperlink{class_logfile_lesen_dialog_b6591a68eaf1f3c2e9b0a6422787df9d}{remove}
+\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+Dieser Dialog sucht eine Log-Datei einer Zielstation nach nicht uebermittelten Eintraegen ab. 
+
+Definition at line 41 of file logfilelesendialog.h.
+
+\subsection{Member Enumeration Documentation}
+\hypertarget{class_logfile_lesen_dialog_f385013205b5ac8ad353d598e3ea4662}{
+\index{LogfileLesenDialog@{LogfileLesenDialog}!streckentypen@{streckentypen}}
+\index{streckentypen@{streckentypen}!LogfileLesenDialog@{LogfileLesenDialog}}
+\subsubsection[streckentypen]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf LogfileLesenDialog::streckentypen}\hspace{0.3cm}{\tt  \mbox{[}private\mbox{]}}}}
+\label{class_logfile_lesen_dialog_f385013205b5ac8ad353d598e3ea4662}
+
+
+\begin{Desc}
+\item[Enumerator: ]\par
+\begin{description}
+\index{Rennvelo@{Rennvelo}!LogfileLesenDialog@{LogfileLesenDialog}}\index{LogfileLesenDialog@{LogfileLesenDialog}!Rennvelo@{Rennvelo}}\item[{\em 
+\hypertarget{class_logfile_lesen_dialog_f385013205b5ac8ad353d598e3ea4662771375c879ad9d49391a189e9615efc4}{
+Rennvelo}
+\label{class_logfile_lesen_dialog_f385013205b5ac8ad353d598e3ea4662771375c879ad9d49391a189e9615efc4}
+}]\index{Mountainbike@{Mountainbike}!LogfileLesenDialog@{LogfileLesenDialog}}\index{LogfileLesenDialog@{LogfileLesenDialog}!Mountainbike@{Mountainbike}}\item[{\em 
+\hypertarget{class_logfile_lesen_dialog_f385013205b5ac8ad353d598e3ea46625ae6fb671052ec288e1376b14877ba5b}{
+Mountainbike}
+\label{class_logfile_lesen_dialog_f385013205b5ac8ad353d598e3ea46625ae6fb671052ec288e1376b14877ba5b}
+}]\index{Laufen@{Laufen}!LogfileLesenDialog@{LogfileLesenDialog}}\index{LogfileLesenDialog@{LogfileLesenDialog}!Laufen@{Laufen}}\item[{\em 
+\hypertarget{class_logfile_lesen_dialog_f385013205b5ac8ad353d598e3ea4662ad9e15143bc96d0edf1ca75908fb5921}{
+Laufen}
+\label{class_logfile_lesen_dialog_f385013205b5ac8ad353d598e3ea4662ad9e15143bc96d0edf1ca75908fb5921}
+}]\index{Walking@{Walking}!LogfileLesenDialog@{LogfileLesenDialog}}\index{LogfileLesenDialog@{LogfileLesenDialog}!Walking@{Walking}}\item[{\em 
+\hypertarget{class_logfile_lesen_dialog_f385013205b5ac8ad353d598e3ea4662f904b39e902869ed6d57fddc4afab35f}{
+Walking}
+\label{class_logfile_lesen_dialog_f385013205b5ac8ad353d598e3ea4662f904b39e902869ed6d57fddc4afab35f}
+}]\index{Langlauf@{Langlauf}!LogfileLesenDialog@{LogfileLesenDialog}}\index{LogfileLesenDialog@{LogfileLesenDialog}!Langlauf@{Langlauf}}\item[{\em 
+\hypertarget{class_logfile_lesen_dialog_f385013205b5ac8ad353d598e3ea46626e82677f8ad67277e8220a3dc24c1cee}{
+Langlauf}
+\label{class_logfile_lesen_dialog_f385013205b5ac8ad353d598e3ea46626e82677f8ad67277e8220a3dc24c1cee}
+}]\index{Inline@{Inline}!LogfileLesenDialog@{LogfileLesenDialog}}\index{LogfileLesenDialog@{LogfileLesenDialog}!Inline@{Inline}}\item[{\em 
+\hypertarget{class_logfile_lesen_dialog_f385013205b5ac8ad353d598e3ea4662d388b1716741ed4655d837a38989e861}{
+Inline}
+\label{class_logfile_lesen_dialog_f385013205b5ac8ad353d598e3ea4662d388b1716741ed4655d837a38989e861}
+}]\end{description}
+\end{Desc}
+
+
+
+Definition at line 51 of file logfilelesendialog.h.
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_logfile_lesen_dialog_dcec514ae2ecb97a1a753a0e12335229}{
+\index{LogfileLesenDialog@{LogfileLesenDialog}!LogfileLesenDialog@{LogfileLesenDialog}}
+\index{LogfileLesenDialog@{LogfileLesenDialog}!LogfileLesenDialog@{LogfileLesenDialog}}
+\subsubsection[LogfileLesenDialog]{\setlength{\rightskip}{0pt plus 5cm}LogfileLesenDialog::LogfileLesenDialog (QWidget $\ast$ {\em parent} = {\tt 0})}}
+\label{class_logfile_lesen_dialog_dcec514ae2ecb97a1a753a0e12335229}
+
+
+Konstruktor. 
+
+
+
+Definition at line 38 of file logfilelesendialog.cpp.
+
+References createItem(), Ui\_\-LogfileLesenDialogClass::delListWidget, Ui\_\-LogfileLesenDialogClass::neuListWidget, Ui\_\-LogfileLesenDialogClass::setupUi(), and ui.
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=337pt]{class_logfile_lesen_dialog_dcec514ae2ecb97a1a753a0e12335229_cgraph}
+\end{center}
+\end{figure}
+\hypertarget{class_logfile_lesen_dialog_6688d3b86807c1f62ae679ae1870a6b2}{
+\index{LogfileLesenDialog@{LogfileLesenDialog}!$\sim$LogfileLesenDialog@{$\sim$LogfileLesenDialog}}
+\index{$\sim$LogfileLesenDialog@{$\sim$LogfileLesenDialog}!LogfileLesenDialog@{LogfileLesenDialog}}
+\subsubsection[$\sim$LogfileLesenDialog]{\setlength{\rightskip}{0pt plus 5cm}LogfileLesenDialog::$\sim$LogfileLesenDialog ()}}
+\label{class_logfile_lesen_dialog_6688d3b86807c1f62ae679ae1870a6b2}
+
+
+Destruktor. 
+
+
+
+Definition at line 129 of file logfilelesendialog.cpp.
+
+\subsection{Member Function Documentation}
+\hypertarget{class_logfile_lesen_dialog_da2f3f4ae517455882e9a2e596e7c3ed}{
+\index{LogfileLesenDialog@{LogfileLesenDialog}!createItem@{createItem}}
+\index{createItem@{createItem}!LogfileLesenDialog@{LogfileLesenDialog}}
+\subsubsection[createItem]{\setlength{\rightskip}{0pt plus 5cm}QListWidgetItem $\ast$ LogfileLesenDialog::createItem (QString {\em line})\hspace{0.3cm}{\tt  \mbox{[}private\mbox{]}}}}
+\label{class_logfile_lesen_dialog_da2f3f4ae517455882e9a2e596e7c3ed}
+
+
+Inhalt der Listen erstellen. 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em line}]String aus der Logdatei \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]Listenelement \end{Desc}
+
+
+Definition at line 139 of file logfilelesendialog.cpp.
+
+References Inline, Langlauf, Laufen, Mountainbike, Rennvelo, and Walking.
+
+Referenced by LogfileLesenDialog().\hypertarget{class_logfile_lesen_dialog_3ec935f830a6ab5cbab8a26f472df991}{
+\index{LogfileLesenDialog@{LogfileLesenDialog}!on\_\-okButton\_\-released@{on\_\-okButton\_\-released}}
+\index{on\_\-okButton\_\-released@{on\_\-okButton\_\-released}!LogfileLesenDialog@{LogfileLesenDialog}}
+\subsubsection[on\_\-okButton\_\-released]{\setlength{\rightskip}{0pt plus 5cm}void LogfileLesenDialog::on\_\-okButton\_\-released ()\hspace{0.3cm}{\tt  \mbox{[}private, slot\mbox{]}}}}
+\label{class_logfile_lesen_dialog_3ec935f830a6ab5cbab8a26f472df991}
+
+
+Slot für den Ok-Button. 
+
+
+
+Definition at line 200 of file logfilelesendialog.cpp.
+
+References Ui\_\-LogfileLesenDialogClass::delListWidget, Ui\_\-LogfileLesenDialogClass::neuListWidget, and ui.\hypertarget{class_logfile_lesen_dialog_bb7a15f0816b93d9ef3c8f044952d3f9}{
+\index{LogfileLesenDialog@{LogfileLesenDialog}!on\_\-canButton\_\-released@{on\_\-canButton\_\-released}}
+\index{on\_\-canButton\_\-released@{on\_\-canButton\_\-released}!LogfileLesenDialog@{LogfileLesenDialog}}
+\subsubsection[on\_\-canButton\_\-released]{\setlength{\rightskip}{0pt plus 5cm}void LogfileLesenDialog::on\_\-canButton\_\-released ()\hspace{0.3cm}{\tt  \mbox{[}private, slot\mbox{]}}}}
+\label{class_logfile_lesen_dialog_bb7a15f0816b93d9ef3c8f044952d3f9}
+
+
+Slot für den Abbrechen-Button. 
+
+
+
+Definition at line 301 of file logfilelesendialog.cpp.\hypertarget{class_logfile_lesen_dialog_04e5cfc7ccc5a9e9f3b085de0f1f2bce}{
+\index{LogfileLesenDialog@{LogfileLesenDialog}!on\_\-neuCheckBox\_\-stateChanged@{on\_\-neuCheckBox\_\-stateChanged}}
+\index{on\_\-neuCheckBox\_\-stateChanged@{on\_\-neuCheckBox\_\-stateChanged}!LogfileLesenDialog@{LogfileLesenDialog}}
+\subsubsection[on\_\-neuCheckBox\_\-stateChanged]{\setlength{\rightskip}{0pt plus 5cm}void LogfileLesenDialog::on\_\-neuCheckBox\_\-stateChanged (int {\em state})\hspace{0.3cm}{\tt  \mbox{[}private, slot\mbox{]}}}}
+\label{class_logfile_lesen_dialog_04e5cfc7ccc5a9e9f3b085de0f1f2bce}
+
+
+Slot für die Reaktion auf Änderungen der CheckBox. 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em state}]Status der CheckBox \end{description}
+\end{Desc}
+
+
+Definition at line 177 of file logfilelesendialog.cpp.
+
+References Ui\_\-LogfileLesenDialogClass::neuListWidget, and ui.\hypertarget{class_logfile_lesen_dialog_bb303eb1d6f62d71c020c155de3e2f96}{
+\index{LogfileLesenDialog@{LogfileLesenDialog}!on\_\-delCheckBox\_\-stateChanged@{on\_\-delCheckBox\_\-stateChanged}}
+\index{on\_\-delCheckBox\_\-stateChanged@{on\_\-delCheckBox\_\-stateChanged}!LogfileLesenDialog@{LogfileLesenDialog}}
+\subsubsection[on\_\-delCheckBox\_\-stateChanged]{\setlength{\rightskip}{0pt plus 5cm}void LogfileLesenDialog::on\_\-delCheckBox\_\-stateChanged (int {\em state})\hspace{0.3cm}{\tt  \mbox{[}private, slot\mbox{]}}}}
+\label{class_logfile_lesen_dialog_bb303eb1d6f62d71c020c155de3e2f96}
+
+
+Slot für die Reaktion auf Änderungen der CheckBox. 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em state}]Status der CheckBox \end{description}
+\end{Desc}
+
+
+Definition at line 189 of file logfilelesendialog.cpp.
+
+References Ui\_\-LogfileLesenDialogClass::delListWidget, and ui.
+
+\subsection{Member Data Documentation}
+\hypertarget{class_logfile_lesen_dialog_ae3b0fc39f6af7f8fcb4b84920cacaea}{
+\index{LogfileLesenDialog@{LogfileLesenDialog}!ui@{ui}}
+\index{ui@{ui}!LogfileLesenDialog@{LogfileLesenDialog}}
+\subsubsection[ui]{\setlength{\rightskip}{0pt plus 5cm}{\bf Ui::LogfileLesenDialogClass} {\bf LogfileLesenDialog::ui}\hspace{0.3cm}{\tt  \mbox{[}private\mbox{]}}}}
+\label{class_logfile_lesen_dialog_ae3b0fc39f6af7f8fcb4b84920cacaea}
+
+
+
+
+Definition at line 52 of file logfilelesendialog.h.
+
+Referenced by LogfileLesenDialog(), on\_\-delCheckBox\_\-stateChanged(), on\_\-neuCheckBox\_\-stateChanged(), and on\_\-okButton\_\-released().\hypertarget{class_logfile_lesen_dialog_c600d0c7f2c2e328ecdbdae3fa12bee2}{
+\index{LogfileLesenDialog@{LogfileLesenDialog}!add@{add}}
+\index{add@{add}!LogfileLesenDialog@{LogfileLesenDialog}}
+\subsubsection[add]{\setlength{\rightskip}{0pt plus 5cm}QStringList {\bf LogfileLesenDialog::add}\hspace{0.3cm}{\tt  \mbox{[}private\mbox{]}}}}
+\label{class_logfile_lesen_dialog_c600d0c7f2c2e328ecdbdae3fa12bee2}
+
+
+
+
+Definition at line 53 of file logfilelesendialog.h.\hypertarget{class_logfile_lesen_dialog_b6591a68eaf1f3c2e9b0a6422787df9d}{
+\index{LogfileLesenDialog@{LogfileLesenDialog}!remove@{remove}}
+\index{remove@{remove}!LogfileLesenDialog@{LogfileLesenDialog}}
+\subsubsection[remove]{\setlength{\rightskip}{0pt plus 5cm}QStringList {\bf LogfileLesenDialog::remove}\hspace{0.3cm}{\tt  \mbox{[}private\mbox{]}}}}
+\label{class_logfile_lesen_dialog_b6591a68eaf1f3c2e9b0a6422787df9d}
+
+
+
+
+Definition at line 54 of file logfilelesendialog.h.
+
+The documentation for this class was generated from the following files:\begin{CompactItemize}
+\item 
+\hyperlink{logfilelesendialog_8h}{logfilelesendialog.h}\item 
+\hyperlink{logfilelesendialog_8cpp}{logfilelesendialog.cpp}\end{CompactItemize}

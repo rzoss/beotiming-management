@@ -1,0 +1,362 @@
+\hypertarget{class_hardware_konfiguration}{
+\section{HardwareKonfiguration Class Reference}
+\label{class_hardware_konfiguration}\index{HardwareKonfiguration@{HardwareKonfiguration}}
+}
+Dieser Dialog erstellt eine Konfiguration fuer eine Anlage.  
+
+
+{\tt \#include $<$hardwarekonfiguration.h$>$}
+
+Collaboration diagram for HardwareKonfiguration:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=98pt]{class_hardware_konfiguration__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{CompactItemize}
+\item 
+\hyperlink{class_hardware_konfiguration_2872e94ce344a468b351bd1e00353760}{HardwareKonfiguration} (\hyperlink{class_user}{User} $\ast$user, QWidget $\ast$parent=0)
+\begin{CompactList}\small\item\em Konstruktor. \item\end{CompactList}\item 
+\hyperlink{class_hardware_konfiguration_309954982d345e65f8ac5fa6c9489ce5}{$\sim$HardwareKonfiguration} ()
+\begin{CompactList}\small\item\em Destruktor. \item\end{CompactList}\end{CompactItemize}
+\subsection*{Private Types}
+\begin{CompactItemize}
+\item 
+enum \hyperlink{class_hardware_konfiguration_b474474dffdc4a8a5df5a422f3eedf82}{stationen} \{ \par
+\hyperlink{class_hardware_konfiguration_b474474dffdc4a8a5df5a422f3eedf82212c4c13e017416b291f5056be96579f}{StationenKey}, 
+\hyperlink{class_hardware_konfiguration_b474474dffdc4a8a5df5a422f3eedf82deca8cd52379f36d7f162330a9b7b059}{typ}, 
+\hyperlink{class_hardware_konfiguration_b474474dffdc4a8a5df5a422f3eedf82d38d5c287e9bda8ab85ad3301449758e}{sim\_\-pin}, 
+\hyperlink{class_hardware_konfiguration_b474474dffdc4a8a5df5a422f3eedf82133b34c2195d4b5ecb8e021ebdf4eaee}{sim\_\-puk}, 
+\par
+\hyperlink{class_hardware_konfiguration_b474474dffdc4a8a5df5a422f3eedf8256765f9294a988857e3bde31b257df36}{sms\_\-center}, 
+\hyperlink{class_hardware_konfiguration_b474474dffdc4a8a5df5a422f3eedf82718742b6ce1dae4e3cd18a223a8e5e97}{server\_\-ip}, 
+\hyperlink{class_hardware_konfiguration_b474474dffdc4a8a5df5a422f3eedf82deeb25d79a8e4668c005dc067f86cf1b}{server\_\-port}, 
+\hyperlink{class_hardware_konfiguration_b474474dffdc4a8a5df5a422f3eedf82a29d25b167e61ad6beb6290da65b1366}{gprs\_\-username}, 
+\par
+\hyperlink{class_hardware_konfiguration_b474474dffdc4a8a5df5a422f3eedf82a2a2e55678f7b2d07f9de9db5e119750}{gprs\_\-pwd}, 
+\hyperlink{class_hardware_konfiguration_b474474dffdc4a8a5df5a422f3eedf82b423c44c3ed289818574d14f01be240a}{ftp\_\-server}, 
+\hyperlink{class_hardware_konfiguration_b474474dffdc4a8a5df5a422f3eedf82ab39cf4dfe7aa8b9f832b086eacab135}{ftp\_\-username}, 
+\hyperlink{class_hardware_konfiguration_b474474dffdc4a8a5df5a422f3eedf82e271e0d5db9ad86bb8eb9ac63411b1d2}{ftp\_\-pwd}
+ \}
+\item 
+enum \hyperlink{class_hardware_konfiguration_f1a8517c9ae8204457ab7ea18fc85f21}{streckentypen} \{ \par
+\hyperlink{class_hardware_konfiguration_f1a8517c9ae8204457ab7ea18fc85f21704e6769f79c82fc33370d776e785b94}{Rennvelo} = 1, 
+\hyperlink{class_hardware_konfiguration_f1a8517c9ae8204457ab7ea18fc85f216c6be4650488db4f8af0ac127dbaca9c}{Mountainbike} = 2, 
+\hyperlink{class_hardware_konfiguration_f1a8517c9ae8204457ab7ea18fc85f211972c02d95553929ffd297edae77b246}{Laufen} = 3, 
+\hyperlink{class_hardware_konfiguration_f1a8517c9ae8204457ab7ea18fc85f212d829a254ad0ad9afeb0cb02cb06532a}{Walking} = 4, 
+\par
+\hyperlink{class_hardware_konfiguration_f1a8517c9ae8204457ab7ea18fc85f21b39955714b52bd7eac1f2223eee2d5a2}{Langlauf} = 5, 
+\hyperlink{class_hardware_konfiguration_f1a8517c9ae8204457ab7ea18fc85f21a7312808685728bae5efed47c1e00089}{Inline} = 6
+ \}
+\end{CompactItemize}
+\subsection*{Private Slots}
+\begin{CompactItemize}
+\item 
+void \hyperlink{class_hardware_konfiguration_eda81840a5d1f60c63eb9898e98dbaf8}{on\_\-okButton\_\-released} ()
+\begin{CompactList}\small\item\em Slot für OK-Button. \item\end{CompactList}\item 
+void \hyperlink{class_hardware_konfiguration_466e1fc199b46929f823e5ebab041854}{on\_\-canButton\_\-released} ()
+\begin{CompactList}\small\item\em Slot für Abbrechen-Button. \item\end{CompactList}\item 
+void \hyperlink{class_hardware_konfiguration_7a08d07a1224b1f4b6e6af2366685463}{on\_\-streckenTreeWidget\_\-currentItemChanged} (QTreeWidgetItem $\ast$current, QTreeWidgetItem $\ast$previous)
+\begin{CompactList}\small\item\em Slot für Änderungen in der Baumauswahl. \item\end{CompactList}\end{CompactItemize}
+\subsection*{Private Member Functions}
+\begin{CompactItemize}
+\item 
+QStringList \hyperlink{class_hardware_konfiguration_dae436cb5061cb83f6b8fcd823ad79ae}{getSelectedRennen} ()
+\begin{CompactList}\small\item\em ausgewählte Rennen im Baum bestimmen \item\end{CompactList}\item 
+bool \hyperlink{class_hardware_konfiguration_322f69fe2384198fd83509ae35353f75}{validation} ()
+\begin{CompactList}\small\item\em Validierung für den Dialog. \item\end{CompactList}\item 
+QStringList \hyperlink{class_hardware_konfiguration_26b0567a1972d8bb30dd3065cfc03b17}{getSommertime} ()
+\begin{CompactList}\small\item\em aktuelle Sommerzeit aus der Datenbank lesen \item\end{CompactList}\end{CompactItemize}
+\subsection*{Private Attributes}
+\begin{CompactItemize}
+\item 
+bool \hyperlink{class_hardware_konfiguration_d260085054ce59016c19a63b774e9957}{use\_\-gprs}
+\item 
+QString \hyperlink{class_hardware_konfiguration_a715366a612f28c1dab5e12d326ad5d6}{funktion}
+\item 
+\hyperlink{class_ui_1_1_hardware_konfiguration_class}{Ui::HardwareKonfigurationClass} \hyperlink{class_hardware_konfiguration_aa2f6fe4bcc16390f4ad5a6cfbbd5001}{ui}
+\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+Dieser Dialog erstellt eine Konfiguration fuer eine Anlage. 
+
+Definition at line 41 of file hardwarekonfiguration.h.
+
+\subsection{Member Enumeration Documentation}
+\hypertarget{class_hardware_konfiguration_b474474dffdc4a8a5df5a422f3eedf82}{
+\index{HardwareKonfiguration@{HardwareKonfiguration}!stationen@{stationen}}
+\index{stationen@{stationen}!HardwareKonfiguration@{HardwareKonfiguration}}
+\subsubsection[stationen]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf HardwareKonfiguration::stationen}\hspace{0.3cm}{\tt  \mbox{[}private\mbox{]}}}}
+\label{class_hardware_konfiguration_b474474dffdc4a8a5df5a422f3eedf82}
+
+
+\begin{Desc}
+\item[Enumerator: ]\par
+\begin{description}
+\index{StationenKey@{StationenKey}!HardwareKonfiguration@{HardwareKonfiguration}}\index{HardwareKonfiguration@{HardwareKonfiguration}!StationenKey@{StationenKey}}\item[{\em 
+\hypertarget{class_hardware_konfiguration_b474474dffdc4a8a5df5a422f3eedf82212c4c13e017416b291f5056be96579f}{
+StationenKey}
+\label{class_hardware_konfiguration_b474474dffdc4a8a5df5a422f3eedf82212c4c13e017416b291f5056be96579f}
+}]\index{typ@{typ}!HardwareKonfiguration@{HardwareKonfiguration}}\index{HardwareKonfiguration@{HardwareKonfiguration}!typ@{typ}}\item[{\em 
+\hypertarget{class_hardware_konfiguration_b474474dffdc4a8a5df5a422f3eedf82deca8cd52379f36d7f162330a9b7b059}{
+typ}
+\label{class_hardware_konfiguration_b474474dffdc4a8a5df5a422f3eedf82deca8cd52379f36d7f162330a9b7b059}
+}]\index{sim\_\-pin@{sim\_\-pin}!HardwareKonfiguration@{HardwareKonfiguration}}\index{HardwareKonfiguration@{HardwareKonfiguration}!sim\_\-pin@{sim\_\-pin}}\item[{\em 
+\hypertarget{class_hardware_konfiguration_b474474dffdc4a8a5df5a422f3eedf82d38d5c287e9bda8ab85ad3301449758e}{
+sim\_\-pin}
+\label{class_hardware_konfiguration_b474474dffdc4a8a5df5a422f3eedf82d38d5c287e9bda8ab85ad3301449758e}
+}]\index{sim\_\-puk@{sim\_\-puk}!HardwareKonfiguration@{HardwareKonfiguration}}\index{HardwareKonfiguration@{HardwareKonfiguration}!sim\_\-puk@{sim\_\-puk}}\item[{\em 
+\hypertarget{class_hardware_konfiguration_b474474dffdc4a8a5df5a422f3eedf82133b34c2195d4b5ecb8e021ebdf4eaee}{
+sim\_\-puk}
+\label{class_hardware_konfiguration_b474474dffdc4a8a5df5a422f3eedf82133b34c2195d4b5ecb8e021ebdf4eaee}
+}]\index{sms\_\-center@{sms\_\-center}!HardwareKonfiguration@{HardwareKonfiguration}}\index{HardwareKonfiguration@{HardwareKonfiguration}!sms\_\-center@{sms\_\-center}}\item[{\em 
+\hypertarget{class_hardware_konfiguration_b474474dffdc4a8a5df5a422f3eedf8256765f9294a988857e3bde31b257df36}{
+sms\_\-center}
+\label{class_hardware_konfiguration_b474474dffdc4a8a5df5a422f3eedf8256765f9294a988857e3bde31b257df36}
+}]\index{server\_\-ip@{server\_\-ip}!HardwareKonfiguration@{HardwareKonfiguration}}\index{HardwareKonfiguration@{HardwareKonfiguration}!server\_\-ip@{server\_\-ip}}\item[{\em 
+\hypertarget{class_hardware_konfiguration_b474474dffdc4a8a5df5a422f3eedf82718742b6ce1dae4e3cd18a223a8e5e97}{
+server\_\-ip}
+\label{class_hardware_konfiguration_b474474dffdc4a8a5df5a422f3eedf82718742b6ce1dae4e3cd18a223a8e5e97}
+}]\index{server\_\-port@{server\_\-port}!HardwareKonfiguration@{HardwareKonfiguration}}\index{HardwareKonfiguration@{HardwareKonfiguration}!server\_\-port@{server\_\-port}}\item[{\em 
+\hypertarget{class_hardware_konfiguration_b474474dffdc4a8a5df5a422f3eedf82deeb25d79a8e4668c005dc067f86cf1b}{
+server\_\-port}
+\label{class_hardware_konfiguration_b474474dffdc4a8a5df5a422f3eedf82deeb25d79a8e4668c005dc067f86cf1b}
+}]\index{gprs\_\-username@{gprs\_\-username}!HardwareKonfiguration@{HardwareKonfiguration}}\index{HardwareKonfiguration@{HardwareKonfiguration}!gprs\_\-username@{gprs\_\-username}}\item[{\em 
+\hypertarget{class_hardware_konfiguration_b474474dffdc4a8a5df5a422f3eedf82a29d25b167e61ad6beb6290da65b1366}{
+gprs\_\-username}
+\label{class_hardware_konfiguration_b474474dffdc4a8a5df5a422f3eedf82a29d25b167e61ad6beb6290da65b1366}
+}]\index{gprs\_\-pwd@{gprs\_\-pwd}!HardwareKonfiguration@{HardwareKonfiguration}}\index{HardwareKonfiguration@{HardwareKonfiguration}!gprs\_\-pwd@{gprs\_\-pwd}}\item[{\em 
+\hypertarget{class_hardware_konfiguration_b474474dffdc4a8a5df5a422f3eedf82a2a2e55678f7b2d07f9de9db5e119750}{
+gprs\_\-pwd}
+\label{class_hardware_konfiguration_b474474dffdc4a8a5df5a422f3eedf82a2a2e55678f7b2d07f9de9db5e119750}
+}]\index{ftp\_\-server@{ftp\_\-server}!HardwareKonfiguration@{HardwareKonfiguration}}\index{HardwareKonfiguration@{HardwareKonfiguration}!ftp\_\-server@{ftp\_\-server}}\item[{\em 
+\hypertarget{class_hardware_konfiguration_b474474dffdc4a8a5df5a422f3eedf82b423c44c3ed289818574d14f01be240a}{
+ftp\_\-server}
+\label{class_hardware_konfiguration_b474474dffdc4a8a5df5a422f3eedf82b423c44c3ed289818574d14f01be240a}
+}]\index{ftp\_\-username@{ftp\_\-username}!HardwareKonfiguration@{HardwareKonfiguration}}\index{HardwareKonfiguration@{HardwareKonfiguration}!ftp\_\-username@{ftp\_\-username}}\item[{\em 
+\hypertarget{class_hardware_konfiguration_b474474dffdc4a8a5df5a422f3eedf82ab39cf4dfe7aa8b9f832b086eacab135}{
+ftp\_\-username}
+\label{class_hardware_konfiguration_b474474dffdc4a8a5df5a422f3eedf82ab39cf4dfe7aa8b9f832b086eacab135}
+}]\index{ftp\_\-pwd@{ftp\_\-pwd}!HardwareKonfiguration@{HardwareKonfiguration}}\index{HardwareKonfiguration@{HardwareKonfiguration}!ftp\_\-pwd@{ftp\_\-pwd}}\item[{\em 
+\hypertarget{class_hardware_konfiguration_b474474dffdc4a8a5df5a422f3eedf82e271e0d5db9ad86bb8eb9ac63411b1d2}{
+ftp\_\-pwd}
+\label{class_hardware_konfiguration_b474474dffdc4a8a5df5a422f3eedf82e271e0d5db9ad86bb8eb9ac63411b1d2}
+}]\end{description}
+\end{Desc}
+
+
+
+Definition at line 50 of file hardwarekonfiguration.h.\hypertarget{class_hardware_konfiguration_f1a8517c9ae8204457ab7ea18fc85f21}{
+\index{HardwareKonfiguration@{HardwareKonfiguration}!streckentypen@{streckentypen}}
+\index{streckentypen@{streckentypen}!HardwareKonfiguration@{HardwareKonfiguration}}
+\subsubsection[streckentypen]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf HardwareKonfiguration::streckentypen}\hspace{0.3cm}{\tt  \mbox{[}private\mbox{]}}}}
+\label{class_hardware_konfiguration_f1a8517c9ae8204457ab7ea18fc85f21}
+
+
+\begin{Desc}
+\item[Enumerator: ]\par
+\begin{description}
+\index{Rennvelo@{Rennvelo}!HardwareKonfiguration@{HardwareKonfiguration}}\index{HardwareKonfiguration@{HardwareKonfiguration}!Rennvelo@{Rennvelo}}\item[{\em 
+\hypertarget{class_hardware_konfiguration_f1a8517c9ae8204457ab7ea18fc85f21704e6769f79c82fc33370d776e785b94}{
+Rennvelo}
+\label{class_hardware_konfiguration_f1a8517c9ae8204457ab7ea18fc85f21704e6769f79c82fc33370d776e785b94}
+}]\index{Mountainbike@{Mountainbike}!HardwareKonfiguration@{HardwareKonfiguration}}\index{HardwareKonfiguration@{HardwareKonfiguration}!Mountainbike@{Mountainbike}}\item[{\em 
+\hypertarget{class_hardware_konfiguration_f1a8517c9ae8204457ab7ea18fc85f216c6be4650488db4f8af0ac127dbaca9c}{
+Mountainbike}
+\label{class_hardware_konfiguration_f1a8517c9ae8204457ab7ea18fc85f216c6be4650488db4f8af0ac127dbaca9c}
+}]\index{Laufen@{Laufen}!HardwareKonfiguration@{HardwareKonfiguration}}\index{HardwareKonfiguration@{HardwareKonfiguration}!Laufen@{Laufen}}\item[{\em 
+\hypertarget{class_hardware_konfiguration_f1a8517c9ae8204457ab7ea18fc85f211972c02d95553929ffd297edae77b246}{
+Laufen}
+\label{class_hardware_konfiguration_f1a8517c9ae8204457ab7ea18fc85f211972c02d95553929ffd297edae77b246}
+}]\index{Walking@{Walking}!HardwareKonfiguration@{HardwareKonfiguration}}\index{HardwareKonfiguration@{HardwareKonfiguration}!Walking@{Walking}}\item[{\em 
+\hypertarget{class_hardware_konfiguration_f1a8517c9ae8204457ab7ea18fc85f212d829a254ad0ad9afeb0cb02cb06532a}{
+Walking}
+\label{class_hardware_konfiguration_f1a8517c9ae8204457ab7ea18fc85f212d829a254ad0ad9afeb0cb02cb06532a}
+}]\index{Langlauf@{Langlauf}!HardwareKonfiguration@{HardwareKonfiguration}}\index{HardwareKonfiguration@{HardwareKonfiguration}!Langlauf@{Langlauf}}\item[{\em 
+\hypertarget{class_hardware_konfiguration_f1a8517c9ae8204457ab7ea18fc85f21b39955714b52bd7eac1f2223eee2d5a2}{
+Langlauf}
+\label{class_hardware_konfiguration_f1a8517c9ae8204457ab7ea18fc85f21b39955714b52bd7eac1f2223eee2d5a2}
+}]\index{Inline@{Inline}!HardwareKonfiguration@{HardwareKonfiguration}}\index{HardwareKonfiguration@{HardwareKonfiguration}!Inline@{Inline}}\item[{\em 
+\hypertarget{class_hardware_konfiguration_f1a8517c9ae8204457ab7ea18fc85f21a7312808685728bae5efed47c1e00089}{
+Inline}
+\label{class_hardware_konfiguration_f1a8517c9ae8204457ab7ea18fc85f21a7312808685728bae5efed47c1e00089}
+}]\end{description}
+\end{Desc}
+
+
+
+Definition at line 53 of file hardwarekonfiguration.h.
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_hardware_konfiguration_2872e94ce344a468b351bd1e00353760}{
+\index{HardwareKonfiguration@{HardwareKonfiguration}!HardwareKonfiguration@{HardwareKonfiguration}}
+\index{HardwareKonfiguration@{HardwareKonfiguration}!HardwareKonfiguration@{HardwareKonfiguration}}
+\subsubsection[HardwareKonfiguration]{\setlength{\rightskip}{0pt plus 5cm}HardwareKonfiguration::HardwareKonfiguration ({\bf User} $\ast$ {\em user}, \/  QWidget $\ast$ {\em parent} = {\tt 0})}}
+\label{class_hardware_konfiguration_2872e94ce344a468b351bd1e00353760}
+
+
+Konstruktor. 
+
+
+
+Definition at line 38 of file hardwarekonfiguration.cpp.
+
+References Ui\_\-HardwareKonfigurationClass::ftpserverLabel, Ui\_\-HardwareKonfigurationClass::ftpuserLabel, funktion, User::getRaceAuthority(), Inline, Langlauf, Laufen, Mountainbike, Rennvelo, Ui\_\-HardwareKonfigurationClass::setupUi(), Ui\_\-HardwareKonfigurationClass::smsLineEdit, Ui\_\-HardwareKonfigurationClass::stationComboBox, Ui\_\-HardwareKonfigurationClass::streckenTreeWidget, ui, use\_\-gprs, and Walking.
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=369pt]{class_hardware_konfiguration_2872e94ce344a468b351bd1e00353760_cgraph}
+\end{center}
+\end{figure}
+\hypertarget{class_hardware_konfiguration_309954982d345e65f8ac5fa6c9489ce5}{
+\index{HardwareKonfiguration@{HardwareKonfiguration}!$\sim$HardwareKonfiguration@{$\sim$HardwareKonfiguration}}
+\index{$\sim$HardwareKonfiguration@{$\sim$HardwareKonfiguration}!HardwareKonfiguration@{HardwareKonfiguration}}
+\subsubsection[$\sim$HardwareKonfiguration]{\setlength{\rightskip}{0pt plus 5cm}HardwareKonfiguration::$\sim$HardwareKonfiguration ()}}
+\label{class_hardware_konfiguration_309954982d345e65f8ac5fa6c9489ce5}
+
+
+Destruktor. 
+
+
+
+Definition at line 147 of file hardwarekonfiguration.cpp.
+
+\subsection{Member Function Documentation}
+\hypertarget{class_hardware_konfiguration_dae436cb5061cb83f6b8fcd823ad79ae}{
+\index{HardwareKonfiguration@{HardwareKonfiguration}!getSelectedRennen@{getSelectedRennen}}
+\index{getSelectedRennen@{getSelectedRennen}!HardwareKonfiguration@{HardwareKonfiguration}}
+\subsubsection[getSelectedRennen]{\setlength{\rightskip}{0pt plus 5cm}QStringList HardwareKonfiguration::getSelectedRennen ()\hspace{0.3cm}{\tt  \mbox{[}private\mbox{]}}}}
+\label{class_hardware_konfiguration_dae436cb5061cb83f6b8fcd823ad79ae}
+
+
+ausgewählte Rennen im Baum bestimmen 
+
+
+
+Definition at line 191 of file hardwarekonfiguration.cpp.
+
+References Ui\_\-HardwareKonfigurationClass::streckenTreeWidget, and ui.
+
+Referenced by on\_\-okButton\_\-released(), and validation().\hypertarget{class_hardware_konfiguration_322f69fe2384198fd83509ae35353f75}{
+\index{HardwareKonfiguration@{HardwareKonfiguration}!validation@{validation}}
+\index{validation@{validation}!HardwareKonfiguration@{HardwareKonfiguration}}
+\subsubsection[validation]{\setlength{\rightskip}{0pt plus 5cm}bool HardwareKonfiguration::validation ()\hspace{0.3cm}{\tt  \mbox{[}private\mbox{]}}}}
+\label{class_hardware_konfiguration_322f69fe2384198fd83509ae35353f75}
+
+
+Validierung für den Dialog. 
+
+
+
+Definition at line 318 of file hardwarekonfiguration.cpp.
+
+References getSelectedRennen(), Ui\_\-HardwareKonfigurationClass::smsLineEdit, and ui.
+
+Referenced by on\_\-okButton\_\-released().
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=222pt]{class_hardware_konfiguration_322f69fe2384198fd83509ae35353f75_cgraph}
+\end{center}
+\end{figure}
+\hypertarget{class_hardware_konfiguration_26b0567a1972d8bb30dd3065cfc03b17}{
+\index{HardwareKonfiguration@{HardwareKonfiguration}!getSommertime@{getSommertime}}
+\index{getSommertime@{getSommertime}!HardwareKonfiguration@{HardwareKonfiguration}}
+\subsubsection[getSommertime]{\setlength{\rightskip}{0pt plus 5cm}QStringList HardwareKonfiguration::getSommertime ()\hspace{0.3cm}{\tt  \mbox{[}private\mbox{]}}}}
+\label{class_hardware_konfiguration_26b0567a1972d8bb30dd3065cfc03b17}
+
+
+aktuelle Sommerzeit aus der Datenbank lesen 
+
+
+
+Definition at line 154 of file hardwarekonfiguration.cpp.
+
+References Ui\_\-HardwareKonfigurationClass::streckenTreeWidget, and ui.
+
+Referenced by on\_\-okButton\_\-released().\hypertarget{class_hardware_konfiguration_eda81840a5d1f60c63eb9898e98dbaf8}{
+\index{HardwareKonfiguration@{HardwareKonfiguration}!on\_\-okButton\_\-released@{on\_\-okButton\_\-released}}
+\index{on\_\-okButton\_\-released@{on\_\-okButton\_\-released}!HardwareKonfiguration@{HardwareKonfiguration}}
+\subsubsection[on\_\-okButton\_\-released]{\setlength{\rightskip}{0pt plus 5cm}void HardwareKonfiguration::on\_\-okButton\_\-released ()\hspace{0.3cm}{\tt  \mbox{[}private, slot\mbox{]}}}}
+\label{class_hardware_konfiguration_eda81840a5d1f60c63eb9898e98dbaf8}
+
+
+Slot für OK-Button. 
+
+
+
+Definition at line 211 of file hardwarekonfiguration.cpp.
+
+References Ui\_\-HardwareKonfigurationClass::ausSpinBox, Ui\_\-HardwareKonfigurationClass::einSpinBox, funktion, getSelectedRennen(), getSommertime(), Ui\_\-HardwareKonfigurationClass::gprsCheckBox, Ui\_\-HardwareKonfigurationClass::smsLineEdit, Ui\_\-HardwareKonfigurationClass::stationComboBox, ui, and validation().\hypertarget{class_hardware_konfiguration_466e1fc199b46929f823e5ebab041854}{
+\index{HardwareKonfiguration@{HardwareKonfiguration}!on\_\-canButton\_\-released@{on\_\-canButton\_\-released}}
+\index{on\_\-canButton\_\-released@{on\_\-canButton\_\-released}!HardwareKonfiguration@{HardwareKonfiguration}}
+\subsubsection[on\_\-canButton\_\-released]{\setlength{\rightskip}{0pt plus 5cm}void HardwareKonfiguration::on\_\-canButton\_\-released ()\hspace{0.3cm}{\tt  \mbox{[}private, slot\mbox{]}}}}
+\label{class_hardware_konfiguration_466e1fc199b46929f823e5ebab041854}
+
+
+Slot für Abbrechen-Button. 
+
+
+
+Definition at line 300 of file hardwarekonfiguration.cpp.\hypertarget{class_hardware_konfiguration_7a08d07a1224b1f4b6e6af2366685463}{
+\index{HardwareKonfiguration@{HardwareKonfiguration}!on\_\-streckenTreeWidget\_\-currentItemChanged@{on\_\-streckenTreeWidget\_\-currentItemChanged}}
+\index{on\_\-streckenTreeWidget\_\-currentItemChanged@{on\_\-streckenTreeWidget\_\-currentItemChanged}!HardwareKonfiguration@{HardwareKonfiguration}}
+\subsubsection[on\_\-streckenTreeWidget\_\-currentItemChanged]{\setlength{\rightskip}{0pt plus 5cm}void HardwareKonfiguration::on\_\-streckenTreeWidget\_\-currentItemChanged (QTreeWidgetItem $\ast$ {\em current}, \/  QTreeWidgetItem $\ast$ {\em previous})\hspace{0.3cm}{\tt  \mbox{[}private, slot\mbox{]}}}}
+\label{class_hardware_konfiguration_7a08d07a1224b1f4b6e6af2366685463}
+
+
+Slot für Änderungen in der Baumauswahl. 
+
+
+
+Definition at line 307 of file hardwarekonfiguration.cpp.
+
+References Ui\_\-HardwareKonfigurationClass::streckenTreeWidget, and ui.
+
+\subsection{Member Data Documentation}
+\hypertarget{class_hardware_konfiguration_d260085054ce59016c19a63b774e9957}{
+\index{HardwareKonfiguration@{HardwareKonfiguration}!use\_\-gprs@{use\_\-gprs}}
+\index{use\_\-gprs@{use\_\-gprs}!HardwareKonfiguration@{HardwareKonfiguration}}
+\subsubsection[use\_\-gprs]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf HardwareKonfiguration::use\_\-gprs}\hspace{0.3cm}{\tt  \mbox{[}private\mbox{]}}}}
+\label{class_hardware_konfiguration_d260085054ce59016c19a63b774e9957}
+
+
+
+
+Definition at line 56 of file hardwarekonfiguration.h.
+
+Referenced by HardwareKonfiguration().\hypertarget{class_hardware_konfiguration_a715366a612f28c1dab5e12d326ad5d6}{
+\index{HardwareKonfiguration@{HardwareKonfiguration}!funktion@{funktion}}
+\index{funktion@{funktion}!HardwareKonfiguration@{HardwareKonfiguration}}
+\subsubsection[funktion]{\setlength{\rightskip}{0pt plus 5cm}QString {\bf HardwareKonfiguration::funktion}\hspace{0.3cm}{\tt  \mbox{[}private\mbox{]}}}}
+\label{class_hardware_konfiguration_a715366a612f28c1dab5e12d326ad5d6}
+
+
+
+
+Definition at line 57 of file hardwarekonfiguration.h.
+
+Referenced by HardwareKonfiguration(), and on\_\-okButton\_\-released().\hypertarget{class_hardware_konfiguration_aa2f6fe4bcc16390f4ad5a6cfbbd5001}{
+\index{HardwareKonfiguration@{HardwareKonfiguration}!ui@{ui}}
+\index{ui@{ui}!HardwareKonfiguration@{HardwareKonfiguration}}
+\subsubsection[ui]{\setlength{\rightskip}{0pt plus 5cm}{\bf Ui::HardwareKonfigurationClass} {\bf HardwareKonfiguration::ui}\hspace{0.3cm}{\tt  \mbox{[}private\mbox{]}}}}
+\label{class_hardware_konfiguration_aa2f6fe4bcc16390f4ad5a6cfbbd5001}
+
+
+
+
+Definition at line 59 of file hardwarekonfiguration.h.
+
+Referenced by getSelectedRennen(), getSommertime(), HardwareKonfiguration(), on\_\-okButton\_\-released(), on\_\-streckenTreeWidget\_\-currentItemChanged(), and validation().
+
+The documentation for this class was generated from the following files:\begin{CompactItemize}
+\item 
+\hyperlink{hardwarekonfiguration_8h}{hardwarekonfiguration.h}\item 
+\hyperlink{hardwarekonfiguration_8cpp}{hardwarekonfiguration.cpp}\end{CompactItemize}

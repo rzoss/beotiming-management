@@ -1,0 +1,5 @@
+<area shape="rect" href="$logondialog_8cpp.html" title="Dieser Dialog ist das Login des Programms. Es dient zur Authentifizierung des Benutzers..." alt="" coords="5,80,117,107">
+<area shape="rect" href="$md5_8cpp.html" title="Diese Funktionen liefern die Moeglichkeit, einen MD5&#45;Hash eines beliebigen String..." alt="" coords="141,80,240,107">
+<area shape="rect" href="$neueruserdialog_8cpp.html" title="Dieser Dialog dient zum erstellen eines neuen Benutzers." alt="" coords="264,80,400,107">
+<area shape="rect" href="$passwordchangedialog_8cpp.html" title="Dieser Dialog dient zum aendern des Passworts des angemeldeten Benutzers." alt="" coords="424,80,600,107">
+<area shape="rect" href="$rechteanpassen_8cpp.html" title="Dieser Dialog dient zum anpassen der Rechte eines beliebigen Benutzers." alt="" coords="624,80,763,107">

@@ -1,0 +1,229 @@
+\hypertarget{class_neuer_user_dialog}{
+\section{NeuerUserDialog Class Reference}
+\label{class_neuer_user_dialog}\index{NeuerUserDialog@{NeuerUserDialog}}
+}
+Dieser Dialog dient zum erstellen eines neuen Benutzers.  
+
+
+{\tt \#include $<$neueruserdialog.h$>$}
+
+Collaboration diagram for NeuerUserDialog:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=113pt]{class_neuer_user_dialog__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{CompactItemize}
+\item 
+\hyperlink{class_neuer_user_dialog_6042fa6723528bcfb392d186079eda52}{NeuerUserDialog} (\hyperlink{class_user}{User} $\ast$user, QWidget $\ast$parent=0)
+\begin{CompactList}\small\item\em Konstruktor. \item\end{CompactList}\item 
+\hyperlink{class_neuer_user_dialog_43abc0928f1c44d630543df0af87b99a}{$\sim$NeuerUserDialog} ()
+\begin{CompactList}\small\item\em Destruktor. \item\end{CompactList}\end{CompactItemize}
+\subsection*{Private Types}
+\begin{CompactItemize}
+\item 
+enum \hyperlink{class_neuer_user_dialog_082ce8ccd9b1a7c9856445d43ce793cc}{streckentypen} \{ \par
+\hyperlink{class_neuer_user_dialog_082ce8ccd9b1a7c9856445d43ce793cc2d729f0c0aed41c25543a552440cbe3e}{Rennvelo} = 1, 
+\hyperlink{class_neuer_user_dialog_082ce8ccd9b1a7c9856445d43ce793cc3cefb34589d488d0af6b64bd2b7906fb}{Mountainbike} = 2, 
+\hyperlink{class_neuer_user_dialog_082ce8ccd9b1a7c9856445d43ce793cc4d2e41951b6b3ca8195716d1c21b6280}{Laufen} = 3, 
+\hyperlink{class_neuer_user_dialog_082ce8ccd9b1a7c9856445d43ce793cc9651254975c1086a510915966b1f4e2b}{Walking} = 4, 
+\par
+\hyperlink{class_neuer_user_dialog_082ce8ccd9b1a7c9856445d43ce793cce9a227562de07b9e59787cf4944f55e9}{Langlauf} = 5, 
+\hyperlink{class_neuer_user_dialog_082ce8ccd9b1a7c9856445d43ce793ccaf72dd6270ab5200ace99b5c70da5772}{Inline} = 6
+ \}
+\end{CompactItemize}
+\subsection*{Private Slots}
+\begin{CompactItemize}
+\item 
+void \hyperlink{class_neuer_user_dialog_8efa7a01186a48c4b15abb986fc3388b}{on\_\-okButton\_\-released} ()
+\begin{CompactList}\small\item\em Slot für OK-Button. \item\end{CompactList}\item 
+void \hyperlink{class_neuer_user_dialog_fd1184d0212d7fda723c67a29d09093a}{on\_\-canButton\_\-released} ()
+\begin{CompactList}\small\item\em Slot für Abbrechen-Button. \item\end{CompactList}\end{CompactItemize}
+\subsection*{Private Member Functions}
+\begin{CompactItemize}
+\item 
+bool \hyperlink{class_neuer_user_dialog_6b115697c371d742e48926b7f084ef5e}{validation} ()
+\begin{CompactList}\small\item\em Validierung der Einträge. \item\end{CompactList}\end{CompactItemize}
+\subsection*{Private Attributes}
+\begin{CompactItemize}
+\item 
+\hyperlink{class_ui_1_1_neuer_user_dialog_class}{Ui::NeuerUserDialogClass} \hyperlink{class_neuer_user_dialog_3f6bb409584c450d6ca87973eb0c31b1}{ui}
+\item 
+\hyperlink{class_user}{User} $\ast$ \hyperlink{class_neuer_user_dialog_4f0a500dbb82eb6f8c7ca521aab8f332}{pUser}
+\item 
+int \hyperlink{class_neuer_user_dialog_acbf834639fcd4aef2b62f69ea594eac}{usertype\_\-offset}
+\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+Dieser Dialog dient zum erstellen eines neuen Benutzers. 
+
+Definition at line 40 of file neueruserdialog.h.
+
+\subsection{Member Enumeration Documentation}
+\hypertarget{class_neuer_user_dialog_082ce8ccd9b1a7c9856445d43ce793cc}{
+\index{NeuerUserDialog@{NeuerUserDialog}!streckentypen@{streckentypen}}
+\index{streckentypen@{streckentypen}!NeuerUserDialog@{NeuerUserDialog}}
+\subsubsection[streckentypen]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf NeuerUserDialog::streckentypen}\hspace{0.3cm}{\tt  \mbox{[}private\mbox{]}}}}
+\label{class_neuer_user_dialog_082ce8ccd9b1a7c9856445d43ce793cc}
+
+
+\begin{Desc}
+\item[Enumerator: ]\par
+\begin{description}
+\index{Rennvelo@{Rennvelo}!NeuerUserDialog@{NeuerUserDialog}}\index{NeuerUserDialog@{NeuerUserDialog}!Rennvelo@{Rennvelo}}\item[{\em 
+\hypertarget{class_neuer_user_dialog_082ce8ccd9b1a7c9856445d43ce793cc2d729f0c0aed41c25543a552440cbe3e}{
+Rennvelo}
+\label{class_neuer_user_dialog_082ce8ccd9b1a7c9856445d43ce793cc2d729f0c0aed41c25543a552440cbe3e}
+}]\index{Mountainbike@{Mountainbike}!NeuerUserDialog@{NeuerUserDialog}}\index{NeuerUserDialog@{NeuerUserDialog}!Mountainbike@{Mountainbike}}\item[{\em 
+\hypertarget{class_neuer_user_dialog_082ce8ccd9b1a7c9856445d43ce793cc3cefb34589d488d0af6b64bd2b7906fb}{
+Mountainbike}
+\label{class_neuer_user_dialog_082ce8ccd9b1a7c9856445d43ce793cc3cefb34589d488d0af6b64bd2b7906fb}
+}]\index{Laufen@{Laufen}!NeuerUserDialog@{NeuerUserDialog}}\index{NeuerUserDialog@{NeuerUserDialog}!Laufen@{Laufen}}\item[{\em 
+\hypertarget{class_neuer_user_dialog_082ce8ccd9b1a7c9856445d43ce793cc4d2e41951b6b3ca8195716d1c21b6280}{
+Laufen}
+\label{class_neuer_user_dialog_082ce8ccd9b1a7c9856445d43ce793cc4d2e41951b6b3ca8195716d1c21b6280}
+}]\index{Walking@{Walking}!NeuerUserDialog@{NeuerUserDialog}}\index{NeuerUserDialog@{NeuerUserDialog}!Walking@{Walking}}\item[{\em 
+\hypertarget{class_neuer_user_dialog_082ce8ccd9b1a7c9856445d43ce793cc9651254975c1086a510915966b1f4e2b}{
+Walking}
+\label{class_neuer_user_dialog_082ce8ccd9b1a7c9856445d43ce793cc9651254975c1086a510915966b1f4e2b}
+}]\index{Langlauf@{Langlauf}!NeuerUserDialog@{NeuerUserDialog}}\index{NeuerUserDialog@{NeuerUserDialog}!Langlauf@{Langlauf}}\item[{\em 
+\hypertarget{class_neuer_user_dialog_082ce8ccd9b1a7c9856445d43ce793cce9a227562de07b9e59787cf4944f55e9}{
+Langlauf}
+\label{class_neuer_user_dialog_082ce8ccd9b1a7c9856445d43ce793cce9a227562de07b9e59787cf4944f55e9}
+}]\index{Inline@{Inline}!NeuerUserDialog@{NeuerUserDialog}}\index{NeuerUserDialog@{NeuerUserDialog}!Inline@{Inline}}\item[{\em 
+\hypertarget{class_neuer_user_dialog_082ce8ccd9b1a7c9856445d43ce793ccaf72dd6270ab5200ace99b5c70da5772}{
+Inline}
+\label{class_neuer_user_dialog_082ce8ccd9b1a7c9856445d43ce793ccaf72dd6270ab5200ace99b5c70da5772}
+}]\end{description}
+\end{Desc}
+
+
+
+Definition at line 49 of file neueruserdialog.h.
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_neuer_user_dialog_6042fa6723528bcfb392d186079eda52}{
+\index{NeuerUserDialog@{NeuerUserDialog}!NeuerUserDialog@{NeuerUserDialog}}
+\index{NeuerUserDialog@{NeuerUserDialog}!NeuerUserDialog@{NeuerUserDialog}}
+\subsubsection[NeuerUserDialog]{\setlength{\rightskip}{0pt plus 5cm}NeuerUserDialog::NeuerUserDialog ({\bf User} $\ast$ {\em user}, \/  QWidget $\ast$ {\em parent} = {\tt 0})}}
+\label{class_neuer_user_dialog_6042fa6723528bcfb392d186079eda52}
+
+
+Konstruktor. 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em user}]Pointer auf den angemeldeten Benutzer \item[{\em parent}]Pointer auf das aufrufende Objekt \end{description}
+\end{Desc}
+
+
+Definition at line 42 of file neueruserdialog.cpp.
+
+References User::administrator, Ui\_\-NeuerUserDialogClass::emailLineEdit, User::getRaceAuthority(), User::getUsertype(), Inline, Langlauf, Laufen, User::manager, Mountainbike, Ui\_\-NeuerUserDialogClass::nameLineEdit, pUser, Rennvelo, Ui\_\-NeuerUserDialogClass::setupUi(), Ui\_\-NeuerUserDialogClass::streckenTreeWidget, Ui\_\-NeuerUserDialogClass::typComboBox, ui, Ui\_\-NeuerUserDialogClass::usernameLineEdit, User::usertype, usertype\_\-offset, and Walking.
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=321pt]{class_neuer_user_dialog_6042fa6723528bcfb392d186079eda52_cgraph}
+\end{center}
+\end{figure}
+\hypertarget{class_neuer_user_dialog_43abc0928f1c44d630543df0af87b99a}{
+\index{NeuerUserDialog@{NeuerUserDialog}!$\sim$NeuerUserDialog@{$\sim$NeuerUserDialog}}
+\index{$\sim$NeuerUserDialog@{$\sim$NeuerUserDialog}!NeuerUserDialog@{NeuerUserDialog}}
+\subsubsection[$\sim$NeuerUserDialog]{\setlength{\rightskip}{0pt plus 5cm}NeuerUserDialog::$\sim$NeuerUserDialog ()}}
+\label{class_neuer_user_dialog_43abc0928f1c44d630543df0af87b99a}
+
+
+Destruktor. 
+
+
+
+Definition at line 165 of file neueruserdialog.cpp.
+
+\subsection{Member Function Documentation}
+\hypertarget{class_neuer_user_dialog_6b115697c371d742e48926b7f084ef5e}{
+\index{NeuerUserDialog@{NeuerUserDialog}!validation@{validation}}
+\index{validation@{validation}!NeuerUserDialog@{NeuerUserDialog}}
+\subsubsection[validation]{\setlength{\rightskip}{0pt plus 5cm}bool NeuerUserDialog::validation ()\hspace{0.3cm}{\tt  \mbox{[}private\mbox{]}}}}
+\label{class_neuer_user_dialog_6b115697c371d742e48926b7f084ef5e}
+
+
+Validierung der Einträge. 
+
+
+
+Definition at line 253 of file neueruserdialog.cpp.
+
+References Ui\_\-NeuerUserDialogClass::emailLineEdit, Ui\_\-NeuerUserDialogClass::nameLineEdit, Ui\_\-NeuerUserDialogClass::pwdLineEdit, Ui\_\-NeuerUserDialogClass::pwdwLineEdit, ui, and Ui\_\-NeuerUserDialogClass::usernameLineEdit.
+
+Referenced by on\_\-okButton\_\-released().\hypertarget{class_neuer_user_dialog_8efa7a01186a48c4b15abb986fc3388b}{
+\index{NeuerUserDialog@{NeuerUserDialog}!on\_\-okButton\_\-released@{on\_\-okButton\_\-released}}
+\index{on\_\-okButton\_\-released@{on\_\-okButton\_\-released}!NeuerUserDialog@{NeuerUserDialog}}
+\subsubsection[on\_\-okButton\_\-released]{\setlength{\rightskip}{0pt plus 5cm}void NeuerUserDialog::on\_\-okButton\_\-released ()\hspace{0.3cm}{\tt  \mbox{[}private, slot\mbox{]}}}}
+\label{class_neuer_user_dialog_8efa7a01186a48c4b15abb986fc3388b}
+
+
+Slot für OK-Button. 
+
+
+
+Definition at line 173 of file neueruserdialog.cpp.
+
+References Ui\_\-NeuerUserDialogClass::emailLineEdit, md5\_\-buffer(), Ui\_\-NeuerUserDialogClass::nameLineEdit, User::password, pUser, Ui\_\-NeuerUserDialogClass::pwdLineEdit, Ui\_\-NeuerUserDialogClass::pwdwLineEdit, Ui\_\-NeuerUserDialogClass::streckenTreeWidget, Ui\_\-NeuerUserDialogClass::typComboBox, ui, Ui\_\-NeuerUserDialogClass::usernameLineEdit, usertype\_\-offset, and validation().\hypertarget{class_neuer_user_dialog_fd1184d0212d7fda723c67a29d09093a}{
+\index{NeuerUserDialog@{NeuerUserDialog}!on\_\-canButton\_\-released@{on\_\-canButton\_\-released}}
+\index{on\_\-canButton\_\-released@{on\_\-canButton\_\-released}!NeuerUserDialog@{NeuerUserDialog}}
+\subsubsection[on\_\-canButton\_\-released]{\setlength{\rightskip}{0pt plus 5cm}void NeuerUserDialog::on\_\-canButton\_\-released ()\hspace{0.3cm}{\tt  \mbox{[}private, slot\mbox{]}}}}
+\label{class_neuer_user_dialog_fd1184d0212d7fda723c67a29d09093a}
+
+
+Slot für Abbrechen-Button. 
+
+
+
+Definition at line 245 of file neueruserdialog.cpp.
+
+\subsection{Member Data Documentation}
+\hypertarget{class_neuer_user_dialog_3f6bb409584c450d6ca87973eb0c31b1}{
+\index{NeuerUserDialog@{NeuerUserDialog}!ui@{ui}}
+\index{ui@{ui}!NeuerUserDialog@{NeuerUserDialog}}
+\subsubsection[ui]{\setlength{\rightskip}{0pt plus 5cm}{\bf Ui::NeuerUserDialogClass} {\bf NeuerUserDialog::ui}\hspace{0.3cm}{\tt  \mbox{[}private\mbox{]}}}}
+\label{class_neuer_user_dialog_3f6bb409584c450d6ca87973eb0c31b1}
+
+
+
+
+Definition at line 51 of file neueruserdialog.h.
+
+Referenced by NeuerUserDialog(), on\_\-okButton\_\-released(), and validation().\hypertarget{class_neuer_user_dialog_4f0a500dbb82eb6f8c7ca521aab8f332}{
+\index{NeuerUserDialog@{NeuerUserDialog}!pUser@{pUser}}
+\index{pUser@{pUser}!NeuerUserDialog@{NeuerUserDialog}}
+\subsubsection[pUser]{\setlength{\rightskip}{0pt plus 5cm}{\bf User}$\ast$ {\bf NeuerUserDialog::pUser}\hspace{0.3cm}{\tt  \mbox{[}private\mbox{]}}}}
+\label{class_neuer_user_dialog_4f0a500dbb82eb6f8c7ca521aab8f332}
+
+
+
+
+Definition at line 52 of file neueruserdialog.h.
+
+Referenced by NeuerUserDialog(), and on\_\-okButton\_\-released().\hypertarget{class_neuer_user_dialog_acbf834639fcd4aef2b62f69ea594eac}{
+\index{NeuerUserDialog@{NeuerUserDialog}!usertype\_\-offset@{usertype\_\-offset}}
+\index{usertype\_\-offset@{usertype\_\-offset}!NeuerUserDialog@{NeuerUserDialog}}
+\subsubsection[usertype\_\-offset]{\setlength{\rightskip}{0pt plus 5cm}int {\bf NeuerUserDialog::usertype\_\-offset}\hspace{0.3cm}{\tt  \mbox{[}private\mbox{]}}}}
+\label{class_neuer_user_dialog_acbf834639fcd4aef2b62f69ea594eac}
+
+
+
+
+Definition at line 53 of file neueruserdialog.h.
+
+Referenced by NeuerUserDialog(), and on\_\-okButton\_\-released().
+
+The documentation for this class was generated from the following files:\begin{CompactItemize}
+\item 
+\hyperlink{neueruserdialog_8h}{neueruserdialog.h}\item 
+\hyperlink{neueruserdialog_8cpp}{neueruserdialog.cpp}\end{CompactItemize}

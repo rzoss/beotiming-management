@@ -1,0 +1,1057 @@
+\hypertarget{class_b_e_o___timing}{
+\section{BEO\_\-Timing Class Reference}
+\label{class_b_e_o___timing}\index{BEO\_\-Timing@{BEO\_\-Timing}}
+}
+Hauptklasse der Applikation.  
+
+
+{\tt \#include $<$beo\_\-timing.h$>$}
+
+Collaboration diagram for BEO\_\-Timing:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{class_b_e_o___timing__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Slots}
+\begin{CompactItemize}
+\item 
+void \hyperlink{class_b_e_o___timing_454b16d1cfe5763b0812114e82108e55}{Tree\_\-Build} ()
+\begin{CompactList}\small\item\em Füllt die Baumansicht mit Ihalt, entsprechend der Benutzerrechte. \item\end{CompactList}\end{CompactItemize}
+\subsection*{Public Member Functions}
+\begin{CompactItemize}
+\item 
+\hyperlink{class_b_e_o___timing_1adf7a002a9712fefe2f68007d2112e9}{BEO\_\-Timing} (QSplashScreen $\ast$splash, QApplication $\ast$\hyperlink{class_b_e_o___timing_8d2d841d6eb959c49a406ecebeb3374d}{a}, QWidget $\ast$parent=0)
+\begin{CompactList}\small\item\em Konstruktor. \item\end{CompactList}\item 
+\hyperlink{class_b_e_o___timing_1a251548e7f861c3a74fe34941586519}{$\sim$BEO\_\-Timing} ()
+\begin{CompactList}\small\item\em Destruktor. \item\end{CompactList}\item 
+void \hyperlink{class_b_e_o___timing_b54fe6db69d9304c6c27bf3b4c253196}{Read\_\-Race} (int StreckenKey)
+\begin{CompactList}\small\item\em Stellt die Rangliste dar. \item\end{CompactList}\item 
+void \hyperlink{class_b_e_o___timing_cd19a9b93fb9492e5ed537a8bc15af45}{Tree\_\-Settings} ()
+\begin{CompactList}\small\item\em Bereitet die Baumansicht zur Darstellung vor. \item\end{CompactList}\item 
+void \hyperlink{class_b_e_o___timing_03a5745ceba3fd3d69f9a0ea722f7e51}{addRow} (int columns)
+\item 
+QString \hyperlink{class_b_e_o___timing_4ca53b436da6fdf16737147cfaf69f87}{getTimeCount} (int StreckenKey)
+\begin{CompactList}\small\item\em Bestimmt die Anzahl Fahrzeiten für eine Strecke. \item\end{CompactList}\end{CompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{CompactItemize}
+\item 
+static void \hyperlink{class_b_e_o___timing_1f2db201ed52a7cd88c0b7b3c2113f2f}{updateUserStatus} (QString username)
+\item 
+static void \hyperlink{class_b_e_o___timing_394c0e847c9a363fd1eb8c1e00404115}{updateRFID} (QString rfid)
+\item 
+static void \hyperlink{class_b_e_o___timing_ab6e90f89fdd1a266ef14556a97c4212}{updateMessage} (QString message)
+\end{CompactItemize}
+\subsection*{Protected Attributes}
+\begin{CompactItemize}
+\item 
+\hyperlink{class_rechte_anpassen}{RechteAnpassen} $\ast$ \hyperlink{class_b_e_o___timing_19f749ab5e005801517ec98286a89596}{rechte}
+\item 
+\hyperlink{class_logfile_lesen_dialog}{LogfileLesenDialog} $\ast$ \hyperlink{class_b_e_o___timing_b8cfb6b1d41a21e54498a183eef54651}{logfile}
+\item 
+\hyperlink{class_hardware_konfiguration}{HardwareKonfiguration} $\ast$ \hyperlink{class_b_e_o___timing_8abbf93b70915e725738223a587cb42d}{config}
+\item 
+\hyperlink{class_neuer_user_dialog}{NeuerUserDialog} $\ast$ \hyperlink{class_b_e_o___timing_dbc64dafa7003517063029cd10e2b583}{newUser}
+\item 
+\hyperlink{class_password_change_dialog}{PasswordChangeDialog} $\ast$ \hyperlink{class_b_e_o___timing_00ca0d5e67f1d99118b529b9a9cbed9f}{pwd}
+\item 
+\hyperlink{class_neues_rennen_dialog}{NeuesRennenDialog} $\ast$ \hyperlink{class_b_e_o___timing_4a79dc06af7ae3a6f89459062e2a7b85}{neu}
+\end{CompactItemize}
+\subsection*{Private Types}
+\begin{CompactItemize}
+\item 
+enum \hyperlink{class_b_e_o___timing_83717794a488147bbcea59aceb9bd0c6}{streckentypen} \{ \par
+\hyperlink{class_b_e_o___timing_83717794a488147bbcea59aceb9bd0c6612dddb59489702baa260ec5a8d465d0}{Rennvelo} = 1, 
+\hyperlink{class_b_e_o___timing_83717794a488147bbcea59aceb9bd0c6013652036599c88cc6d898b0b747a489}{Mountainbike} = 2, 
+\hyperlink{class_b_e_o___timing_83717794a488147bbcea59aceb9bd0c62594018512b9d035dea2d72721d50744}{Laufen} = 3, 
+\hyperlink{class_b_e_o___timing_83717794a488147bbcea59aceb9bd0c6b7cfbcb7a8fa64617133990c5c482f3a}{Walking} = 4, 
+\par
+\hyperlink{class_b_e_o___timing_83717794a488147bbcea59aceb9bd0c64da7c10b2bbac1b2b31d96560b844e7b}{Langlauf} = 5, 
+\hyperlink{class_b_e_o___timing_83717794a488147bbcea59aceb9bd0c6db090685ad135c3b151134f9db436620}{Inline} = 6
+ \}
+\item 
+enum \hyperlink{class_b_e_o___timing_d9ee9a58f0522671aebfe86b4987c738}{teilnehmer} \{ \par
+\hyperlink{class_b_e_o___timing_d9ee9a58f0522671aebfe86b4987c738808daf1f793b19f21881f2378c17188e}{Name}, 
+\hyperlink{class_b_e_o___timing_d9ee9a58f0522671aebfe86b4987c7388ae8e43cc5ad0b6ad4fcfc160e78209e}{Vorname}, 
+\hyperlink{class_b_e_o___timing_d9ee9a58f0522671aebfe86b4987c738ba90e2c7f4fe3eb4c15d4e9a4d5dcdfa}{Adresse}, 
+\hyperlink{class_b_e_o___timing_d9ee9a58f0522671aebfe86b4987c7383519de2261dc99147e20f93cbed77333}{PLZ}, 
+\par
+\hyperlink{class_b_e_o___timing_d9ee9a58f0522671aebfe86b4987c738af409b3aec51720698d932d7ff0e5056}{Ort}, 
+\hyperlink{class_b_e_o___timing_d9ee9a58f0522671aebfe86b4987c7380d2bf52d229a3ca79e7d2564487b1dcd}{Nationalitaet}, 
+\hyperlink{class_b_e_o___timing_d9ee9a58f0522671aebfe86b4987c73874acee0490dd3156d8da39a5bb7c80f5}{Jahrgang}, 
+\hyperlink{class_b_e_o___timing_d9ee9a58f0522671aebfe86b4987c73877e33a9512a1e78621d2cb6e97b93a1f}{Geschlecht}, 
+\par
+\hyperlink{class_b_e_o___timing_d9ee9a58f0522671aebfe86b4987c738496b99d0f720dfcd278723b4515d1d31}{Email}, 
+\hyperlink{class_b_e_o___timing_d9ee9a58f0522671aebfe86b4987c738743223bd27bbd8bbc3edf0744b79c195}{Telefon}, 
+\hyperlink{class_b_e_o___timing_d9ee9a58f0522671aebfe86b4987c738d327629bc2f966890b341590f242a38c}{Mobile}, 
+\hyperlink{class_b_e_o___timing_d9ee9a58f0522671aebfe86b4987c738fc827ac2c81d4ecacf7c548aeb04862d}{Team\_\-Club}, 
+\par
+\hyperlink{class_b_e_o___timing_d9ee9a58f0522671aebfe86b4987c7384c3237e0985523dc550990299a015121}{Kategorie}, 
+\hyperlink{class_b_e_o___timing_d9ee9a58f0522671aebfe86b4987c738fddfb13341f6add1048f497cc312feb2}{Fahrzeit}, 
+\hyperlink{class_b_e_o___timing_d9ee9a58f0522671aebfe86b4987c7387b1fdabc8963eb07a28fbfe34b74510b}{Rueckstand}, 
+\hyperlink{class_b_e_o___timing_d9ee9a58f0522671aebfe86b4987c738b37056e809f1ac729fb04016b00c9d4e}{RFID\_\-SNR}, 
+\par
+\hyperlink{class_b_e_o___timing_d9ee9a58f0522671aebfe86b4987c738461715c513041d4a79d9ecf6fea24c66}{StreckenKey}, 
+\hyperlink{class_b_e_o___timing_d9ee9a58f0522671aebfe86b4987c7386b9d2c06f139583bd0d3e762d44d3e38}{TimeID}, 
+\hyperlink{class_b_e_o___timing_d9ee9a58f0522671aebfe86b4987c7386d9a3c79ea6149bad6aa9565c35c05c9}{TimeKey}, 
+\hyperlink{class_b_e_o___timing_d9ee9a58f0522671aebfe86b4987c73813314225bf181333cf505eb2337aaf97}{TeilnehmerKey}
+ \}
+\end{CompactItemize}
+\subsection*{Private Slots}
+\begin{CompactItemize}
+\item 
+void \hyperlink{class_b_e_o___timing_e6ea4891e62ef27156bba2ddec60683a}{Tree\_\-Changed} ()
+\begin{CompactList}\small\item\em Reagiert auf eine Änderung der Auswahl im Baum. \item\end{CompactList}\item 
+void \hyperlink{class_b_e_o___timing_c854db88175caa8572dd15831b4bfb18}{Table\_\-Edit} ()
+\begin{CompactList}\small\item\em Aufrufen des TableEdit-Dialogs mit den richtigen Parametern. \item\end{CompactList}\item 
+void \hyperlink{class_b_e_o___timing_b3d37415fce4b586bca4397bd790105c}{checkRFID} ()
+\begin{CompactList}\small\item\em Prüfen ob eine RFID-Karte im Feld ist. \item\end{CompactList}\item 
+void \hyperlink{class_b_e_o___timing_6695ca0572c0a4484d2926c16a3f477b}{checkDB} ()
+\begin{CompactList}\small\item\em Datenbankverbindung ueberpruefen. \item\end{CompactList}\item 
+void \hyperlink{class_b_e_o___timing_6836bffd46ffdbf81149f4e245435731}{NeuesRennen} ()
+\begin{CompactList}\small\item\em Aufrufen des NeuesRennen-Dialogs. \item\end{CompactList}\item 
+void \hyperlink{class_b_e_o___timing_c04ab99954514a018e78de4b0224cdb5}{exportToCsv} ()
+\begin{CompactList}\small\item\em Exportieren der Rangliste im CSV-Format. \item\end{CompactList}\item 
+void \hyperlink{class_b_e_o___timing_b705f7916ae9647060ea70c1e8fb60d8}{changePwd} ()
+\begin{CompactList}\small\item\em Passwort ändern Dialog öffnen. \item\end{CompactList}\item 
+void \hyperlink{class_b_e_o___timing_1ae33dd83b22ab12aed7c68028ad363a}{neuerUser} ()
+\begin{CompactList}\small\item\em Neuer Benutzer - Dialog öffnen. \item\end{CompactList}\item 
+void \hyperlink{class_b_e_o___timing_c8299f8565050c6390965b2a1df80ab0}{buildConfiguration} ()
+\begin{CompactList}\small\item\em Konfiguration erstellen - Dialog öffnen. \item\end{CompactList}\item 
+void \hyperlink{class_b_e_o___timing_0e2af5a5752098ca296327f4f41bf2c6}{readLogFile} ()
+\begin{CompactList}\small\item\em Log-Datei Lesen - Dialog öffnen. \item\end{CompactList}\item 
+void \hyperlink{class_b_e_o___timing_92ea80de324e788dbc928e655b70e631}{rechteAnpassen} ()
+\begin{CompactList}\small\item\em Benutzerreche anpassen - Dialog öffnen. \item\end{CompactList}\item 
+void \hyperlink{class_b_e_o___timing_2f021b28df0eb948aa69146ab5631c02}{about} ()
+\begin{CompactList}\small\item\em About - Dialog der Managementsoftware anzeigen. \item\end{CompactList}\item 
+void \hyperlink{class_b_e_o___timing_d303ff34c6d33593cb57e1fc1881d991}{rfidConnection} (bool)
+\begin{CompactList}\small\item\em Verbindung zum RFID-Leser herstellen bzw. trennen. \item\end{CompactList}\item 
+void \hyperlink{class_b_e_o___timing_42c6266466562efb8e012cc0389767b7}{mysqlConnection} (bool)
+\begin{CompactList}\small\item\em Verbindung zur Datenbank herstellen bzw. trennen (experimentell, nur Superadmin). \item\end{CompactList}\item 
+void \hyperlink{class_b_e_o___timing_0736e099c5aa29e7169d74b5cd7da2d7}{purge} ()
+\begin{CompactList}\small\item\em Datenbank bereinigen. Alle \char`\"{}(Noch nicht ausgewertet)\char`\"{}-Einträge entfernen. \item\end{CompactList}\item 
+void \hyperlink{class_b_e_o___timing_85d0de732b79a53566feb1eb636c2886}{optimieren} ()
+\begin{CompactList}\small\item\em Optimieren der Tabellen in der Datenbank. \item\end{CompactList}\item 
+void \hyperlink{class_b_e_o___timing_6d5901b04efdce11f441205714385160}{CR500\_\-verbinden} ()
+\begin{CompactList}\small\item\em Verbinden des RFID-Lesers. \item\end{CompactList}\end{CompactItemize}
+\subsection*{Private Member Functions}
+\begin{CompactItemize}
+\item 
+void \hyperlink{class_b_e_o___timing_8f8ee452bed83bd1eb01ba25f3074232}{createStatusBar} ()
+\begin{CompactList}\small\item\em Erstellt die Statusbar mit den drei Labeln. \item\end{CompactList}\item 
+void \hyperlink{class_b_e_o___timing_63c37dc34b4caddfea648850ce260c28}{createMenu} ()
+\begin{CompactList}\small\item\em Verbindet die Aktionen mit dem Slots (Benutzermenue). \item\end{CompactList}\item 
+void \hyperlink{class_b_e_o___timing_7f935167b5af6676da6cf85084118575}{createToolbar} ()
+\begin{CompactList}\small\item\em Erstellt die Symbolliste mit den ausgewählten Aktionen. \item\end{CompactList}\item 
+void \hyperlink{class_b_e_o___timing_cd12cfc862cb158f92a7500f836783c7}{setUserRights} ()
+\begin{CompactList}\small\item\em Setzt die Benutzerrechte für die verschiedenen Aktionen. \item\end{CompactList}\item 
+void \hyperlink{class_b_e_o___timing_fa8e65c455ffd3b02112fdd4e6e76878}{newVersion} ()
+\begin{CompactList}\small\item\em Versionscheck. \item\end{CompactList}\end{CompactItemize}
+\subsection*{Private Attributes}
+\begin{CompactItemize}
+\item 
+\hyperlink{class_ui_1_1_b_e_o___timing_class}{Ui::BEO\_\-TimingClass} \hyperlink{class_b_e_o___timing_4e75592803bdf66af32320a30b8972c2}{ui}
+\item 
+\hyperlink{class_user}{User} $\ast$ \hyperlink{class_b_e_o___timing_36f4e79080543317d02636f93b667c27}{user}
+\item 
+QApplication $\ast$ \hyperlink{class_b_e_o___timing_8d2d841d6eb959c49a406ecebeb3374d}{a}
+\item 
+\hyperlink{class_r_f_i_d___thread}{RFID\_\-Thread} $\ast$ \hyperlink{class_b_e_o___timing_3f78ca1ff8e8b783d594c615e1204690}{thread}
+\item 
+QTableView $\ast$ \hyperlink{class_b_e_o___timing_48b9d6ca16febbddf487260d130925b1}{view}
+\item 
+QTreeWidget $\ast$ \hyperlink{class_b_e_o___timing_2ec471682ac3f39eedd965fa2e94f3d7}{raceTree}
+\item 
+\hyperlink{class_database}{Database} $\ast$ \hyperlink{class_b_e_o___timing_59ff5cd2ab570b6aaec5e4d6367e107b}{pMySQL}
+\item 
+\hyperlink{class_d_b___thread}{DB\_\-Thread} $\ast$ \hyperlink{class_b_e_o___timing_2690847a55f7a275ba0df12f8a5e5827}{pMySQL\_\-thread}
+\item 
+QToolBar $\ast$ \hyperlink{class_b_e_o___timing_a12a334dd438e255a500dc7591e1f588}{toolbar}
+\item 
+\hyperlink{class_r_f_i_d___c_r500}{RFID\_\-CR500} $\ast$ \hyperlink{class_b_e_o___timing_a68330ea7c66ad7f7cf913e31d6facf2}{pRfid}
+\item 
+bool \hyperlink{class_b_e_o___timing_670385786b671be23b3b3b10dd3e7b91}{version}
+\end{CompactItemize}
+\subsection*{Static Private Attributes}
+\begin{CompactItemize}
+\item 
+static QLabel $\ast$ \hyperlink{class_b_e_o___timing_7f14795095b944fc64585ec6af1df23a}{userLabel}
+\item 
+static QLabel $\ast$ \hyperlink{class_b_e_o___timing_c021ff5e0e3900e27fb3fece4c719238}{connectionLabel}
+\item 
+static QLabel $\ast$ \hyperlink{class_b_e_o___timing_4d07aaff9e9e351ae75ec2b607157419}{messageLabel}
+\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+Hauptklasse der Applikation. 
+
+Definition at line 59 of file beo\_\-timing.h.
+
+\subsection{Member Enumeration Documentation}
+\hypertarget{class_b_e_o___timing_83717794a488147bbcea59aceb9bd0c6}{
+\index{BEO\_\-Timing@{BEO\_\-Timing}!streckentypen@{streckentypen}}
+\index{streckentypen@{streckentypen}!BEO_Timing@{BEO\_\-Timing}}
+\subsubsection[streckentypen]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf BEO\_\-Timing::streckentypen}\hspace{0.3cm}{\tt  \mbox{[}private\mbox{]}}}}
+\label{class_b_e_o___timing_83717794a488147bbcea59aceb9bd0c6}
+
+
+\begin{Desc}
+\item[Enumerator: ]\par
+\begin{description}
+\index{Rennvelo@{Rennvelo}!BEO\_\-Timing@{BEO\_\-Timing}}\index{BEO\_\-Timing@{BEO\_\-Timing}!Rennvelo@{Rennvelo}}\item[{\em 
+\hypertarget{class_b_e_o___timing_83717794a488147bbcea59aceb9bd0c6612dddb59489702baa260ec5a8d465d0}{
+Rennvelo}
+\label{class_b_e_o___timing_83717794a488147bbcea59aceb9bd0c6612dddb59489702baa260ec5a8d465d0}
+}]\index{Mountainbike@{Mountainbike}!BEO\_\-Timing@{BEO\_\-Timing}}\index{BEO\_\-Timing@{BEO\_\-Timing}!Mountainbike@{Mountainbike}}\item[{\em 
+\hypertarget{class_b_e_o___timing_83717794a488147bbcea59aceb9bd0c6013652036599c88cc6d898b0b747a489}{
+Mountainbike}
+\label{class_b_e_o___timing_83717794a488147bbcea59aceb9bd0c6013652036599c88cc6d898b0b747a489}
+}]\index{Laufen@{Laufen}!BEO\_\-Timing@{BEO\_\-Timing}}\index{BEO\_\-Timing@{BEO\_\-Timing}!Laufen@{Laufen}}\item[{\em 
+\hypertarget{class_b_e_o___timing_83717794a488147bbcea59aceb9bd0c62594018512b9d035dea2d72721d50744}{
+Laufen}
+\label{class_b_e_o___timing_83717794a488147bbcea59aceb9bd0c62594018512b9d035dea2d72721d50744}
+}]\index{Walking@{Walking}!BEO\_\-Timing@{BEO\_\-Timing}}\index{BEO\_\-Timing@{BEO\_\-Timing}!Walking@{Walking}}\item[{\em 
+\hypertarget{class_b_e_o___timing_83717794a488147bbcea59aceb9bd0c6b7cfbcb7a8fa64617133990c5c482f3a}{
+Walking}
+\label{class_b_e_o___timing_83717794a488147bbcea59aceb9bd0c6b7cfbcb7a8fa64617133990c5c482f3a}
+}]\index{Langlauf@{Langlauf}!BEO\_\-Timing@{BEO\_\-Timing}}\index{BEO\_\-Timing@{BEO\_\-Timing}!Langlauf@{Langlauf}}\item[{\em 
+\hypertarget{class_b_e_o___timing_83717794a488147bbcea59aceb9bd0c64da7c10b2bbac1b2b31d96560b844e7b}{
+Langlauf}
+\label{class_b_e_o___timing_83717794a488147bbcea59aceb9bd0c64da7c10b2bbac1b2b31d96560b844e7b}
+}]\index{Inline@{Inline}!BEO\_\-Timing@{BEO\_\-Timing}}\index{BEO\_\-Timing@{BEO\_\-Timing}!Inline@{Inline}}\item[{\em 
+\hypertarget{class_b_e_o___timing_83717794a488147bbcea59aceb9bd0c6db090685ad135c3b151134f9db436620}{
+Inline}
+\label{class_b_e_o___timing_83717794a488147bbcea59aceb9bd0c6db090685ad135c3b151134f9db436620}
+}]\end{description}
+\end{Desc}
+
+
+
+Definition at line 86 of file beo\_\-timing.h.\hypertarget{class_b_e_o___timing_d9ee9a58f0522671aebfe86b4987c738}{
+\index{BEO\_\-Timing@{BEO\_\-Timing}!teilnehmer@{teilnehmer}}
+\index{teilnehmer@{teilnehmer}!BEO_Timing@{BEO\_\-Timing}}
+\subsubsection[teilnehmer]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf BEO\_\-Timing::teilnehmer}\hspace{0.3cm}{\tt  \mbox{[}private\mbox{]}}}}
+\label{class_b_e_o___timing_d9ee9a58f0522671aebfe86b4987c738}
+
+
+\begin{Desc}
+\item[Enumerator: ]\par
+\begin{description}
+\index{Name@{Name}!BEO\_\-Timing@{BEO\_\-Timing}}\index{BEO\_\-Timing@{BEO\_\-Timing}!Name@{Name}}\item[{\em 
+\hypertarget{class_b_e_o___timing_d9ee9a58f0522671aebfe86b4987c738808daf1f793b19f21881f2378c17188e}{
+Name}
+\label{class_b_e_o___timing_d9ee9a58f0522671aebfe86b4987c738808daf1f793b19f21881f2378c17188e}
+}]\index{Vorname@{Vorname}!BEO\_\-Timing@{BEO\_\-Timing}}\index{BEO\_\-Timing@{BEO\_\-Timing}!Vorname@{Vorname}}\item[{\em 
+\hypertarget{class_b_e_o___timing_d9ee9a58f0522671aebfe86b4987c7388ae8e43cc5ad0b6ad4fcfc160e78209e}{
+Vorname}
+\label{class_b_e_o___timing_d9ee9a58f0522671aebfe86b4987c7388ae8e43cc5ad0b6ad4fcfc160e78209e}
+}]\index{Adresse@{Adresse}!BEO\_\-Timing@{BEO\_\-Timing}}\index{BEO\_\-Timing@{BEO\_\-Timing}!Adresse@{Adresse}}\item[{\em 
+\hypertarget{class_b_e_o___timing_d9ee9a58f0522671aebfe86b4987c738ba90e2c7f4fe3eb4c15d4e9a4d5dcdfa}{
+Adresse}
+\label{class_b_e_o___timing_d9ee9a58f0522671aebfe86b4987c738ba90e2c7f4fe3eb4c15d4e9a4d5dcdfa}
+}]\index{PLZ@{PLZ}!BEO\_\-Timing@{BEO\_\-Timing}}\index{BEO\_\-Timing@{BEO\_\-Timing}!PLZ@{PLZ}}\item[{\em 
+\hypertarget{class_b_e_o___timing_d9ee9a58f0522671aebfe86b4987c7383519de2261dc99147e20f93cbed77333}{
+PLZ}
+\label{class_b_e_o___timing_d9ee9a58f0522671aebfe86b4987c7383519de2261dc99147e20f93cbed77333}
+}]\index{Ort@{Ort}!BEO\_\-Timing@{BEO\_\-Timing}}\index{BEO\_\-Timing@{BEO\_\-Timing}!Ort@{Ort}}\item[{\em 
+\hypertarget{class_b_e_o___timing_d9ee9a58f0522671aebfe86b4987c738af409b3aec51720698d932d7ff0e5056}{
+Ort}
+\label{class_b_e_o___timing_d9ee9a58f0522671aebfe86b4987c738af409b3aec51720698d932d7ff0e5056}
+}]\index{Nationalitaet@{Nationalitaet}!BEO\_\-Timing@{BEO\_\-Timing}}\index{BEO\_\-Timing@{BEO\_\-Timing}!Nationalitaet@{Nationalitaet}}\item[{\em 
+\hypertarget{class_b_e_o___timing_d9ee9a58f0522671aebfe86b4987c7380d2bf52d229a3ca79e7d2564487b1dcd}{
+Nationalitaet}
+\label{class_b_e_o___timing_d9ee9a58f0522671aebfe86b4987c7380d2bf52d229a3ca79e7d2564487b1dcd}
+}]\index{Jahrgang@{Jahrgang}!BEO\_\-Timing@{BEO\_\-Timing}}\index{BEO\_\-Timing@{BEO\_\-Timing}!Jahrgang@{Jahrgang}}\item[{\em 
+\hypertarget{class_b_e_o___timing_d9ee9a58f0522671aebfe86b4987c73874acee0490dd3156d8da39a5bb7c80f5}{
+Jahrgang}
+\label{class_b_e_o___timing_d9ee9a58f0522671aebfe86b4987c73874acee0490dd3156d8da39a5bb7c80f5}
+}]\index{Geschlecht@{Geschlecht}!BEO\_\-Timing@{BEO\_\-Timing}}\index{BEO\_\-Timing@{BEO\_\-Timing}!Geschlecht@{Geschlecht}}\item[{\em 
+\hypertarget{class_b_e_o___timing_d9ee9a58f0522671aebfe86b4987c73877e33a9512a1e78621d2cb6e97b93a1f}{
+Geschlecht}
+\label{class_b_e_o___timing_d9ee9a58f0522671aebfe86b4987c73877e33a9512a1e78621d2cb6e97b93a1f}
+}]\index{Email@{Email}!BEO\_\-Timing@{BEO\_\-Timing}}\index{BEO\_\-Timing@{BEO\_\-Timing}!Email@{Email}}\item[{\em 
+\hypertarget{class_b_e_o___timing_d9ee9a58f0522671aebfe86b4987c738496b99d0f720dfcd278723b4515d1d31}{
+Email}
+\label{class_b_e_o___timing_d9ee9a58f0522671aebfe86b4987c738496b99d0f720dfcd278723b4515d1d31}
+}]\index{Telefon@{Telefon}!BEO\_\-Timing@{BEO\_\-Timing}}\index{BEO\_\-Timing@{BEO\_\-Timing}!Telefon@{Telefon}}\item[{\em 
+\hypertarget{class_b_e_o___timing_d9ee9a58f0522671aebfe86b4987c738743223bd27bbd8bbc3edf0744b79c195}{
+Telefon}
+\label{class_b_e_o___timing_d9ee9a58f0522671aebfe86b4987c738743223bd27bbd8bbc3edf0744b79c195}
+}]\index{Mobile@{Mobile}!BEO\_\-Timing@{BEO\_\-Timing}}\index{BEO\_\-Timing@{BEO\_\-Timing}!Mobile@{Mobile}}\item[{\em 
+\hypertarget{class_b_e_o___timing_d9ee9a58f0522671aebfe86b4987c738d327629bc2f966890b341590f242a38c}{
+Mobile}
+\label{class_b_e_o___timing_d9ee9a58f0522671aebfe86b4987c738d327629bc2f966890b341590f242a38c}
+}]\index{Team\_\-Club@{Team\_\-Club}!BEO\_\-Timing@{BEO\_\-Timing}}\index{BEO\_\-Timing@{BEO\_\-Timing}!Team\_\-Club@{Team\_\-Club}}\item[{\em 
+\hypertarget{class_b_e_o___timing_d9ee9a58f0522671aebfe86b4987c738fc827ac2c81d4ecacf7c548aeb04862d}{
+Team\_\-Club}
+\label{class_b_e_o___timing_d9ee9a58f0522671aebfe86b4987c738fc827ac2c81d4ecacf7c548aeb04862d}
+}]\index{Kategorie@{Kategorie}!BEO\_\-Timing@{BEO\_\-Timing}}\index{BEO\_\-Timing@{BEO\_\-Timing}!Kategorie@{Kategorie}}\item[{\em 
+\hypertarget{class_b_e_o___timing_d9ee9a58f0522671aebfe86b4987c7384c3237e0985523dc550990299a015121}{
+Kategorie}
+\label{class_b_e_o___timing_d9ee9a58f0522671aebfe86b4987c7384c3237e0985523dc550990299a015121}
+}]\index{Fahrzeit@{Fahrzeit}!BEO\_\-Timing@{BEO\_\-Timing}}\index{BEO\_\-Timing@{BEO\_\-Timing}!Fahrzeit@{Fahrzeit}}\item[{\em 
+\hypertarget{class_b_e_o___timing_d9ee9a58f0522671aebfe86b4987c738fddfb13341f6add1048f497cc312feb2}{
+Fahrzeit}
+\label{class_b_e_o___timing_d9ee9a58f0522671aebfe86b4987c738fddfb13341f6add1048f497cc312feb2}
+}]\index{Rueckstand@{Rueckstand}!BEO\_\-Timing@{BEO\_\-Timing}}\index{BEO\_\-Timing@{BEO\_\-Timing}!Rueckstand@{Rueckstand}}\item[{\em 
+\hypertarget{class_b_e_o___timing_d9ee9a58f0522671aebfe86b4987c7387b1fdabc8963eb07a28fbfe34b74510b}{
+Rueckstand}
+\label{class_b_e_o___timing_d9ee9a58f0522671aebfe86b4987c7387b1fdabc8963eb07a28fbfe34b74510b}
+}]\index{RFID\_\-SNR@{RFID\_\-SNR}!BEO\_\-Timing@{BEO\_\-Timing}}\index{BEO\_\-Timing@{BEO\_\-Timing}!RFID\_\-SNR@{RFID\_\-SNR}}\item[{\em 
+\hypertarget{class_b_e_o___timing_d9ee9a58f0522671aebfe86b4987c738b37056e809f1ac729fb04016b00c9d4e}{
+RFID\_\-SNR}
+\label{class_b_e_o___timing_d9ee9a58f0522671aebfe86b4987c738b37056e809f1ac729fb04016b00c9d4e}
+}]\index{StreckenKey@{StreckenKey}!BEO\_\-Timing@{BEO\_\-Timing}}\index{BEO\_\-Timing@{BEO\_\-Timing}!StreckenKey@{StreckenKey}}\item[{\em 
+\hypertarget{class_b_e_o___timing_d9ee9a58f0522671aebfe86b4987c738461715c513041d4a79d9ecf6fea24c66}{
+StreckenKey}
+\label{class_b_e_o___timing_d9ee9a58f0522671aebfe86b4987c738461715c513041d4a79d9ecf6fea24c66}
+}]\index{TimeID@{TimeID}!BEO\_\-Timing@{BEO\_\-Timing}}\index{BEO\_\-Timing@{BEO\_\-Timing}!TimeID@{TimeID}}\item[{\em 
+\hypertarget{class_b_e_o___timing_d9ee9a58f0522671aebfe86b4987c7386b9d2c06f139583bd0d3e762d44d3e38}{
+TimeID}
+\label{class_b_e_o___timing_d9ee9a58f0522671aebfe86b4987c7386b9d2c06f139583bd0d3e762d44d3e38}
+}]\index{TimeKey@{TimeKey}!BEO\_\-Timing@{BEO\_\-Timing}}\index{BEO\_\-Timing@{BEO\_\-Timing}!TimeKey@{TimeKey}}\item[{\em 
+\hypertarget{class_b_e_o___timing_d9ee9a58f0522671aebfe86b4987c7386d9a3c79ea6149bad6aa9565c35c05c9}{
+TimeKey}
+\label{class_b_e_o___timing_d9ee9a58f0522671aebfe86b4987c7386d9a3c79ea6149bad6aa9565c35c05c9}
+}]\index{TeilnehmerKey@{TeilnehmerKey}!BEO\_\-Timing@{BEO\_\-Timing}}\index{BEO\_\-Timing@{BEO\_\-Timing}!TeilnehmerKey@{TeilnehmerKey}}\item[{\em 
+\hypertarget{class_b_e_o___timing_d9ee9a58f0522671aebfe86b4987c73813314225bf181333cf505eb2337aaf97}{
+TeilnehmerKey}
+\label{class_b_e_o___timing_d9ee9a58f0522671aebfe86b4987c73813314225bf181333cf505eb2337aaf97}
+}]\end{description}
+\end{Desc}
+
+
+
+Definition at line 87 of file beo\_\-timing.h.
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_b_e_o___timing_1adf7a002a9712fefe2f68007d2112e9}{
+\index{BEO\_\-Timing@{BEO\_\-Timing}!BEO\_\-Timing@{BEO\_\-Timing}}
+\index{BEO\_\-Timing@{BEO\_\-Timing}!BEO_Timing@{BEO\_\-Timing}}
+\subsubsection[BEO\_\-Timing]{\setlength{\rightskip}{0pt plus 5cm}BEO\_\-Timing::BEO\_\-Timing (QSplashScreen $\ast$ {\em splash}, \/  QApplication $\ast$ {\em a}, \/  QWidget $\ast$ {\em parent} = {\tt 0})}}
+\label{class_b_e_o___timing_1adf7a002a9712fefe2f68007d2112e9}
+
+
+Konstruktor. 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em splash}]Pointer auf den Splashscreen \item[{\em a}]Pointer auf die Hauptapplikation \item[{\em parent}]Pointer auf das aufrufende Element \end{description}
+\end{Desc}
+
+
+Definition at line 56 of file beo\_\-timing.cpp.
+
+References checkDB(), checkRFID(), CR500\_\-verbinden(), createMenu(), createStatusBar(), createToolbar(), Database::getDb(), User::getLogonSuccess(), newVersion(), pMySQL, pMySQL\_\-thread, Ui\_\-BEO\_\-TimingClass::setupUi(), setUserRights(), thread, Tree\_\-Build(), Tree\_\-Settings(), ui, user, and version.
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=285pt]{class_b_e_o___timing_1adf7a002a9712fefe2f68007d2112e9_cgraph}
+\end{center}
+\end{figure}
+\hypertarget{class_b_e_o___timing_1a251548e7f861c3a74fe34941586519}{
+\index{BEO\_\-Timing@{BEO\_\-Timing}!$\sim$BEO\_\-Timing@{$\sim$BEO\_\-Timing}}
+\index{$\sim$BEO\_\-Timing@{$\sim$BEO\_\-Timing}!BEO_Timing@{BEO\_\-Timing}}
+\subsubsection[$\sim$BEO\_\-Timing]{\setlength{\rightskip}{0pt plus 5cm}BEO\_\-Timing::$\sim$BEO\_\-Timing ()}}
+\label{class_b_e_o___timing_1a251548e7f861c3a74fe34941586519}
+
+
+Destruktor. 
+
+
+
+Definition at line 148 of file beo\_\-timing.cpp.
+
+References pMySQL\_\-thread, pRfid, RFID\_\-Thread::stop(), DB\_\-Thread::stop(), and thread.
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=158pt]{class_b_e_o___timing_1a251548e7f861c3a74fe34941586519_cgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_b_e_o___timing_b54fe6db69d9304c6c27bf3b4c253196}{
+\index{BEO\_\-Timing@{BEO\_\-Timing}!Read\_\-Race@{Read\_\-Race}}
+\index{Read\_\-Race@{Read\_\-Race}!BEO_Timing@{BEO\_\-Timing}}
+\subsubsection[Read\_\-Race]{\setlength{\rightskip}{0pt plus 5cm}void BEO\_\-Timing::Read\_\-Race (int {\em StreckenNummer})}}
+\label{class_b_e_o___timing_b54fe6db69d9304c6c27bf3b4c253196}
+
+
+Stellt die Rangliste dar. 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em StreckenNummer}]Strecke, welche dargestellt werden soll. \end{description}
+\end{Desc}
+
+
+Definition at line 344 of file beo\_\-timing.cpp.
+
+References Adresse, Email, Fahrzeit, Geschlecht, Jahrgang, Kategorie, Mobile, model, Name, Nationalitaet, Ort, PLZ, Ui\_\-BEO\_\-TimingClass::RanglistenTableView, Ui\_\-BEO\_\-TimingClass::RennenTreeWidget, RFID\_\-SNR, Rueckstand, StreckenKey, Team\_\-Club, TeilnehmerKey, Telefon, TimeID, TimeKey, ui, view, and Vorname.
+
+Referenced by TableEditDialog::on\_\-BestaetigenButton\_\-released(), and Tree\_\-Changed().\hypertarget{class_b_e_o___timing_cd19a9b93fb9492e5ed537a8bc15af45}{
+\index{BEO\_\-Timing@{BEO\_\-Timing}!Tree\_\-Settings@{Tree\_\-Settings}}
+\index{Tree\_\-Settings@{Tree\_\-Settings}!BEO_Timing@{BEO\_\-Timing}}
+\subsubsection[Tree\_\-Settings]{\setlength{\rightskip}{0pt plus 5cm}void BEO\_\-Timing::Tree\_\-Settings ()}}
+\label{class_b_e_o___timing_cd19a9b93fb9492e5ed537a8bc15af45}
+
+
+Bereitet die Baumansicht zur Darstellung vor. 
+
+
+
+Definition at line 233 of file beo\_\-timing.cpp.
+
+References raceTree, Ui\_\-BEO\_\-TimingClass::RennenTreeWidget, Tree\_\-Changed(), and ui.
+
+Referenced by BEO\_\-Timing().\hypertarget{class_b_e_o___timing_1f2db201ed52a7cd88c0b7b3c2113f2f}{
+\index{BEO\_\-Timing@{BEO\_\-Timing}!updateUserStatus@{updateUserStatus}}
+\index{updateUserStatus@{updateUserStatus}!BEO_Timing@{BEO\_\-Timing}}
+\subsubsection[updateUserStatus]{\setlength{\rightskip}{0pt plus 5cm}static void BEO\_\-Timing::updateUserStatus (QString {\em username})\hspace{0.3cm}{\tt  \mbox{[}inline, static\mbox{]}}}}
+\label{class_b_e_o___timing_1f2db201ed52a7cd88c0b7b3c2113f2f}
+
+
+
+
+Definition at line 68 of file beo\_\-timing.h.
+
+References userLabel.
+
+Referenced by LogonDialog::on\_\-LogonButton\_\-released().\hypertarget{class_b_e_o___timing_394c0e847c9a363fd1eb8c1e00404115}{
+\index{BEO\_\-Timing@{BEO\_\-Timing}!updateRFID@{updateRFID}}
+\index{updateRFID@{updateRFID}!BEO_Timing@{BEO\_\-Timing}}
+\subsubsection[updateRFID]{\setlength{\rightskip}{0pt plus 5cm}static void BEO\_\-Timing::updateRFID (QString {\em rfid})\hspace{0.3cm}{\tt  \mbox{[}inline, static\mbox{]}}}}
+\label{class_b_e_o___timing_394c0e847c9a363fd1eb8c1e00404115}
+
+
+
+
+Definition at line 69 of file beo\_\-timing.h.
+
+References connectionLabel.
+
+Referenced by RFID\_\-CR500::RFID\_\-CR500().\hypertarget{class_b_e_o___timing_ab6e90f89fdd1a266ef14556a97c4212}{
+\index{BEO\_\-Timing@{BEO\_\-Timing}!updateMessage@{updateMessage}}
+\index{updateMessage@{updateMessage}!BEO_Timing@{BEO\_\-Timing}}
+\subsubsection[updateMessage]{\setlength{\rightskip}{0pt plus 5cm}static void BEO\_\-Timing::updateMessage (QString {\em message})\hspace{0.3cm}{\tt  \mbox{[}inline, static\mbox{]}}}}
+\label{class_b_e_o___timing_ab6e90f89fdd1a266ef14556a97c4212}
+
+
+
+
+Definition at line 70 of file beo\_\-timing.h.
+
+References messageLabel.
+
+Referenced by RFID\_\-CR500::findCard(), and RFID\_\-CR500::RFID\_\-CR500().\hypertarget{class_b_e_o___timing_03a5745ceba3fd3d69f9a0ea722f7e51}{
+\index{BEO\_\-Timing@{BEO\_\-Timing}!addRow@{addRow}}
+\index{addRow@{addRow}!BEO_Timing@{BEO\_\-Timing}}
+\subsubsection[addRow]{\setlength{\rightskip}{0pt plus 5cm}void BEO\_\-Timing::addRow (int {\em columns})}}
+\label{class_b_e_o___timing_03a5745ceba3fd3d69f9a0ea722f7e51}
+
+
+\hypertarget{class_b_e_o___timing_4ca53b436da6fdf16737147cfaf69f87}{
+\index{BEO\_\-Timing@{BEO\_\-Timing}!getTimeCount@{getTimeCount}}
+\index{getTimeCount@{getTimeCount}!BEO_Timing@{BEO\_\-Timing}}
+\subsubsection[getTimeCount]{\setlength{\rightskip}{0pt plus 5cm}QString BEO\_\-Timing::getTimeCount (int {\em StreckenKey})}}
+\label{class_b_e_o___timing_4ca53b436da6fdf16737147cfaf69f87}
+
+
+Bestimmt die Anzahl Fahrzeiten für eine Strecke. 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em StreckenKey}]Streckennummer \end{description}
+\end{Desc}
+
+
+Definition at line 332 of file beo\_\-timing.cpp.
+
+Referenced by Tree\_\-Build().\hypertarget{class_b_e_o___timing_8f8ee452bed83bd1eb01ba25f3074232}{
+\index{BEO\_\-Timing@{BEO\_\-Timing}!createStatusBar@{createStatusBar}}
+\index{createStatusBar@{createStatusBar}!BEO_Timing@{BEO\_\-Timing}}
+\subsubsection[createStatusBar]{\setlength{\rightskip}{0pt plus 5cm}void BEO\_\-Timing::createStatusBar ()\hspace{0.3cm}{\tt  \mbox{[}private\mbox{]}}}}
+\label{class_b_e_o___timing_8f8ee452bed83bd1eb01ba25f3074232}
+
+
+Erstellt die Statusbar mit den drei Labeln. 
+
+
+
+Definition at line 429 of file beo\_\-timing.cpp.
+
+References connectionLabel, messageLabel, and userLabel.
+
+Referenced by BEO\_\-Timing().\hypertarget{class_b_e_o___timing_63c37dc34b4caddfea648850ce260c28}{
+\index{BEO\_\-Timing@{BEO\_\-Timing}!createMenu@{createMenu}}
+\index{createMenu@{createMenu}!BEO_Timing@{BEO\_\-Timing}}
+\subsubsection[createMenu]{\setlength{\rightskip}{0pt plus 5cm}void BEO\_\-Timing::createMenu ()\hspace{0.3cm}{\tt  \mbox{[}private\mbox{]}}}}
+\label{class_b_e_o___timing_63c37dc34b4caddfea648850ce260c28}
+
+
+Verbindet die Aktionen mit dem Slots (Benutzermenue). 
+
+
+
+Definition at line 164 of file beo\_\-timing.cpp.
+
+References a, about(), Ui\_\-BEO\_\-TimingClass::actionAbout, Ui\_\-BEO\_\-TimingClass::actionAbout\_\-Qt, Ui\_\-BEO\_\-TimingClass::actionAktualisieren, Ui\_\-BEO\_\-TimingClass::actionBeenden, Ui\_\-BEO\_\-TimingClass::actionBenutzerrechte\_\-ndern, Ui\_\-BEO\_\-TimingClass::actionDatenbank, Ui\_\-BEO\_\-TimingClass::actionDatenbank\_\-optimieren, Ui\_\-BEO\_\-TimingClass::actionEintrag\_\-Editieren, Ui\_\-BEO\_\-TimingClass::actionExportieren\_\-als\_\-CSV, Ui\_\-BEO\_\-TimingClass::actionKonfiguration\_\-erstellen, Ui\_\-BEO\_\-TimingClass::actionLog\_\-Datei\_\-auslesen, Ui\_\-BEO\_\-TimingClass::actionNeuer\_\-Benutzer\_\-erstellen\_\-3, Ui\_\-BEO\_\-TimingClass::actionNeues\_\-Rennen\_\-erfassen, Ui\_\-BEO\_\-TimingClass::actionPasswort\_\-ndern, Ui\_\-BEO\_\-TimingClass::actionRFID\_\-Leser, Ui\_\-BEO\_\-TimingClass::actionRFID\_\-Leser\_\-verbinden, Ui\_\-BEO\_\-TimingClass::actionVerwaiste\_\-Eintr\_\-ge\_\-entfernen, buildConfiguration(), changePwd(), CR500\_\-verbinden(), exportToCsv(), mysqlConnection(), neuerUser(), NeuesRennen(), optimieren(), purge(), readLogFile(), rechteAnpassen(), rfidConnection(), Table\_\-Edit(), Tree\_\-Build(), and ui.
+
+Referenced by BEO\_\-Timing().\hypertarget{class_b_e_o___timing_7f935167b5af6676da6cf85084118575}{
+\index{BEO\_\-Timing@{BEO\_\-Timing}!createToolbar@{createToolbar}}
+\index{createToolbar@{createToolbar}!BEO_Timing@{BEO\_\-Timing}}
+\subsubsection[createToolbar]{\setlength{\rightskip}{0pt plus 5cm}void BEO\_\-Timing::createToolbar ()\hspace{0.3cm}{\tt  \mbox{[}private\mbox{]}}}}
+\label{class_b_e_o___timing_7f935167b5af6676da6cf85084118575}
+
+
+Erstellt die Symbolliste mit den ausgewählten Aktionen. 
+
+
+
+Definition at line 219 of file beo\_\-timing.cpp.
+
+References Ui\_\-BEO\_\-TimingClass::actionAktualisieren, Ui\_\-BEO\_\-TimingClass::actionBeenden, Ui\_\-BEO\_\-TimingClass::actionEintrag\_\-Editieren, Ui\_\-BEO\_\-TimingClass::actionExportieren\_\-als\_\-CSV, Ui\_\-BEO\_\-TimingClass::actionNeuer\_\-Benutzer\_\-erstellen\_\-3, Ui\_\-BEO\_\-TimingClass::actionNeues\_\-Rennen\_\-erfassen, Ui\_\-BEO\_\-TimingClass::actionRFID\_\-Leser, toolbar, and ui.
+
+Referenced by BEO\_\-Timing().\hypertarget{class_b_e_o___timing_cd12cfc862cb158f92a7500f836783c7}{
+\index{BEO\_\-Timing@{BEO\_\-Timing}!setUserRights@{setUserRights}}
+\index{setUserRights@{setUserRights}!BEO_Timing@{BEO\_\-Timing}}
+\subsubsection[setUserRights]{\setlength{\rightskip}{0pt plus 5cm}void BEO\_\-Timing::setUserRights ()\hspace{0.3cm}{\tt  \mbox{[}private\mbox{]}}}}
+\label{class_b_e_o___timing_cd12cfc862cb158f92a7500f836783c7}
+
+
+Setzt die Benutzerrechte für die verschiedenen Aktionen. 
+
+
+
+Definition at line 187 of file beo\_\-timing.cpp.
+
+References Ui\_\-BEO\_\-TimingClass::actionBenutzerrechte\_\-ndern, Ui\_\-BEO\_\-TimingClass::actionDatenbank, Ui\_\-BEO\_\-TimingClass::actionDatenbank\_\-optimieren, Ui\_\-BEO\_\-TimingClass::actionEintrag\_\-Editieren, Ui\_\-BEO\_\-TimingClass::actionKonfiguration\_\-erstellen, Ui\_\-BEO\_\-TimingClass::actionLog\_\-Datei\_\-auslesen, Ui\_\-BEO\_\-TimingClass::actionNeuer\_\-Benutzer\_\-erstellen\_\-3, Ui\_\-BEO\_\-TimingClass::actionNeues\_\-Rennen\_\-erfassen, Ui\_\-BEO\_\-TimingClass::actionRFID\_\-Leser, Ui\_\-BEO\_\-TimingClass::actionRFID\_\-Leser\_\-verbinden, Ui\_\-BEO\_\-TimingClass::actionVerwaiste\_\-Eintr\_\-ge\_\-entfernen, User::administrator, User::getUsertype(), User::manager, User::superadministrator, ui, User::user, and user.
+
+Referenced by BEO\_\-Timing().
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=157pt]{class_b_e_o___timing_cd12cfc862cb158f92a7500f836783c7_cgraph}
+\end{center}
+\end{figure}
+\hypertarget{class_b_e_o___timing_fa8e65c455ffd3b02112fdd4e6e76878}{
+\index{BEO\_\-Timing@{BEO\_\-Timing}!newVersion@{newVersion}}
+\index{newVersion@{newVersion}!BEO_Timing@{BEO\_\-Timing}}
+\subsubsection[newVersion]{\setlength{\rightskip}{0pt plus 5cm}void BEO\_\-Timing::newVersion ()\hspace{0.3cm}{\tt  \mbox{[}private\mbox{]}}}}
+\label{class_b_e_o___timing_fa8e65c455ffd3b02112fdd4e6e76878}
+
+
+Versionscheck. 
+
+
+
+Definition at line 712 of file beo\_\-timing.cpp.
+
+References VERSION, and version.
+
+Referenced by BEO\_\-Timing().\hypertarget{class_b_e_o___timing_454b16d1cfe5763b0812114e82108e55}{
+\index{BEO\_\-Timing@{BEO\_\-Timing}!Tree\_\-Build@{Tree\_\-Build}}
+\index{Tree\_\-Build@{Tree\_\-Build}!BEO_Timing@{BEO\_\-Timing}}
+\subsubsection[Tree\_\-Build]{\setlength{\rightskip}{0pt plus 5cm}void BEO\_\-Timing::Tree\_\-Build ()\hspace{0.3cm}{\tt  \mbox{[}slot\mbox{]}}}}
+\label{class_b_e_o___timing_454b16d1cfe5763b0812114e82108e55}
+
+
+Füllt die Baumansicht mit Ihalt, entsprechend der Benutzerrechte. 
+
+
+
+Definition at line 252 of file beo\_\-timing.cpp.
+
+References User::getRaceAuthority(), getTimeCount(), Inline, Langlauf, Laufen, Mountainbike, raceTree, Ui\_\-BEO\_\-TimingClass::RennenTreeWidget, Rennvelo, ui, user, and Walking.
+
+Referenced by BEO\_\-Timing(), createMenu(), and NeuesRennen().\hypertarget{class_b_e_o___timing_e6ea4891e62ef27156bba2ddec60683a}{
+\index{BEO\_\-Timing@{BEO\_\-Timing}!Tree\_\-Changed@{Tree\_\-Changed}}
+\index{Tree\_\-Changed@{Tree\_\-Changed}!BEO_Timing@{BEO\_\-Timing}}
+\subsubsection[Tree\_\-Changed]{\setlength{\rightskip}{0pt plus 5cm}void BEO\_\-Timing::Tree\_\-Changed ()\hspace{0.3cm}{\tt  \mbox{[}private, slot\mbox{]}}}}
+\label{class_b_e_o___timing_e6ea4891e62ef27156bba2ddec60683a}
+
+
+Reagiert auf eine Änderung der Auswahl im Baum. 
+
+
+
+Definition at line 321 of file beo\_\-timing.cpp.
+
+References raceTree, and Read\_\-Race().
+
+Referenced by Tree\_\-Settings().\hypertarget{class_b_e_o___timing_c854db88175caa8572dd15831b4bfb18}{
+\index{BEO\_\-Timing@{BEO\_\-Timing}!Table\_\-Edit@{Table\_\-Edit}}
+\index{Table\_\-Edit@{Table\_\-Edit}!BEO_Timing@{BEO\_\-Timing}}
+\subsubsection[Table\_\-Edit]{\setlength{\rightskip}{0pt plus 5cm}void BEO\_\-Timing::Table\_\-Edit ()\hspace{0.3cm}{\tt  \mbox{[}private, slot\mbox{]}}}}
+\label{class_b_e_o___timing_c854db88175caa8572dd15831b4bfb18}
+
+
+Aufrufen des TableEdit-Dialogs mit den richtigen Parametern. 
+
+
+
+Definition at line 451 of file beo\_\-timing.cpp.
+
+References model, TeilnehmerKey, user, and view.
+
+Referenced by createMenu().\hypertarget{class_b_e_o___timing_b3d37415fce4b586bca4397bd790105c}{
+\index{BEO\_\-Timing@{BEO\_\-Timing}!checkRFID@{checkRFID}}
+\index{checkRFID@{checkRFID}!BEO_Timing@{BEO\_\-Timing}}
+\subsubsection[checkRFID]{\setlength{\rightskip}{0pt plus 5cm}void BEO\_\-Timing::checkRFID ()\hspace{0.3cm}{\tt  \mbox{[}private, slot\mbox{]}}}}
+\label{class_b_e_o___timing_b3d37415fce4b586bca4397bd790105c}
+
+
+Prüfen ob eine RFID-Karte im Feld ist. 
+
+
+
+Definition at line 496 of file beo\_\-timing.cpp.
+
+References RFID\_\-CR500::findCard(), RFID\_\-CR500::isConnected(), pRfid, and RFID\_\-CR500::readData().
+
+Referenced by BEO\_\-Timing().\hypertarget{class_b_e_o___timing_6695ca0572c0a4484d2926c16a3f477b}{
+\index{BEO\_\-Timing@{BEO\_\-Timing}!checkDB@{checkDB}}
+\index{checkDB@{checkDB}!BEO_Timing@{BEO\_\-Timing}}
+\subsubsection[checkDB]{\setlength{\rightskip}{0pt plus 5cm}void BEO\_\-Timing::checkDB ()\hspace{0.3cm}{\tt  \mbox{[}private, slot\mbox{]}}}}
+\label{class_b_e_o___timing_6695ca0572c0a4484d2926c16a3f477b}
+
+
+Datenbankverbindung ueberpruefen. 
+
+
+
+Definition at line 525 of file beo\_\-timing.cpp.
+
+References Database::getDb(), DB\_\-Thread::getState(), pMySQL, pMySQL\_\-thread, DB\_\-Thread::restart, DB\_\-Thread::running, and DB\_\-Thread::stopp.
+
+Referenced by BEO\_\-Timing().\hypertarget{class_b_e_o___timing_6836bffd46ffdbf81149f4e245435731}{
+\index{BEO\_\-Timing@{BEO\_\-Timing}!NeuesRennen@{NeuesRennen}}
+\index{NeuesRennen@{NeuesRennen}!BEO_Timing@{BEO\_\-Timing}}
+\subsubsection[NeuesRennen]{\setlength{\rightskip}{0pt plus 5cm}void BEO\_\-Timing::NeuesRennen ()\hspace{0.3cm}{\tt  \mbox{[}private, slot\mbox{]}}}}
+\label{class_b_e_o___timing_6836bffd46ffdbf81149f4e245435731}
+
+
+Aufrufen des NeuesRennen-Dialogs. 
+
+
+
+Definition at line 477 of file beo\_\-timing.cpp.
+
+References neu, and Tree\_\-Build().
+
+Referenced by createMenu().\hypertarget{class_b_e_o___timing_c04ab99954514a018e78de4b0224cdb5}{
+\index{BEO\_\-Timing@{BEO\_\-Timing}!exportToCsv@{exportToCsv}}
+\index{exportToCsv@{exportToCsv}!BEO_Timing@{BEO\_\-Timing}}
+\subsubsection[exportToCsv]{\setlength{\rightskip}{0pt plus 5cm}void BEO\_\-Timing::exportToCsv ()\hspace{0.3cm}{\tt  \mbox{[}private, slot\mbox{]}}}}
+\label{class_b_e_o___timing_c04ab99954514a018e78de4b0224cdb5}
+
+
+Exportieren der Rangliste im CSV-Format. 
+
+
+
+Definition at line 557 of file beo\_\-timing.cpp.
+
+References model, and view.
+
+Referenced by createMenu().\hypertarget{class_b_e_o___timing_b705f7916ae9647060ea70c1e8fb60d8}{
+\index{BEO\_\-Timing@{BEO\_\-Timing}!changePwd@{changePwd}}
+\index{changePwd@{changePwd}!BEO_Timing@{BEO\_\-Timing}}
+\subsubsection[changePwd]{\setlength{\rightskip}{0pt plus 5cm}void BEO\_\-Timing::changePwd ()\hspace{0.3cm}{\tt  \mbox{[}private, slot\mbox{]}}}}
+\label{class_b_e_o___timing_b705f7916ae9647060ea70c1e8fb60d8}
+
+
+Passwort ändern Dialog öffnen. 
+
+
+
+Definition at line 596 of file beo\_\-timing.cpp.
+
+References pwd, and user.
+
+Referenced by createMenu().\hypertarget{class_b_e_o___timing_1ae33dd83b22ab12aed7c68028ad363a}{
+\index{BEO\_\-Timing@{BEO\_\-Timing}!neuerUser@{neuerUser}}
+\index{neuerUser@{neuerUser}!BEO_Timing@{BEO\_\-Timing}}
+\subsubsection[neuerUser]{\setlength{\rightskip}{0pt plus 5cm}void BEO\_\-Timing::neuerUser ()\hspace{0.3cm}{\tt  \mbox{[}private, slot\mbox{]}}}}
+\label{class_b_e_o___timing_1ae33dd83b22ab12aed7c68028ad363a}
+
+
+Neuer Benutzer - Dialog öffnen. 
+
+
+
+Definition at line 611 of file beo\_\-timing.cpp.
+
+References newUser, and user.
+
+Referenced by createMenu().\hypertarget{class_b_e_o___timing_c8299f8565050c6390965b2a1df80ab0}{
+\index{BEO\_\-Timing@{BEO\_\-Timing}!buildConfiguration@{buildConfiguration}}
+\index{buildConfiguration@{buildConfiguration}!BEO_Timing@{BEO\_\-Timing}}
+\subsubsection[buildConfiguration]{\setlength{\rightskip}{0pt plus 5cm}void BEO\_\-Timing::buildConfiguration ()\hspace{0.3cm}{\tt  \mbox{[}private, slot\mbox{]}}}}
+\label{class_b_e_o___timing_c8299f8565050c6390965b2a1df80ab0}
+
+
+Konfiguration erstellen - Dialog öffnen. 
+
+
+
+Definition at line 625 of file beo\_\-timing.cpp.
+
+References config, and user.
+
+Referenced by createMenu().\hypertarget{class_b_e_o___timing_0e2af5a5752098ca296327f4f41bf2c6}{
+\index{BEO\_\-Timing@{BEO\_\-Timing}!readLogFile@{readLogFile}}
+\index{readLogFile@{readLogFile}!BEO_Timing@{BEO\_\-Timing}}
+\subsubsection[readLogFile]{\setlength{\rightskip}{0pt plus 5cm}void BEO\_\-Timing::readLogFile ()\hspace{0.3cm}{\tt  \mbox{[}private, slot\mbox{]}}}}
+\label{class_b_e_o___timing_0e2af5a5752098ca296327f4f41bf2c6}
+
+
+Log-Datei Lesen - Dialog öffnen. 
+
+
+
+Definition at line 640 of file beo\_\-timing.cpp.
+
+References logfile.
+
+Referenced by createMenu().\hypertarget{class_b_e_o___timing_92ea80de324e788dbc928e655b70e631}{
+\index{BEO\_\-Timing@{BEO\_\-Timing}!rechteAnpassen@{rechteAnpassen}}
+\index{rechteAnpassen@{rechteAnpassen}!BEO_Timing@{BEO\_\-Timing}}
+\subsubsection[rechteAnpassen]{\setlength{\rightskip}{0pt plus 5cm}void BEO\_\-Timing::rechteAnpassen ()\hspace{0.3cm}{\tt  \mbox{[}private, slot\mbox{]}}}}
+\label{class_b_e_o___timing_92ea80de324e788dbc928e655b70e631}
+
+
+Benutzerreche anpassen - Dialog öffnen. 
+
+
+
+Definition at line 654 of file beo\_\-timing.cpp.
+
+References rechte, and user.
+
+Referenced by createMenu().\hypertarget{class_b_e_o___timing_2f021b28df0eb948aa69146ab5631c02}{
+\index{BEO\_\-Timing@{BEO\_\-Timing}!about@{about}}
+\index{about@{about}!BEO_Timing@{BEO\_\-Timing}}
+\subsubsection[about]{\setlength{\rightskip}{0pt plus 5cm}void BEO\_\-Timing::about ()\hspace{0.3cm}{\tt  \mbox{[}private, slot\mbox{]}}}}
+\label{class_b_e_o___timing_2f021b28df0eb948aa69146ab5631c02}
+
+
+About - Dialog der Managementsoftware anzeigen. 
+
+
+
+Definition at line 668 of file beo\_\-timing.cpp.
+
+Referenced by createMenu().\hypertarget{class_b_e_o___timing_d303ff34c6d33593cb57e1fc1881d991}{
+\index{BEO\_\-Timing@{BEO\_\-Timing}!rfidConnection@{rfidConnection}}
+\index{rfidConnection@{rfidConnection}!BEO_Timing@{BEO\_\-Timing}}
+\subsubsection[rfidConnection]{\setlength{\rightskip}{0pt plus 5cm}void BEO\_\-Timing::rfidConnection (bool {\em checked})\hspace{0.3cm}{\tt  \mbox{[}private, slot\mbox{]}}}}
+\label{class_b_e_o___timing_d303ff34c6d33593cb57e1fc1881d991}
+
+
+Verbindung zum RFID-Leser herstellen bzw. trennen. 
+
+
+
+Definition at line 685 of file beo\_\-timing.cpp.
+
+References pRfid, RFID\_\-Thread::restart, RFID\_\-Thread::setRFID(), RFID\_\-Thread::setState(), RFID\_\-Thread::stopp, and thread.
+
+Referenced by createMenu().\hypertarget{class_b_e_o___timing_42c6266466562efb8e012cc0389767b7}{
+\index{BEO\_\-Timing@{BEO\_\-Timing}!mysqlConnection@{mysqlConnection}}
+\index{mysqlConnection@{mysqlConnection}!BEO_Timing@{BEO\_\-Timing}}
+\subsubsection[mysqlConnection]{\setlength{\rightskip}{0pt plus 5cm}void BEO\_\-Timing::mysqlConnection (bool {\em checked})\hspace{0.3cm}{\tt  \mbox{[}private, slot\mbox{]}}}}
+\label{class_b_e_o___timing_42c6266466562efb8e012cc0389767b7}
+
+
+Verbindung zur Datenbank herstellen bzw. trennen (experimentell, nur Superadmin). 
+
+
+
+Definition at line 700 of file beo\_\-timing.cpp.
+
+References pMySQL\_\-thread, DB\_\-Thread::restart, DB\_\-Thread::setState(), and DB\_\-Thread::stopp.
+
+Referenced by createMenu().\hypertarget{class_b_e_o___timing_0736e099c5aa29e7169d74b5cd7da2d7}{
+\index{BEO\_\-Timing@{BEO\_\-Timing}!purge@{purge}}
+\index{purge@{purge}!BEO_Timing@{BEO\_\-Timing}}
+\subsubsection[purge]{\setlength{\rightskip}{0pt plus 5cm}void BEO\_\-Timing::purge ()\hspace{0.3cm}{\tt  \mbox{[}private, slot\mbox{]}}}}
+\label{class_b_e_o___timing_0736e099c5aa29e7169d74b5cd7da2d7}
+
+
+Datenbank bereinigen. Alle \char`\"{}(Noch nicht ausgewertet)\char`\"{}-Einträge entfernen. 
+
+
+
+Definition at line 725 of file beo\_\-timing.cpp.
+
+Referenced by createMenu().\hypertarget{class_b_e_o___timing_85d0de732b79a53566feb1eb636c2886}{
+\index{BEO\_\-Timing@{BEO\_\-Timing}!optimieren@{optimieren}}
+\index{optimieren@{optimieren}!BEO_Timing@{BEO\_\-Timing}}
+\subsubsection[optimieren]{\setlength{\rightskip}{0pt plus 5cm}void BEO\_\-Timing::optimieren ()\hspace{0.3cm}{\tt  \mbox{[}private, slot\mbox{]}}}}
+\label{class_b_e_o___timing_85d0de732b79a53566feb1eb636c2886}
+
+
+Optimieren der Tabellen in der Datenbank. 
+
+
+
+Definition at line 763 of file beo\_\-timing.cpp.
+
+Referenced by createMenu().\hypertarget{class_b_e_o___timing_6d5901b04efdce11f441205714385160}{
+\index{BEO\_\-Timing@{BEO\_\-Timing}!CR500\_\-verbinden@{CR500\_\-verbinden}}
+\index{CR500\_\-verbinden@{CR500\_\-verbinden}!BEO_Timing@{BEO\_\-Timing}}
+\subsubsection[CR500\_\-verbinden]{\setlength{\rightskip}{0pt plus 5cm}void BEO\_\-Timing::CR500\_\-verbinden ()\hspace{0.3cm}{\tt  \mbox{[}private, slot\mbox{]}}}}
+\label{class_b_e_o___timing_6d5901b04efdce11f441205714385160}
+
+
+Verbinden des RFID-Lesers. 
+
+
+
+Definition at line 782 of file beo\_\-timing.cpp.
+
+References Ui\_\-BEO\_\-TimingClass::actionRFID\_\-Leser, Ui\_\-BEO\_\-TimingClass::actionRFID\_\-Leser\_\-verbinden, RFID\_\-CR500::isConnected(), RFID\_\-Thread::pause, pRfid, RFID\_\-Thread::running, RFID\_\-Thread::setRFID(), RFID\_\-Thread::setState(), thread, and ui.
+
+Referenced by BEO\_\-Timing(), and createMenu().
+
+\subsection{Member Data Documentation}
+\hypertarget{class_b_e_o___timing_19f749ab5e005801517ec98286a89596}{
+\index{BEO\_\-Timing@{BEO\_\-Timing}!rechte@{rechte}}
+\index{rechte@{rechte}!BEO_Timing@{BEO\_\-Timing}}
+\subsubsection[rechte]{\setlength{\rightskip}{0pt plus 5cm}{\bf RechteAnpassen}$\ast$ {\bf BEO\_\-Timing::rechte}\hspace{0.3cm}{\tt  \mbox{[}protected\mbox{]}}}}
+\label{class_b_e_o___timing_19f749ab5e005801517ec98286a89596}
+
+
+
+
+Definition at line 77 of file beo\_\-timing.h.
+
+Referenced by rechteAnpassen().\hypertarget{class_b_e_o___timing_b8cfb6b1d41a21e54498a183eef54651}{
+\index{BEO\_\-Timing@{BEO\_\-Timing}!logfile@{logfile}}
+\index{logfile@{logfile}!BEO_Timing@{BEO\_\-Timing}}
+\subsubsection[logfile]{\setlength{\rightskip}{0pt plus 5cm}{\bf LogfileLesenDialog}$\ast$ {\bf BEO\_\-Timing::logfile}\hspace{0.3cm}{\tt  \mbox{[}protected\mbox{]}}}}
+\label{class_b_e_o___timing_b8cfb6b1d41a21e54498a183eef54651}
+
+
+
+
+Definition at line 78 of file beo\_\-timing.h.
+
+Referenced by readLogFile().\hypertarget{class_b_e_o___timing_8abbf93b70915e725738223a587cb42d}{
+\index{BEO\_\-Timing@{BEO\_\-Timing}!config@{config}}
+\index{config@{config}!BEO_Timing@{BEO\_\-Timing}}
+\subsubsection[config]{\setlength{\rightskip}{0pt plus 5cm}{\bf HardwareKonfiguration}$\ast$ {\bf BEO\_\-Timing::config}\hspace{0.3cm}{\tt  \mbox{[}protected\mbox{]}}}}
+\label{class_b_e_o___timing_8abbf93b70915e725738223a587cb42d}
+
+
+
+
+Definition at line 79 of file beo\_\-timing.h.
+
+Referenced by buildConfiguration().\hypertarget{class_b_e_o___timing_dbc64dafa7003517063029cd10e2b583}{
+\index{BEO\_\-Timing@{BEO\_\-Timing}!newUser@{newUser}}
+\index{newUser@{newUser}!BEO_Timing@{BEO\_\-Timing}}
+\subsubsection[newUser]{\setlength{\rightskip}{0pt plus 5cm}{\bf NeuerUserDialog}$\ast$ {\bf BEO\_\-Timing::newUser}\hspace{0.3cm}{\tt  \mbox{[}protected\mbox{]}}}}
+\label{class_b_e_o___timing_dbc64dafa7003517063029cd10e2b583}
+
+
+
+
+Definition at line 80 of file beo\_\-timing.h.
+
+Referenced by neuerUser().\hypertarget{class_b_e_o___timing_00ca0d5e67f1d99118b529b9a9cbed9f}{
+\index{BEO\_\-Timing@{BEO\_\-Timing}!pwd@{pwd}}
+\index{pwd@{pwd}!BEO_Timing@{BEO\_\-Timing}}
+\subsubsection[pwd]{\setlength{\rightskip}{0pt plus 5cm}{\bf PasswordChangeDialog}$\ast$ {\bf BEO\_\-Timing::pwd}\hspace{0.3cm}{\tt  \mbox{[}protected\mbox{]}}}}
+\label{class_b_e_o___timing_00ca0d5e67f1d99118b529b9a9cbed9f}
+
+
+
+
+Definition at line 81 of file beo\_\-timing.h.
+
+Referenced by changePwd().\hypertarget{class_b_e_o___timing_4a79dc06af7ae3a6f89459062e2a7b85}{
+\index{BEO\_\-Timing@{BEO\_\-Timing}!neu@{neu}}
+\index{neu@{neu}!BEO_Timing@{BEO\_\-Timing}}
+\subsubsection[neu]{\setlength{\rightskip}{0pt plus 5cm}{\bf NeuesRennenDialog}$\ast$ {\bf BEO\_\-Timing::neu}\hspace{0.3cm}{\tt  \mbox{[}protected\mbox{]}}}}
+\label{class_b_e_o___timing_4a79dc06af7ae3a6f89459062e2a7b85}
+
+
+
+
+Definition at line 82 of file beo\_\-timing.h.
+
+Referenced by NeuesRennen().\hypertarget{class_b_e_o___timing_4e75592803bdf66af32320a30b8972c2}{
+\index{BEO\_\-Timing@{BEO\_\-Timing}!ui@{ui}}
+\index{ui@{ui}!BEO_Timing@{BEO\_\-Timing}}
+\subsubsection[ui]{\setlength{\rightskip}{0pt plus 5cm}{\bf Ui::BEO\_\-TimingClass} {\bf BEO\_\-Timing::ui}\hspace{0.3cm}{\tt  \mbox{[}private\mbox{]}}}}
+\label{class_b_e_o___timing_4e75592803bdf66af32320a30b8972c2}
+
+
+
+
+Definition at line 91 of file beo\_\-timing.h.
+
+Referenced by BEO\_\-Timing(), CR500\_\-verbinden(), createMenu(), createToolbar(), Read\_\-Race(), setUserRights(), Tree\_\-Build(), and Tree\_\-Settings().\hypertarget{class_b_e_o___timing_36f4e79080543317d02636f93b667c27}{
+\index{BEO\_\-Timing@{BEO\_\-Timing}!user@{user}}
+\index{user@{user}!BEO_Timing@{BEO\_\-Timing}}
+\subsubsection[user]{\setlength{\rightskip}{0pt plus 5cm}{\bf User}$\ast$ {\bf BEO\_\-Timing::user}\hspace{0.3cm}{\tt  \mbox{[}private\mbox{]}}}}
+\label{class_b_e_o___timing_36f4e79080543317d02636f93b667c27}
+
+
+
+
+Definition at line 92 of file beo\_\-timing.h.
+
+Referenced by BEO\_\-Timing(), buildConfiguration(), changePwd(), neuerUser(), rechteAnpassen(), setUserRights(), Table\_\-Edit(), and Tree\_\-Build().\hypertarget{class_b_e_o___timing_8d2d841d6eb959c49a406ecebeb3374d}{
+\index{BEO\_\-Timing@{BEO\_\-Timing}!a@{a}}
+\index{a@{a}!BEO_Timing@{BEO\_\-Timing}}
+\subsubsection[a]{\setlength{\rightskip}{0pt plus 5cm}QApplication$\ast$ {\bf BEO\_\-Timing::a}\hspace{0.3cm}{\tt  \mbox{[}private\mbox{]}}}}
+\label{class_b_e_o___timing_8d2d841d6eb959c49a406ecebeb3374d}
+
+
+
+
+Definition at line 93 of file beo\_\-timing.h.
+
+Referenced by createMenu().\hypertarget{class_b_e_o___timing_3f78ca1ff8e8b783d594c615e1204690}{
+\index{BEO\_\-Timing@{BEO\_\-Timing}!thread@{thread}}
+\index{thread@{thread}!BEO_Timing@{BEO\_\-Timing}}
+\subsubsection[thread]{\setlength{\rightskip}{0pt plus 5cm}{\bf RFID\_\-Thread}$\ast$ {\bf BEO\_\-Timing::thread}\hspace{0.3cm}{\tt  \mbox{[}private\mbox{]}}}}
+\label{class_b_e_o___timing_3f78ca1ff8e8b783d594c615e1204690}
+
+
+
+
+Definition at line 94 of file beo\_\-timing.h.
+
+Referenced by BEO\_\-Timing(), CR500\_\-verbinden(), rfidConnection(), and $\sim$BEO\_\-Timing().\hypertarget{class_b_e_o___timing_7f14795095b944fc64585ec6af1df23a}{
+\index{BEO\_\-Timing@{BEO\_\-Timing}!userLabel@{userLabel}}
+\index{userLabel@{userLabel}!BEO_Timing@{BEO\_\-Timing}}
+\subsubsection[userLabel]{\setlength{\rightskip}{0pt plus 5cm}QLabel $\ast$ {\bf BEO\_\-Timing::userLabel}\hspace{0.3cm}{\tt  \mbox{[}static, private\mbox{]}}}}
+\label{class_b_e_o___timing_7f14795095b944fc64585ec6af1df23a}
+
+
+
+
+Definition at line 100 of file beo\_\-timing.h.
+
+Referenced by createStatusBar(), and updateUserStatus().\hypertarget{class_b_e_o___timing_c021ff5e0e3900e27fb3fece4c719238}{
+\index{BEO\_\-Timing@{BEO\_\-Timing}!connectionLabel@{connectionLabel}}
+\index{connectionLabel@{connectionLabel}!BEO_Timing@{BEO\_\-Timing}}
+\subsubsection[connectionLabel]{\setlength{\rightskip}{0pt plus 5cm}QLabel $\ast$ {\bf BEO\_\-Timing::connectionLabel}\hspace{0.3cm}{\tt  \mbox{[}static, private\mbox{]}}}}
+\label{class_b_e_o___timing_c021ff5e0e3900e27fb3fece4c719238}
+
+
+
+
+Definition at line 101 of file beo\_\-timing.h.
+
+Referenced by createStatusBar(), and updateRFID().\hypertarget{class_b_e_o___timing_4d07aaff9e9e351ae75ec2b607157419}{
+\index{BEO\_\-Timing@{BEO\_\-Timing}!messageLabel@{messageLabel}}
+\index{messageLabel@{messageLabel}!BEO_Timing@{BEO\_\-Timing}}
+\subsubsection[messageLabel]{\setlength{\rightskip}{0pt plus 5cm}QLabel $\ast$ {\bf BEO\_\-Timing::messageLabel}\hspace{0.3cm}{\tt  \mbox{[}static, private\mbox{]}}}}
+\label{class_b_e_o___timing_4d07aaff9e9e351ae75ec2b607157419}
+
+
+
+
+Definition at line 102 of file beo\_\-timing.h.
+
+Referenced by createStatusBar(), and updateMessage().\hypertarget{class_b_e_o___timing_48b9d6ca16febbddf487260d130925b1}{
+\index{BEO\_\-Timing@{BEO\_\-Timing}!view@{view}}
+\index{view@{view}!BEO_Timing@{BEO\_\-Timing}}
+\subsubsection[view]{\setlength{\rightskip}{0pt plus 5cm}QTableView$\ast$ {\bf BEO\_\-Timing::view}\hspace{0.3cm}{\tt  \mbox{[}private\mbox{]}}}}
+\label{class_b_e_o___timing_48b9d6ca16febbddf487260d130925b1}
+
+
+
+
+Definition at line 103 of file beo\_\-timing.h.
+
+Referenced by exportToCsv(), Read\_\-Race(), and Table\_\-Edit().\hypertarget{class_b_e_o___timing_2ec471682ac3f39eedd965fa2e94f3d7}{
+\index{BEO\_\-Timing@{BEO\_\-Timing}!raceTree@{raceTree}}
+\index{raceTree@{raceTree}!BEO_Timing@{BEO\_\-Timing}}
+\subsubsection[raceTree]{\setlength{\rightskip}{0pt plus 5cm}QTreeWidget$\ast$ {\bf BEO\_\-Timing::raceTree}\hspace{0.3cm}{\tt  \mbox{[}private\mbox{]}}}}
+\label{class_b_e_o___timing_2ec471682ac3f39eedd965fa2e94f3d7}
+
+
+
+
+Definition at line 104 of file beo\_\-timing.h.
+
+Referenced by Tree\_\-Build(), Tree\_\-Changed(), and Tree\_\-Settings().\hypertarget{class_b_e_o___timing_59ff5cd2ab570b6aaec5e4d6367e107b}{
+\index{BEO\_\-Timing@{BEO\_\-Timing}!pMySQL@{pMySQL}}
+\index{pMySQL@{pMySQL}!BEO_Timing@{BEO\_\-Timing}}
+\subsubsection[pMySQL]{\setlength{\rightskip}{0pt plus 5cm}{\bf Database}$\ast$ {\bf BEO\_\-Timing::pMySQL}\hspace{0.3cm}{\tt  \mbox{[}private\mbox{]}}}}
+\label{class_b_e_o___timing_59ff5cd2ab570b6aaec5e4d6367e107b}
+
+
+
+
+Definition at line 105 of file beo\_\-timing.h.
+
+Referenced by BEO\_\-Timing(), and checkDB().\hypertarget{class_b_e_o___timing_2690847a55f7a275ba0df12f8a5e5827}{
+\index{BEO\_\-Timing@{BEO\_\-Timing}!pMySQL\_\-thread@{pMySQL\_\-thread}}
+\index{pMySQL\_\-thread@{pMySQL\_\-thread}!BEO_Timing@{BEO\_\-Timing}}
+\subsubsection[pMySQL\_\-thread]{\setlength{\rightskip}{0pt plus 5cm}{\bf DB\_\-Thread}$\ast$ {\bf BEO\_\-Timing::pMySQL\_\-thread}\hspace{0.3cm}{\tt  \mbox{[}private\mbox{]}}}}
+\label{class_b_e_o___timing_2690847a55f7a275ba0df12f8a5e5827}
+
+
+
+
+Definition at line 106 of file beo\_\-timing.h.
+
+Referenced by BEO\_\-Timing(), checkDB(), mysqlConnection(), and $\sim$BEO\_\-Timing().\hypertarget{class_b_e_o___timing_a12a334dd438e255a500dc7591e1f588}{
+\index{BEO\_\-Timing@{BEO\_\-Timing}!toolbar@{toolbar}}
+\index{toolbar@{toolbar}!BEO_Timing@{BEO\_\-Timing}}
+\subsubsection[toolbar]{\setlength{\rightskip}{0pt plus 5cm}QToolBar$\ast$ {\bf BEO\_\-Timing::toolbar}\hspace{0.3cm}{\tt  \mbox{[}private\mbox{]}}}}
+\label{class_b_e_o___timing_a12a334dd438e255a500dc7591e1f588}
+
+
+
+
+Definition at line 107 of file beo\_\-timing.h.
+
+Referenced by createToolbar().\hypertarget{class_b_e_o___timing_a68330ea7c66ad7f7cf913e31d6facf2}{
+\index{BEO\_\-Timing@{BEO\_\-Timing}!pRfid@{pRfid}}
+\index{pRfid@{pRfid}!BEO_Timing@{BEO\_\-Timing}}
+\subsubsection[pRfid]{\setlength{\rightskip}{0pt plus 5cm}{\bf RFID\_\-CR500}$\ast$ {\bf BEO\_\-Timing::pRfid}\hspace{0.3cm}{\tt  \mbox{[}private\mbox{]}}}}
+\label{class_b_e_o___timing_a68330ea7c66ad7f7cf913e31d6facf2}
+
+
+
+
+Definition at line 108 of file beo\_\-timing.h.
+
+Referenced by checkRFID(), CR500\_\-verbinden(), rfidConnection(), and $\sim$BEO\_\-Timing().\hypertarget{class_b_e_o___timing_670385786b671be23b3b3b10dd3e7b91}{
+\index{BEO\_\-Timing@{BEO\_\-Timing}!version@{version}}
+\index{version@{version}!BEO_Timing@{BEO\_\-Timing}}
+\subsubsection[version]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf BEO\_\-Timing::version}\hspace{0.3cm}{\tt  \mbox{[}private\mbox{]}}}}
+\label{class_b_e_o___timing_670385786b671be23b3b3b10dd3e7b91}
+
+
+
+
+Definition at line 109 of file beo\_\-timing.h.
+
+Referenced by BEO\_\-Timing(), and newVersion().
+
+The documentation for this class was generated from the following files:\begin{CompactItemize}
+\item 
+\hyperlink{beo__timing_8h}{beo\_\-timing.h}\item 
+\hyperlink{beo__timing_8cpp}{beo\_\-timing.cpp}\end{CompactItemize}

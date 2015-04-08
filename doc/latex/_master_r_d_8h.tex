@@ -1,0 +1,489 @@
+\hypertarget{_master_r_d_8h}{
+\section{RFID\_\-Reader/MasterRD.h File Reference}
+\label{_master_r_d_8h}\index{RFID\_\-Reader/MasterRD.h@{RFID\_\-Reader/MasterRD.h}}
+}
+Headerdatei für die DLL des RFID-Lesers CR500-USB. 
+
+
+
+This graph shows which files directly or indirectly include this file:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=98pt]{_master_r_d_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Defines}
+\begin{CompactItemize}
+\item 
+\#define \hyperlink{_master_r_d_8h_12e8fdb03bab94cb4feea8dce4d706ec}{LIB\_\-SUCCESS}~0
+\item 
+\#define \hyperlink{_master_r_d_8h_74adb8bf96dcd6c11c7e6b61cf7dc725}{LIB\_\-FAILED}~1
+\item 
+\#define \hyperlink{_master_r_d_8h_28314078bfeed0cbbab0c9e2a6f83972}{MAX\_\-RF\_\-BUFFER}~1024
+\end{CompactItemize}
+\subsection*{Functions}
+\begin{CompactItemize}
+\item 
+\hyperlink{_master_r_d_8h_79ec018016c00128c65e9fd7529c1ecf}{int} (WINAPI $\ast$lib\_\-ver)(unsigned int $\ast$nVer)
+\end{CompactItemize}
+\subsection*{Variables}
+\begin{CompactItemize}
+\item 
+long \hyperlink{_master_r_d_8h_3128588f7aafa08fbf72984b61b9ac51}{baud}
+\item 
+unsigned char $\ast$ \hyperlink{_master_r_d_8h_08058b8b01c5a75f2d222638ceb7ab5e}{pVersion}
+\item 
+unsigned char unsigned char $\ast$ \hyperlink{_master_r_d_8h_80817fe4e1b6829d96260d2eb77220c5}{pLen}
+\item 
+unsigned char \hyperlink{_master_r_d_8h_e51c47bc45f0ee4dd952b30d46c7d9f2}{msec}
+\item 
+unsigned char \hyperlink{_master_r_d_8h_a5044999f3339d2ba3b1bf22fa6cfe95}{type}
+\item 
+unsigned char \hyperlink{_master_r_d_8h_234be45c406c2d8d2489673913eecfd4}{model}
+\item 
+unsigned char \hyperlink{_master_r_d_8h_f61b66b2d9004f4975ae5f51c2177f3d}{color}
+\item 
+unsigned char $\ast$ \hyperlink{_master_r_d_8h_d7f5fc5b86ef30fce39719bb3f455208}{Snr}
+\item 
+unsigned char \hyperlink{_master_r_d_8h_3df51d72ee422be371c0b4b317610ecd}{bound}
+\item 
+unsigned char $\ast$ \hyperlink{_master_r_d_8h_2d96f320e76c39efa636fadfca9301b9}{pData}
+\item 
+unsigned char unsigned char $\ast$ \hyperlink{_master_r_d_8h_a7e66c30196131346e06af28c7661e84}{pMsgLg}
+\item 
+unsigned char $\ast$ \hyperlink{_master_r_d_8h_feb4b8260103395792699e1d19892b45}{command}
+\item 
+unsigned char unsigned char \hyperlink{_master_r_d_8h_916fd0dcf36331b649387daa552961e8}{cmdLen}
+\item 
+unsigned char unsigned char unsigned char unsigned char $\ast$ \hyperlink{_master_r_d_8h_99c02100754b017c65dd8ed5c04388bb}{Length}
+\item 
+unsigned char $\ast$ \hyperlink{_master_r_d_8h_28f8573ae41bcf6c605a88f43515a14f}{szIn}
+\item 
+unsigned char unsigned int \hyperlink{_master_r_d_8h_223a0a1774481ca75f3eb33af2fe38ed}{inlen}
+\item 
+unsigned char unsigned int unsigned char $\ast$ \hyperlink{_master_r_d_8h_7da5dfcff1c288368511fd309ad221f8}{key}
+\item 
+unsigned char unsigned int unsigned char unsigned int \hyperlink{_master_r_d_8h_756e7250b248c260a4728486b00c405a}{keylen}
+\item 
+unsigned char unsigned short $\ast$ \hyperlink{_master_r_d_8h_d6d6661890be22017e75446a24e41bc2}{TagType}
+\item 
+unsigned char $\ast$ \hyperlink{_master_r_d_8h_fc74895e4f1b59a547ccce15d8f93e07}{pSnr}
+\item 
+unsigned char \hyperlink{_master_r_d_8h_2344571e27355dfe1d525209829b4bc3}{block}
+\item 
+unsigned char \hyperlink{_master_r_d_8h_17a17908516fbcb32566244a77d57772}{page}
+\item 
+unsigned char \hyperlink{_master_r_d_8h_0cc421aee1dab5540192abf5144d16c2}{bcnt}
+\item 
+unsigned char unsigned char unsigned char $\ast$ \hyperlink{_master_r_d_8h_b7ca857d655af32d52135e307058e86f}{pRLength}
+\item 
+unsigned char unsigned char \hyperlink{_master_r_d_8h_a94b6acb0d3c20b5fbb0cc88a5a99740}{srcLen}
+\item 
+unsigned char unsigned char unsigned char $\ast$ \hyperlink{_master_r_d_8h_b83b2a6fec4af4de997b8292cd7b40c1}{Size}
+\item 
+unsigned char \hyperlink{_master_r_d_8h_74b654271a172a244c844fb86277cd8a}{mode}
+\item 
+unsigned char unsigned char \hyperlink{_master_r_d_8h_2bb2a68fd9011f11a2078c73c86b1f06}{secnr}
+\item 
+unsigned char unsigned char $\ast$ \hyperlink{_master_r_d_8h_6f0f3eff16962881999799f7b0f66a0a}{data}
+\item 
+unsigned char long \hyperlink{_master_r_d_8h_ebadacfc123eafe0e9719ca0e1c37d79}{value}
+\item 
+unsigned char long $\ast$ \hyperlink{_master_r_d_8h_2afa2fed8f7a973f785295b4a5540a0b}{pValue}
+\item 
+unsigned long \hyperlink{_master_r_d_8h_4263306c43374f46fe72f142bd023ce8}{PUPI}
+\item 
+unsigned long unsigned char \hyperlink{_master_r_d_8h_4a316315721352c8aa804daa4b832e2c}{CID}
+\item 
+unsigned char unsigned char unsigned char $\ast$ \hyperlink{_master_r_d_8h_89b736f30b83b60bb15e9234ecfedf92}{pMsgLen}
+\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+Headerdatei für die DLL des RFID-Lesers CR500-USB. 
+
+\begin{Desc}
+\item[Version:]1.0 \end{Desc}
+\begin{Desc}
+\item[Date:]09.06.2008 \end{Desc}
+\begin{Desc}
+\item[Author:]R.Zoss\end{Desc}
+Copyright (C) 2008 Rico Zoss
+
+This file is part of BEO-Timing Managementsoftware.
+
+BEO-Timing Managementsoftware is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
+
+BEO-Timing Managementsoftware is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License along with BEO-Timing Managementsoftware. If not, see $<$\href{http://www.gnu.org/licenses/}{\tt http://www.gnu.org/licenses/}$>$. 
+
+Definition in file \hyperlink{_master_r_d_8h-source}{MasterRD.h}.
+
+\subsection{Define Documentation}
+\hypertarget{_master_r_d_8h_74adb8bf96dcd6c11c7e6b61cf7dc725}{
+\index{MasterRD.h@{MasterRD.h}!LIB\_\-FAILED@{LIB\_\-FAILED}}
+\index{LIB\_\-FAILED@{LIB\_\-FAILED}!MasterRD.h@{MasterRD.h}}
+\subsubsection[LIB\_\-FAILED]{\setlength{\rightskip}{0pt plus 5cm}\#define LIB\_\-FAILED~1}}
+\label{_master_r_d_8h_74adb8bf96dcd6c11c7e6b61cf7dc725}
+
+
+
+
+Definition at line 37 of file MasterRD.h.\hypertarget{_master_r_d_8h_12e8fdb03bab94cb4feea8dce4d706ec}{
+\index{MasterRD.h@{MasterRD.h}!LIB\_\-SUCCESS@{LIB\_\-SUCCESS}}
+\index{LIB\_\-SUCCESS@{LIB\_\-SUCCESS}!MasterRD.h@{MasterRD.h}}
+\subsubsection[LIB\_\-SUCCESS]{\setlength{\rightskip}{0pt plus 5cm}\#define LIB\_\-SUCCESS~0}}
+\label{_master_r_d_8h_12e8fdb03bab94cb4feea8dce4d706ec}
+
+
+
+
+Definition at line 35 of file MasterRD.h.
+
+Referenced by RFID\_\-CR500::RFID\_\-CR500().\hypertarget{_master_r_d_8h_28314078bfeed0cbbab0c9e2a6f83972}{
+\index{MasterRD.h@{MasterRD.h}!MAX\_\-RF\_\-BUFFER@{MAX\_\-RF\_\-BUFFER}}
+\index{MAX\_\-RF\_\-BUFFER@{MAX\_\-RF\_\-BUFFER}!MasterRD.h@{MasterRD.h}}
+\subsubsection[MAX\_\-RF\_\-BUFFER]{\setlength{\rightskip}{0pt plus 5cm}\#define MAX\_\-RF\_\-BUFFER~1024}}
+\label{_master_r_d_8h_28314078bfeed0cbbab0c9e2a6f83972}
+
+
+
+
+Definition at line 39 of file MasterRD.h.
+
+\subsection{Function Documentation}
+\hypertarget{_master_r_d_8h_79ec018016c00128c65e9fd7529c1ecf}{
+\index{MasterRD.h@{MasterRD.h}!int@{int}}
+\index{int@{int}!MasterRD.h@{MasterRD.h}}
+\subsubsection[int]{\setlength{\rightskip}{0pt plus 5cm}int (WINAPI $\ast$ {\em lib\_\-ver})}}
+\label{_master_r_d_8h_79ec018016c00128c65e9fd7529c1ecf}
+
+
+
+
+Referenced by PasswordChangeDialog::on\_\-newLineEdit\_\-textChanged().
+
+\subsection{Variable Documentation}
+\hypertarget{_master_r_d_8h_3128588f7aafa08fbf72984b61b9ac51}{
+\index{MasterRD.h@{MasterRD.h}!baud@{baud}}
+\index{baud@{baud}!MasterRD.h@{MasterRD.h}}
+\subsubsection[baud]{\setlength{\rightskip}{0pt plus 5cm}long {\bf baud}}}
+\label{_master_r_d_8h_3128588f7aafa08fbf72984b61b9ac51}
+
+
+
+
+Definition at line 61 of file MasterRD.h.\hypertarget{_master_r_d_8h_0cc421aee1dab5540192abf5144d16c2}{
+\index{MasterRD.h@{MasterRD.h}!bcnt@{bcnt}}
+\index{bcnt@{bcnt}!MasterRD.h@{MasterRD.h}}
+\subsubsection[bcnt]{\setlength{\rightskip}{0pt plus 5cm}unsigned char {\bf bcnt}}}
+\label{_master_r_d_8h_0cc421aee1dab5540192abf5144d16c2}
+
+
+
+
+Definition at line 309 of file MasterRD.h.
+
+Referenced by RFID\_\-CR500::findCard().\hypertarget{_master_r_d_8h_2344571e27355dfe1d525209829b4bc3}{
+\index{MasterRD.h@{MasterRD.h}!block@{block}}
+\index{block@{block}!MasterRD.h@{MasterRD.h}}
+\subsubsection[block]{\setlength{\rightskip}{0pt plus 5cm}unsigned char {\bf block}}}
+\label{_master_r_d_8h_2344571e27355dfe1d525209829b4bc3}
+
+
+
+
+Definition at line 253 of file MasterRD.h.\hypertarget{_master_r_d_8h_3df51d72ee422be371c0b4b317610ecd}{
+\index{MasterRD.h@{MasterRD.h}!bound@{bound}}
+\index{bound@{bound}!MasterRD.h@{MasterRD.h}}
+\subsubsection[bound]{\setlength{\rightskip}{0pt plus 5cm}unsigned char {\bf bound}}}
+\label{_master_r_d_8h_3df51d72ee422be371c0b4b317610ecd}
+
+
+
+
+Definition at line 160 of file MasterRD.h.\hypertarget{_master_r_d_8h_4a316315721352c8aa804daa4b832e2c}{
+\index{MasterRD.h@{MasterRD.h}!CID@{CID}}
+\index{CID@{CID}!MasterRD.h@{MasterRD.h}}
+\subsubsection[CID]{\setlength{\rightskip}{0pt plus 5cm}unsigned char {\bf CID}}}
+\label{_master_r_d_8h_4a316315721352c8aa804daa4b832e2c}
+
+
+
+
+Definition at line 530 of file MasterRD.h.\hypertarget{_master_r_d_8h_916fd0dcf36331b649387daa552961e8}{
+\index{MasterRD.h@{MasterRD.h}!cmdLen@{cmdLen}}
+\index{cmdLen@{cmdLen}!MasterRD.h@{MasterRD.h}}
+\subsubsection[cmdLen]{\setlength{\rightskip}{0pt plus 5cm}unsigned char unsigned char unsigned char {\bf cmdLen}}}
+\label{_master_r_d_8h_916fd0dcf36331b649387daa552961e8}
+
+
+
+
+Definition at line 162 of file MasterRD.h.\hypertarget{_master_r_d_8h_f61b66b2d9004f4975ae5f51c2177f3d}{
+\index{MasterRD.h@{MasterRD.h}!color@{color}}
+\index{color@{color}!MasterRD.h@{MasterRD.h}}
+\subsubsection[color]{\setlength{\rightskip}{0pt plus 5cm}unsigned char {\bf color}}}
+\label{_master_r_d_8h_f61b66b2d9004f4975ae5f51c2177f3d}
+
+
+
+
+Definition at line 148 of file MasterRD.h.\hypertarget{_master_r_d_8h_feb4b8260103395792699e1d19892b45}{
+\index{MasterRD.h@{MasterRD.h}!command@{command}}
+\index{command@{command}!MasterRD.h@{MasterRD.h}}
+\subsubsection[command]{\setlength{\rightskip}{0pt plus 5cm}unsigned char unsigned char $\ast$ {\bf command}}}
+\label{_master_r_d_8h_feb4b8260103395792699e1d19892b45}
+
+
+
+
+Definition at line 162 of file MasterRD.h.\hypertarget{_master_r_d_8h_6f0f3eff16962881999799f7b0f66a0a}{
+\index{MasterRD.h@{MasterRD.h}!data@{data}}
+\index{data@{data}!MasterRD.h@{MasterRD.h}}
+\subsubsection[data]{\setlength{\rightskip}{0pt plus 5cm}unsigned char $\ast$ {\bf data}}}
+\label{_master_r_d_8h_6f0f3eff16962881999799f7b0f66a0a}
+
+
+
+
+Definition at line 380 of file MasterRD.h.\hypertarget{_master_r_d_8h_223a0a1774481ca75f3eb33af2fe38ed}{
+\index{MasterRD.h@{MasterRD.h}!inlen@{inlen}}
+\index{inlen@{inlen}!MasterRD.h@{MasterRD.h}}
+\subsubsection[inlen]{\setlength{\rightskip}{0pt plus 5cm}unsigned char unsigned int {\bf inlen}}}
+\label{_master_r_d_8h_223a0a1774481ca75f3eb33af2fe38ed}
+
+
+
+
+Definition at line 184 of file MasterRD.h.\hypertarget{_master_r_d_8h_7da5dfcff1c288368511fd309ad221f8}{
+\index{MasterRD.h@{MasterRD.h}!key@{key}}
+\index{key@{key}!MasterRD.h@{MasterRD.h}}
+\subsubsection[key]{\setlength{\rightskip}{0pt plus 5cm}unsigned char $\ast$ {\bf key}}}
+\label{_master_r_d_8h_7da5dfcff1c288368511fd309ad221f8}
+
+
+
+
+Definition at line 184 of file MasterRD.h.\hypertarget{_master_r_d_8h_756e7250b248c260a4728486b00c405a}{
+\index{MasterRD.h@{MasterRD.h}!keylen@{keylen}}
+\index{keylen@{keylen}!MasterRD.h@{MasterRD.h}}
+\subsubsection[keylen]{\setlength{\rightskip}{0pt plus 5cm}unsigned char unsigned int unsigned char unsigned int {\bf keylen}}}
+\label{_master_r_d_8h_756e7250b248c260a4728486b00c405a}
+
+
+
+
+Definition at line 184 of file MasterRD.h.\hypertarget{_master_r_d_8h_99c02100754b017c65dd8ed5c04388bb}{
+\index{MasterRD.h@{MasterRD.h}!Length@{Length}}
+\index{Length@{Length}!MasterRD.h@{MasterRD.h}}
+\subsubsection[Length]{\setlength{\rightskip}{0pt plus 5cm}unsigned char unsigned char unsigned char unsigned char$\ast$ {\bf Length}}}
+\label{_master_r_d_8h_99c02100754b017c65dd8ed5c04388bb}
+
+
+
+
+Definition at line 162 of file MasterRD.h.\hypertarget{_master_r_d_8h_74b654271a172a244c844fb86277cd8a}{
+\index{MasterRD.h@{MasterRD.h}!mode@{mode}}
+\index{mode@{mode}!MasterRD.h@{MasterRD.h}}
+\subsubsection[mode]{\setlength{\rightskip}{0pt plus 5cm}unsigned char {\bf mode}}}
+\label{_master_r_d_8h_74b654271a172a244c844fb86277cd8a}
+
+
+
+
+Definition at line 331 of file MasterRD.h.
+
+Referenced by RFID\_\-CR500::findCard().\hypertarget{_master_r_d_8h_234be45c406c2d8d2489673913eecfd4}{
+\index{MasterRD.h@{MasterRD.h}!model@{model}}
+\index{model@{model}!MasterRD.h@{MasterRD.h}}
+\subsubsection[model]{\setlength{\rightskip}{0pt plus 5cm}unsigned char {\bf model}}}
+\label{_master_r_d_8h_234be45c406c2d8d2489673913eecfd4}
+
+
+
+
+Definition at line 135 of file MasterRD.h.
+
+Referenced by BEO\_\-Timing::exportToCsv(), TableEditDialog::on\_\-loeschenButton\_\-released(), BEO\_\-Timing::Read\_\-Race(), and BEO\_\-Timing::Table\_\-Edit().\hypertarget{_master_r_d_8h_e51c47bc45f0ee4dd952b30d46c7d9f2}{
+\index{MasterRD.h@{MasterRD.h}!msec@{msec}}
+\index{msec@{msec}!MasterRD.h@{MasterRD.h}}
+\subsubsection[msec]{\setlength{\rightskip}{0pt plus 5cm}unsigned char {\bf msec}}}
+\label{_master_r_d_8h_e51c47bc45f0ee4dd952b30d46c7d9f2}
+
+
+
+
+Definition at line 105 of file MasterRD.h.\hypertarget{_master_r_d_8h_17a17908516fbcb32566244a77d57772}{
+\index{MasterRD.h@{MasterRD.h}!page@{page}}
+\index{page@{page}!MasterRD.h@{MasterRD.h}}
+\subsubsection[page]{\setlength{\rightskip}{0pt plus 5cm}unsigned char {\bf page}}}
+\label{_master_r_d_8h_17a17908516fbcb32566244a77d57772}
+
+
+
+
+Definition at line 267 of file MasterRD.h.\hypertarget{_master_r_d_8h_2d96f320e76c39efa636fadfca9301b9}{
+\index{MasterRD.h@{MasterRD.h}!pData@{pData}}
+\index{pData@{pData}!MasterRD.h@{MasterRD.h}}
+\subsubsection[pData]{\setlength{\rightskip}{0pt plus 5cm}unsigned char unsigned char $\ast$ {\bf pData}}}
+\label{_master_r_d_8h_2d96f320e76c39efa636fadfca9301b9}
+
+
+
+
+Definition at line 161 of file MasterRD.h.
+
+Referenced by RFID\_\-CR500::clearValidFlag(), and RFID\_\-CR500::readData().\hypertarget{_master_r_d_8h_80817fe4e1b6829d96260d2eb77220c5}{
+\index{MasterRD.h@{MasterRD.h}!pLen@{pLen}}
+\index{pLen@{pLen}!MasterRD.h@{MasterRD.h}}
+\subsubsection[pLen]{\setlength{\rightskip}{0pt plus 5cm}unsigned char unsigned char unsigned char $\ast$ {\bf pLen}}}
+\label{_master_r_d_8h_80817fe4e1b6829d96260d2eb77220c5}
+
+
+
+
+Definition at line 92 of file MasterRD.h.\hypertarget{_master_r_d_8h_89b736f30b83b60bb15e9234ecfedf92}{
+\index{MasterRD.h@{MasterRD.h}!pMsgLen@{pMsgLen}}
+\index{pMsgLen@{pMsgLen}!MasterRD.h@{MasterRD.h}}
+\subsubsection[pMsgLen]{\setlength{\rightskip}{0pt plus 5cm}unsigned char unsigned char unsigned char$\ast$ {\bf pMsgLen}}}
+\label{_master_r_d_8h_89b736f30b83b60bb15e9234ecfedf92}
+
+
+
+
+Definition at line 574 of file MasterRD.h.\hypertarget{_master_r_d_8h_a7e66c30196131346e06af28c7661e84}{
+\index{MasterRD.h@{MasterRD.h}!pMsgLg@{pMsgLg}}
+\index{pMsgLg@{pMsgLg}!MasterRD.h@{MasterRD.h}}
+\subsubsection[pMsgLg]{\setlength{\rightskip}{0pt plus 5cm}unsigned char unsigned char unsigned char unsigned char unsigned char $\ast$ {\bf pMsgLg}}}
+\label{_master_r_d_8h_a7e66c30196131346e06af28c7661e84}
+
+
+
+
+Definition at line 161 of file MasterRD.h.\hypertarget{_master_r_d_8h_b7ca857d655af32d52135e307058e86f}{
+\index{MasterRD.h@{MasterRD.h}!pRLength@{pRLength}}
+\index{pRLength@{pRLength}!MasterRD.h@{MasterRD.h}}
+\subsubsection[pRLength]{\setlength{\rightskip}{0pt plus 5cm}unsigned char unsigned char unsigned char$\ast$ {\bf pRLength}}}
+\label{_master_r_d_8h_b7ca857d655af32d52135e307058e86f}
+
+
+
+
+Definition at line 309 of file MasterRD.h.\hypertarget{_master_r_d_8h_fc74895e4f1b59a547ccce15d8f93e07}{
+\index{MasterRD.h@{MasterRD.h}!pSnr@{pSnr}}
+\index{pSnr@{pSnr}!MasterRD.h@{MasterRD.h}}
+\subsubsection[pSnr]{\setlength{\rightskip}{0pt plus 5cm}unsigned char $\ast$ {\bf pSnr}}}
+\label{_master_r_d_8h_fc74895e4f1b59a547ccce15d8f93e07}
+
+
+
+
+Definition at line 236 of file MasterRD.h.\hypertarget{_master_r_d_8h_4263306c43374f46fe72f142bd023ce8}{
+\index{MasterRD.h@{MasterRD.h}!PUPI@{PUPI}}
+\index{PUPI@{PUPI}!MasterRD.h@{MasterRD.h}}
+\subsubsection[PUPI]{\setlength{\rightskip}{0pt plus 5cm}unsigned long {\bf PUPI}}}
+\label{_master_r_d_8h_4263306c43374f46fe72f142bd023ce8}
+
+
+
+
+Definition at line 530 of file MasterRD.h.\hypertarget{_master_r_d_8h_2afa2fed8f7a973f785295b4a5540a0b}{
+\index{MasterRD.h@{MasterRD.h}!pValue@{pValue}}
+\index{pValue@{pValue}!MasterRD.h@{MasterRD.h}}
+\subsubsection[pValue]{\setlength{\rightskip}{0pt plus 5cm}unsigned char long$\ast$ {\bf pValue}}}
+\label{_master_r_d_8h_2afa2fed8f7a973f785295b4a5540a0b}
+
+
+
+
+Definition at line 406 of file MasterRD.h.\hypertarget{_master_r_d_8h_08058b8b01c5a75f2d222638ceb7ab5e}{
+\index{MasterRD.h@{MasterRD.h}!pVersion@{pVersion}}
+\index{pVersion@{pVersion}!MasterRD.h@{MasterRD.h}}
+\subsubsection[pVersion]{\setlength{\rightskip}{0pt plus 5cm}unsigned char$\ast$ {\bf pVersion}}}
+\label{_master_r_d_8h_08058b8b01c5a75f2d222638ceb7ab5e}
+
+
+
+
+Definition at line 92 of file MasterRD.h.\hypertarget{_master_r_d_8h_2bb2a68fd9011f11a2078c73c86b1f06}{
+\index{MasterRD.h@{MasterRD.h}!secnr@{secnr}}
+\index{secnr@{secnr}!MasterRD.h@{MasterRD.h}}
+\subsubsection[secnr]{\setlength{\rightskip}{0pt plus 5cm}unsigned char unsigned char {\bf secnr}}}
+\label{_master_r_d_8h_2bb2a68fd9011f11a2078c73c86b1f06}
+
+
+
+
+Definition at line 347 of file MasterRD.h.\hypertarget{_master_r_d_8h_b83b2a6fec4af4de997b8292cd7b40c1}{
+\index{MasterRD.h@{MasterRD.h}!Size@{Size}}
+\index{Size@{Size}!MasterRD.h@{MasterRD.h}}
+\subsubsection[Size]{\setlength{\rightskip}{0pt plus 5cm}unsigned char unsigned char unsigned char$\ast$ {\bf Size}}}
+\label{_master_r_d_8h_b83b2a6fec4af4de997b8292cd7b40c1}
+
+
+
+
+Definition at line 327 of file MasterRD.h.\hypertarget{_master_r_d_8h_d7f5fc5b86ef30fce39719bb3f455208}{
+\index{MasterRD.h@{MasterRD.h}!Snr@{Snr}}
+\index{Snr@{Snr}!MasterRD.h@{MasterRD.h}}
+\subsubsection[Snr]{\setlength{\rightskip}{0pt plus 5cm}unsigned char$\ast$ {\bf Snr}}}
+\label{_master_r_d_8h_d7f5fc5b86ef30fce39719bb3f455208}
+
+
+
+
+Definition at line 159 of file MasterRD.h.
+
+Referenced by RFID\_\-CR500::findCard().\hypertarget{_master_r_d_8h_a94b6acb0d3c20b5fbb0cc88a5a99740}{
+\index{MasterRD.h@{MasterRD.h}!srcLen@{srcLen}}
+\index{srcLen@{srcLen}!MasterRD.h@{MasterRD.h}}
+\subsubsection[srcLen]{\setlength{\rightskip}{0pt plus 5cm}unsigned char unsigned char {\bf srcLen}}}
+\label{_master_r_d_8h_a94b6acb0d3c20b5fbb0cc88a5a99740}
+
+
+
+
+Definition at line 327 of file MasterRD.h.\hypertarget{_master_r_d_8h_28f8573ae41bcf6c605a88f43515a14f}{
+\index{MasterRD.h@{MasterRD.h}!szIn@{szIn}}
+\index{szIn@{szIn}!MasterRD.h@{MasterRD.h}}
+\subsubsection[szIn]{\setlength{\rightskip}{0pt plus 5cm}unsigned char $\ast$ {\bf szIn}}}
+\label{_master_r_d_8h_28f8573ae41bcf6c605a88f43515a14f}
+
+
+
+
+Definition at line 184 of file MasterRD.h.\hypertarget{_master_r_d_8h_d6d6661890be22017e75446a24e41bc2}{
+\index{MasterRD.h@{MasterRD.h}!TagType@{TagType}}
+\index{TagType@{TagType}!MasterRD.h@{MasterRD.h}}
+\subsubsection[TagType]{\setlength{\rightskip}{0pt plus 5cm}unsigned char unsigned short$\ast$ {\bf TagType}}}
+\label{_master_r_d_8h_d6d6661890be22017e75446a24e41bc2}
+
+
+
+
+Definition at line 224 of file MasterRD.h.
+
+Referenced by RFID\_\-CR500::findCard().\hypertarget{_master_r_d_8h_a5044999f3339d2ba3b1bf22fa6cfe95}{
+\index{MasterRD.h@{MasterRD.h}!type@{type}}
+\index{type@{type}!MasterRD.h@{MasterRD.h}}
+\subsubsection[type]{\setlength{\rightskip}{0pt plus 5cm}unsigned char {\bf type}}}
+\label{_master_r_d_8h_a5044999f3339d2ba3b1bf22fa6cfe95}
+
+
+
+
+Definition at line 121 of file MasterRD.h.\hypertarget{_master_r_d_8h_ebadacfc123eafe0e9719ca0e1c37d79}{
+\index{MasterRD.h@{MasterRD.h}!value@{value}}
+\index{value@{value}!MasterRD.h@{MasterRD.h}}
+\subsubsection[value]{\setlength{\rightskip}{0pt plus 5cm}unsigned char long {\bf value}}}
+\label{_master_r_d_8h_ebadacfc123eafe0e9719ca0e1c37d79}
+
+
+
+
+Definition at line 393 of file MasterRD.h.
+
+Referenced by PasswordChangeDialog::on\_\-newLineEdit\_\-textChanged().

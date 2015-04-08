@@ -1,0 +1,381 @@
+\hypertarget{openpcd_8h}{
+\section{RFID\_\-Reader/openpcd.h File Reference}
+\label{openpcd_8h}\index{RFID\_\-Reader/openpcd.h@{RFID\_\-Reader/openpcd.h}}
+}
+\subsection*{Defines}
+\begin{CompactItemize}
+\item 
+\#define \hyperlink{openpcd_8h_c50c06301ba264f9be64f9022e58b204}{EXPORT\_\-CONVENTION}~\_\-\_\-stdcall
+\item 
+\#define \hyperlink{openpcd_8h_3472d8cdbb788d5f1815b3522595bc49}{EXPORT}~\_\-\_\-declspec(dllimport)
+\item 
+\#define \hyperlink{openpcd_8h_71fd7d7b130bc49cae0e28b6519362b6}{PCDERROR\_\-NONE}~0
+\item 
+\#define \hyperlink{openpcd_8h_f1b6f0558b8783f768268c4405369971}{PCDERROR\_\-INVALID\_\-PARAMETER}~-1
+\item 
+\#define \hyperlink{openpcd_8h_d6c93bedbefd85cf43201918ea2dd4b6}{PCDERROR\_\-KEY\_\-FORMAT}~-2
+\item 
+\#define \hyperlink{openpcd_8h_35fd808c436a4b9b77237ceb20a5b329}{PCDERROR\_\-KEY\_\-AUTH}~-3
+\item 
+\#define \hyperlink{openpcd_8h_711058acb7bff23294a0de234accfe3f}{PCDERROR\_\-NO\_\-CARD\_\-FOUND}~-4
+\item 
+\#define \hyperlink{openpcd_8h_33146e785f154417e36625265210a515}{PCDERROR\_\-LAYER2\_\-INIT}~-5
+\item 
+\#define \hyperlink{openpcd_8h_dbe9db15ab61f90634613e6136570ee0}{PCDERROR\_\-LAYER2\_\-OPEN}~-6
+\item 
+\#define \hyperlink{openpcd_8h_d61605f4b170d04718d13080c757f2fb}{PCDERROR\_\-LAYER3\_\-INIT}~-7
+\item 
+\#define \hyperlink{openpcd_8h_9466f466c16c65b2328272040c62e0af}{PCDERROR\_\-LAYER3\_\-OPEN}~-8
+\item 
+\#define \hyperlink{openpcd_8h_1b65f4f82dc462f3b3434de9adb85a0b}{PCDERROR\_\-SELECT}~-9
+\item 
+\#define \hyperlink{openpcd_8h_a38f8cdd2ec687bb8a807171cf94314d}{PCDERROR\_\-READ\_\-FAILED}~-10
+\item 
+\#define \hyperlink{openpcd_8h_e95a331e6f7594ddbf46f2d8ee3a414a}{PCDERROR\_\-WRITE\_\-FAILED}~-11
+\item 
+\#define \hyperlink{openpcd_8h_39a3a8af7be499118620de6b76f2beaa}{PCDERROR\_\-CLOSED}~-12
+\item 
+\#define \hyperlink{openpcd_8h_9be980858e7d6711d7318be096466aee}{PCDERROR\_\-NO\_\-READER}~-13
+\item 
+\#define \hyperlink{openpcd_8h_cc4d888700b6336957e0d6cc2bb5cd96}{PCDERROR\_\-OUT\_\-OF\_\-MEMORY}~-14
+\item 
+\#define \hyperlink{openpcd_8h_d5305f4543ddd8ca95a6634aca452516}{PCDERROR\_\-READER\_\-VERSION}~-15
+\item 
+\#define \hyperlink{openpcd_8h_66c39c57f83e05ca3b742ba277b35a86}{PCDAUTH\_\-KEY\_\-LENGTH}~6
+\item 
+\#define \hyperlink{openpcd_8h_2894fc8bbf603fc39f695456a0949a53}{PCDAUTH\_\-KEYID\_\-1A}~0
+\item 
+\#define \hyperlink{openpcd_8h_7e28a02583e7ffb0d99ad778e1d8feed}{PCDAUTH\_\-KEYID\_\-1B}~1
+\end{CompactItemize}
+\subsection*{Typedefs}
+\begin{CompactItemize}
+\item 
+typedef void $\ast$ \hyperlink{openpcd_8h_90e5d7b37c8a1b5c778df9d3f9e09758}{MIFARE\_\-HANDLE}
+\end{CompactItemize}
+\subsection*{Functions}
+\begin{CompactItemize}
+\item 
+EXPORT int EXPORT\_\-CONVENTION \hyperlink{openpcd_8h_554746a1f28dcb4da8619ee18900d9e0}{openpcd\_\-open\_\-reader} (\hyperlink{openpcd_8h_90e5d7b37c8a1b5c778df9d3f9e09758}{MIFARE\_\-HANDLE} $\ast$handle)
+\item 
+EXPORT int EXPORT\_\-CONVENTION \hyperlink{openpcd_8h_12a4d351a737cbe4c284e6f8b1cf0c33}{openpcd\_\-set\_\-key} (\hyperlink{openpcd_8h_90e5d7b37c8a1b5c778df9d3f9e09758}{MIFARE\_\-HANDLE} handle, unsigned int key\_\-id, const void $\ast$\hyperlink{_master_r_d_8h_7da5dfcff1c288368511fd309ad221f8}{key})
+\item 
+EXPORT int EXPORT\_\-CONVENTION \hyperlink{openpcd_8h_5e75c5e337c629f9914317a0d5aa0044}{openpcd\_\-select\_\-card} (\hyperlink{openpcd_8h_90e5d7b37c8a1b5c778df9d3f9e09758}{MIFARE\_\-HANDLE} handle)
+\item 
+EXPORT int EXPORT\_\-CONVENTION \hyperlink{openpcd_8h_f88c281551ac16432e485ac6e18f3f46}{openpcd\_\-read} (\hyperlink{openpcd_8h_90e5d7b37c8a1b5c778df9d3f9e09758}{MIFARE\_\-HANDLE} handle, int \hyperlink{_master_r_d_8h_17a17908516fbcb32566244a77d57772}{page}, void $\ast$\hyperlink{_master_r_d_8h_6f0f3eff16962881999799f7b0f66a0a}{data}, int len)
+\item 
+EXPORT int EXPORT\_\-CONVENTION \hyperlink{openpcd_8h_2ea863140bab28b81455a2750fa6c3c5}{openpcd\_\-write} (\hyperlink{openpcd_8h_90e5d7b37c8a1b5c778df9d3f9e09758}{MIFARE\_\-HANDLE} handle, int \hyperlink{_master_r_d_8h_17a17908516fbcb32566244a77d57772}{page}, const void $\ast$\hyperlink{_master_r_d_8h_6f0f3eff16962881999799f7b0f66a0a}{data}, int len)
+\item 
+EXPORT int EXPORT\_\-CONVENTION \hyperlink{openpcd_8h_d77b79f392ecad25a9111c6790faeeb9}{openpcd\_\-deselect\_\-card} (\hyperlink{openpcd_8h_90e5d7b37c8a1b5c778df9d3f9e09758}{MIFARE\_\-HANDLE} handle)
+\item 
+EXPORT int EXPORT\_\-CONVENTION \hyperlink{openpcd_8h_52330b3be688b4ef66f5f91c5156f4af}{openpcd\_\-close\_\-reader} (\hyperlink{openpcd_8h_90e5d7b37c8a1b5c778df9d3f9e09758}{MIFARE\_\-HANDLE} handle)
+\item 
+EXPORT char $\ast$EXPORT\_\-CONVENTION \hyperlink{openpcd_8h_4feec27c7698a45aa8aece5053677914}{openpcd\_\-get\_\-error\_\-text} (int error)
+\item 
+EXPORT int EXPORT\_\-CONVENTION \hyperlink{openpcd_8h_f8c248275344315a01b8d4fe703a45d8}{openpcd\_\-get\_\-card\_\-id} (\hyperlink{openpcd_8h_90e5d7b37c8a1b5c778df9d3f9e09758}{MIFARE\_\-HANDLE} handle, unsigned int $\ast$uid)
+\item 
+EXPORT int EXPORT\_\-CONVENTION \hyperlink{openpcd_8h_a43b40a2d532bb041561a18ac03eb21d}{openpcd\_\-get\_\-api\_\-version} (\hyperlink{openpcd_8h_90e5d7b37c8a1b5c778df9d3f9e09758}{MIFARE\_\-HANDLE} handle, unsigned int $\ast$version)
+\item 
+EXPORT int EXPORT\_\-CONVENTION \hyperlink{openpcd_8h_e59549a557622df99f794ccfc91af90a}{openpcd\_\-reset\_\-reader} (\hyperlink{openpcd_8h_90e5d7b37c8a1b5c778df9d3f9e09758}{MIFARE\_\-HANDLE} handle)
+\item 
+EXPORT int EXPORT\_\-CONVENTION \hyperlink{openpcd_8h_5f70d1c8cd001659c94bf7f2b6b1acd9}{openpcd\_\-get\_\-environment} (\hyperlink{openpcd_8h_90e5d7b37c8a1b5c778df9d3f9e09758}{MIFARE\_\-HANDLE} handle, unsigned char count, unsigned char $\ast$\hyperlink{_master_r_d_8h_6f0f3eff16962881999799f7b0f66a0a}{data})
+\item 
+EXPORT int EXPORT\_\-CONVENTION \hyperlink{openpcd_8h_f8cbaf141a36efc6b087bf6e881f399a}{openpcd\_\-set\_\-environment} (\hyperlink{openpcd_8h_90e5d7b37c8a1b5c778df9d3f9e09758}{MIFARE\_\-HANDLE} handle, unsigned char count, const unsigned char $\ast$\hyperlink{_master_r_d_8h_6f0f3eff16962881999799f7b0f66a0a}{data})
+\end{CompactItemize}
+
+
+\subsection{Define Documentation}
+\hypertarget{openpcd_8h_3472d8cdbb788d5f1815b3522595bc49}{
+\index{openpcd.h@{openpcd.h}!EXPORT@{EXPORT}}
+\index{EXPORT@{EXPORT}!openpcd.h@{openpcd.h}}
+\subsubsection[EXPORT]{\setlength{\rightskip}{0pt plus 5cm}\#define EXPORT~\_\-\_\-declspec(dllimport)}}
+\label{openpcd_8h_3472d8cdbb788d5f1815b3522595bc49}
+
+
+
+
+Definition at line 48 of file openpcd.h.\hypertarget{openpcd_8h_c50c06301ba264f9be64f9022e58b204}{
+\index{openpcd.h@{openpcd.h}!EXPORT\_\-CONVENTION@{EXPORT\_\-CONVENTION}}
+\index{EXPORT\_\-CONVENTION@{EXPORT\_\-CONVENTION}!openpcd.h@{openpcd.h}}
+\subsubsection[EXPORT\_\-CONVENTION]{\setlength{\rightskip}{0pt plus 5cm}\#define EXPORT\_\-CONVENTION~\_\-\_\-stdcall}}
+\label{openpcd_8h_c50c06301ba264f9be64f9022e58b204}
+
+
+
+
+Definition at line 42 of file openpcd.h.\hypertarget{openpcd_8h_66c39c57f83e05ca3b742ba277b35a86}{
+\index{openpcd.h@{openpcd.h}!PCDAUTH\_\-KEY\_\-LENGTH@{PCDAUTH\_\-KEY\_\-LENGTH}}
+\index{PCDAUTH\_\-KEY\_\-LENGTH@{PCDAUTH\_\-KEY\_\-LENGTH}!openpcd.h@{openpcd.h}}
+\subsubsection[PCDAUTH\_\-KEY\_\-LENGTH]{\setlength{\rightskip}{0pt plus 5cm}\#define PCDAUTH\_\-KEY\_\-LENGTH~6}}
+\label{openpcd_8h_66c39c57f83e05ca3b742ba277b35a86}
+
+
+
+
+Definition at line 68 of file openpcd.h.\hypertarget{openpcd_8h_2894fc8bbf603fc39f695456a0949a53}{
+\index{openpcd.h@{openpcd.h}!PCDAUTH\_\-KEYID\_\-1A@{PCDAUTH\_\-KEYID\_\-1A}}
+\index{PCDAUTH\_\-KEYID\_\-1A@{PCDAUTH\_\-KEYID\_\-1A}!openpcd.h@{openpcd.h}}
+\subsubsection[PCDAUTH\_\-KEYID\_\-1A]{\setlength{\rightskip}{0pt plus 5cm}\#define PCDAUTH\_\-KEYID\_\-1A~0}}
+\label{openpcd_8h_2894fc8bbf603fc39f695456a0949a53}
+
+
+
+
+Definition at line 69 of file openpcd.h.\hypertarget{openpcd_8h_7e28a02583e7ffb0d99ad778e1d8feed}{
+\index{openpcd.h@{openpcd.h}!PCDAUTH\_\-KEYID\_\-1B@{PCDAUTH\_\-KEYID\_\-1B}}
+\index{PCDAUTH\_\-KEYID\_\-1B@{PCDAUTH\_\-KEYID\_\-1B}!openpcd.h@{openpcd.h}}
+\subsubsection[PCDAUTH\_\-KEYID\_\-1B]{\setlength{\rightskip}{0pt plus 5cm}\#define PCDAUTH\_\-KEYID\_\-1B~1}}
+\label{openpcd_8h_7e28a02583e7ffb0d99ad778e1d8feed}
+
+
+
+
+Definition at line 70 of file openpcd.h.\hypertarget{openpcd_8h_39a3a8af7be499118620de6b76f2beaa}{
+\index{openpcd.h@{openpcd.h}!PCDERROR\_\-CLOSED@{PCDERROR\_\-CLOSED}}
+\index{PCDERROR\_\-CLOSED@{PCDERROR\_\-CLOSED}!openpcd.h@{openpcd.h}}
+\subsubsection[PCDERROR\_\-CLOSED]{\setlength{\rightskip}{0pt plus 5cm}\#define PCDERROR\_\-CLOSED~-12}}
+\label{openpcd_8h_39a3a8af7be499118620de6b76f2beaa}
+
+
+
+
+Definition at line 63 of file openpcd.h.\hypertarget{openpcd_8h_f1b6f0558b8783f768268c4405369971}{
+\index{openpcd.h@{openpcd.h}!PCDERROR\_\-INVALID\_\-PARAMETER@{PCDERROR\_\-INVALID\_\-PARAMETER}}
+\index{PCDERROR\_\-INVALID\_\-PARAMETER@{PCDERROR\_\-INVALID\_\-PARAMETER}!openpcd.h@{openpcd.h}}
+\subsubsection[PCDERROR\_\-INVALID\_\-PARAMETER]{\setlength{\rightskip}{0pt plus 5cm}\#define PCDERROR\_\-INVALID\_\-PARAMETER~-1}}
+\label{openpcd_8h_f1b6f0558b8783f768268c4405369971}
+
+
+
+
+Definition at line 52 of file openpcd.h.\hypertarget{openpcd_8h_35fd808c436a4b9b77237ceb20a5b329}{
+\index{openpcd.h@{openpcd.h}!PCDERROR\_\-KEY\_\-AUTH@{PCDERROR\_\-KEY\_\-AUTH}}
+\index{PCDERROR\_\-KEY\_\-AUTH@{PCDERROR\_\-KEY\_\-AUTH}!openpcd.h@{openpcd.h}}
+\subsubsection[PCDERROR\_\-KEY\_\-AUTH]{\setlength{\rightskip}{0pt plus 5cm}\#define PCDERROR\_\-KEY\_\-AUTH~-3}}
+\label{openpcd_8h_35fd808c436a4b9b77237ceb20a5b329}
+
+
+
+
+Definition at line 54 of file openpcd.h.\hypertarget{openpcd_8h_d6c93bedbefd85cf43201918ea2dd4b6}{
+\index{openpcd.h@{openpcd.h}!PCDERROR\_\-KEY\_\-FORMAT@{PCDERROR\_\-KEY\_\-FORMAT}}
+\index{PCDERROR\_\-KEY\_\-FORMAT@{PCDERROR\_\-KEY\_\-FORMAT}!openpcd.h@{openpcd.h}}
+\subsubsection[PCDERROR\_\-KEY\_\-FORMAT]{\setlength{\rightskip}{0pt plus 5cm}\#define PCDERROR\_\-KEY\_\-FORMAT~-2}}
+\label{openpcd_8h_d6c93bedbefd85cf43201918ea2dd4b6}
+
+
+
+
+Definition at line 53 of file openpcd.h.\hypertarget{openpcd_8h_33146e785f154417e36625265210a515}{
+\index{openpcd.h@{openpcd.h}!PCDERROR\_\-LAYER2\_\-INIT@{PCDERROR\_\-LAYER2\_\-INIT}}
+\index{PCDERROR\_\-LAYER2\_\-INIT@{PCDERROR\_\-LAYER2\_\-INIT}!openpcd.h@{openpcd.h}}
+\subsubsection[PCDERROR\_\-LAYER2\_\-INIT]{\setlength{\rightskip}{0pt plus 5cm}\#define PCDERROR\_\-LAYER2\_\-INIT~-5}}
+\label{openpcd_8h_33146e785f154417e36625265210a515}
+
+
+
+
+Definition at line 56 of file openpcd.h.\hypertarget{openpcd_8h_dbe9db15ab61f90634613e6136570ee0}{
+\index{openpcd.h@{openpcd.h}!PCDERROR\_\-LAYER2\_\-OPEN@{PCDERROR\_\-LAYER2\_\-OPEN}}
+\index{PCDERROR\_\-LAYER2\_\-OPEN@{PCDERROR\_\-LAYER2\_\-OPEN}!openpcd.h@{openpcd.h}}
+\subsubsection[PCDERROR\_\-LAYER2\_\-OPEN]{\setlength{\rightskip}{0pt plus 5cm}\#define PCDERROR\_\-LAYER2\_\-OPEN~-6}}
+\label{openpcd_8h_dbe9db15ab61f90634613e6136570ee0}
+
+
+
+
+Definition at line 57 of file openpcd.h.\hypertarget{openpcd_8h_d61605f4b170d04718d13080c757f2fb}{
+\index{openpcd.h@{openpcd.h}!PCDERROR\_\-LAYER3\_\-INIT@{PCDERROR\_\-LAYER3\_\-INIT}}
+\index{PCDERROR\_\-LAYER3\_\-INIT@{PCDERROR\_\-LAYER3\_\-INIT}!openpcd.h@{openpcd.h}}
+\subsubsection[PCDERROR\_\-LAYER3\_\-INIT]{\setlength{\rightskip}{0pt plus 5cm}\#define PCDERROR\_\-LAYER3\_\-INIT~-7}}
+\label{openpcd_8h_d61605f4b170d04718d13080c757f2fb}
+
+
+
+
+Definition at line 58 of file openpcd.h.\hypertarget{openpcd_8h_9466f466c16c65b2328272040c62e0af}{
+\index{openpcd.h@{openpcd.h}!PCDERROR\_\-LAYER3\_\-OPEN@{PCDERROR\_\-LAYER3\_\-OPEN}}
+\index{PCDERROR\_\-LAYER3\_\-OPEN@{PCDERROR\_\-LAYER3\_\-OPEN}!openpcd.h@{openpcd.h}}
+\subsubsection[PCDERROR\_\-LAYER3\_\-OPEN]{\setlength{\rightskip}{0pt plus 5cm}\#define PCDERROR\_\-LAYER3\_\-OPEN~-8}}
+\label{openpcd_8h_9466f466c16c65b2328272040c62e0af}
+
+
+
+
+Definition at line 59 of file openpcd.h.\hypertarget{openpcd_8h_711058acb7bff23294a0de234accfe3f}{
+\index{openpcd.h@{openpcd.h}!PCDERROR\_\-NO\_\-CARD\_\-FOUND@{PCDERROR\_\-NO\_\-CARD\_\-FOUND}}
+\index{PCDERROR\_\-NO\_\-CARD\_\-FOUND@{PCDERROR\_\-NO\_\-CARD\_\-FOUND}!openpcd.h@{openpcd.h}}
+\subsubsection[PCDERROR\_\-NO\_\-CARD\_\-FOUND]{\setlength{\rightskip}{0pt plus 5cm}\#define PCDERROR\_\-NO\_\-CARD\_\-FOUND~-4}}
+\label{openpcd_8h_711058acb7bff23294a0de234accfe3f}
+
+
+
+
+Definition at line 55 of file openpcd.h.\hypertarget{openpcd_8h_9be980858e7d6711d7318be096466aee}{
+\index{openpcd.h@{openpcd.h}!PCDERROR\_\-NO\_\-READER@{PCDERROR\_\-NO\_\-READER}}
+\index{PCDERROR\_\-NO\_\-READER@{PCDERROR\_\-NO\_\-READER}!openpcd.h@{openpcd.h}}
+\subsubsection[PCDERROR\_\-NO\_\-READER]{\setlength{\rightskip}{0pt plus 5cm}\#define PCDERROR\_\-NO\_\-READER~-13}}
+\label{openpcd_8h_9be980858e7d6711d7318be096466aee}
+
+
+
+
+Definition at line 64 of file openpcd.h.\hypertarget{openpcd_8h_71fd7d7b130bc49cae0e28b6519362b6}{
+\index{openpcd.h@{openpcd.h}!PCDERROR\_\-NONE@{PCDERROR\_\-NONE}}
+\index{PCDERROR\_\-NONE@{PCDERROR\_\-NONE}!openpcd.h@{openpcd.h}}
+\subsubsection[PCDERROR\_\-NONE]{\setlength{\rightskip}{0pt plus 5cm}\#define PCDERROR\_\-NONE~0}}
+\label{openpcd_8h_71fd7d7b130bc49cae0e28b6519362b6}
+
+
+
+
+Definition at line 51 of file openpcd.h.\hypertarget{openpcd_8h_cc4d888700b6336957e0d6cc2bb5cd96}{
+\index{openpcd.h@{openpcd.h}!PCDERROR\_\-OUT\_\-OF\_\-MEMORY@{PCDERROR\_\-OUT\_\-OF\_\-MEMORY}}
+\index{PCDERROR\_\-OUT\_\-OF\_\-MEMORY@{PCDERROR\_\-OUT\_\-OF\_\-MEMORY}!openpcd.h@{openpcd.h}}
+\subsubsection[PCDERROR\_\-OUT\_\-OF\_\-MEMORY]{\setlength{\rightskip}{0pt plus 5cm}\#define PCDERROR\_\-OUT\_\-OF\_\-MEMORY~-14}}
+\label{openpcd_8h_cc4d888700b6336957e0d6cc2bb5cd96}
+
+
+
+
+Definition at line 65 of file openpcd.h.\hypertarget{openpcd_8h_a38f8cdd2ec687bb8a807171cf94314d}{
+\index{openpcd.h@{openpcd.h}!PCDERROR\_\-READ\_\-FAILED@{PCDERROR\_\-READ\_\-FAILED}}
+\index{PCDERROR\_\-READ\_\-FAILED@{PCDERROR\_\-READ\_\-FAILED}!openpcd.h@{openpcd.h}}
+\subsubsection[PCDERROR\_\-READ\_\-FAILED]{\setlength{\rightskip}{0pt plus 5cm}\#define PCDERROR\_\-READ\_\-FAILED~-10}}
+\label{openpcd_8h_a38f8cdd2ec687bb8a807171cf94314d}
+
+
+
+
+Definition at line 61 of file openpcd.h.\hypertarget{openpcd_8h_d5305f4543ddd8ca95a6634aca452516}{
+\index{openpcd.h@{openpcd.h}!PCDERROR\_\-READER\_\-VERSION@{PCDERROR\_\-READER\_\-VERSION}}
+\index{PCDERROR\_\-READER\_\-VERSION@{PCDERROR\_\-READER\_\-VERSION}!openpcd.h@{openpcd.h}}
+\subsubsection[PCDERROR\_\-READER\_\-VERSION]{\setlength{\rightskip}{0pt plus 5cm}\#define PCDERROR\_\-READER\_\-VERSION~-15}}
+\label{openpcd_8h_d5305f4543ddd8ca95a6634aca452516}
+
+
+
+
+Definition at line 66 of file openpcd.h.\hypertarget{openpcd_8h_1b65f4f82dc462f3b3434de9adb85a0b}{
+\index{openpcd.h@{openpcd.h}!PCDERROR\_\-SELECT@{PCDERROR\_\-SELECT}}
+\index{PCDERROR\_\-SELECT@{PCDERROR\_\-SELECT}!openpcd.h@{openpcd.h}}
+\subsubsection[PCDERROR\_\-SELECT]{\setlength{\rightskip}{0pt plus 5cm}\#define PCDERROR\_\-SELECT~-9}}
+\label{openpcd_8h_1b65f4f82dc462f3b3434de9adb85a0b}
+
+
+
+
+Definition at line 60 of file openpcd.h.\hypertarget{openpcd_8h_e95a331e6f7594ddbf46f2d8ee3a414a}{
+\index{openpcd.h@{openpcd.h}!PCDERROR\_\-WRITE\_\-FAILED@{PCDERROR\_\-WRITE\_\-FAILED}}
+\index{PCDERROR\_\-WRITE\_\-FAILED@{PCDERROR\_\-WRITE\_\-FAILED}!openpcd.h@{openpcd.h}}
+\subsubsection[PCDERROR\_\-WRITE\_\-FAILED]{\setlength{\rightskip}{0pt plus 5cm}\#define PCDERROR\_\-WRITE\_\-FAILED~-11}}
+\label{openpcd_8h_e95a331e6f7594ddbf46f2d8ee3a414a}
+
+
+
+
+Definition at line 62 of file openpcd.h.
+
+\subsection{Typedef Documentation}
+\hypertarget{openpcd_8h_90e5d7b37c8a1b5c778df9d3f9e09758}{
+\index{openpcd.h@{openpcd.h}!MIFARE\_\-HANDLE@{MIFARE\_\-HANDLE}}
+\index{MIFARE\_\-HANDLE@{MIFARE\_\-HANDLE}!openpcd.h@{openpcd.h}}
+\subsubsection[MIFARE\_\-HANDLE]{\setlength{\rightskip}{0pt plus 5cm}typedef void$\ast$ {\bf MIFARE\_\-HANDLE}}}
+\label{openpcd_8h_90e5d7b37c8a1b5c778df9d3f9e09758}
+
+
+
+
+Definition at line 72 of file openpcd.h.
+
+\subsection{Function Documentation}
+\hypertarget{openpcd_8h_52330b3be688b4ef66f5f91c5156f4af}{
+\index{openpcd.h@{openpcd.h}!openpcd\_\-close\_\-reader@{openpcd\_\-close\_\-reader}}
+\index{openpcd\_\-close\_\-reader@{openpcd\_\-close\_\-reader}!openpcd.h@{openpcd.h}}
+\subsubsection[openpcd\_\-close\_\-reader]{\setlength{\rightskip}{0pt plus 5cm}EXPORT int EXPORT\_\-CONVENTION openpcd\_\-close\_\-reader ({\bf MIFARE\_\-HANDLE} {\em handle})}}
+\label{openpcd_8h_52330b3be688b4ef66f5f91c5156f4af}
+
+
+\hypertarget{openpcd_8h_d77b79f392ecad25a9111c6790faeeb9}{
+\index{openpcd.h@{openpcd.h}!openpcd\_\-deselect\_\-card@{openpcd\_\-deselect\_\-card}}
+\index{openpcd\_\-deselect\_\-card@{openpcd\_\-deselect\_\-card}!openpcd.h@{openpcd.h}}
+\subsubsection[openpcd\_\-deselect\_\-card]{\setlength{\rightskip}{0pt plus 5cm}EXPORT int EXPORT\_\-CONVENTION openpcd\_\-deselect\_\-card ({\bf MIFARE\_\-HANDLE} {\em handle})}}
+\label{openpcd_8h_d77b79f392ecad25a9111c6790faeeb9}
+
+
+\hypertarget{openpcd_8h_a43b40a2d532bb041561a18ac03eb21d}{
+\index{openpcd.h@{openpcd.h}!openpcd\_\-get\_\-api\_\-version@{openpcd\_\-get\_\-api\_\-version}}
+\index{openpcd\_\-get\_\-api\_\-version@{openpcd\_\-get\_\-api\_\-version}!openpcd.h@{openpcd.h}}
+\subsubsection[openpcd\_\-get\_\-api\_\-version]{\setlength{\rightskip}{0pt plus 5cm}EXPORT int EXPORT\_\-CONVENTION openpcd\_\-get\_\-api\_\-version ({\bf MIFARE\_\-HANDLE} {\em handle}, \/  unsigned int $\ast$ {\em version})}}
+\label{openpcd_8h_a43b40a2d532bb041561a18ac03eb21d}
+
+
+\hypertarget{openpcd_8h_f8c248275344315a01b8d4fe703a45d8}{
+\index{openpcd.h@{openpcd.h}!openpcd\_\-get\_\-card\_\-id@{openpcd\_\-get\_\-card\_\-id}}
+\index{openpcd\_\-get\_\-card\_\-id@{openpcd\_\-get\_\-card\_\-id}!openpcd.h@{openpcd.h}}
+\subsubsection[openpcd\_\-get\_\-card\_\-id]{\setlength{\rightskip}{0pt plus 5cm}EXPORT int EXPORT\_\-CONVENTION openpcd\_\-get\_\-card\_\-id ({\bf MIFARE\_\-HANDLE} {\em handle}, \/  unsigned int $\ast$ {\em uid})}}
+\label{openpcd_8h_f8c248275344315a01b8d4fe703a45d8}
+
+
+\hypertarget{openpcd_8h_5f70d1c8cd001659c94bf7f2b6b1acd9}{
+\index{openpcd.h@{openpcd.h}!openpcd\_\-get\_\-environment@{openpcd\_\-get\_\-environment}}
+\index{openpcd\_\-get\_\-environment@{openpcd\_\-get\_\-environment}!openpcd.h@{openpcd.h}}
+\subsubsection[openpcd\_\-get\_\-environment]{\setlength{\rightskip}{0pt plus 5cm}EXPORT int EXPORT\_\-CONVENTION openpcd\_\-get\_\-environment ({\bf MIFARE\_\-HANDLE} {\em handle}, \/  unsigned char {\em count}, \/  unsigned char $\ast$ {\em data})}}
+\label{openpcd_8h_5f70d1c8cd001659c94bf7f2b6b1acd9}
+
+
+\hypertarget{openpcd_8h_4feec27c7698a45aa8aece5053677914}{
+\index{openpcd.h@{openpcd.h}!openpcd\_\-get\_\-error\_\-text@{openpcd\_\-get\_\-error\_\-text}}
+\index{openpcd\_\-get\_\-error\_\-text@{openpcd\_\-get\_\-error\_\-text}!openpcd.h@{openpcd.h}}
+\subsubsection[openpcd\_\-get\_\-error\_\-text]{\setlength{\rightskip}{0pt plus 5cm}EXPORT char$\ast$ EXPORT\_\-CONVENTION openpcd\_\-get\_\-error\_\-text (int {\em error})}}
+\label{openpcd_8h_4feec27c7698a45aa8aece5053677914}
+
+
+\hypertarget{openpcd_8h_554746a1f28dcb4da8619ee18900d9e0}{
+\index{openpcd.h@{openpcd.h}!openpcd\_\-open\_\-reader@{openpcd\_\-open\_\-reader}}
+\index{openpcd\_\-open\_\-reader@{openpcd\_\-open\_\-reader}!openpcd.h@{openpcd.h}}
+\subsubsection[openpcd\_\-open\_\-reader]{\setlength{\rightskip}{0pt plus 5cm}EXPORT int EXPORT\_\-CONVENTION openpcd\_\-open\_\-reader ({\bf MIFARE\_\-HANDLE} $\ast$ {\em handle})}}
+\label{openpcd_8h_554746a1f28dcb4da8619ee18900d9e0}
+
+
+\hypertarget{openpcd_8h_f88c281551ac16432e485ac6e18f3f46}{
+\index{openpcd.h@{openpcd.h}!openpcd\_\-read@{openpcd\_\-read}}
+\index{openpcd\_\-read@{openpcd\_\-read}!openpcd.h@{openpcd.h}}
+\subsubsection[openpcd\_\-read]{\setlength{\rightskip}{0pt plus 5cm}EXPORT int EXPORT\_\-CONVENTION openpcd\_\-read ({\bf MIFARE\_\-HANDLE} {\em handle}, \/  int {\em page}, \/  void $\ast$ {\em data}, \/  int {\em len})}}
+\label{openpcd_8h_f88c281551ac16432e485ac6e18f3f46}
+
+
+\hypertarget{openpcd_8h_e59549a557622df99f794ccfc91af90a}{
+\index{openpcd.h@{openpcd.h}!openpcd\_\-reset\_\-reader@{openpcd\_\-reset\_\-reader}}
+\index{openpcd\_\-reset\_\-reader@{openpcd\_\-reset\_\-reader}!openpcd.h@{openpcd.h}}
+\subsubsection[openpcd\_\-reset\_\-reader]{\setlength{\rightskip}{0pt plus 5cm}EXPORT int EXPORT\_\-CONVENTION openpcd\_\-reset\_\-reader ({\bf MIFARE\_\-HANDLE} {\em handle})}}
+\label{openpcd_8h_e59549a557622df99f794ccfc91af90a}
+
+
+\hypertarget{openpcd_8h_5e75c5e337c629f9914317a0d5aa0044}{
+\index{openpcd.h@{openpcd.h}!openpcd\_\-select\_\-card@{openpcd\_\-select\_\-card}}
+\index{openpcd\_\-select\_\-card@{openpcd\_\-select\_\-card}!openpcd.h@{openpcd.h}}
+\subsubsection[openpcd\_\-select\_\-card]{\setlength{\rightskip}{0pt plus 5cm}EXPORT int EXPORT\_\-CONVENTION openpcd\_\-select\_\-card ({\bf MIFARE\_\-HANDLE} {\em handle})}}
+\label{openpcd_8h_5e75c5e337c629f9914317a0d5aa0044}
+
+
+\hypertarget{openpcd_8h_f8cbaf141a36efc6b087bf6e881f399a}{
+\index{openpcd.h@{openpcd.h}!openpcd\_\-set\_\-environment@{openpcd\_\-set\_\-environment}}
+\index{openpcd\_\-set\_\-environment@{openpcd\_\-set\_\-environment}!openpcd.h@{openpcd.h}}
+\subsubsection[openpcd\_\-set\_\-environment]{\setlength{\rightskip}{0pt plus 5cm}EXPORT int EXPORT\_\-CONVENTION openpcd\_\-set\_\-environment ({\bf MIFARE\_\-HANDLE} {\em handle}, \/  unsigned char {\em count}, \/  const unsigned char $\ast$ {\em data})}}
+\label{openpcd_8h_f8cbaf141a36efc6b087bf6e881f399a}
+
+
+\hypertarget{openpcd_8h_12a4d351a737cbe4c284e6f8b1cf0c33}{
+\index{openpcd.h@{openpcd.h}!openpcd\_\-set\_\-key@{openpcd\_\-set\_\-key}}
+\index{openpcd\_\-set\_\-key@{openpcd\_\-set\_\-key}!openpcd.h@{openpcd.h}}
+\subsubsection[openpcd\_\-set\_\-key]{\setlength{\rightskip}{0pt plus 5cm}EXPORT int EXPORT\_\-CONVENTION openpcd\_\-set\_\-key ({\bf MIFARE\_\-HANDLE} {\em handle}, \/  unsigned int {\em key\_\-id}, \/  const void $\ast$ {\em key})}}
+\label{openpcd_8h_12a4d351a737cbe4c284e6f8b1cf0c33}
+
+
+\hypertarget{openpcd_8h_2ea863140bab28b81455a2750fa6c3c5}{
+\index{openpcd.h@{openpcd.h}!openpcd\_\-write@{openpcd\_\-write}}
+\index{openpcd\_\-write@{openpcd\_\-write}!openpcd.h@{openpcd.h}}
+\subsubsection[openpcd\_\-write]{\setlength{\rightskip}{0pt plus 5cm}EXPORT int EXPORT\_\-CONVENTION openpcd\_\-write ({\bf MIFARE\_\-HANDLE} {\em handle}, \/  int {\em page}, \/  const void $\ast$ {\em data}, \/  int {\em len})}}
+\label{openpcd_8h_2ea863140bab28b81455a2750fa6c3c5}
+
+

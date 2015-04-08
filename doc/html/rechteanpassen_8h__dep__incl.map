@@ -1,0 +1,15 @@
+<area shape="rect" href="$beo__timing_8h.html" title="Hauptklasse der Applikation." alt="" coords="615,80,711,106">
+<area shape="rect" href="$beo__timing_8cpp.html" title="Hauptklasse der Applikation." alt="" coords="1044,229,1153,256">
+<area shape="rect" href="$moc__rechteanpassen_8cpp.html" title="debug/moc_rechteanpassen.cpp" alt="" coords="1187,80,1395,106">
+<area shape="rect" href="$rechteanpassen_8cpp.html" title="Dieser Dialog dient zum anpassen der Rechte eines beliebigen Benutzers." alt="" coords="1419,80,1557,106">
+<area shape="rect" href="$tableeditdialog_8h.html" title="Dieser Dialog dient dem Editieren der Eintraege." alt="" coords="1187,154,1301,181">
+<area shape="rect" href="$logondialog_8h.html" title="Dieser Dialog ist das Login des Programms. Es dient zur Authentifizierung des Benutzers..." alt="" coords="184,154,280,181">
+<area shape="rect" href="$logondialog_8cpp.html" title="Dieser Dialog ist das Login des Programms. Es dient zur Authentifizierung des Benutzers..." alt="" coords="5,229,117,256">
+<area shape="rect" href="$main_8cpp.html" title="Das main Initialisiert das Programm und erstellt den Hauptdialog." alt="" coords="347,229,421,256">
+<area shape="rect" href="$db_thread_8cpp.html" title="Dieser Thread ueberprueft alle 5 Sekunden die Verbindung zur Datenbank." alt="" coords="355,154,453,181">
+<area shape="rect" href="$moc__beo__timing_8cpp.html" title="debug/moc_beo_timing.cpp" alt="" coords="477,154,656,181">
+<area shape="rect" href="$neuesrennendialog_8cpp.html" title="Dieser Dialog dient zum erstellen eines neunen Rennens." alt="" coords="680,154,835,181">
+<area shape="rect" href="$_r_f_i_d___c_r500_8cpp.html" title="Enthält alle Eigenschaften des RFID&#45;Lesers CR500&#45;USB." alt="" coords="859,154,1061,181">
+<area shape="rect" href="$moc__tableeditdialog_8cpp.html" title="debug/moc_tableeditdialog.cpp" alt="" coords="1331,229,1531,256">
+<area shape="rect" href="$tableeditdialog_8cpp.html" title="Dieser Dialog dient dem Editieren der Eintraege." alt="" coords="1179,229,1307,256">
+<area shape="rect" href="$moc__logondialog_8cpp.html" title="debug/moc_logondialog.cpp" alt="" coords="141,229,323,256">

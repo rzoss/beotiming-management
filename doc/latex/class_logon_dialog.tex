@@ -1,0 +1,165 @@
+\hypertarget{class_logon_dialog}{
+\section{LogonDialog Class Reference}
+\label{class_logon_dialog}\index{LogonDialog@{LogonDialog}}
+}
+Dieser Dialog ist das Login des Programms. Es dient zur Authentifizierung des Benutzers.  
+
+
+{\tt \#include $<$logondialog.h$>$}
+
+Collaboration diagram for LogonDialog:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{class_logon_dialog__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{CompactItemize}
+\item 
+\hyperlink{class_logon_dialog_fd0f4977c07e5fbc9173d4ac35489f8b}{LogonDialog} (\hyperlink{class_user}{User} $\ast$\hyperlink{class_logon_dialog_60af9ce2cb403ef6ae38953b9c78e2ee}{user}, QApplication $\ast$\hyperlink{class_logon_dialog_cc6f7b558e791bdb79d0c522209306c2}{a}, \hyperlink{class_b_e_o___timing}{BEO\_\-Timing} $\ast$\hyperlink{class_logon_dialog_1c32b591de3a058059ed985b5f470ca0}{w}, QWidget $\ast$parent=0)
+\begin{CompactList}\small\item\em Konstruktor. \item\end{CompactList}\item 
+\hyperlink{class_logon_dialog_da40d3f09891af804cce52c6b46ee597}{$\sim$LogonDialog} ()
+\begin{CompactList}\small\item\em Destruktor. \item\end{CompactList}\end{CompactItemize}
+\subsection*{Protected Attributes}
+\begin{CompactItemize}
+\item 
+QApplication $\ast$ \hyperlink{class_logon_dialog_cc6f7b558e791bdb79d0c522209306c2}{a}
+\item 
+\hyperlink{class_b_e_o___timing}{BEO\_\-Timing} $\ast$ \hyperlink{class_logon_dialog_1c32b591de3a058059ed985b5f470ca0}{w}
+\item 
+\hyperlink{class_user}{User} $\ast$ \hyperlink{class_logon_dialog_60af9ce2cb403ef6ae38953b9c78e2ee}{user}
+\item 
+\hyperlink{class_ui_1_1_logon_dialog_class}{Ui::LogonDialogClass} \hyperlink{class_logon_dialog_24dfce9f2459f2c66f09a430d8baf907}{ui}
+\end{CompactItemize}
+\subsection*{Private Slots}
+\begin{CompactItemize}
+\item 
+void \hyperlink{class_logon_dialog_458c87e2493dd7421792e8141e65c5dd}{on\_\-LogonButton\_\-released} ()
+\begin{CompactList}\small\item\em Slot für Logon-Button. \item\end{CompactList}\item 
+void \hyperlink{class_logon_dialog_6c66e4cb7c567b47f544080ae148b0b3}{on\_\-BeendenButton\_\-released} ()
+\begin{CompactList}\small\item\em Slot für Beenden-Button. \item\end{CompactList}\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+Dieser Dialog ist das Login des Programms. Es dient zur Authentifizierung des Benutzers. 
+
+Definition at line 43 of file logondialog.h.
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_logon_dialog_fd0f4977c07e5fbc9173d4ac35489f8b}{
+\index{LogonDialog@{LogonDialog}!LogonDialog@{LogonDialog}}
+\index{LogonDialog@{LogonDialog}!LogonDialog@{LogonDialog}}
+\subsubsection[LogonDialog]{\setlength{\rightskip}{0pt plus 5cm}LogonDialog::LogonDialog ({\bf User} $\ast$ {\em user}, \/  QApplication $\ast$ {\em a}, \/  {\bf BEO\_\-Timing} $\ast$ {\em w}, \/  QWidget $\ast$ {\em parent} = {\tt 0})}}
+\label{class_logon_dialog_fd0f4977c07e5fbc9173d4ac35489f8b}
+
+
+Konstruktor. 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em user}]Pointer auf den angemeldeten Benutzer \item[{\em a}]Pointer auf die Hauptapplikation \item[{\em w}]Pointer auf das Hauptfenster \item[{\em parent}]Pointer auf parent \end{description}
+\end{Desc}
+
+
+Definition at line 46 of file logondialog.cpp.
+
+References Ui\_\-LogonDialogClass::setupUi(), and ui.
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=282pt]{class_logon_dialog_fd0f4977c07e5fbc9173d4ac35489f8b_cgraph}
+\end{center}
+\end{figure}
+\hypertarget{class_logon_dialog_da40d3f09891af804cce52c6b46ee597}{
+\index{LogonDialog@{LogonDialog}!$\sim$LogonDialog@{$\sim$LogonDialog}}
+\index{$\sim$LogonDialog@{$\sim$LogonDialog}!LogonDialog@{LogonDialog}}
+\subsubsection[$\sim$LogonDialog]{\setlength{\rightskip}{0pt plus 5cm}LogonDialog::$\sim$LogonDialog ()}}
+\label{class_logon_dialog_da40d3f09891af804cce52c6b46ee597}
+
+
+Destruktor. 
+
+
+
+Definition at line 61 of file logondialog.cpp.
+
+\subsection{Member Function Documentation}
+\hypertarget{class_logon_dialog_458c87e2493dd7421792e8141e65c5dd}{
+\index{LogonDialog@{LogonDialog}!on\_\-LogonButton\_\-released@{on\_\-LogonButton\_\-released}}
+\index{on\_\-LogonButton\_\-released@{on\_\-LogonButton\_\-released}!LogonDialog@{LogonDialog}}
+\subsubsection[on\_\-LogonButton\_\-released]{\setlength{\rightskip}{0pt plus 5cm}void LogonDialog::on\_\-LogonButton\_\-released ()\hspace{0.3cm}{\tt  \mbox{[}private, slot\mbox{]}}}}
+\label{class_logon_dialog_458c87e2493dd7421792e8141e65c5dd}
+
+
+Slot für Logon-Button. 
+
+
+
+Definition at line 75 of file logondialog.cpp.
+
+References Ui\_\-LogonDialogClass::BenutzernameEdit, User::Init(), md5\_\-buffer(), md5\_\-init(), Ui\_\-LogonDialogClass::PasswortLabel\_\-2, ui, BEO\_\-Timing::updateUserStatus(), user, and w.\hypertarget{class_logon_dialog_6c66e4cb7c567b47f544080ae148b0b3}{
+\index{LogonDialog@{LogonDialog}!on\_\-BeendenButton\_\-released@{on\_\-BeendenButton\_\-released}}
+\index{on\_\-BeendenButton\_\-released@{on\_\-BeendenButton\_\-released}!LogonDialog@{LogonDialog}}
+\subsubsection[on\_\-BeendenButton\_\-released]{\setlength{\rightskip}{0pt plus 5cm}void LogonDialog::on\_\-BeendenButton\_\-released ()\hspace{0.3cm}{\tt  \mbox{[}private, slot\mbox{]}}}}
+\label{class_logon_dialog_6c66e4cb7c567b47f544080ae148b0b3}
+
+
+Slot für Beenden-Button. 
+
+
+
+Definition at line 69 of file logondialog.cpp.
+
+\subsection{Member Data Documentation}
+\hypertarget{class_logon_dialog_cc6f7b558e791bdb79d0c522209306c2}{
+\index{LogonDialog@{LogonDialog}!a@{a}}
+\index{a@{a}!LogonDialog@{LogonDialog}}
+\subsubsection[a]{\setlength{\rightskip}{0pt plus 5cm}QApplication$\ast$ {\bf LogonDialog::a}\hspace{0.3cm}{\tt  \mbox{[}protected\mbox{]}}}}
+\label{class_logon_dialog_cc6f7b558e791bdb79d0c522209306c2}
+
+
+
+
+Definition at line 52 of file logondialog.h.\hypertarget{class_logon_dialog_1c32b591de3a058059ed985b5f470ca0}{
+\index{LogonDialog@{LogonDialog}!w@{w}}
+\index{w@{w}!LogonDialog@{LogonDialog}}
+\subsubsection[w]{\setlength{\rightskip}{0pt plus 5cm}{\bf BEO\_\-Timing}$\ast$ {\bf LogonDialog::w}\hspace{0.3cm}{\tt  \mbox{[}protected\mbox{]}}}}
+\label{class_logon_dialog_1c32b591de3a058059ed985b5f470ca0}
+
+
+
+
+Definition at line 53 of file logondialog.h.
+
+Referenced by on\_\-LogonButton\_\-released().\hypertarget{class_logon_dialog_60af9ce2cb403ef6ae38953b9c78e2ee}{
+\index{LogonDialog@{LogonDialog}!user@{user}}
+\index{user@{user}!LogonDialog@{LogonDialog}}
+\subsubsection[user]{\setlength{\rightskip}{0pt plus 5cm}{\bf User}$\ast$ {\bf LogonDialog::user}\hspace{0.3cm}{\tt  \mbox{[}protected\mbox{]}}}}
+\label{class_logon_dialog_60af9ce2cb403ef6ae38953b9c78e2ee}
+
+
+
+
+Definition at line 54 of file logondialog.h.
+
+Referenced by on\_\-LogonButton\_\-released().\hypertarget{class_logon_dialog_24dfce9f2459f2c66f09a430d8baf907}{
+\index{LogonDialog@{LogonDialog}!ui@{ui}}
+\index{ui@{ui}!LogonDialog@{LogonDialog}}
+\subsubsection[ui]{\setlength{\rightskip}{0pt plus 5cm}{\bf Ui::LogonDialogClass} {\bf LogonDialog::ui}\hspace{0.3cm}{\tt  \mbox{[}protected\mbox{]}}}}
+\label{class_logon_dialog_24dfce9f2459f2c66f09a430d8baf907}
+
+
+
+
+Definition at line 55 of file logondialog.h.
+
+Referenced by LogonDialog(), and on\_\-LogonButton\_\-released().
+
+The documentation for this class was generated from the following files:\begin{CompactItemize}
+\item 
+\hyperlink{logondialog_8h}{logondialog.h}\item 
+\hyperlink{logondialog_8cpp}{logondialog.cpp}\end{CompactItemize}

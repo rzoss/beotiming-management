@@ -1,0 +1,249 @@
+\hypertarget{_r_f_i_d___c_r500_8h}{
+\section{RFID\_\-Reader/RFID\_\-CR500.h File Reference}
+\label{_r_f_i_d___c_r500_8h}\index{RFID\_\-Reader/RFID\_\-CR500.h@{RFID\_\-Reader/RFID\_\-CR500.h}}
+}
+Enthält alle Eigenschaften des RFID-Lesers CR500-USB. 
+
+{\tt \#include $<$windows.h$>$}\par
+{\tt \#include $<$QtGui$>$}\par
+{\tt \#include \char`\"{}RFID\_\-Reader/rfidinputdialog.h\char`\"{}}\par
+
+
+Include dependency graph for RFID\_\-CR500.h:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=420pt]{_r_f_i_d___c_r500_8h__incl}
+\end{center}
+\end{figure}
+
+
+This graph shows which files directly or indirectly include this file:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=420pt]{_r_f_i_d___c_r500_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{CompactItemize}
+\item 
+struct \hyperlink{struct_m_y_t_i_m_e}{MYTIME}
+\begin{CompactList}\small\item\em Struktur fuer die Fahrzeit (Groesse 4 Byte). \item\end{CompactList}\item 
+struct \hyperlink{struct_m_y_d_a_t_e}{MYDATE}
+\begin{CompactList}\small\item\em Struktur fuer die Start- und Endzeit (Groesse 7 Byte). \item\end{CompactList}\item 
+class \hyperlink{class_r_f_i_d___c_r500}{RFID\_\-CR500}
+\begin{CompactList}\small\item\em Enthält alle Eigenschaften des RFID-Lesers CR500-USB. \item\end{CompactList}\end{CompactItemize}
+\subsection*{Defines}
+\begin{CompactItemize}
+\item 
+\#define \hyperlink{_r_f_i_d___c_r500_8h_597463e32a8f9644e3539086cf45aac0}{RFID\_\-ADR\_\-STATUS}~4
+\begin{CompactList}\small\item\em Pagenummer des Statusbits in der RFID-Karte. \item\end{CompactList}\item 
+\#define \hyperlink{_r_f_i_d___c_r500_8h_ef9f4fb825ed6c083b11764ad97f9c8a}{RFID\_\-ADR\_\-STRECKE}~5
+\begin{CompactList}\small\item\em Pagenummer der Streckennummer in der RFID-Karte. \item\end{CompactList}\item 
+\#define \hyperlink{_r_f_i_d___c_r500_8h_77b1101b3522554f0bc4f34c99335d31}{RFID\_\-ADR\_\-STARTTIME}~6
+\begin{CompactList}\small\item\em Pagenummer der Startzeit in der RFID-Karte. \item\end{CompactList}\item 
+\#define \hyperlink{_r_f_i_d___c_r500_8h_5b7e9a26d58b7f2d86e38725570a189e}{RFID\_\-ADR\_\-ENDTIME}~8
+\begin{CompactList}\small\item\em Pagenummer der Endzeit in der RFID-Karte. \item\end{CompactList}\item 
+\#define \hyperlink{_r_f_i_d___c_r500_8h_9c078ad4fdcdd7fed5bcb9c1c49c82f0}{RFID\_\-ADR\_\-RACETIME}~10
+\begin{CompactList}\small\item\em Pagenummer der Fahrzeit in der RFID-Karte. \item\end{CompactList}\item 
+\#define \hyperlink{_r_f_i_d___c_r500_8h_035cb5f2ac9f139c0ab5a178209249fd}{TAG\_\-STATUS\_\-STRECKENVALID}~(1$<$$<$0)
+\begin{CompactList}\small\item\em Gültige Streckennr. aud der Karte. \item\end{CompactList}\item 
+\#define \hyperlink{_r_f_i_d___c_r500_8h_3c36907efdfc9c64816e09fa0618b8ca}{TAG\_\-STATUS\_\-STARTVALID}~(1$<$$<$1)
+\begin{CompactList}\small\item\em Gültige Startzeit auf der Karte. \item\end{CompactList}\item 
+\#define \hyperlink{_r_f_i_d___c_r500_8h_a7f8d28b6faa7976ed39b7936a4904e5}{TAG\_\-STATUS\_\-ENDVALID}~(1$<$$<$2)
+\begin{CompactList}\small\item\em Gültige Endzeit auf der Karte. \item\end{CompactList}\item 
+\#define \hyperlink{_r_f_i_d___c_r500_8h_b5ed5ada4835710a7c3c0866937fb9f3}{TAG\_\-STATUS\_\-MANUALCLEARED}~(1$<$$<$3)
+\begin{CompactList}\small\item\em Karte ist Manuel gelöscht worden. \item\end{CompactList}\item 
+\#define \hyperlink{_r_f_i_d___c_r500_8h_c8f9aa4914aec834b758cbf6e16e1cf1}{TAG\_\-STATUS\_\-REGISTERED}~(1$<$$<$4)
+\begin{CompactList}\small\item\em Karte ist Persönlich. \item\end{CompactList}\end{CompactItemize}
+\subsection*{Enumerations}
+\begin{CompactItemize}
+\item 
+enum \{ \hyperlink{_r_f_i_d___c_r500_8h_99fb83031ce9923c84392b4e92f956b57f48418c60e70982c78f0684ac2950fe}{NO\_\-LED}, 
+\hyperlink{_r_f_i_d___c_r500_8h_99fb83031ce9923c84392b4e92f956b5edcf3ad9edba345343e3d99b9d27d5a9}{RED\_\-LED}, 
+\hyperlink{_r_f_i_d___c_r500_8h_99fb83031ce9923c84392b4e92f956b5c9da5c4501ff07f5930282709dec61b3}{GREEN\_\-LED}, 
+\hyperlink{_r_f_i_d___c_r500_8h_99fb83031ce9923c84392b4e92f956b59924710c1e80e5287b87b1d6541c3623}{YELLOW\_\-LED}
+ \}
+\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+Enthält alle Eigenschaften des RFID-Lesers CR500-USB. 
+
+\begin{Desc}
+\item[Version:]1.0 \end{Desc}
+\begin{Desc}
+\item[Date:]09.06.2008 \end{Desc}
+\begin{Desc}
+\item[Author:]R.Zoss\end{Desc}
+Copyright (C) 2008 Rico Zoss
+
+This file is part of BEO-Timing Managementsoftware.
+
+BEO-Timing Managementsoftware is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
+
+BEO-Timing Managementsoftware is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License along with BEO-Timing Managementsoftware. If not, see $<$\href{http://www.gnu.org/licenses/}{\tt http://www.gnu.org/licenses/}$>$. 
+
+Definition in file \hyperlink{_r_f_i_d___c_r500_8h-source}{RFID\_\-CR500.h}.
+
+\subsection{Define Documentation}
+\hypertarget{_r_f_i_d___c_r500_8h_5b7e9a26d58b7f2d86e38725570a189e}{
+\index{RFID\_\-CR500.h@{RFID\_\-CR500.h}!RFID\_\-ADR\_\-ENDTIME@{RFID\_\-ADR\_\-ENDTIME}}
+\index{RFID\_\-ADR\_\-ENDTIME@{RFID\_\-ADR\_\-ENDTIME}!RFID_CR500.h@{RFID\_\-CR500.h}}
+\subsubsection[RFID\_\-ADR\_\-ENDTIME]{\setlength{\rightskip}{0pt plus 5cm}\#define RFID\_\-ADR\_\-ENDTIME~8}}
+\label{_r_f_i_d___c_r500_8h_5b7e9a26d58b7f2d86e38725570a189e}
+
+
+Pagenummer der Endzeit in der RFID-Karte. 
+
+
+
+Definition at line 45 of file RFID\_\-CR500.h.
+
+Referenced by RFID\_\-CR500::readData().\hypertarget{_r_f_i_d___c_r500_8h_9c078ad4fdcdd7fed5bcb9c1c49c82f0}{
+\index{RFID\_\-CR500.h@{RFID\_\-CR500.h}!RFID\_\-ADR\_\-RACETIME@{RFID\_\-ADR\_\-RACETIME}}
+\index{RFID\_\-ADR\_\-RACETIME@{RFID\_\-ADR\_\-RACETIME}!RFID_CR500.h@{RFID\_\-CR500.h}}
+\subsubsection[RFID\_\-ADR\_\-RACETIME]{\setlength{\rightskip}{0pt plus 5cm}\#define RFID\_\-ADR\_\-RACETIME~10}}
+\label{_r_f_i_d___c_r500_8h_9c078ad4fdcdd7fed5bcb9c1c49c82f0}
+
+
+Pagenummer der Fahrzeit in der RFID-Karte. 
+
+
+
+Definition at line 47 of file RFID\_\-CR500.h.\hypertarget{_r_f_i_d___c_r500_8h_77b1101b3522554f0bc4f34c99335d31}{
+\index{RFID\_\-CR500.h@{RFID\_\-CR500.h}!RFID\_\-ADR\_\-STARTTIME@{RFID\_\-ADR\_\-STARTTIME}}
+\index{RFID\_\-ADR\_\-STARTTIME@{RFID\_\-ADR\_\-STARTTIME}!RFID_CR500.h@{RFID\_\-CR500.h}}
+\subsubsection[RFID\_\-ADR\_\-STARTTIME]{\setlength{\rightskip}{0pt plus 5cm}\#define RFID\_\-ADR\_\-STARTTIME~6}}
+\label{_r_f_i_d___c_r500_8h_77b1101b3522554f0bc4f34c99335d31}
+
+
+Pagenummer der Startzeit in der RFID-Karte. 
+
+
+
+Definition at line 43 of file RFID\_\-CR500.h.\hypertarget{_r_f_i_d___c_r500_8h_597463e32a8f9644e3539086cf45aac0}{
+\index{RFID\_\-CR500.h@{RFID\_\-CR500.h}!RFID\_\-ADR\_\-STATUS@{RFID\_\-ADR\_\-STATUS}}
+\index{RFID\_\-ADR\_\-STATUS@{RFID\_\-ADR\_\-STATUS}!RFID_CR500.h@{RFID\_\-CR500.h}}
+\subsubsection[RFID\_\-ADR\_\-STATUS]{\setlength{\rightskip}{0pt plus 5cm}\#define RFID\_\-ADR\_\-STATUS~4}}
+\label{_r_f_i_d___c_r500_8h_597463e32a8f9644e3539086cf45aac0}
+
+
+Pagenummer des Statusbits in der RFID-Karte. 
+
+
+
+Definition at line 39 of file RFID\_\-CR500.h.
+
+Referenced by RFID\_\-CR500::clearValidFlag(), and RFID\_\-CR500::readData().\hypertarget{_r_f_i_d___c_r500_8h_ef9f4fb825ed6c083b11764ad97f9c8a}{
+\index{RFID\_\-CR500.h@{RFID\_\-CR500.h}!RFID\_\-ADR\_\-STRECKE@{RFID\_\-ADR\_\-STRECKE}}
+\index{RFID\_\-ADR\_\-STRECKE@{RFID\_\-ADR\_\-STRECKE}!RFID_CR500.h@{RFID\_\-CR500.h}}
+\subsubsection[RFID\_\-ADR\_\-STRECKE]{\setlength{\rightskip}{0pt plus 5cm}\#define RFID\_\-ADR\_\-STRECKE~5}}
+\label{_r_f_i_d___c_r500_8h_ef9f4fb825ed6c083b11764ad97f9c8a}
+
+
+Pagenummer der Streckennummer in der RFID-Karte. 
+
+
+
+Definition at line 41 of file RFID\_\-CR500.h.\hypertarget{_r_f_i_d___c_r500_8h_a7f8d28b6faa7976ed39b7936a4904e5}{
+\index{RFID\_\-CR500.h@{RFID\_\-CR500.h}!TAG\_\-STATUS\_\-ENDVALID@{TAG\_\-STATUS\_\-ENDVALID}}
+\index{TAG\_\-STATUS\_\-ENDVALID@{TAG\_\-STATUS\_\-ENDVALID}!RFID_CR500.h@{RFID\_\-CR500.h}}
+\subsubsection[TAG\_\-STATUS\_\-ENDVALID]{\setlength{\rightskip}{0pt plus 5cm}\#define TAG\_\-STATUS\_\-ENDVALID~(1$<$$<$2)}}
+\label{_r_f_i_d___c_r500_8h_a7f8d28b6faa7976ed39b7936a4904e5}
+
+
+Gültige Endzeit auf der Karte. 
+
+
+
+Definition at line 55 of file RFID\_\-CR500.h.
+
+Referenced by RFID\_\-CR500::clearValidFlag(), and RFID\_\-CR500::readData().\hypertarget{_r_f_i_d___c_r500_8h_b5ed5ada4835710a7c3c0866937fb9f3}{
+\index{RFID\_\-CR500.h@{RFID\_\-CR500.h}!TAG\_\-STATUS\_\-MANUALCLEARED@{TAG\_\-STATUS\_\-MANUALCLEARED}}
+\index{TAG\_\-STATUS\_\-MANUALCLEARED@{TAG\_\-STATUS\_\-MANUALCLEARED}!RFID_CR500.h@{RFID\_\-CR500.h}}
+\subsubsection[TAG\_\-STATUS\_\-MANUALCLEARED]{\setlength{\rightskip}{0pt plus 5cm}\#define TAG\_\-STATUS\_\-MANUALCLEARED~(1$<$$<$3)}}
+\label{_r_f_i_d___c_r500_8h_b5ed5ada4835710a7c3c0866937fb9f3}
+
+
+Karte ist Manuel gelöscht worden. 
+
+
+
+Definition at line 57 of file RFID\_\-CR500.h.
+
+Referenced by RFID\_\-CR500::readData().\hypertarget{_r_f_i_d___c_r500_8h_c8f9aa4914aec834b758cbf6e16e1cf1}{
+\index{RFID\_\-CR500.h@{RFID\_\-CR500.h}!TAG\_\-STATUS\_\-REGISTERED@{TAG\_\-STATUS\_\-REGISTERED}}
+\index{TAG\_\-STATUS\_\-REGISTERED@{TAG\_\-STATUS\_\-REGISTERED}!RFID_CR500.h@{RFID\_\-CR500.h}}
+\subsubsection[TAG\_\-STATUS\_\-REGISTERED]{\setlength{\rightskip}{0pt plus 5cm}\#define TAG\_\-STATUS\_\-REGISTERED~(1$<$$<$4)}}
+\label{_r_f_i_d___c_r500_8h_c8f9aa4914aec834b758cbf6e16e1cf1}
+
+
+Karte ist Persönlich. 
+
+
+
+Definition at line 59 of file RFID\_\-CR500.h.
+
+Referenced by RFID\_\-CR500::readData().\hypertarget{_r_f_i_d___c_r500_8h_3c36907efdfc9c64816e09fa0618b8ca}{
+\index{RFID\_\-CR500.h@{RFID\_\-CR500.h}!TAG\_\-STATUS\_\-STARTVALID@{TAG\_\-STATUS\_\-STARTVALID}}
+\index{TAG\_\-STATUS\_\-STARTVALID@{TAG\_\-STATUS\_\-STARTVALID}!RFID_CR500.h@{RFID\_\-CR500.h}}
+\subsubsection[TAG\_\-STATUS\_\-STARTVALID]{\setlength{\rightskip}{0pt plus 5cm}\#define TAG\_\-STATUS\_\-STARTVALID~(1$<$$<$1)}}
+\label{_r_f_i_d___c_r500_8h_3c36907efdfc9c64816e09fa0618b8ca}
+
+
+Gültige Startzeit auf der Karte. 
+
+
+
+Definition at line 53 of file RFID\_\-CR500.h.
+
+Referenced by RFID\_\-CR500::clearValidFlag(), and RFID\_\-CR500::readData().\hypertarget{_r_f_i_d___c_r500_8h_035cb5f2ac9f139c0ab5a178209249fd}{
+\index{RFID\_\-CR500.h@{RFID\_\-CR500.h}!TAG\_\-STATUS\_\-STRECKENVALID@{TAG\_\-STATUS\_\-STRECKENVALID}}
+\index{TAG\_\-STATUS\_\-STRECKENVALID@{TAG\_\-STATUS\_\-STRECKENVALID}!RFID_CR500.h@{RFID\_\-CR500.h}}
+\subsubsection[TAG\_\-STATUS\_\-STRECKENVALID]{\setlength{\rightskip}{0pt plus 5cm}\#define TAG\_\-STATUS\_\-STRECKENVALID~(1$<$$<$0)}}
+\label{_r_f_i_d___c_r500_8h_035cb5f2ac9f139c0ab5a178209249fd}
+
+
+Gültige Streckennr. aud der Karte. 
+
+
+
+Definition at line 51 of file RFID\_\-CR500.h.
+
+Referenced by RFID\_\-CR500::clearValidFlag(), and RFID\_\-CR500::readData().
+
+\subsection{Enumeration Type Documentation}
+\hypertarget{_r_f_i_d___c_r500_8h_99fb83031ce9923c84392b4e92f956b5}{
+\subsubsection["@2]{\setlength{\rightskip}{0pt plus 5cm}anonymous enum}}
+\label{_r_f_i_d___c_r500_8h_99fb83031ce9923c84392b4e92f956b5}
+
+
+\begin{Desc}
+\item[Enumerator: ]\par
+\begin{description}
+\index{NO\_\-LED@{NO\_\-LED}!RFID\_\-CR500.h@{RFID\_\-CR500.h}}\index{RFID\_\-CR500.h@{RFID\_\-CR500.h}!NO\_\-LED@{NO\_\-LED}}\item[{\em 
+\hypertarget{_r_f_i_d___c_r500_8h_99fb83031ce9923c84392b4e92f956b57f48418c60e70982c78f0684ac2950fe}{
+NO\_\-LED}
+\label{_r_f_i_d___c_r500_8h_99fb83031ce9923c84392b4e92f956b57f48418c60e70982c78f0684ac2950fe}
+}]\index{RED\_\-LED@{RED\_\-LED}!RFID\_\-CR500.h@{RFID\_\-CR500.h}}\index{RFID\_\-CR500.h@{RFID\_\-CR500.h}!RED\_\-LED@{RED\_\-LED}}\item[{\em 
+\hypertarget{_r_f_i_d___c_r500_8h_99fb83031ce9923c84392b4e92f956b5edcf3ad9edba345343e3d99b9d27d5a9}{
+RED\_\-LED}
+\label{_r_f_i_d___c_r500_8h_99fb83031ce9923c84392b4e92f956b5edcf3ad9edba345343e3d99b9d27d5a9}
+}]\index{GREEN\_\-LED@{GREEN\_\-LED}!RFID\_\-CR500.h@{RFID\_\-CR500.h}}\index{RFID\_\-CR500.h@{RFID\_\-CR500.h}!GREEN\_\-LED@{GREEN\_\-LED}}\item[{\em 
+\hypertarget{_r_f_i_d___c_r500_8h_99fb83031ce9923c84392b4e92f956b5c9da5c4501ff07f5930282709dec61b3}{
+GREEN\_\-LED}
+\label{_r_f_i_d___c_r500_8h_99fb83031ce9923c84392b4e92f956b5c9da5c4501ff07f5930282709dec61b3}
+}]\index{YELLOW\_\-LED@{YELLOW\_\-LED}!RFID\_\-CR500.h@{RFID\_\-CR500.h}}\index{RFID\_\-CR500.h@{RFID\_\-CR500.h}!YELLOW\_\-LED@{YELLOW\_\-LED}}\item[{\em 
+\hypertarget{_r_f_i_d___c_r500_8h_99fb83031ce9923c84392b4e92f956b59924710c1e80e5287b87b1d6541c3623}{
+YELLOW\_\-LED}
+\label{_r_f_i_d___c_r500_8h_99fb83031ce9923c84392b4e92f956b59924710c1e80e5287b87b1d6541c3623}
+}]\end{description}
+\end{Desc}
+
+
+
+Definition at line 61 of file RFID\_\-CR500.h.

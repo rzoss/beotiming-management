@@ -1,0 +1,338 @@
+\hypertarget{class_user}{
+\section{User Class Reference}
+\label{class_user}\index{User@{User}}
+}
+Diese Klasse symbolisiert einen Benutzer und stellt Funktionen bereit.  
+
+
+{\tt \#include $<$User.h$>$}
+
+\subsection*{Public Types}
+\begin{CompactItemize}
+\item 
+enum \{ \hyperlink{class_user_6f9db9ebdd86f9c93deff41f7b9193f11bc1a99427bacb8101d7b99796ce2148}{superadministrator}, 
+\hyperlink{class_user_6f9db9ebdd86f9c93deff41f7b9193f155b52804af3433a9d28257d0a0a54eb3}{administrator}, 
+\hyperlink{class_user_6f9db9ebdd86f9c93deff41f7b9193f11813ae9ec397f1858dda882399516656}{manager}, 
+\hyperlink{class_user_6f9db9ebdd86f9c93deff41f7b9193f1d7f13ff6c9b4738cc12563330ef164e9}{user}
+ \}
+\end{CompactItemize}
+\subsection*{Public Member Functions}
+\begin{CompactItemize}
+\item 
+\hyperlink{class_user_4a0137053e591fbb79d9057dd7d2283d}{User} ()
+\begin{CompactList}\small\item\em Konstruktor. \item\end{CompactList}\item 
+virtual \hyperlink{class_user_c00b72ad64eb4149f7b21b9f5468c2b2}{$\sim$User} ()
+\begin{CompactList}\small\item\em Destruktor. \item\end{CompactList}\item 
+int \hyperlink{class_user_f6482cc57caa04a2c718fb059b2c1336}{getUsertype} ()
+\begin{CompactList}\small\item\em Gibt den Usertype zurück. \item\end{CompactList}\item 
+void \hyperlink{class_user_32b6c340b057ae716881248a3ee8f1e2}{Init} (QString \hyperlink{class_user_e4202de2b7974e92a55b913d20b03833}{username}, QString \hyperlink{class_user_c887622f22a898c097d156ad964be846}{password})  throw (QString)
+\begin{CompactList}\small\item\em Initialisierung des Benutzers. Diese Methode wirft eine Exception, im Falle eines falschen Benutzernames oder Passworts. \item\end{CompactList}\item 
+void \hyperlink{class_user_b99348b94c4fc390f50113c44111370f}{Init} (QString \hyperlink{class_user_e4202de2b7974e92a55b913d20b03833}{username})
+\begin{CompactList}\small\item\em Initialisieren über den Benutzernamen. \item\end{CompactList}\item 
+bool \hyperlink{class_user_f18e23aba10e99668b35c0b46dece9ae}{checkPassword} (QString \hyperlink{class_user_c887622f22a898c097d156ad964be846}{password})
+\item 
+bool \hyperlink{class_user_1aa3e9682d94bd9c6c8d6c1e2d90d02a}{getRaceAuthority} (int race)
+\begin{CompactList}\small\item\em Prüfen, ob der Benutzer die Berechtigung für ein Rennen hat. \item\end{CompactList}\item 
+bool \hyperlink{class_user_58c0c89c438e6091bb8e056b421efed6}{getLogonSuccess} ()
+\begin{CompactList}\small\item\em LogonSuccess überprüfen. \item\end{CompactList}\end{CompactItemize}
+\subsection*{Protected Attributes}
+\begin{CompactItemize}
+\item 
+QString \hyperlink{class_user_e4202de2b7974e92a55b913d20b03833}{username}
+\item 
+QString \hyperlink{class_user_182c8e0056fab1df2af8318cc3f5c058}{name}
+\item 
+QString \hyperlink{class_user_5b7a66a134d017ae18c2d1464f34eb67}{email}
+\item 
+QString \hyperlink{class_user_c887622f22a898c097d156ad964be846}{password}
+\item 
+int \hyperlink{class_user_29cdee57f89b7c6f43eb656c7658ed60}{usertype}
+\item 
+QString \hyperlink{class_user_b5f525a8d6723eada2dd17ecb057a464}{rennen}
+\item 
+bool \hyperlink{class_user_62dd92fabb3f0cf42c9cebbb7875b879}{logonSuccess}
+\end{CompactItemize}
+\subsection*{Friends}
+\begin{CompactItemize}
+\item 
+class \hyperlink{class_user_2d41462495b9d75be015c70b749702a6}{PasswordChangeDialog}
+\item 
+class \hyperlink{class_user_25239d16a03334074a70ce4f9301d56d}{NeuerUserDialog}
+\item 
+class \hyperlink{class_user_3fffb2093eb859119c4d500dd91ae8cc}{RechteAnpassen}
+\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+Diese Klasse symbolisiert einen Benutzer und stellt Funktionen bereit. 
+
+Definition at line 40 of file User.h.
+
+\subsection{Member Enumeration Documentation}
+\hypertarget{class_user_6f9db9ebdd86f9c93deff41f7b9193f1}{
+\subsubsection["@6]{\setlength{\rightskip}{0pt plus 5cm}anonymous enum}}
+\label{class_user_6f9db9ebdd86f9c93deff41f7b9193f1}
+
+
+\begin{Desc}
+\item[Enumerator: ]\par
+\begin{description}
+\index{superadministrator@{superadministrator}!User@{User}}\index{User@{User}!superadministrator@{superadministrator}}\item[{\em 
+\hypertarget{class_user_6f9db9ebdd86f9c93deff41f7b9193f11bc1a99427bacb8101d7b99796ce2148}{
+superadministrator}
+\label{class_user_6f9db9ebdd86f9c93deff41f7b9193f11bc1a99427bacb8101d7b99796ce2148}
+}]\index{administrator@{administrator}!User@{User}}\index{User@{User}!administrator@{administrator}}\item[{\em 
+\hypertarget{class_user_6f9db9ebdd86f9c93deff41f7b9193f155b52804af3433a9d28257d0a0a54eb3}{
+administrator}
+\label{class_user_6f9db9ebdd86f9c93deff41f7b9193f155b52804af3433a9d28257d0a0a54eb3}
+}]\index{manager@{manager}!User@{User}}\index{User@{User}!manager@{manager}}\item[{\em 
+\hypertarget{class_user_6f9db9ebdd86f9c93deff41f7b9193f11813ae9ec397f1858dda882399516656}{
+manager}
+\label{class_user_6f9db9ebdd86f9c93deff41f7b9193f11813ae9ec397f1858dda882399516656}
+}]\index{user@{user}!User@{User}}\index{User@{User}!user@{user}}\item[{\em 
+\hypertarget{class_user_6f9db9ebdd86f9c93deff41f7b9193f1d7f13ff6c9b4738cc12563330ef164e9}{
+user}
+\label{class_user_6f9db9ebdd86f9c93deff41f7b9193f1d7f13ff6c9b4738cc12563330ef164e9}
+}]\end{description}
+\end{Desc}
+
+
+
+Definition at line 51 of file User.h.
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_user_4a0137053e591fbb79d9057dd7d2283d}{
+\index{User@{User}!User@{User}}
+\index{User@{User}!User@{User}}
+\subsubsection[User]{\setlength{\rightskip}{0pt plus 5cm}User::User ()}}
+\label{class_user_4a0137053e591fbb79d9057dd7d2283d}
+
+
+Konstruktor. 
+
+
+
+Definition at line 39 of file User.cpp.
+
+References logonSuccess.\hypertarget{class_user_c00b72ad64eb4149f7b21b9f5468c2b2}{
+\index{User@{User}!$\sim$User@{$\sim$User}}
+\index{$\sim$User@{$\sim$User}!User@{User}}
+\subsubsection[$\sim$User]{\setlength{\rightskip}{0pt plus 5cm}User::$\sim$User ()\hspace{0.3cm}{\tt  \mbox{[}virtual\mbox{]}}}}
+\label{class_user_c00b72ad64eb4149f7b21b9f5468c2b2}
+
+
+Destruktor. 
+
+
+
+Definition at line 46 of file User.cpp.
+
+\subsection{Member Function Documentation}
+\hypertarget{class_user_f6482cc57caa04a2c718fb059b2c1336}{
+\index{User@{User}!getUsertype@{getUsertype}}
+\index{getUsertype@{getUsertype}!User@{User}}
+\subsubsection[getUsertype]{\setlength{\rightskip}{0pt plus 5cm}int User::getUsertype ()}}
+\label{class_user_f6482cc57caa04a2c718fb059b2c1336}
+
+
+Gibt den Usertype zurück. 
+
+\begin{Desc}
+\item[Returns:]Typ des Benutzers (int) \end{Desc}
+
+
+Definition at line 133 of file User.cpp.
+
+References usertype.
+
+Referenced by NeuerUserDialog::NeuerUserDialog(), BEO\_\-Timing::setUserRights(), and TableEditDialog::TableEditDialog().\hypertarget{class_user_32b6c340b057ae716881248a3ee8f1e2}{
+\index{User@{User}!Init@{Init}}
+\index{Init@{Init}!User@{User}}
+\subsubsection[Init]{\setlength{\rightskip}{0pt plus 5cm}void User::Init (QString {\em username}, \/  QString {\em password})  throw (QString)}}
+\label{class_user_32b6c340b057ae716881248a3ee8f1e2}
+
+
+Initialisierung des Benutzers. Diese Methode wirft eine Exception, im Falle eines falschen Benutzernames oder Passworts. 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em username}]Benutzername des Benutzers \item[{\em password}]Passwort des Benutzers \end{description}
+\end{Desc}
+
+
+Definition at line 56 of file User.cpp.
+
+References email, logonSuccess, name, password, rennen, username, and usertype.
+
+Referenced by LogonDialog::on\_\-LogonButton\_\-released(), and RechteAnpassen::on\_\-okButton\_\-released().\hypertarget{class_user_b99348b94c4fc390f50113c44111370f}{
+\index{User@{User}!Init@{Init}}
+\index{Init@{Init}!User@{User}}
+\subsubsection[Init]{\setlength{\rightskip}{0pt plus 5cm}void User::Init (QString {\em username})}}
+\label{class_user_b99348b94c4fc390f50113c44111370f}
+
+
+Initialisieren über den Benutzernamen. 
+
+
+
+Definition at line 90 of file User.cpp.
+
+References email, name, password, rennen, and usertype.\hypertarget{class_user_f18e23aba10e99668b35c0b46dece9ae}{
+\index{User@{User}!checkPassword@{checkPassword}}
+\index{checkPassword@{checkPassword}!User@{User}}
+\subsubsection[checkPassword]{\setlength{\rightskip}{0pt plus 5cm}bool User::checkPassword (QString {\em password})}}
+\label{class_user_f18e23aba10e99668b35c0b46dece9ae}
+
+
+\hypertarget{class_user_1aa3e9682d94bd9c6c8d6c1e2d90d02a}{
+\index{User@{User}!getRaceAuthority@{getRaceAuthority}}
+\index{getRaceAuthority@{getRaceAuthority}!User@{User}}
+\subsubsection[getRaceAuthority]{\setlength{\rightskip}{0pt plus 5cm}bool User::getRaceAuthority (int {\em race})}}
+\label{class_user_1aa3e9682d94bd9c6c8d6c1e2d90d02a}
+
+
+Prüfen, ob der Benutzer die Berechtigung für ein Rennen hat. 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em race}]zu überprüfendes Rennen \end{description}
+\end{Desc}
+
+
+Definition at line 118 of file User.cpp.
+
+References rennen.
+
+Referenced by HardwareKonfiguration::HardwareKonfiguration(), NeuerUserDialog::NeuerUserDialog(), RechteAnpassen::RechteAnpassen(), and BEO\_\-Timing::Tree\_\-Build().\hypertarget{class_user_58c0c89c438e6091bb8e056b421efed6}{
+\index{User@{User}!getLogonSuccess@{getLogonSuccess}}
+\index{getLogonSuccess@{getLogonSuccess}!User@{User}}
+\subsubsection[getLogonSuccess]{\setlength{\rightskip}{0pt plus 5cm}bool User::getLogonSuccess ()}}
+\label{class_user_58c0c89c438e6091bb8e056b421efed6}
+
+
+LogonSuccess überprüfen. 
+
+
+
+Definition at line 111 of file User.cpp.
+
+References logonSuccess.
+
+Referenced by BEO\_\-Timing::BEO\_\-Timing().
+
+\subsection{Friends And Related Function Documentation}
+\hypertarget{class_user_2d41462495b9d75be015c70b749702a6}{
+\index{User@{User}!PasswordChangeDialog@{PasswordChangeDialog}}
+\index{PasswordChangeDialog@{PasswordChangeDialog}!User@{User}}
+\subsubsection[PasswordChangeDialog]{\setlength{\rightskip}{0pt plus 5cm}friend class {\bf PasswordChangeDialog}\hspace{0.3cm}{\tt  \mbox{[}friend\mbox{]}}}}
+\label{class_user_2d41462495b9d75be015c70b749702a6}
+
+
+
+
+Definition at line 60 of file User.h.\hypertarget{class_user_25239d16a03334074a70ce4f9301d56d}{
+\index{User@{User}!NeuerUserDialog@{NeuerUserDialog}}
+\index{NeuerUserDialog@{NeuerUserDialog}!User@{User}}
+\subsubsection[NeuerUserDialog]{\setlength{\rightskip}{0pt plus 5cm}friend class {\bf NeuerUserDialog}\hspace{0.3cm}{\tt  \mbox{[}friend\mbox{]}}}}
+\label{class_user_25239d16a03334074a70ce4f9301d56d}
+
+
+
+
+Definition at line 61 of file User.h.\hypertarget{class_user_3fffb2093eb859119c4d500dd91ae8cc}{
+\index{User@{User}!RechteAnpassen@{RechteAnpassen}}
+\index{RechteAnpassen@{RechteAnpassen}!User@{User}}
+\subsubsection[RechteAnpassen]{\setlength{\rightskip}{0pt plus 5cm}friend class {\bf RechteAnpassen}\hspace{0.3cm}{\tt  \mbox{[}friend\mbox{]}}}}
+\label{class_user_3fffb2093eb859119c4d500dd91ae8cc}
+
+
+
+
+Definition at line 62 of file User.h.
+
+\subsection{Member Data Documentation}
+\hypertarget{class_user_e4202de2b7974e92a55b913d20b03833}{
+\index{User@{User}!username@{username}}
+\index{username@{username}!User@{User}}
+\subsubsection[username]{\setlength{\rightskip}{0pt plus 5cm}QString {\bf User::username}\hspace{0.3cm}{\tt  \mbox{[}protected\mbox{]}}}}
+\label{class_user_e4202de2b7974e92a55b913d20b03833}
+
+
+
+
+Definition at line 53 of file User.h.
+
+Referenced by Init(), and PasswordChangeDialog::on\_\-okButton\_\-released().\hypertarget{class_user_182c8e0056fab1df2af8318cc3f5c058}{
+\index{User@{User}!name@{name}}
+\index{name@{name}!User@{User}}
+\subsubsection[name]{\setlength{\rightskip}{0pt plus 5cm}QString {\bf User::name}\hspace{0.3cm}{\tt  \mbox{[}protected\mbox{]}}}}
+\label{class_user_182c8e0056fab1df2af8318cc3f5c058}
+
+
+
+
+Definition at line 54 of file User.h.
+
+Referenced by Init().\hypertarget{class_user_5b7a66a134d017ae18c2d1464f34eb67}{
+\index{User@{User}!email@{email}}
+\index{email@{email}!User@{User}}
+\subsubsection[email]{\setlength{\rightskip}{0pt plus 5cm}QString {\bf User::email}\hspace{0.3cm}{\tt  \mbox{[}protected\mbox{]}}}}
+\label{class_user_5b7a66a134d017ae18c2d1464f34eb67}
+
+
+
+
+Definition at line 55 of file User.h.
+
+Referenced by Init().\hypertarget{class_user_c887622f22a898c097d156ad964be846}{
+\index{User@{User}!password@{password}}
+\index{password@{password}!User@{User}}
+\subsubsection[password]{\setlength{\rightskip}{0pt plus 5cm}QString {\bf User::password}\hspace{0.3cm}{\tt  \mbox{[}protected\mbox{]}}}}
+\label{class_user_c887622f22a898c097d156ad964be846}
+
+
+
+
+Definition at line 56 of file User.h.
+
+Referenced by Init(), RechteAnpassen::on\_\-okButton\_\-released(), PasswordChangeDialog::on\_\-okButton\_\-released(), and NeuerUserDialog::on\_\-okButton\_\-released().\hypertarget{class_user_29cdee57f89b7c6f43eb656c7658ed60}{
+\index{User@{User}!usertype@{usertype}}
+\index{usertype@{usertype}!User@{User}}
+\subsubsection[usertype]{\setlength{\rightskip}{0pt plus 5cm}int {\bf User::usertype}\hspace{0.3cm}{\tt  \mbox{[}protected\mbox{]}}}}
+\label{class_user_29cdee57f89b7c6f43eb656c7658ed60}
+
+
+
+
+Definition at line 57 of file User.h.
+
+Referenced by getUsertype(), Init(), and NeuerUserDialog::NeuerUserDialog().\hypertarget{class_user_b5f525a8d6723eada2dd17ecb057a464}{
+\index{User@{User}!rennen@{rennen}}
+\index{rennen@{rennen}!User@{User}}
+\subsubsection[rennen]{\setlength{\rightskip}{0pt plus 5cm}QString {\bf User::rennen}\hspace{0.3cm}{\tt  \mbox{[}protected\mbox{]}}}}
+\label{class_user_b5f525a8d6723eada2dd17ecb057a464}
+
+
+
+
+Definition at line 58 of file User.h.
+
+Referenced by getRaceAuthority(), Init(), and RechteAnpassen::on\_\-okButton\_\-released().\hypertarget{class_user_62dd92fabb3f0cf42c9cebbb7875b879}{
+\index{User@{User}!logonSuccess@{logonSuccess}}
+\index{logonSuccess@{logonSuccess}!User@{User}}
+\subsubsection[logonSuccess]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf User::logonSuccess}\hspace{0.3cm}{\tt  \mbox{[}protected\mbox{]}}}}
+\label{class_user_62dd92fabb3f0cf42c9cebbb7875b879}
+
+
+
+
+Definition at line 59 of file User.h.
+
+Referenced by getLogonSuccess(), Init(), and User().
+
+The documentation for this class was generated from the following files:\begin{CompactItemize}
+\item 
+\hyperlink{_user_8h}{User.h}\item 
+\hyperlink{_user_8cpp}{User.cpp}\end{CompactItemize}

@@ -1,0 +1,246 @@
+\hypertarget{class_d_b___thread}{
+\section{DB\_\-Thread Class Reference}
+\label{class_d_b___thread}\index{DB\_\-Thread@{DB\_\-Thread}}
+}
+Dieser Thread ueberprueft alle 5 Sekunden die Verbindung zur Datenbank.  
+
+
+{\tt \#include $<$dbThread.h$>$}
+
+Collaboration diagram for DB\_\-Thread:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=57pt]{class_d_b___thread__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{CompactItemize}
+\item 
+enum \hyperlink{class_d_b___thread_056b06b7057fe2d2c90640629908d067}{\_\-\_\-state} \{ \hyperlink{class_d_b___thread_056b06b7057fe2d2c90640629908d067e3fcc0be212969d602965ecffc92322a}{running}, 
+\hyperlink{class_d_b___thread_056b06b7057fe2d2c90640629908d06783b156701d5c8cf522dbe2fef9a4f86c}{stopp}, 
+\hyperlink{class_d_b___thread_056b06b7057fe2d2c90640629908d0671d6c307cea966b1131a430c477f063b9}{pause}, 
+\hyperlink{class_d_b___thread_056b06b7057fe2d2c90640629908d06775836f6eb7ea02e6179915382269ccd9}{restart}
+ \}
+\item 
+typedef enum \hyperlink{class_d_b___thread_056b06b7057fe2d2c90640629908d067}{DB\_\-Thread::\_\-\_\-state} \hyperlink{class_d_b___thread_a70b1b8bfaf0d6b88c1284b947234b5e}{STATE}
+\end{CompactItemize}
+\subsection*{Signals}
+\begin{CompactItemize}
+\item 
+void \hyperlink{class_d_b___thread_4c701f484e76dda9fb89e6f0fadec67b}{checkDB} ()
+\end{CompactItemize}
+\subsection*{Public Member Functions}
+\begin{CompactItemize}
+\item 
+\hyperlink{class_d_b___thread_a46c43472b35bc30b885da7adb2ec480}{DB\_\-Thread} ()
+\begin{CompactList}\small\item\em Konstruktor. \item\end{CompactList}\item 
+\hyperlink{class_d_b___thread_3c4f9d073814887a717de180b2e8e6b9}{$\sim$DB\_\-Thread} ()
+\begin{CompactList}\small\item\em Destruktor. \item\end{CompactList}\item 
+void \hyperlink{class_d_b___thread_e468157edacaa0760e833bf643371e62}{stop} ()
+\begin{CompactList}\small\item\em Stoppen des Threads. \item\end{CompactList}\item 
+void \hyperlink{class_d_b___thread_5ca406169a78d0e196a7cb57aae01a30}{setState} (\hyperlink{class_d_b___thread_a70b1b8bfaf0d6b88c1284b947234b5e}{STATE} \hyperlink{class_d_b___thread_9b38f026919bb5a09dd2e8af8e0feef7}{state})
+\begin{CompactList}\small\item\em setzen des States der Zustandsmaschine \item\end{CompactList}\item 
+int \hyperlink{class_d_b___thread_01d2131117426b8f76c3aacb901f6de7}{getState} ()
+\begin{CompactList}\small\item\em lesen des States der Zustandsmaschine \item\end{CompactList}\end{CompactItemize}
+\subsection*{Protected Member Functions}
+\begin{CompactItemize}
+\item 
+void \hyperlink{class_d_b___thread_bb50ad9355d7353eab556833a59e49e0}{run} ()
+\begin{CompactList}\small\item\em Überschreiben der vererbten Funktion \char`\"{}run\char`\"{}. \item\end{CompactList}\end{CompactItemize}
+\subsection*{Private Attributes}
+\begin{CompactItemize}
+\item 
+volatile bool \hyperlink{class_d_b___thread_31c37537c9902c0ebf175b2a35ec965f}{stopped}
+\item 
+volatile \hyperlink{class_d_b___thread_a70b1b8bfaf0d6b88c1284b947234b5e}{STATE} \hyperlink{class_d_b___thread_9b38f026919bb5a09dd2e8af8e0feef7}{state}
+\item 
+\hyperlink{class_database}{Database} $\ast$ \hyperlink{class_d_b___thread_e4deb0ec2f72fb944aabb8015b678954}{pMySQL}
+\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+Dieser Thread ueberprueft alle 5 Sekunden die Verbindung zur Datenbank. 
+
+Definition at line 42 of file dbThread.h.
+
+\subsection{Member Typedef Documentation}
+\hypertarget{class_d_b___thread_a70b1b8bfaf0d6b88c1284b947234b5e}{
+\index{DB\_\-Thread@{DB\_\-Thread}!STATE@{STATE}}
+\index{STATE@{STATE}!DB_Thread@{DB\_\-Thread}}
+\subsubsection[STATE]{\setlength{\rightskip}{0pt plus 5cm}typedef enum {\bf DB\_\-Thread::\_\-\_\-state} {\bf DB\_\-Thread::STATE}}}
+\label{class_d_b___thread_a70b1b8bfaf0d6b88c1284b947234b5e}
+
+
+
+
+\subsection{Member Enumeration Documentation}
+\hypertarget{class_d_b___thread_056b06b7057fe2d2c90640629908d067}{
+\index{DB\_\-Thread@{DB\_\-Thread}!\_\-\_\-state@{\_\-\_\-state}}
+\index{\_\-\_\-state@{\_\-\_\-state}!DB_Thread@{DB\_\-Thread}}
+\subsubsection[\_\-\_\-state]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf DB\_\-Thread::\_\-\_\-state}}}
+\label{class_d_b___thread_056b06b7057fe2d2c90640629908d067}
+
+
+\begin{Desc}
+\item[Enumerator: ]\par
+\begin{description}
+\index{running@{running}!DB\_\-Thread@{DB\_\-Thread}}\index{DB\_\-Thread@{DB\_\-Thread}!running@{running}}\item[{\em 
+\hypertarget{class_d_b___thread_056b06b7057fe2d2c90640629908d067e3fcc0be212969d602965ecffc92322a}{
+running}
+\label{class_d_b___thread_056b06b7057fe2d2c90640629908d067e3fcc0be212969d602965ecffc92322a}
+}]\index{stopp@{stopp}!DB\_\-Thread@{DB\_\-Thread}}\index{DB\_\-Thread@{DB\_\-Thread}!stopp@{stopp}}\item[{\em 
+\hypertarget{class_d_b___thread_056b06b7057fe2d2c90640629908d06783b156701d5c8cf522dbe2fef9a4f86c}{
+stopp}
+\label{class_d_b___thread_056b06b7057fe2d2c90640629908d06783b156701d5c8cf522dbe2fef9a4f86c}
+}]\index{pause@{pause}!DB\_\-Thread@{DB\_\-Thread}}\index{DB\_\-Thread@{DB\_\-Thread}!pause@{pause}}\item[{\em 
+\hypertarget{class_d_b___thread_056b06b7057fe2d2c90640629908d0671d6c307cea966b1131a430c477f063b9}{
+pause}
+\label{class_d_b___thread_056b06b7057fe2d2c90640629908d0671d6c307cea966b1131a430c477f063b9}
+}]\index{restart@{restart}!DB\_\-Thread@{DB\_\-Thread}}\index{DB\_\-Thread@{DB\_\-Thread}!restart@{restart}}\item[{\em 
+\hypertarget{class_d_b___thread_056b06b7057fe2d2c90640629908d06775836f6eb7ea02e6179915382269ccd9}{
+restart}
+\label{class_d_b___thread_056b06b7057fe2d2c90640629908d06775836f6eb7ea02e6179915382269ccd9}
+}]\end{description}
+\end{Desc}
+
+
+
+Definition at line 50 of file dbThread.h.
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_d_b___thread_a46c43472b35bc30b885da7adb2ec480}{
+\index{DB\_\-Thread@{DB\_\-Thread}!DB\_\-Thread@{DB\_\-Thread}}
+\index{DB\_\-Thread@{DB\_\-Thread}!DB_Thread@{DB\_\-Thread}}
+\subsubsection[DB\_\-Thread]{\setlength{\rightskip}{0pt plus 5cm}DB\_\-Thread::DB\_\-Thread ()}}
+\label{class_d_b___thread_a46c43472b35bc30b885da7adb2ec480}
+
+
+Konstruktor. 
+
+
+
+Definition at line 37 of file dbThread.cpp.
+
+References running, state, and stopped.\hypertarget{class_d_b___thread_3c4f9d073814887a717de180b2e8e6b9}{
+\index{DB\_\-Thread@{DB\_\-Thread}!$\sim$DB\_\-Thread@{$\sim$DB\_\-Thread}}
+\index{$\sim$DB\_\-Thread@{$\sim$DB\_\-Thread}!DB_Thread@{DB\_\-Thread}}
+\subsubsection[$\sim$DB\_\-Thread]{\setlength{\rightskip}{0pt plus 5cm}DB\_\-Thread::$\sim$DB\_\-Thread ()}}
+\label{class_d_b___thread_3c4f9d073814887a717de180b2e8e6b9}
+
+
+Destruktor. 
+
+
+
+Definition at line 46 of file dbThread.cpp.
+
+\subsection{Member Function Documentation}
+\hypertarget{class_d_b___thread_e468157edacaa0760e833bf643371e62}{
+\index{DB\_\-Thread@{DB\_\-Thread}!stop@{stop}}
+\index{stop@{stop}!DB_Thread@{DB\_\-Thread}}
+\subsubsection[stop]{\setlength{\rightskip}{0pt plus 5cm}void DB\_\-Thread::stop ()}}
+\label{class_d_b___thread_e468157edacaa0760e833bf643371e62}
+
+
+Stoppen des Threads. 
+
+
+
+Definition at line 52 of file dbThread.cpp.
+
+References stopped.
+
+Referenced by BEO\_\-Timing::$\sim$BEO\_\-Timing().\hypertarget{class_d_b___thread_5ca406169a78d0e196a7cb57aae01a30}{
+\index{DB\_\-Thread@{DB\_\-Thread}!setState@{setState}}
+\index{setState@{setState}!DB_Thread@{DB\_\-Thread}}
+\subsubsection[setState]{\setlength{\rightskip}{0pt plus 5cm}void DB\_\-Thread::setState ({\bf STATE} {\em state})}}
+\label{class_d_b___thread_5ca406169a78d0e196a7cb57aae01a30}
+
+
+setzen des States der Zustandsmaschine 
+
+
+
+Definition at line 58 of file dbThread.cpp.
+
+Referenced by BEO\_\-Timing::mysqlConnection().\hypertarget{class_d_b___thread_01d2131117426b8f76c3aacb901f6de7}{
+\index{DB\_\-Thread@{DB\_\-Thread}!getState@{getState}}
+\index{getState@{getState}!DB_Thread@{DB\_\-Thread}}
+\subsubsection[getState]{\setlength{\rightskip}{0pt plus 5cm}int DB\_\-Thread::getState ()}}
+\label{class_d_b___thread_01d2131117426b8f76c3aacb901f6de7}
+
+
+lesen des States der Zustandsmaschine 
+
+
+
+Definition at line 64 of file dbThread.cpp.
+
+References state.
+
+Referenced by BEO\_\-Timing::checkDB().\hypertarget{class_d_b___thread_bb50ad9355d7353eab556833a59e49e0}{
+\index{DB\_\-Thread@{DB\_\-Thread}!run@{run}}
+\index{run@{run}!DB_Thread@{DB\_\-Thread}}
+\subsubsection[run]{\setlength{\rightskip}{0pt plus 5cm}void DB\_\-Thread::run ()\hspace{0.3cm}{\tt  \mbox{[}protected\mbox{]}}}}
+\label{class_d_b___thread_bb50ad9355d7353eab556833a59e49e0}
+
+
+Überschreiben der vererbten Funktion \char`\"{}run\char`\"{}. 
+
+
+
+Definition at line 71 of file dbThread.cpp.
+
+References checkDB(), DB\_\-REFRESH\_\-RATE\_\-ms, pause, restart, running, state, stopp, and stopped.\hypertarget{class_d_b___thread_4c701f484e76dda9fb89e6f0fadec67b}{
+\index{DB\_\-Thread@{DB\_\-Thread}!checkDB@{checkDB}}
+\index{checkDB@{checkDB}!DB_Thread@{DB\_\-Thread}}
+\subsubsection[checkDB]{\setlength{\rightskip}{0pt plus 5cm}void DB\_\-Thread::checkDB ()\hspace{0.3cm}{\tt  \mbox{[}signal\mbox{]}}}}
+\label{class_d_b___thread_4c701f484e76dda9fb89e6f0fadec67b}
+
+
+
+
+Definition at line 73 of file moc\_\-dbThread.cpp.
+
+Referenced by run().
+
+\subsection{Member Data Documentation}
+\hypertarget{class_d_b___thread_31c37537c9902c0ebf175b2a35ec965f}{
+\index{DB\_\-Thread@{DB\_\-Thread}!stopped@{stopped}}
+\index{stopped@{stopped}!DB_Thread@{DB\_\-Thread}}
+\subsubsection[stopped]{\setlength{\rightskip}{0pt plus 5cm}volatile bool {\bf DB\_\-Thread::stopped}\hspace{0.3cm}{\tt  \mbox{[}private\mbox{]}}}}
+\label{class_d_b___thread_31c37537c9902c0ebf175b2a35ec965f}
+
+
+
+
+Definition at line 58 of file dbThread.h.
+
+Referenced by DB\_\-Thread(), run(), and stop().\hypertarget{class_d_b___thread_9b38f026919bb5a09dd2e8af8e0feef7}{
+\index{DB\_\-Thread@{DB\_\-Thread}!state@{state}}
+\index{state@{state}!DB_Thread@{DB\_\-Thread}}
+\subsubsection[state]{\setlength{\rightskip}{0pt plus 5cm}volatile {\bf STATE} {\bf DB\_\-Thread::state}\hspace{0.3cm}{\tt  \mbox{[}private\mbox{]}}}}
+\label{class_d_b___thread_9b38f026919bb5a09dd2e8af8e0feef7}
+
+
+
+
+Definition at line 59 of file dbThread.h.
+
+Referenced by DB\_\-Thread(), getState(), and run().\hypertarget{class_d_b___thread_e4deb0ec2f72fb944aabb8015b678954}{
+\index{DB\_\-Thread@{DB\_\-Thread}!pMySQL@{pMySQL}}
+\index{pMySQL@{pMySQL}!DB_Thread@{DB\_\-Thread}}
+\subsubsection[pMySQL]{\setlength{\rightskip}{0pt plus 5cm}{\bf Database}$\ast$ {\bf DB\_\-Thread::pMySQL}\hspace{0.3cm}{\tt  \mbox{[}private\mbox{]}}}}
+\label{class_d_b___thread_e4deb0ec2f72fb944aabb8015b678954}
+
+
+
+
+Definition at line 60 of file dbThread.h.
+
+The documentation for this class was generated from the following files:\begin{CompactItemize}
+\item 
+\hyperlink{db_thread_8h}{dbThread.h}\item 
+\hyperlink{db_thread_8cpp}{dbThread.cpp}\item 
+debug/\hyperlink{moc__db_thread_8cpp}{moc\_\-dbThread.cpp}\end{CompactItemize}

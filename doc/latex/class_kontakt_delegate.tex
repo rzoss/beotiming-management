@@ -1,0 +1,178 @@
+\hypertarget{class_kontakt_delegate}{
+\section{KontaktDelegate Class Reference}
+\label{class_kontakt_delegate}\index{KontaktDelegate@{KontaktDelegate}}
+}
+Diese Klasse bildet die Schnittstelle zwischen der Kontakteditiertabelle und der Datenbank. Sie schränkt die Eingabemöglichkeiten ein.  
+
+
+{\tt \#include $<$KontaktDelegate.h$>$}
+
+\subsection*{Public Types}
+\begin{CompactItemize}
+\item 
+enum \{ \par
+\hyperlink{class_kontakt_delegate_fc7afbf9a00884adacdccdfd06ffc7a35c43e85ebe5c19ed5b4140e829db5bbc}{TeilnehmerKey}, 
+\hyperlink{class_kontakt_delegate_fc7afbf9a00884adacdccdfd06ffc7a32e05aa3cadcf486b4247200f8543a91d}{Name}, 
+\hyperlink{class_kontakt_delegate_fc7afbf9a00884adacdccdfd06ffc7a3e1cdd5d7579ed0053fc8dfadeeec4c6e}{Vorname}, 
+\hyperlink{class_kontakt_delegate_fc7afbf9a00884adacdccdfd06ffc7a3df66cc5f1321774e64677acbf9238f8b}{Adresse}, 
+\par
+\hyperlink{class_kontakt_delegate_fc7afbf9a00884adacdccdfd06ffc7a3c9b949882ef0ee828256aab760643083}{PLZ}, 
+\hyperlink{class_kontakt_delegate_fc7afbf9a00884adacdccdfd06ffc7a3254bbd500b3a141f3a819d4222210979}{Ort}, 
+\hyperlink{class_kontakt_delegate_fc7afbf9a00884adacdccdfd06ffc7a30f385c9da3ab92021cb4e1f53b2471c3}{Jahrgang}, 
+\hyperlink{class_kontakt_delegate_fc7afbf9a00884adacdccdfd06ffc7a3478ab7baf704b8be026c2fd6acaa5fef}{Geschlecht}, 
+\par
+\hyperlink{class_kontakt_delegate_fc7afbf9a00884adacdccdfd06ffc7a3dd939c5c1e3a420c955f9b6967baeaae}{Nationalitaet}, 
+\hyperlink{class_kontakt_delegate_fc7afbf9a00884adacdccdfd06ffc7a3069f28c6ebea26c8f657fe6e94eeb2bf}{Team\_\-Club}, 
+\hyperlink{class_kontakt_delegate_fc7afbf9a00884adacdccdfd06ffc7a32f182224117f5e5ef4c55bb086d7f47d}{Email}, 
+\hyperlink{class_kontakt_delegate_fc7afbf9a00884adacdccdfd06ffc7a31eb4c57cff8ec4138bcd0409a136ccc3}{Telefon}, 
+\par
+\hyperlink{class_kontakt_delegate_fc7afbf9a00884adacdccdfd06ffc7a32084ea40573bc29804b7f92f6fe6f522}{Mobile}, 
+\hyperlink{class_kontakt_delegate_fc7afbf9a00884adacdccdfd06ffc7a31b49488741e98d66eacca2bcd21395ef}{RFID\_\-SNR}
+ \}
+\end{CompactItemize}
+\subsection*{Public Member Functions}
+\begin{CompactItemize}
+\item 
+\hyperlink{class_kontakt_delegate_b0c6c1d150ba191eeaa0c982ee497b61}{KontaktDelegate} (QObject $\ast$parent=0)
+\begin{CompactList}\small\item\em Konstruktor. \item\end{CompactList}\item 
+QWidget $\ast$ \hyperlink{class_kontakt_delegate_ba53fe0194a7de1a6d0eb9cb20153ab3}{createEditor} (QWidget $\ast$parent, const QStyleOptionViewItem \&option, const QModelIndex \&index) const 
+\begin{CompactList}\small\item\em Einstellungen für die Anzeige und Manipulation. \item\end{CompactList}\item 
+void \hyperlink{class_kontakt_delegate_096ab170a084ce50b893f03e0697b0d6}{setEditorData} (QWidget $\ast$editor, const QModelIndex \&index) const 
+\begin{CompactList}\small\item\em Setzen der spezifischen Typen gemäss den Daten im Modell. \item\end{CompactList}\item 
+void \hyperlink{class_kontakt_delegate_fbf3a18d00f43bb3a9050721bc21426e}{setModelData} (QWidget $\ast$editor, QAbstractItemModel $\ast$\hyperlink{_master_r_d_8h_234be45c406c2d8d2489673913eecfd4}{model}, const QModelIndex \&index) const 
+\begin{CompactList}\small\item\em Setzen der Information im Modell. \item\end{CompactList}\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+Diese Klasse bildet die Schnittstelle zwischen der Kontakteditiertabelle und der Datenbank. Sie schränkt die Eingabemöglichkeiten ein. 
+
+Definition at line 43 of file KontaktDelegate.h.
+
+\subsection{Member Enumeration Documentation}
+\hypertarget{class_kontakt_delegate_fc7afbf9a00884adacdccdfd06ffc7a3}{
+\subsubsection["@0]{\setlength{\rightskip}{0pt plus 5cm}anonymous enum}}
+\label{class_kontakt_delegate_fc7afbf9a00884adacdccdfd06ffc7a3}
+
+
+\begin{Desc}
+\item[Enumerator: ]\par
+\begin{description}
+\index{TeilnehmerKey@{TeilnehmerKey}!KontaktDelegate@{KontaktDelegate}}\index{KontaktDelegate@{KontaktDelegate}!TeilnehmerKey@{TeilnehmerKey}}\item[{\em 
+\hypertarget{class_kontakt_delegate_fc7afbf9a00884adacdccdfd06ffc7a35c43e85ebe5c19ed5b4140e829db5bbc}{
+TeilnehmerKey}
+\label{class_kontakt_delegate_fc7afbf9a00884adacdccdfd06ffc7a35c43e85ebe5c19ed5b4140e829db5bbc}
+}]\index{Name@{Name}!KontaktDelegate@{KontaktDelegate}}\index{KontaktDelegate@{KontaktDelegate}!Name@{Name}}\item[{\em 
+\hypertarget{class_kontakt_delegate_fc7afbf9a00884adacdccdfd06ffc7a32e05aa3cadcf486b4247200f8543a91d}{
+Name}
+\label{class_kontakt_delegate_fc7afbf9a00884adacdccdfd06ffc7a32e05aa3cadcf486b4247200f8543a91d}
+}]\index{Vorname@{Vorname}!KontaktDelegate@{KontaktDelegate}}\index{KontaktDelegate@{KontaktDelegate}!Vorname@{Vorname}}\item[{\em 
+\hypertarget{class_kontakt_delegate_fc7afbf9a00884adacdccdfd06ffc7a3e1cdd5d7579ed0053fc8dfadeeec4c6e}{
+Vorname}
+\label{class_kontakt_delegate_fc7afbf9a00884adacdccdfd06ffc7a3e1cdd5d7579ed0053fc8dfadeeec4c6e}
+}]\index{Adresse@{Adresse}!KontaktDelegate@{KontaktDelegate}}\index{KontaktDelegate@{KontaktDelegate}!Adresse@{Adresse}}\item[{\em 
+\hypertarget{class_kontakt_delegate_fc7afbf9a00884adacdccdfd06ffc7a3df66cc5f1321774e64677acbf9238f8b}{
+Adresse}
+\label{class_kontakt_delegate_fc7afbf9a00884adacdccdfd06ffc7a3df66cc5f1321774e64677acbf9238f8b}
+}]\index{PLZ@{PLZ}!KontaktDelegate@{KontaktDelegate}}\index{KontaktDelegate@{KontaktDelegate}!PLZ@{PLZ}}\item[{\em 
+\hypertarget{class_kontakt_delegate_fc7afbf9a00884adacdccdfd06ffc7a3c9b949882ef0ee828256aab760643083}{
+PLZ}
+\label{class_kontakt_delegate_fc7afbf9a00884adacdccdfd06ffc7a3c9b949882ef0ee828256aab760643083}
+}]\index{Ort@{Ort}!KontaktDelegate@{KontaktDelegate}}\index{KontaktDelegate@{KontaktDelegate}!Ort@{Ort}}\item[{\em 
+\hypertarget{class_kontakt_delegate_fc7afbf9a00884adacdccdfd06ffc7a3254bbd500b3a141f3a819d4222210979}{
+Ort}
+\label{class_kontakt_delegate_fc7afbf9a00884adacdccdfd06ffc7a3254bbd500b3a141f3a819d4222210979}
+}]\index{Jahrgang@{Jahrgang}!KontaktDelegate@{KontaktDelegate}}\index{KontaktDelegate@{KontaktDelegate}!Jahrgang@{Jahrgang}}\item[{\em 
+\hypertarget{class_kontakt_delegate_fc7afbf9a00884adacdccdfd06ffc7a30f385c9da3ab92021cb4e1f53b2471c3}{
+Jahrgang}
+\label{class_kontakt_delegate_fc7afbf9a00884adacdccdfd06ffc7a30f385c9da3ab92021cb4e1f53b2471c3}
+}]\index{Geschlecht@{Geschlecht}!KontaktDelegate@{KontaktDelegate}}\index{KontaktDelegate@{KontaktDelegate}!Geschlecht@{Geschlecht}}\item[{\em 
+\hypertarget{class_kontakt_delegate_fc7afbf9a00884adacdccdfd06ffc7a3478ab7baf704b8be026c2fd6acaa5fef}{
+Geschlecht}
+\label{class_kontakt_delegate_fc7afbf9a00884adacdccdfd06ffc7a3478ab7baf704b8be026c2fd6acaa5fef}
+}]\index{Nationalitaet@{Nationalitaet}!KontaktDelegate@{KontaktDelegate}}\index{KontaktDelegate@{KontaktDelegate}!Nationalitaet@{Nationalitaet}}\item[{\em 
+\hypertarget{class_kontakt_delegate_fc7afbf9a00884adacdccdfd06ffc7a3dd939c5c1e3a420c955f9b6967baeaae}{
+Nationalitaet}
+\label{class_kontakt_delegate_fc7afbf9a00884adacdccdfd06ffc7a3dd939c5c1e3a420c955f9b6967baeaae}
+}]\index{Team\_\-Club@{Team\_\-Club}!KontaktDelegate@{KontaktDelegate}}\index{KontaktDelegate@{KontaktDelegate}!Team\_\-Club@{Team\_\-Club}}\item[{\em 
+\hypertarget{class_kontakt_delegate_fc7afbf9a00884adacdccdfd06ffc7a3069f28c6ebea26c8f657fe6e94eeb2bf}{
+Team\_\-Club}
+\label{class_kontakt_delegate_fc7afbf9a00884adacdccdfd06ffc7a3069f28c6ebea26c8f657fe6e94eeb2bf}
+}]\index{Email@{Email}!KontaktDelegate@{KontaktDelegate}}\index{KontaktDelegate@{KontaktDelegate}!Email@{Email}}\item[{\em 
+\hypertarget{class_kontakt_delegate_fc7afbf9a00884adacdccdfd06ffc7a32f182224117f5e5ef4c55bb086d7f47d}{
+Email}
+\label{class_kontakt_delegate_fc7afbf9a00884adacdccdfd06ffc7a32f182224117f5e5ef4c55bb086d7f47d}
+}]\index{Telefon@{Telefon}!KontaktDelegate@{KontaktDelegate}}\index{KontaktDelegate@{KontaktDelegate}!Telefon@{Telefon}}\item[{\em 
+\hypertarget{class_kontakt_delegate_fc7afbf9a00884adacdccdfd06ffc7a31eb4c57cff8ec4138bcd0409a136ccc3}{
+Telefon}
+\label{class_kontakt_delegate_fc7afbf9a00884adacdccdfd06ffc7a31eb4c57cff8ec4138bcd0409a136ccc3}
+}]\index{Mobile@{Mobile}!KontaktDelegate@{KontaktDelegate}}\index{KontaktDelegate@{KontaktDelegate}!Mobile@{Mobile}}\item[{\em 
+\hypertarget{class_kontakt_delegate_fc7afbf9a00884adacdccdfd06ffc7a32084ea40573bc29804b7f92f6fe6f522}{
+Mobile}
+\label{class_kontakt_delegate_fc7afbf9a00884adacdccdfd06ffc7a32084ea40573bc29804b7f92f6fe6f522}
+}]\index{RFID\_\-SNR@{RFID\_\-SNR}!KontaktDelegate@{KontaktDelegate}}\index{KontaktDelegate@{KontaktDelegate}!RFID\_\-SNR@{RFID\_\-SNR}}\item[{\em 
+\hypertarget{class_kontakt_delegate_fc7afbf9a00884adacdccdfd06ffc7a31b49488741e98d66eacca2bcd21395ef}{
+RFID\_\-SNR}
+\label{class_kontakt_delegate_fc7afbf9a00884adacdccdfd06ffc7a31b49488741e98d66eacca2bcd21395ef}
+}]\end{description}
+\end{Desc}
+
+
+
+Definition at line 54 of file KontaktDelegate.h.
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_kontakt_delegate_b0c6c1d150ba191eeaa0c982ee497b61}{
+\index{KontaktDelegate@{KontaktDelegate}!KontaktDelegate@{KontaktDelegate}}
+\index{KontaktDelegate@{KontaktDelegate}!KontaktDelegate@{KontaktDelegate}}
+\subsubsection[KontaktDelegate]{\setlength{\rightskip}{0pt plus 5cm}KontaktDelegate::KontaktDelegate (QObject $\ast$ {\em parent} = {\tt 0})}}
+\label{class_kontakt_delegate_b0c6c1d150ba191eeaa0c982ee497b61}
+
+
+Konstruktor. 
+
+
+
+Definition at line 38 of file KontaktDelegate.cpp.
+
+\subsection{Member Function Documentation}
+\hypertarget{class_kontakt_delegate_ba53fe0194a7de1a6d0eb9cb20153ab3}{
+\index{KontaktDelegate@{KontaktDelegate}!createEditor@{createEditor}}
+\index{createEditor@{createEditor}!KontaktDelegate@{KontaktDelegate}}
+\subsubsection[createEditor]{\setlength{\rightskip}{0pt plus 5cm}QWidget $\ast$ KontaktDelegate::createEditor (QWidget $\ast$ {\em parent}, \/  const QStyleOptionViewItem \& {\em option}, \/  const QModelIndex \& {\em index}) const}}
+\label{class_kontakt_delegate_ba53fe0194a7de1a6d0eb9cb20153ab3}
+
+
+Einstellungen für die Anzeige und Manipulation. 
+
+
+
+Definition at line 44 of file KontaktDelegate.cpp.
+
+References Geschlecht, Jahrgang, and Nationalitaet.\hypertarget{class_kontakt_delegate_096ab170a084ce50b893f03e0697b0d6}{
+\index{KontaktDelegate@{KontaktDelegate}!setEditorData@{setEditorData}}
+\index{setEditorData@{setEditorData}!KontaktDelegate@{KontaktDelegate}}
+\subsubsection[setEditorData]{\setlength{\rightskip}{0pt plus 5cm}void KontaktDelegate::setEditorData (QWidget $\ast$ {\em editor}, \/  const QModelIndex \& {\em index}) const}}
+\label{class_kontakt_delegate_096ab170a084ce50b893f03e0697b0d6}
+
+
+Setzen der spezifischen Typen gemäss den Daten im Modell. 
+
+
+
+Definition at line 79 of file KontaktDelegate.cpp.\hypertarget{class_kontakt_delegate_fbf3a18d00f43bb3a9050721bc21426e}{
+\index{KontaktDelegate@{KontaktDelegate}!setModelData@{setModelData}}
+\index{setModelData@{setModelData}!KontaktDelegate@{KontaktDelegate}}
+\subsubsection[setModelData]{\setlength{\rightskip}{0pt plus 5cm}void KontaktDelegate::setModelData (QWidget $\ast$ {\em editor}, \/  QAbstractItemModel $\ast$ {\em model}, \/  const QModelIndex \& {\em index}) const}}
+\label{class_kontakt_delegate_fbf3a18d00f43bb3a9050721bc21426e}
+
+
+Setzen der Information im Modell. 
+
+
+
+Definition at line 98 of file KontaktDelegate.cpp.
+
+The documentation for this class was generated from the following files:\begin{CompactItemize}
+\item 
+delegates/\hyperlink{_kontakt_delegate_8h}{KontaktDelegate.h}\item 
+delegates/\hyperlink{_kontakt_delegate_8cpp}{KontaktDelegate.cpp}\end{CompactItemize}

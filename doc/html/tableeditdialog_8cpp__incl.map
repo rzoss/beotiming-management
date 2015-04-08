@@ -1,0 +1,25 @@
+<area shape="rect" href="$tableeditdialog_8h.html" title="Dieser Dialog dient dem Editieren der Eintraege." alt="" coords="3217,80,3332,107">
+<area shape="rect" href="$_user_8h.html" title="Diese Klasse symbolisiert einen Benutzer und stellt Funktionen bereit." alt="" coords="3223,304,3281,331">
+<area shape="rect" href="$_resultate_delegate_8h.html" title="Diese Klasse bildet die Schnittstelle zwischen der Resultateeditiertabelle und der..." alt="" coords="4375,304,4572,331">
+<area shape="rect" href="$_kontakt_delegate_8h.html" title="Diese Klasse bildet die Schnittstelle zwischen der Kontakteditiertabelle und der..." alt="" coords="4113,304,4300,331">
+<area shape="rect" href="$ui__tableeditdialog_8h.html" title="ui_tableeditdialog.h" alt="" coords="1555,304,1685,331">
+<area shape="rect" href="$beo__timing_8h.html" title="Hauptklasse der Applikation." alt="" coords="3188,155,3292,182">
+<area shape="rect" href="$ui__beo__timing_8h.html" title="ui_beo_timing.h" alt="" coords="1055,304,1167,331">
+<area shape="rect" href="$rfidinputdialog_8h.html" title="Stellt die Eingabemaske, sowie die benötigten Funktionen zum auswerten von RFID&#45;Tags..." alt="" coords="3441,230,3633,256">
+<area shape="rect" href="$_r_f_i_d___c_r500_8h.html" title="Enthält alle Eigenschaften des RFID&#45;Lesers CR500&#45;USB." alt="" coords="3444,304,3631,331">
+<area shape="rect" href="$_database_8h.html" title="Diese Klasse symbolisiert die Datenbank. Sie erstellt die Verbindung und stellt verschiedene..." alt="" coords="3900,304,3988,331">
+<area shape="rect" href="$db_thread_8h.html" title="Dieser Thread ueberprueft alle 5 Sekunden die Verbindung zur Datenbank." alt="" coords="3951,230,4036,256">
+<area shape="rect" href="$passwordchangedialog_8h.html" title="Dieser Dialog dient zum aendern des Passworts des angemeldeten Benutzers." alt="" coords="2577,230,2740,256">
+<area shape="rect" href="$neueruserdialog_8h.html" title="Dieser Dialog dient zum erstellen eines neuen Benutzers." alt="" coords="2911,230,3033,256">
+<area shape="rect" href="$neuesrennendialog_8h.html" title="Dieser Dialog dient zum erstellen eines neunen Rennens." alt="" coords="2415,230,2553,256">
+<area shape="rect" href="$hardwarekonfiguration_8h.html" title="Dieser Dialog erstellt eine Konfiguration fuer eine Anlage." alt="" coords="3057,230,3215,256">
+<area shape="rect" href="$logfilelesendialog_8h.html" title="Dieser Dialog sucht eine Log&#45;Datei einer Zielstation nach nicht uebermittelten Eintraegen..." alt="" coords="2260,230,2391,256">
+<area shape="rect" href="$rechteanpassen_8h.html" title="Dieser Dialog dient zum anpassen der Rechte eines beliebigen Benutzers." alt="" coords="2764,230,2887,256">
+<area shape="rect" href="$rfid_thread_8h.html" title="Erstellt einen Thread, welcher alle 0.5 Sekunden prüft ob eine Karte im Feld des..." alt="" coords="3657,230,3825,256">
+<area shape="rect" href="$ui__rfidinputdialog_8h.html" title="ui_rfidinputdialog.h" alt="" coords="2587,304,2715,331">
+<area shape="rect" href="$ui__passwordchangedialog_8h.html" title="ui_passwordchangedialog.h" alt="" coords="1352,304,1531,331">
+<area shape="rect" href="$ui__neueruserdialog_8h.html" title="ui_neueruserdialog.h" alt="" coords="1875,304,2013,331">
+<area shape="rect" href="$ui__neuesrennendialog_8h.html" title="ui_neuesrennendialog.h" alt="" coords="2405,304,2563,331">
+<area shape="rect" href="$ui__hardwarekonfiguration_8h.html" title="ui_hardwarekonfiguration.h" alt="" coords="2208,304,2381,331">
+<area shape="rect" href="$ui__logfilelesendialog_8h.html" title="ui_logfilelesendialog.h" alt="" coords="2037,304,2184,331">
+<area shape="rect" href="$ui__rechteanpassen_8h.html" title="ui_rechteanpassen.h" alt="" coords="1709,304,1851,331">

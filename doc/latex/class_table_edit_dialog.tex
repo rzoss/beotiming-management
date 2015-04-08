@@ -1,0 +1,478 @@
+\hypertarget{class_table_edit_dialog}{
+\section{TableEditDialog Class Reference}
+\label{class_table_edit_dialog}\index{TableEditDialog@{TableEditDialog}}
+}
+Dieser Dialog dient dem Editieren der Eintraege.  
+
+
+{\tt \#include $<$tableeditdialog.h$>$}
+
+Collaboration diagram for TableEditDialog:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{class_table_edit_dialog__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{CompactItemize}
+\item 
+\hyperlink{class_table_edit_dialog_f1bf42b072c27aeb0eb3f29d497a0a8f}{TableEditDialog} (int TeilnehmerKeyParam, \hyperlink{class_user}{User} $\ast$user, QWidget $\ast$parent=0)
+\begin{CompactList}\small\item\em Konstruktor. \item\end{CompactList}\item 
+\hyperlink{class_table_edit_dialog_cb768ab9eaca499eee124debc9762067}{$\sim$TableEditDialog} ()
+\begin{CompactList}\small\item\em Destruktor. \item\end{CompactList}\end{CompactItemize}
+\subsection*{Private Types}
+\begin{CompactItemize}
+\item 
+enum \{ \par
+\hyperlink{class_table_edit_dialog_86c177ed9439b08e0b6cfc902a3d2cc7daaee1ae13160b7122146d6be94078b9}{TeilnehmerKey}, 
+\hyperlink{class_table_edit_dialog_86c177ed9439b08e0b6cfc902a3d2cc762ac34273d46592d74466bed3e93b65d}{Name}, 
+\hyperlink{class_table_edit_dialog_86c177ed9439b08e0b6cfc902a3d2cc748fd0828072976d7bde192a59ca24225}{Vorname}, 
+\hyperlink{class_table_edit_dialog_86c177ed9439b08e0b6cfc902a3d2cc7b488b973a9c87959710052ee0539cdd1}{Adresse}, 
+\par
+\hyperlink{class_table_edit_dialog_86c177ed9439b08e0b6cfc902a3d2cc7779f4c8a7a891f73695bfd7d4a827d2e}{PLZ}, 
+\hyperlink{class_table_edit_dialog_86c177ed9439b08e0b6cfc902a3d2cc7f0e8d2dc5ab13e67e64dcddeb97793b0}{Ort}, 
+\hyperlink{class_table_edit_dialog_86c177ed9439b08e0b6cfc902a3d2cc7fef4aebc1c99e649ee63f9716efc6558}{Jahrgang}, 
+\hyperlink{class_table_edit_dialog_86c177ed9439b08e0b6cfc902a3d2cc7cc1bf0df502b7297c40bbda093263308}{Geschlecht}, 
+\par
+\hyperlink{class_table_edit_dialog_86c177ed9439b08e0b6cfc902a3d2cc77d2d971c7111901b1741a3b25816790c}{Nationalitaet}, 
+\hyperlink{class_table_edit_dialog_86c177ed9439b08e0b6cfc902a3d2cc7edf90a84d265a4ef25f9dc97eeaab9d1}{Team\_\-Club}, 
+\hyperlink{class_table_edit_dialog_86c177ed9439b08e0b6cfc902a3d2cc75f5c8aded8722631927d1da12be33915}{Email}, 
+\hyperlink{class_table_edit_dialog_86c177ed9439b08e0b6cfc902a3d2cc76c511d5234e9cce6a3f0ebf9353155ea}{Telefon}, 
+\par
+\hyperlink{class_table_edit_dialog_86c177ed9439b08e0b6cfc902a3d2cc7b39d889b9563fe65457190bdb4758452}{Mobile}, 
+\hyperlink{class_table_edit_dialog_86c177ed9439b08e0b6cfc902a3d2cc72fb86b56b24ca9716876528d4e215af9}{RFID\_\-SNR}
+ \}
+\item 
+enum \{ \par
+\hyperlink{class_table_edit_dialog_bece1e406d8effa6b198f777247779c5e01a69b6f9385d89c33fe1c369a3a589}{TimeKey}, 
+\hyperlink{class_table_edit_dialog_bece1e406d8effa6b198f777247779c5a6658fe4dfede6c6e65a29e7a607b7b0}{Eintrag}, 
+\hyperlink{class_table_edit_dialog_bece1e406d8effa6b198f777247779c5fc61d637022cc07e5b46cd6a8bd882bf}{Startzeit}, 
+\hyperlink{class_table_edit_dialog_bece1e406d8effa6b198f777247779c5261fca6b87d7710b1cc5fcb64cfb8c9f}{Endzeit}, 
+\par
+\hyperlink{class_table_edit_dialog_bece1e406d8effa6b198f777247779c5203d607fc2584a81d53495a35183e952}{StreckenKey}, 
+\hyperlink{class_table_edit_dialog_bece1e406d8effa6b198f777247779c5d2a2f3db2f2db22f77d5c8b7fadafaa1}{TeilnehmerKey2}, 
+\hyperlink{class_table_edit_dialog_bece1e406d8effa6b198f777247779c5bb66db8c440e8819c4cc9ba3ecf7fcf7}{Kategorie}, 
+\hyperlink{class_table_edit_dialog_bece1e406d8effa6b198f777247779c5db099451e2967b3fe3045f7644a2c1b6}{Fahrzeit}, 
+\par
+\hyperlink{class_table_edit_dialog_bece1e406d8effa6b198f777247779c5ea3908e03a61ca36d77168ec1560e7a1}{SNR\_\-RFID}, 
+\hyperlink{class_table_edit_dialog_bece1e406d8effa6b198f777247779c570fa99606b59738c81764ff50d9a3429}{TimeID}
+ \}
+\item 
+enum \{ \hyperlink{class_table_edit_dialog_fc63d051c5c8dff3412065d3c49ba7fd8cbaa9625e519c0c7c6a5ca79e9ae539}{superadministrator}, 
+\hyperlink{class_table_edit_dialog_fc63d051c5c8dff3412065d3c49ba7fd669d220d082a679ea8db9f7928f3d458}{administrator}, 
+\hyperlink{class_table_edit_dialog_fc63d051c5c8dff3412065d3c49ba7fd8aa81aa302567502aca18faf757675f6}{manager}, 
+\hyperlink{class_table_edit_dialog_fc63d051c5c8dff3412065d3c49ba7fdcdbb283199a1373c7075a6a596514f01}{user}
+ \}
+\end{CompactItemize}
+\subsection*{Private Slots}
+\begin{CompactItemize}
+\item 
+void \hyperlink{class_table_edit_dialog_b3ae208e0e028f4030875efe33e3de48}{on\_\-BestaetigenButton\_\-released} ()
+\begin{CompactList}\small\item\em Slot für Bestätigen-Button. \item\end{CompactList}\item 
+void \hyperlink{class_table_edit_dialog_d10a162c0554577a222a34cd918e3d1f}{on\_\-VerwerfenButton\_\-released} ()
+\begin{CompactList}\small\item\em Slot für Verwerfen-Button. \item\end{CompactList}\item 
+void \hyperlink{class_table_edit_dialog_0ccad25795df2d282741c21eeca778e6}{on\_\-loeschenButton\_\-released} ()
+\begin{CompactList}\small\item\em Slot für Löschen-Button. \item\end{CompactList}\item 
+void \hyperlink{class_table_edit_dialog_24028bd71ab1cee427967807e85e29fe}{on\_\-kontakte\_\-dataChanged} (const QModelIndex \&topLeft, const QModelIndex \&bottomRight)
+\begin{CompactList}\small\item\em Slot um Datenänderungen im Model in einer Liste zu speichern. \item\end{CompactList}\item 
+void \hyperlink{class_table_edit_dialog_d09fb68dc6ea3de8056d088099db6b67}{on\_\-resultate\_\-dataChanged} (const QModelIndex \&topLeft, const QModelIndex \&bottomRight)
+\begin{CompactList}\small\item\em Slot um Datenänderungen im Model in einer Liste zu speichern. \item\end{CompactList}\end{CompactItemize}
+\subsection*{Private Attributes}
+\begin{CompactItemize}
+\item 
+\hyperlink{class_ui_1_1_table_edit_dialog_class}{Ui::TableEditDialogClass} \hyperlink{class_table_edit_dialog_f63889b474e6ccf0d2dc0d7c1deb44c9}{ui}
+\item 
+\hyperlink{class_b_e_o___timing}{BEO\_\-Timing} $\ast$ \hyperlink{class_table_edit_dialog_91a07844cd384a7efa73a77d2e168586}{mainWindow}
+\item 
+QTableView $\ast$ \hyperlink{class_table_edit_dialog_a6e15d4f17c02c81f8a1221ed1e789b5}{kontaktView}
+\item 
+QSqlTableModel $\ast$ \hyperlink{class_table_edit_dialog_2bccfca0a956c1fe7e4272e435456b8e}{kontaktModel}
+\item 
+QTableView $\ast$ \hyperlink{class_table_edit_dialog_3ae273e36ee898643059e8963ed9f557}{resultateView}
+\item 
+QSqlTableModel $\ast$ \hyperlink{class_table_edit_dialog_c544c898094d550a4df24603738d576d}{resultateModel}
+\item 
+QModelIndexList $\ast$ \hyperlink{class_table_edit_dialog_779a6767b90cf2a0f67d4fd3a0eef79e}{kontakteChanged}
+\item 
+QModelIndexList $\ast$ \hyperlink{class_table_edit_dialog_9bc0694e38258f5d52f1b2abf65f7ba3}{resultateChanged}
+\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+Dieser Dialog dient dem Editieren der Eintraege. 
+
+Definition at line 44 of file tableeditdialog.h.
+
+\subsection{Member Enumeration Documentation}
+\hypertarget{class_table_edit_dialog_86c177ed9439b08e0b6cfc902a3d2cc7}{
+\subsubsection["@3]{\setlength{\rightskip}{0pt plus 5cm}anonymous enum\hspace{0.3cm}{\tt  \mbox{[}private\mbox{]}}}}
+\label{class_table_edit_dialog_86c177ed9439b08e0b6cfc902a3d2cc7}
+
+
+\begin{Desc}
+\item[Enumerator: ]\par
+\begin{description}
+\index{TeilnehmerKey@{TeilnehmerKey}!TableEditDialog@{TableEditDialog}}\index{TableEditDialog@{TableEditDialog}!TeilnehmerKey@{TeilnehmerKey}}\item[{\em 
+\hypertarget{class_table_edit_dialog_86c177ed9439b08e0b6cfc902a3d2cc7daaee1ae13160b7122146d6be94078b9}{
+TeilnehmerKey}
+\label{class_table_edit_dialog_86c177ed9439b08e0b6cfc902a3d2cc7daaee1ae13160b7122146d6be94078b9}
+}]\index{Name@{Name}!TableEditDialog@{TableEditDialog}}\index{TableEditDialog@{TableEditDialog}!Name@{Name}}\item[{\em 
+\hypertarget{class_table_edit_dialog_86c177ed9439b08e0b6cfc902a3d2cc762ac34273d46592d74466bed3e93b65d}{
+Name}
+\label{class_table_edit_dialog_86c177ed9439b08e0b6cfc902a3d2cc762ac34273d46592d74466bed3e93b65d}
+}]\index{Vorname@{Vorname}!TableEditDialog@{TableEditDialog}}\index{TableEditDialog@{TableEditDialog}!Vorname@{Vorname}}\item[{\em 
+\hypertarget{class_table_edit_dialog_86c177ed9439b08e0b6cfc902a3d2cc748fd0828072976d7bde192a59ca24225}{
+Vorname}
+\label{class_table_edit_dialog_86c177ed9439b08e0b6cfc902a3d2cc748fd0828072976d7bde192a59ca24225}
+}]\index{Adresse@{Adresse}!TableEditDialog@{TableEditDialog}}\index{TableEditDialog@{TableEditDialog}!Adresse@{Adresse}}\item[{\em 
+\hypertarget{class_table_edit_dialog_86c177ed9439b08e0b6cfc902a3d2cc7b488b973a9c87959710052ee0539cdd1}{
+Adresse}
+\label{class_table_edit_dialog_86c177ed9439b08e0b6cfc902a3d2cc7b488b973a9c87959710052ee0539cdd1}
+}]\index{PLZ@{PLZ}!TableEditDialog@{TableEditDialog}}\index{TableEditDialog@{TableEditDialog}!PLZ@{PLZ}}\item[{\em 
+\hypertarget{class_table_edit_dialog_86c177ed9439b08e0b6cfc902a3d2cc7779f4c8a7a891f73695bfd7d4a827d2e}{
+PLZ}
+\label{class_table_edit_dialog_86c177ed9439b08e0b6cfc902a3d2cc7779f4c8a7a891f73695bfd7d4a827d2e}
+}]\index{Ort@{Ort}!TableEditDialog@{TableEditDialog}}\index{TableEditDialog@{TableEditDialog}!Ort@{Ort}}\item[{\em 
+\hypertarget{class_table_edit_dialog_86c177ed9439b08e0b6cfc902a3d2cc7f0e8d2dc5ab13e67e64dcddeb97793b0}{
+Ort}
+\label{class_table_edit_dialog_86c177ed9439b08e0b6cfc902a3d2cc7f0e8d2dc5ab13e67e64dcddeb97793b0}
+}]\index{Jahrgang@{Jahrgang}!TableEditDialog@{TableEditDialog}}\index{TableEditDialog@{TableEditDialog}!Jahrgang@{Jahrgang}}\item[{\em 
+\hypertarget{class_table_edit_dialog_86c177ed9439b08e0b6cfc902a3d2cc7fef4aebc1c99e649ee63f9716efc6558}{
+Jahrgang}
+\label{class_table_edit_dialog_86c177ed9439b08e0b6cfc902a3d2cc7fef4aebc1c99e649ee63f9716efc6558}
+}]\index{Geschlecht@{Geschlecht}!TableEditDialog@{TableEditDialog}}\index{TableEditDialog@{TableEditDialog}!Geschlecht@{Geschlecht}}\item[{\em 
+\hypertarget{class_table_edit_dialog_86c177ed9439b08e0b6cfc902a3d2cc7cc1bf0df502b7297c40bbda093263308}{
+Geschlecht}
+\label{class_table_edit_dialog_86c177ed9439b08e0b6cfc902a3d2cc7cc1bf0df502b7297c40bbda093263308}
+}]\index{Nationalitaet@{Nationalitaet}!TableEditDialog@{TableEditDialog}}\index{TableEditDialog@{TableEditDialog}!Nationalitaet@{Nationalitaet}}\item[{\em 
+\hypertarget{class_table_edit_dialog_86c177ed9439b08e0b6cfc902a3d2cc77d2d971c7111901b1741a3b25816790c}{
+Nationalitaet}
+\label{class_table_edit_dialog_86c177ed9439b08e0b6cfc902a3d2cc77d2d971c7111901b1741a3b25816790c}
+}]\index{Team\_\-Club@{Team\_\-Club}!TableEditDialog@{TableEditDialog}}\index{TableEditDialog@{TableEditDialog}!Team\_\-Club@{Team\_\-Club}}\item[{\em 
+\hypertarget{class_table_edit_dialog_86c177ed9439b08e0b6cfc902a3d2cc7edf90a84d265a4ef25f9dc97eeaab9d1}{
+Team\_\-Club}
+\label{class_table_edit_dialog_86c177ed9439b08e0b6cfc902a3d2cc7edf90a84d265a4ef25f9dc97eeaab9d1}
+}]\index{Email@{Email}!TableEditDialog@{TableEditDialog}}\index{TableEditDialog@{TableEditDialog}!Email@{Email}}\item[{\em 
+\hypertarget{class_table_edit_dialog_86c177ed9439b08e0b6cfc902a3d2cc75f5c8aded8722631927d1da12be33915}{
+Email}
+\label{class_table_edit_dialog_86c177ed9439b08e0b6cfc902a3d2cc75f5c8aded8722631927d1da12be33915}
+}]\index{Telefon@{Telefon}!TableEditDialog@{TableEditDialog}}\index{TableEditDialog@{TableEditDialog}!Telefon@{Telefon}}\item[{\em 
+\hypertarget{class_table_edit_dialog_86c177ed9439b08e0b6cfc902a3d2cc76c511d5234e9cce6a3f0ebf9353155ea}{
+Telefon}
+\label{class_table_edit_dialog_86c177ed9439b08e0b6cfc902a3d2cc76c511d5234e9cce6a3f0ebf9353155ea}
+}]\index{Mobile@{Mobile}!TableEditDialog@{TableEditDialog}}\index{TableEditDialog@{TableEditDialog}!Mobile@{Mobile}}\item[{\em 
+\hypertarget{class_table_edit_dialog_86c177ed9439b08e0b6cfc902a3d2cc7b39d889b9563fe65457190bdb4758452}{
+Mobile}
+\label{class_table_edit_dialog_86c177ed9439b08e0b6cfc902a3d2cc7b39d889b9563fe65457190bdb4758452}
+}]\index{RFID\_\-SNR@{RFID\_\-SNR}!TableEditDialog@{TableEditDialog}}\index{TableEditDialog@{TableEditDialog}!RFID\_\-SNR@{RFID\_\-SNR}}\item[{\em 
+\hypertarget{class_table_edit_dialog_86c177ed9439b08e0b6cfc902a3d2cc72fb86b56b24ca9716876528d4e215af9}{
+RFID\_\-SNR}
+\label{class_table_edit_dialog_86c177ed9439b08e0b6cfc902a3d2cc72fb86b56b24ca9716876528d4e215af9}
+}]\end{description}
+\end{Desc}
+
+
+
+Definition at line 53 of file tableeditdialog.h.\hypertarget{class_table_edit_dialog_bece1e406d8effa6b198f777247779c5}{
+\subsubsection["@4]{\setlength{\rightskip}{0pt plus 5cm}anonymous enum\hspace{0.3cm}{\tt  \mbox{[}private\mbox{]}}}}
+\label{class_table_edit_dialog_bece1e406d8effa6b198f777247779c5}
+
+
+\begin{Desc}
+\item[Enumerator: ]\par
+\begin{description}
+\index{TimeKey@{TimeKey}!TableEditDialog@{TableEditDialog}}\index{TableEditDialog@{TableEditDialog}!TimeKey@{TimeKey}}\item[{\em 
+\hypertarget{class_table_edit_dialog_bece1e406d8effa6b198f777247779c5e01a69b6f9385d89c33fe1c369a3a589}{
+TimeKey}
+\label{class_table_edit_dialog_bece1e406d8effa6b198f777247779c5e01a69b6f9385d89c33fe1c369a3a589}
+}]\index{Eintrag@{Eintrag}!TableEditDialog@{TableEditDialog}}\index{TableEditDialog@{TableEditDialog}!Eintrag@{Eintrag}}\item[{\em 
+\hypertarget{class_table_edit_dialog_bece1e406d8effa6b198f777247779c5a6658fe4dfede6c6e65a29e7a607b7b0}{
+Eintrag}
+\label{class_table_edit_dialog_bece1e406d8effa6b198f777247779c5a6658fe4dfede6c6e65a29e7a607b7b0}
+}]\index{Startzeit@{Startzeit}!TableEditDialog@{TableEditDialog}}\index{TableEditDialog@{TableEditDialog}!Startzeit@{Startzeit}}\item[{\em 
+\hypertarget{class_table_edit_dialog_bece1e406d8effa6b198f777247779c5fc61d637022cc07e5b46cd6a8bd882bf}{
+Startzeit}
+\label{class_table_edit_dialog_bece1e406d8effa6b198f777247779c5fc61d637022cc07e5b46cd6a8bd882bf}
+}]\index{Endzeit@{Endzeit}!TableEditDialog@{TableEditDialog}}\index{TableEditDialog@{TableEditDialog}!Endzeit@{Endzeit}}\item[{\em 
+\hypertarget{class_table_edit_dialog_bece1e406d8effa6b198f777247779c5261fca6b87d7710b1cc5fcb64cfb8c9f}{
+Endzeit}
+\label{class_table_edit_dialog_bece1e406d8effa6b198f777247779c5261fca6b87d7710b1cc5fcb64cfb8c9f}
+}]\index{StreckenKey@{StreckenKey}!TableEditDialog@{TableEditDialog}}\index{TableEditDialog@{TableEditDialog}!StreckenKey@{StreckenKey}}\item[{\em 
+\hypertarget{class_table_edit_dialog_bece1e406d8effa6b198f777247779c5203d607fc2584a81d53495a35183e952}{
+StreckenKey}
+\label{class_table_edit_dialog_bece1e406d8effa6b198f777247779c5203d607fc2584a81d53495a35183e952}
+}]\index{TeilnehmerKey2@{TeilnehmerKey2}!TableEditDialog@{TableEditDialog}}\index{TableEditDialog@{TableEditDialog}!TeilnehmerKey2@{TeilnehmerKey2}}\item[{\em 
+\hypertarget{class_table_edit_dialog_bece1e406d8effa6b198f777247779c5d2a2f3db2f2db22f77d5c8b7fadafaa1}{
+TeilnehmerKey2}
+\label{class_table_edit_dialog_bece1e406d8effa6b198f777247779c5d2a2f3db2f2db22f77d5c8b7fadafaa1}
+}]\index{Kategorie@{Kategorie}!TableEditDialog@{TableEditDialog}}\index{TableEditDialog@{TableEditDialog}!Kategorie@{Kategorie}}\item[{\em 
+\hypertarget{class_table_edit_dialog_bece1e406d8effa6b198f777247779c5bb66db8c440e8819c4cc9ba3ecf7fcf7}{
+Kategorie}
+\label{class_table_edit_dialog_bece1e406d8effa6b198f777247779c5bb66db8c440e8819c4cc9ba3ecf7fcf7}
+}]\index{Fahrzeit@{Fahrzeit}!TableEditDialog@{TableEditDialog}}\index{TableEditDialog@{TableEditDialog}!Fahrzeit@{Fahrzeit}}\item[{\em 
+\hypertarget{class_table_edit_dialog_bece1e406d8effa6b198f777247779c5db099451e2967b3fe3045f7644a2c1b6}{
+Fahrzeit}
+\label{class_table_edit_dialog_bece1e406d8effa6b198f777247779c5db099451e2967b3fe3045f7644a2c1b6}
+}]\index{SNR\_\-RFID@{SNR\_\-RFID}!TableEditDialog@{TableEditDialog}}\index{TableEditDialog@{TableEditDialog}!SNR\_\-RFID@{SNR\_\-RFID}}\item[{\em 
+\hypertarget{class_table_edit_dialog_bece1e406d8effa6b198f777247779c5ea3908e03a61ca36d77168ec1560e7a1}{
+SNR\_\-RFID}
+\label{class_table_edit_dialog_bece1e406d8effa6b198f777247779c5ea3908e03a61ca36d77168ec1560e7a1}
+}]\index{TimeID@{TimeID}!TableEditDialog@{TableEditDialog}}\index{TableEditDialog@{TableEditDialog}!TimeID@{TimeID}}\item[{\em 
+\hypertarget{class_table_edit_dialog_bece1e406d8effa6b198f777247779c570fa99606b59738c81764ff50d9a3429}{
+TimeID}
+\label{class_table_edit_dialog_bece1e406d8effa6b198f777247779c570fa99606b59738c81764ff50d9a3429}
+}]\end{description}
+\end{Desc}
+
+
+
+Definition at line 55 of file tableeditdialog.h.\hypertarget{class_table_edit_dialog_fc63d051c5c8dff3412065d3c49ba7fd}{
+\subsubsection["@5]{\setlength{\rightskip}{0pt plus 5cm}anonymous enum\hspace{0.3cm}{\tt  \mbox{[}private\mbox{]}}}}
+\label{class_table_edit_dialog_fc63d051c5c8dff3412065d3c49ba7fd}
+
+
+\begin{Desc}
+\item[Enumerator: ]\par
+\begin{description}
+\index{superadministrator@{superadministrator}!TableEditDialog@{TableEditDialog}}\index{TableEditDialog@{TableEditDialog}!superadministrator@{superadministrator}}\item[{\em 
+\hypertarget{class_table_edit_dialog_fc63d051c5c8dff3412065d3c49ba7fd8cbaa9625e519c0c7c6a5ca79e9ae539}{
+superadministrator}
+\label{class_table_edit_dialog_fc63d051c5c8dff3412065d3c49ba7fd8cbaa9625e519c0c7c6a5ca79e9ae539}
+}]\index{administrator@{administrator}!TableEditDialog@{TableEditDialog}}\index{TableEditDialog@{TableEditDialog}!administrator@{administrator}}\item[{\em 
+\hypertarget{class_table_edit_dialog_fc63d051c5c8dff3412065d3c49ba7fd669d220d082a679ea8db9f7928f3d458}{
+administrator}
+\label{class_table_edit_dialog_fc63d051c5c8dff3412065d3c49ba7fd669d220d082a679ea8db9f7928f3d458}
+}]\index{manager@{manager}!TableEditDialog@{TableEditDialog}}\index{TableEditDialog@{TableEditDialog}!manager@{manager}}\item[{\em 
+\hypertarget{class_table_edit_dialog_fc63d051c5c8dff3412065d3c49ba7fd8aa81aa302567502aca18faf757675f6}{
+manager}
+\label{class_table_edit_dialog_fc63d051c5c8dff3412065d3c49ba7fd8aa81aa302567502aca18faf757675f6}
+}]\index{user@{user}!TableEditDialog@{TableEditDialog}}\index{TableEditDialog@{TableEditDialog}!user@{user}}\item[{\em 
+\hypertarget{class_table_edit_dialog_fc63d051c5c8dff3412065d3c49ba7fdcdbb283199a1373c7075a6a596514f01}{
+user}
+\label{class_table_edit_dialog_fc63d051c5c8dff3412065d3c49ba7fdcdbb283199a1373c7075a6a596514f01}
+}]\end{description}
+\end{Desc}
+
+
+
+Definition at line 57 of file tableeditdialog.h.
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_table_edit_dialog_f1bf42b072c27aeb0eb3f29d497a0a8f}{
+\index{TableEditDialog@{TableEditDialog}!TableEditDialog@{TableEditDialog}}
+\index{TableEditDialog@{TableEditDialog}!TableEditDialog@{TableEditDialog}}
+\subsubsection[TableEditDialog]{\setlength{\rightskip}{0pt plus 5cm}TableEditDialog::TableEditDialog (int {\em TeilnehmerKeyParam}, \/  {\bf User} $\ast$ {\em user}, \/  QWidget $\ast$ {\em parent} = {\tt 0})}}
+\label{class_table_edit_dialog_f1bf42b072c27aeb0eb3f29d497a0a8f}
+
+
+Konstruktor. 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em TeilnehmerKeyParam}]Primarykey des Teilnehmers \item[{\em user}]Pointer auf den angemeldeten Benutzer \item[{\em parent}]Pointer auf das aufrufende Objekt \end{description}
+\end{Desc}
+
+
+Definition at line 45 of file tableeditdialog.cpp.
+
+References administrator, Adresse, Eintrag, Email, Endzeit, Fahrzeit, Geschlecht, User::getUsertype(), Jahrgang, Kategorie, Ui\_\-TableEditDialogClass::KontaktdatenTable, kontakteChanged, kontaktModel, kontaktView, mainWindow, manager, Mobile, Name, Nationalitaet, on\_\-kontakte\_\-dataChanged(), on\_\-resultate\_\-dataChanged(), Ort, PLZ, resultateChanged, resultateModel, Ui\_\-TableEditDialogClass::ResultateTable, resultateView, RFID\_\-SNR, Ui\_\-TableEditDialogClass::setupUi(), SNR\_\-RFID, Startzeit, StreckenKey, Team\_\-Club, TeilnehmerKey, TeilnehmerKey2, Telefon, TimeID, TimeKey, ui, and Vorname.
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=310pt]{class_table_edit_dialog_f1bf42b072c27aeb0eb3f29d497a0a8f_cgraph}
+\end{center}
+\end{figure}
+\hypertarget{class_table_edit_dialog_cb768ab9eaca499eee124debc9762067}{
+\index{TableEditDialog@{TableEditDialog}!$\sim$TableEditDialog@{$\sim$TableEditDialog}}
+\index{$\sim$TableEditDialog@{$\sim$TableEditDialog}!TableEditDialog@{TableEditDialog}}
+\subsubsection[$\sim$TableEditDialog]{\setlength{\rightskip}{0pt plus 5cm}TableEditDialog::$\sim$TableEditDialog ()}}
+\label{class_table_edit_dialog_cb768ab9eaca499eee124debc9762067}
+
+
+Destruktor. 
+
+
+
+Definition at line 152 of file tableeditdialog.cpp.
+
+\subsection{Member Function Documentation}
+\hypertarget{class_table_edit_dialog_b3ae208e0e028f4030875efe33e3de48}{
+\index{TableEditDialog@{TableEditDialog}!on\_\-BestaetigenButton\_\-released@{on\_\-BestaetigenButton\_\-released}}
+\index{on\_\-BestaetigenButton\_\-released@{on\_\-BestaetigenButton\_\-released}!TableEditDialog@{TableEditDialog}}
+\subsubsection[on\_\-BestaetigenButton\_\-released]{\setlength{\rightskip}{0pt plus 5cm}void TableEditDialog::on\_\-BestaetigenButton\_\-released ()\hspace{0.3cm}{\tt  \mbox{[}private, slot\mbox{]}}}}
+\label{class_table_edit_dialog_b3ae208e0e028f4030875efe33e3de48}
+
+
+Slot für Bestätigen-Button. 
+
+
+
+Definition at line 185 of file tableeditdialog.cpp.
+
+References kontakteChanged, kontaktModel, mainWindow, BEO\_\-Timing::Read\_\-Race(), resultateChanged, and resultateModel.\hypertarget{class_table_edit_dialog_d10a162c0554577a222a34cd918e3d1f}{
+\index{TableEditDialog@{TableEditDialog}!on\_\-VerwerfenButton\_\-released@{on\_\-VerwerfenButton\_\-released}}
+\index{on\_\-VerwerfenButton\_\-released@{on\_\-VerwerfenButton\_\-released}!TableEditDialog@{TableEditDialog}}
+\subsubsection[on\_\-VerwerfenButton\_\-released]{\setlength{\rightskip}{0pt plus 5cm}void TableEditDialog::on\_\-VerwerfenButton\_\-released ()\hspace{0.3cm}{\tt  \mbox{[}private, slot\mbox{]}}}}
+\label{class_table_edit_dialog_d10a162c0554577a222a34cd918e3d1f}
+
+
+Slot für Verwerfen-Button. 
+
+
+
+Definition at line 233 of file tableeditdialog.cpp.
+
+References kontaktModel, and resultateModel.\hypertarget{class_table_edit_dialog_0ccad25795df2d282741c21eeca778e6}{
+\index{TableEditDialog@{TableEditDialog}!on\_\-loeschenButton\_\-released@{on\_\-loeschenButton\_\-released}}
+\index{on\_\-loeschenButton\_\-released@{on\_\-loeschenButton\_\-released}!TableEditDialog@{TableEditDialog}}
+\subsubsection[on\_\-loeschenButton\_\-released]{\setlength{\rightskip}{0pt plus 5cm}void TableEditDialog::on\_\-loeschenButton\_\-released ()\hspace{0.3cm}{\tt  \mbox{[}private, slot\mbox{]}}}}
+\label{class_table_edit_dialog_0ccad25795df2d282741c21eeca778e6}
+
+
+Slot für Löschen-Button. 
+
+
+
+Definition at line 159 of file tableeditdialog.cpp.
+
+References model, resultateModel, and resultateView.\hypertarget{class_table_edit_dialog_24028bd71ab1cee427967807e85e29fe}{
+\index{TableEditDialog@{TableEditDialog}!on\_\-kontakte\_\-dataChanged@{on\_\-kontakte\_\-dataChanged}}
+\index{on\_\-kontakte\_\-dataChanged@{on\_\-kontakte\_\-dataChanged}!TableEditDialog@{TableEditDialog}}
+\subsubsection[on\_\-kontakte\_\-dataChanged]{\setlength{\rightskip}{0pt plus 5cm}void TableEditDialog::on\_\-kontakte\_\-dataChanged (const QModelIndex \& {\em topLeft}, \/  const QModelIndex \& {\em bottomRight})\hspace{0.3cm}{\tt  \mbox{[}private, slot\mbox{]}}}}
+\label{class_table_edit_dialog_24028bd71ab1cee427967807e85e29fe}
+
+
+Slot um Datenänderungen im Model in einer Liste zu speichern. 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em topLeft}]linke, obere Ecke der Auswahl \item[{\em bottomRight}]rechte, untere Ecke der Auswahl \end{description}
+\end{Desc}
+
+
+Definition at line 244 of file tableeditdialog.cpp.
+
+References kontakteChanged.
+
+Referenced by TableEditDialog().\hypertarget{class_table_edit_dialog_d09fb68dc6ea3de8056d088099db6b67}{
+\index{TableEditDialog@{TableEditDialog}!on\_\-resultate\_\-dataChanged@{on\_\-resultate\_\-dataChanged}}
+\index{on\_\-resultate\_\-dataChanged@{on\_\-resultate\_\-dataChanged}!TableEditDialog@{TableEditDialog}}
+\subsubsection[on\_\-resultate\_\-dataChanged]{\setlength{\rightskip}{0pt plus 5cm}void TableEditDialog::on\_\-resultate\_\-dataChanged (const QModelIndex \& {\em topLeft}, \/  const QModelIndex \& {\em bottomRight})\hspace{0.3cm}{\tt  \mbox{[}private, slot\mbox{]}}}}
+\label{class_table_edit_dialog_d09fb68dc6ea3de8056d088099db6b67}
+
+
+Slot um Datenänderungen im Model in einer Liste zu speichern. 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em topLeft}]linke, obere Ecke der Auswahl \item[{\em bottomRight}]rechte, untere Ecke der Auswahl \end{description}
+\end{Desc}
+
+
+Definition at line 252 of file tableeditdialog.cpp.
+
+References resultateChanged.
+
+Referenced by TableEditDialog().
+
+\subsection{Member Data Documentation}
+\hypertarget{class_table_edit_dialog_f63889b474e6ccf0d2dc0d7c1deb44c9}{
+\index{TableEditDialog@{TableEditDialog}!ui@{ui}}
+\index{ui@{ui}!TableEditDialog@{TableEditDialog}}
+\subsubsection[ui]{\setlength{\rightskip}{0pt plus 5cm}{\bf Ui::TableEditDialogClass} {\bf TableEditDialog::ui}\hspace{0.3cm}{\tt  \mbox{[}private\mbox{]}}}}
+\label{class_table_edit_dialog_f63889b474e6ccf0d2dc0d7c1deb44c9}
+
+
+
+
+Definition at line 58 of file tableeditdialog.h.
+
+Referenced by TableEditDialog().\hypertarget{class_table_edit_dialog_91a07844cd384a7efa73a77d2e168586}{
+\index{TableEditDialog@{TableEditDialog}!mainWindow@{mainWindow}}
+\index{mainWindow@{mainWindow}!TableEditDialog@{TableEditDialog}}
+\subsubsection[mainWindow]{\setlength{\rightskip}{0pt plus 5cm}{\bf BEO\_\-Timing}$\ast$ {\bf TableEditDialog::mainWindow}\hspace{0.3cm}{\tt  \mbox{[}private\mbox{]}}}}
+\label{class_table_edit_dialog_91a07844cd384a7efa73a77d2e168586}
+
+
+
+
+Definition at line 59 of file tableeditdialog.h.
+
+Referenced by on\_\-BestaetigenButton\_\-released(), and TableEditDialog().\hypertarget{class_table_edit_dialog_a6e15d4f17c02c81f8a1221ed1e789b5}{
+\index{TableEditDialog@{TableEditDialog}!kontaktView@{kontaktView}}
+\index{kontaktView@{kontaktView}!TableEditDialog@{TableEditDialog}}
+\subsubsection[kontaktView]{\setlength{\rightskip}{0pt plus 5cm}QTableView$\ast$ {\bf TableEditDialog::kontaktView}\hspace{0.3cm}{\tt  \mbox{[}private\mbox{]}}}}
+\label{class_table_edit_dialog_a6e15d4f17c02c81f8a1221ed1e789b5}
+
+
+
+
+Definition at line 60 of file tableeditdialog.h.
+
+Referenced by TableEditDialog().\hypertarget{class_table_edit_dialog_2bccfca0a956c1fe7e4272e435456b8e}{
+\index{TableEditDialog@{TableEditDialog}!kontaktModel@{kontaktModel}}
+\index{kontaktModel@{kontaktModel}!TableEditDialog@{TableEditDialog}}
+\subsubsection[kontaktModel]{\setlength{\rightskip}{0pt plus 5cm}QSqlTableModel$\ast$ {\bf TableEditDialog::kontaktModel}\hspace{0.3cm}{\tt  \mbox{[}private\mbox{]}}}}
+\label{class_table_edit_dialog_2bccfca0a956c1fe7e4272e435456b8e}
+
+
+
+
+Definition at line 61 of file tableeditdialog.h.
+
+Referenced by on\_\-BestaetigenButton\_\-released(), on\_\-VerwerfenButton\_\-released(), and TableEditDialog().\hypertarget{class_table_edit_dialog_3ae273e36ee898643059e8963ed9f557}{
+\index{TableEditDialog@{TableEditDialog}!resultateView@{resultateView}}
+\index{resultateView@{resultateView}!TableEditDialog@{TableEditDialog}}
+\subsubsection[resultateView]{\setlength{\rightskip}{0pt plus 5cm}QTableView$\ast$ {\bf TableEditDialog::resultateView}\hspace{0.3cm}{\tt  \mbox{[}private\mbox{]}}}}
+\label{class_table_edit_dialog_3ae273e36ee898643059e8963ed9f557}
+
+
+
+
+Definition at line 62 of file tableeditdialog.h.
+
+Referenced by on\_\-loeschenButton\_\-released(), and TableEditDialog().\hypertarget{class_table_edit_dialog_c544c898094d550a4df24603738d576d}{
+\index{TableEditDialog@{TableEditDialog}!resultateModel@{resultateModel}}
+\index{resultateModel@{resultateModel}!TableEditDialog@{TableEditDialog}}
+\subsubsection[resultateModel]{\setlength{\rightskip}{0pt plus 5cm}QSqlTableModel$\ast$ {\bf TableEditDialog::resultateModel}\hspace{0.3cm}{\tt  \mbox{[}private\mbox{]}}}}
+\label{class_table_edit_dialog_c544c898094d550a4df24603738d576d}
+
+
+
+
+Definition at line 63 of file tableeditdialog.h.
+
+Referenced by on\_\-BestaetigenButton\_\-released(), on\_\-loeschenButton\_\-released(), on\_\-VerwerfenButton\_\-released(), and TableEditDialog().\hypertarget{class_table_edit_dialog_779a6767b90cf2a0f67d4fd3a0eef79e}{
+\index{TableEditDialog@{TableEditDialog}!kontakteChanged@{kontakteChanged}}
+\index{kontakteChanged@{kontakteChanged}!TableEditDialog@{TableEditDialog}}
+\subsubsection[kontakteChanged]{\setlength{\rightskip}{0pt plus 5cm}QModelIndexList$\ast$ {\bf TableEditDialog::kontakteChanged}\hspace{0.3cm}{\tt  \mbox{[}private\mbox{]}}}}
+\label{class_table_edit_dialog_779a6767b90cf2a0f67d4fd3a0eef79e}
+
+
+
+
+Definition at line 64 of file tableeditdialog.h.
+
+Referenced by on\_\-BestaetigenButton\_\-released(), on\_\-kontakte\_\-dataChanged(), and TableEditDialog().\hypertarget{class_table_edit_dialog_9bc0694e38258f5d52f1b2abf65f7ba3}{
+\index{TableEditDialog@{TableEditDialog}!resultateChanged@{resultateChanged}}
+\index{resultateChanged@{resultateChanged}!TableEditDialog@{TableEditDialog}}
+\subsubsection[resultateChanged]{\setlength{\rightskip}{0pt plus 5cm}QModelIndexList$\ast$ {\bf TableEditDialog::resultateChanged}\hspace{0.3cm}{\tt  \mbox{[}private\mbox{]}}}}
+\label{class_table_edit_dialog_9bc0694e38258f5d52f1b2abf65f7ba3}
+
+
+
+
+Definition at line 65 of file tableeditdialog.h.
+
+Referenced by on\_\-BestaetigenButton\_\-released(), on\_\-resultate\_\-dataChanged(), and TableEditDialog().
+
+The documentation for this class was generated from the following files:\begin{CompactItemize}
+\item 
+\hyperlink{tableeditdialog_8h}{tableeditdialog.h}\item 
+\hyperlink{tableeditdialog_8cpp}{tableeditdialog.cpp}\end{CompactItemize}

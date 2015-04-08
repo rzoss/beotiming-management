@@ -1,0 +1,249 @@
+\hypertarget{class_r_f_i_d___thread}{
+\section{RFID\_\-Thread Class Reference}
+\label{class_r_f_i_d___thread}\index{RFID\_\-Thread@{RFID\_\-Thread}}
+}
+Erstellt einen Thread, welcher alle 0.5 Sekunden prüft ob eine Karte im Feld des Lesers erscheint.  
+
+
+{\tt \#include $<$rfidThread.h$>$}
+
+Collaboration diagram for RFID\_\-Thread:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=86pt]{class_r_f_i_d___thread__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{CompactItemize}
+\item 
+enum \hyperlink{class_r_f_i_d___thread_0c5695c7667faf1b1efe371bbfb81a77}{\_\-state} \{ \hyperlink{class_r_f_i_d___thread_0c5695c7667faf1b1efe371bbfb81a772bc7a4d5978016c397b5e14e788c03c0}{running}, 
+\hyperlink{class_r_f_i_d___thread_0c5695c7667faf1b1efe371bbfb81a774af436f3cc3d02f80ac0eb3ad84e375c}{stopp}, 
+\hyperlink{class_r_f_i_d___thread_0c5695c7667faf1b1efe371bbfb81a77eef055b595dcb36e33abc1095b9f5901}{pause}, 
+\hyperlink{class_r_f_i_d___thread_0c5695c7667faf1b1efe371bbfb81a7726a2d1b6047b8e68bd0167ef98ac01c9}{restart}
+ \}
+\item 
+typedef enum \hyperlink{class_r_f_i_d___thread_0c5695c7667faf1b1efe371bbfb81a77}{RFID\_\-Thread::\_\-state} \hyperlink{class_r_f_i_d___thread_44a4be086bc76f772174db2b9b389eb1}{STATE}
+\end{CompactItemize}
+\subsection*{Signals}
+\begin{CompactItemize}
+\item 
+void \hyperlink{class_r_f_i_d___thread_9ad5963abb159cabb61ef91a201ffdfa}{checkRFID} ()
+\end{CompactItemize}
+\subsection*{Public Member Functions}
+\begin{CompactItemize}
+\item 
+\hyperlink{class_r_f_i_d___thread_f60ee945c8912b0628ae1bc481f0ca9b}{RFID\_\-Thread} (\hyperlink{class_r_f_i_d___c_r500}{RFID\_\-CR500} $\ast$\hyperlink{class_r_f_i_d___thread_d25fbcccbbe6d4094736f1bf1b681b7f}{pRfid})
+\begin{CompactList}\small\item\em Konstruktor. \item\end{CompactList}\item 
+\hyperlink{class_r_f_i_d___thread_805943c4c19f9611d3e5c392d98072ed}{$\sim$RFID\_\-Thread} ()
+\begin{CompactList}\small\item\em Destruktor. \item\end{CompactList}\item 
+void \hyperlink{class_r_f_i_d___thread_d6fe5c34ad7534b547970cbb1e3cdc78}{stop} ()
+\begin{CompactList}\small\item\em Stoppen des Threads. \item\end{CompactList}\item 
+void \hyperlink{class_r_f_i_d___thread_d7b71a78a4c22c00d384327101166086}{setState} (\hyperlink{class_r_f_i_d___thread_44a4be086bc76f772174db2b9b389eb1}{STATE} \hyperlink{class_r_f_i_d___thread_9d15987c8d3a0b8e53e936da8e50bdd6}{state})
+\begin{CompactList}\small\item\em Setter für den State. \item\end{CompactList}\item 
+void \hyperlink{class_r_f_i_d___thread_1c13017995a135d84c7eac183a93fd6e}{setRFID} (\hyperlink{class_r_f_i_d___c_r500}{RFID\_\-CR500} $\ast$\hyperlink{class_r_f_i_d___thread_d25fbcccbbe6d4094736f1bf1b681b7f}{pRfid})
+\begin{CompactList}\small\item\em Setzen des Pointers auf den Leser. \item\end{CompactList}\end{CompactItemize}
+\subsection*{Protected Member Functions}
+\begin{CompactItemize}
+\item 
+void \hyperlink{class_r_f_i_d___thread_185320343182f6cbbd076d9088bcb3c4}{run} ()
+\begin{CompactList}\small\item\em run-Funktion des Threads \item\end{CompactList}\end{CompactItemize}
+\subsection*{Private Attributes}
+\begin{CompactItemize}
+\item 
+volatile bool \hyperlink{class_r_f_i_d___thread_0ac912c1f590f586b9908beadf6c2b0f}{stopped}
+\item 
+volatile \hyperlink{class_r_f_i_d___thread_44a4be086bc76f772174db2b9b389eb1}{STATE} \hyperlink{class_r_f_i_d___thread_9d15987c8d3a0b8e53e936da8e50bdd6}{state}
+\item 
+\hyperlink{class_r_f_i_d___c_r500}{RFID\_\-CR500} $\ast$ \hyperlink{class_r_f_i_d___thread_d25fbcccbbe6d4094736f1bf1b681b7f}{pRfid}
+\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+Erstellt einen Thread, welcher alle 0.5 Sekunden prüft ob eine Karte im Feld des Lesers erscheint. 
+
+Definition at line 45 of file rfidThread.h.
+
+\subsection{Member Typedef Documentation}
+\hypertarget{class_r_f_i_d___thread_44a4be086bc76f772174db2b9b389eb1}{
+\index{RFID\_\-Thread@{RFID\_\-Thread}!STATE@{STATE}}
+\index{STATE@{STATE}!RFID_Thread@{RFID\_\-Thread}}
+\subsubsection[STATE]{\setlength{\rightskip}{0pt plus 5cm}typedef enum {\bf RFID\_\-Thread::\_\-state}  {\bf RFID\_\-Thread::STATE}}}
+\label{class_r_f_i_d___thread_44a4be086bc76f772174db2b9b389eb1}
+
+
+
+
+\subsection{Member Enumeration Documentation}
+\hypertarget{class_r_f_i_d___thread_0c5695c7667faf1b1efe371bbfb81a77}{
+\index{RFID\_\-Thread@{RFID\_\-Thread}!\_\-state@{\_\-state}}
+\index{\_\-state@{\_\-state}!RFID_Thread@{RFID\_\-Thread}}
+\subsubsection[\_\-state]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf RFID\_\-Thread::\_\-state}}}
+\label{class_r_f_i_d___thread_0c5695c7667faf1b1efe371bbfb81a77}
+
+
+\begin{Desc}
+\item[Enumerator: ]\par
+\begin{description}
+\index{running@{running}!RFID\_\-Thread@{RFID\_\-Thread}}\index{RFID\_\-Thread@{RFID\_\-Thread}!running@{running}}\item[{\em 
+\hypertarget{class_r_f_i_d___thread_0c5695c7667faf1b1efe371bbfb81a772bc7a4d5978016c397b5e14e788c03c0}{
+running}
+\label{class_r_f_i_d___thread_0c5695c7667faf1b1efe371bbfb81a772bc7a4d5978016c397b5e14e788c03c0}
+}]\index{stopp@{stopp}!RFID\_\-Thread@{RFID\_\-Thread}}\index{RFID\_\-Thread@{RFID\_\-Thread}!stopp@{stopp}}\item[{\em 
+\hypertarget{class_r_f_i_d___thread_0c5695c7667faf1b1efe371bbfb81a774af436f3cc3d02f80ac0eb3ad84e375c}{
+stopp}
+\label{class_r_f_i_d___thread_0c5695c7667faf1b1efe371bbfb81a774af436f3cc3d02f80ac0eb3ad84e375c}
+}]\index{pause@{pause}!RFID\_\-Thread@{RFID\_\-Thread}}\index{RFID\_\-Thread@{RFID\_\-Thread}!pause@{pause}}\item[{\em 
+\hypertarget{class_r_f_i_d___thread_0c5695c7667faf1b1efe371bbfb81a77eef055b595dcb36e33abc1095b9f5901}{
+pause}
+\label{class_r_f_i_d___thread_0c5695c7667faf1b1efe371bbfb81a77eef055b595dcb36e33abc1095b9f5901}
+}]\index{restart@{restart}!RFID\_\-Thread@{RFID\_\-Thread}}\index{RFID\_\-Thread@{RFID\_\-Thread}!restart@{restart}}\item[{\em 
+\hypertarget{class_r_f_i_d___thread_0c5695c7667faf1b1efe371bbfb81a7726a2d1b6047b8e68bd0167ef98ac01c9}{
+restart}
+\label{class_r_f_i_d___thread_0c5695c7667faf1b1efe371bbfb81a7726a2d1b6047b8e68bd0167ef98ac01c9}
+}]\end{description}
+\end{Desc}
+
+
+
+Definition at line 54 of file rfidThread.h.
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_r_f_i_d___thread_f60ee945c8912b0628ae1bc481f0ca9b}{
+\index{RFID\_\-Thread@{RFID\_\-Thread}!RFID\_\-Thread@{RFID\_\-Thread}}
+\index{RFID\_\-Thread@{RFID\_\-Thread}!RFID_Thread@{RFID\_\-Thread}}
+\subsubsection[RFID\_\-Thread]{\setlength{\rightskip}{0pt plus 5cm}RFID\_\-Thread::RFID\_\-Thread ({\bf RFID\_\-CR500} $\ast$ {\em pRfid})}}
+\label{class_r_f_i_d___thread_f60ee945c8912b0628ae1bc481f0ca9b}
+
+
+Konstruktor. 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em pRfid}]Pointer auf den RFID-Leser \end{description}
+\end{Desc}
+
+
+Definition at line 41 of file rfidThread.cpp.
+
+References stopped.\hypertarget{class_r_f_i_d___thread_805943c4c19f9611d3e5c392d98072ed}{
+\index{RFID\_\-Thread@{RFID\_\-Thread}!$\sim$RFID\_\-Thread@{$\sim$RFID\_\-Thread}}
+\index{$\sim$RFID\_\-Thread@{$\sim$RFID\_\-Thread}!RFID_Thread@{RFID\_\-Thread}}
+\subsubsection[$\sim$RFID\_\-Thread]{\setlength{\rightskip}{0pt plus 5cm}RFID\_\-Thread::$\sim$RFID\_\-Thread ()}}
+\label{class_r_f_i_d___thread_805943c4c19f9611d3e5c392d98072ed}
+
+
+Destruktor. 
+
+
+
+Definition at line 49 of file rfidThread.cpp.
+
+\subsection{Member Function Documentation}
+\hypertarget{class_r_f_i_d___thread_d6fe5c34ad7534b547970cbb1e3cdc78}{
+\index{RFID\_\-Thread@{RFID\_\-Thread}!stop@{stop}}
+\index{stop@{stop}!RFID_Thread@{RFID\_\-Thread}}
+\subsubsection[stop]{\setlength{\rightskip}{0pt plus 5cm}void RFID\_\-Thread::stop ()}}
+\label{class_r_f_i_d___thread_d6fe5c34ad7534b547970cbb1e3cdc78}
+
+
+Stoppen des Threads. 
+
+
+
+Definition at line 62 of file rfidThread.cpp.
+
+References stopped.
+
+Referenced by BEO\_\-Timing::$\sim$BEO\_\-Timing().\hypertarget{class_r_f_i_d___thread_d7b71a78a4c22c00d384327101166086}{
+\index{RFID\_\-Thread@{RFID\_\-Thread}!setState@{setState}}
+\index{setState@{setState}!RFID_Thread@{RFID\_\-Thread}}
+\subsubsection[setState]{\setlength{\rightskip}{0pt plus 5cm}void RFID\_\-Thread::setState ({\bf STATE} {\em state})}}
+\label{class_r_f_i_d___thread_d7b71a78a4c22c00d384327101166086}
+
+
+Setter für den State. 
+
+
+
+Definition at line 56 of file rfidThread.cpp.
+
+Referenced by BEO\_\-Timing::CR500\_\-verbinden(), and BEO\_\-Timing::rfidConnection().\hypertarget{class_r_f_i_d___thread_1c13017995a135d84c7eac183a93fd6e}{
+\index{RFID\_\-Thread@{RFID\_\-Thread}!setRFID@{setRFID}}
+\index{setRFID@{setRFID}!RFID_Thread@{RFID\_\-Thread}}
+\subsubsection[setRFID]{\setlength{\rightskip}{0pt plus 5cm}void RFID\_\-Thread::setRFID ({\bf RFID\_\-CR500} $\ast$ {\em pRfid})}}
+\label{class_r_f_i_d___thread_1c13017995a135d84c7eac183a93fd6e}
+
+
+Setzen des Pointers auf den Leser. 
+
+
+
+Definition at line 68 of file rfidThread.cpp.
+
+Referenced by BEO\_\-Timing::CR500\_\-verbinden(), and BEO\_\-Timing::rfidConnection().\hypertarget{class_r_f_i_d___thread_185320343182f6cbbd076d9088bcb3c4}{
+\index{RFID\_\-Thread@{RFID\_\-Thread}!run@{run}}
+\index{run@{run}!RFID_Thread@{RFID\_\-Thread}}
+\subsubsection[run]{\setlength{\rightskip}{0pt plus 5cm}void RFID\_\-Thread::run ()\hspace{0.3cm}{\tt  \mbox{[}protected\mbox{]}}}}
+\label{class_r_f_i_d___thread_185320343182f6cbbd076d9088bcb3c4}
+
+
+run-Funktion des Threads 
+
+
+
+Definition at line 74 of file rfidThread.cpp.
+
+References checkRFID(), pause, restart, RFID\_\-REFRESH\_\-RATE\_\-ms, running, state, stopp, and stopped.\hypertarget{class_r_f_i_d___thread_9ad5963abb159cabb61ef91a201ffdfa}{
+\index{RFID\_\-Thread@{RFID\_\-Thread}!checkRFID@{checkRFID}}
+\index{checkRFID@{checkRFID}!RFID_Thread@{RFID\_\-Thread}}
+\subsubsection[checkRFID]{\setlength{\rightskip}{0pt plus 5cm}void RFID\_\-Thread::checkRFID ()\hspace{0.3cm}{\tt  \mbox{[}signal\mbox{]}}}}
+\label{class_r_f_i_d___thread_9ad5963abb159cabb61ef91a201ffdfa}
+
+
+
+
+Definition at line 73 of file moc\_\-rfidThread.cpp.
+
+Referenced by run().
+
+\subsection{Member Data Documentation}
+\hypertarget{class_r_f_i_d___thread_0ac912c1f590f586b9908beadf6c2b0f}{
+\index{RFID\_\-Thread@{RFID\_\-Thread}!stopped@{stopped}}
+\index{stopped@{stopped}!RFID_Thread@{RFID\_\-Thread}}
+\subsubsection[stopped]{\setlength{\rightskip}{0pt plus 5cm}volatile bool {\bf RFID\_\-Thread::stopped}\hspace{0.3cm}{\tt  \mbox{[}private\mbox{]}}}}
+\label{class_r_f_i_d___thread_0ac912c1f590f586b9908beadf6c2b0f}
+
+
+
+
+Definition at line 60 of file rfidThread.h.
+
+Referenced by RFID\_\-Thread(), run(), and stop().\hypertarget{class_r_f_i_d___thread_9d15987c8d3a0b8e53e936da8e50bdd6}{
+\index{RFID\_\-Thread@{RFID\_\-Thread}!state@{state}}
+\index{state@{state}!RFID_Thread@{RFID\_\-Thread}}
+\subsubsection[state]{\setlength{\rightskip}{0pt plus 5cm}volatile {\bf STATE} {\bf RFID\_\-Thread::state}\hspace{0.3cm}{\tt  \mbox{[}private\mbox{]}}}}
+\label{class_r_f_i_d___thread_9d15987c8d3a0b8e53e936da8e50bdd6}
+
+
+
+
+Definition at line 61 of file rfidThread.h.
+
+Referenced by run().\hypertarget{class_r_f_i_d___thread_d25fbcccbbe6d4094736f1bf1b681b7f}{
+\index{RFID\_\-Thread@{RFID\_\-Thread}!pRfid@{pRfid}}
+\index{pRfid@{pRfid}!RFID_Thread@{RFID\_\-Thread}}
+\subsubsection[pRfid]{\setlength{\rightskip}{0pt plus 5cm}{\bf RFID\_\-CR500}$\ast$ {\bf RFID\_\-Thread::pRfid}\hspace{0.3cm}{\tt  \mbox{[}private\mbox{]}}}}
+\label{class_r_f_i_d___thread_d25fbcccbbe6d4094736f1bf1b681b7f}
+
+
+
+
+Definition at line 62 of file rfidThread.h.
+
+The documentation for this class was generated from the following files:\begin{CompactItemize}
+\item 
+RFID\_\-Reader/\hyperlink{rfid_thread_8h}{rfidThread.h}\item 
+debug/\hyperlink{moc__rfid_thread_8cpp}{moc\_\-rfidThread.cpp}\item 
+RFID\_\-Reader/\hyperlink{rfid_thread_8cpp}{rfidThread.cpp}\end{CompactItemize}

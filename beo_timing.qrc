@@ -1,0 +1,27 @@
+<RCC>
+    <qresource prefix="/" >
+        <file>images/b_edit.png</file>
+        <file>images/beenden.png</file>
+        <file>images/bike.png</file>
+        <file>images/config.png</file>
+        <file>images/export.png</file>
+        <file>images/icon16_t.bmp</file>
+        <file>images/icon32_t.bmp</file>
+        <file>images/info.png</file>
+        <file>images/inline.png</file>
+        <file>images/langlauf.png</file>
+        <file>images/log.png</file>
+        <file>images/new.png</file>
+        <file>images/newuser.png</file>
+        <file>images/optimieren.png</file>
+        <file>images/papierkorb.png</file>
+        <file>images/plauf.png</file>
+        <file>images/pwd.png</file>
+        <file>images/qt.png</file>
+        <file>images/reload.png</file>
+        <file>images/rennrad.png</file>
+        <file>images/splash.png</file>
+        <file>images/unbekannt.png</file>
+        <file>images/walking.png</file>
+    </qresource>
+</RCC>
