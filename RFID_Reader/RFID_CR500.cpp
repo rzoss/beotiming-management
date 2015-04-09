@@ -1,8 +1,8 @@
-/**
+ï»¿/**
  *******************************************************************************
  * \file    RFID_CR500.cpp
  *******************************************************************************
- * \brief    Enthält alle Eigenschaften des RFID-Lesers CR500-USB.
+ * \brief    EnthÃ¤lt alle Eigenschaften des RFID-Lesers CR500-USB.
  *
  * \version		1.0
  * \date		09.06.2008
@@ -82,7 +82,7 @@ RFID_CR500::RFID_CR500(struct TAG_SETTINGS * tag_settings)
 	qDebug() << "Nummer des Lesers: " + icdev;
 	// Piepsem mit dem Leser
 	rf_beep(icdev,10);
-	// Licht auf Grün
+	// Licht auf GrÃ¼n
 	rf_light(icdev,GREEN_LED);
 	// Statusleiste aktualisieren
 	BEO_Timing::updateRFID("CR500");
@@ -96,7 +96,7 @@ RFID_CR500::~RFID_CR500()
 	rf_ClosePort();
 }
 /*!
- * \brief Strcat für UTF-8
+ * \brief Strcat fÃ¼r UTF-8
  */
 void RFID_CR500::myStrcat (TCHAR * op, int size) {
 	int i;
@@ -120,7 +120,7 @@ void RFID_CR500::myStrcat (TCHAR * op, int size) {
 	op[i++]=(TCHAR)'\0';
 }
 /*!
- * \brief Ausgabe für UTF-8 String
+ * \brief Ausgabe fÃ¼r UTF-8 String
  */
 void RFID_CR500::myCout (TCHAR * op, int size){
 	char out[1000];
@@ -143,9 +143,9 @@ void RFID_CR500::init_RFID(){
 
 	myStrcat(szBuf, sizeof(szBuf)/sizeof(TCHAR));
 	myCout(szBuf, sizeof(szBuf)/sizeof(TCHAR));
-	// Laden der "MasterRD.dll" über die Windows-API
+	// Laden der "MasterRD.dll" Ã¼ber die Windows-API
 	m_hInstMaster = LoadLibrary((LPTSTR)szBuf);
-	// Bereitstellen der Adressen für die Funktionen in der DLL
+	// Bereitstellen der Adressen fÃ¼r die Funktionen in der DLL
 	if(m_hInstMaster){
         /*  System Functions */
 		(FARPROC&)lib_ver               = GetProcAddress(m_hInstMaster,("lib_ver"));
@@ -324,38 +324,38 @@ bool RFID_CR500::readData() {
 	}
 	qDebug() << "tag_init: " << settings->tag_reset;
 	if(settings->tag_reset == Res_persoenlich){
-		// In diesem Fall soll die Karte zurückgesetzt werden
-		// hier muss das Statusbyte gelöscht werden!
+		// In diesem Fall soll die Karte zurÃ¼ckgesetzt werden
+		// hier muss das Statusbyte gelÃ¶scht werden!
 		memset(pData,0,16); // 16 Datenbytes auf '0x00' setzen
-		// Persönlich Flag setzen
+		// PersÃ¶nlich Flag setzen
 		*pData |= TAG_STATUS_REGISTERED;
-		state = rf_ul_write(icdev,RFID_ADR_STATUS,pData); // Page 4 mit '0' + Personal überschreiben
+		state = rf_ul_write(icdev,RFID_ADR_STATUS,pData); // Page 4 mit '0' + Personal Ã¼berschreiben
 		*pData &= ~TAG_STATUS_REGISTERED;
 		for(int i=1; i<9;i++){
-			state = rf_ul_write(icdev,RFID_ADR_STATUS+i,pData); // Page 5-11 mit '0' überschreiben
+			state = rf_ul_write(icdev,RFID_ADR_STATUS+i,pData); // Page 5-11 mit '0' Ã¼berschreiben
 		}
-		BEO_Timing::updateMessage("Page 4 - 11 der Karte zurückgesetzt.");
+		BEO_Timing::updateMessage("Page 4 - 11 der Karte zurÃ¼ckgesetzt.");
 
 		QMessageBox msgBox;
-		msgBox.setText("Page 4 - 11 der Karte \"" + serial + "\" wurde zurückgesetzt. Sie ist als persönlich Markiert!");
-		msgBox.setWindowTitle(QObject::tr("Tag zurückgesetzt"));
+		msgBox.setText("Page 4 - 11 der Karte \"" + serial + "\" wurde zurÃ¼ckgesetzt. Sie ist als persÃ¶nlich Markiert!");
+		msgBox.setWindowTitle(QObject::tr("Tag zurÃ¼ckgesetzt"));
 		msgBox.setIcon(QMessageBox::Information);
 		msgBox.exec();
 		QTimer::singleShot(2500,&msgBox, SLOT(close()));
 		return false;
 	}else if(settings->tag_reset == Res_unpersoenlich){
-		// In diesem Fall soll die Karte zurückgesetzt werden
-		// hier muss das Statusbyte gelöscht werden!
+		// In diesem Fall soll die Karte zurÃ¼ckgesetzt werden
+		// hier muss das Statusbyte gelÃ¶scht werden!
 		memset(pData,0,16); // 16 Datenbytes auf '0x00' setzen
 		for(int i=0; i<9;i++){
-			state = rf_ul_write(icdev,RFID_ADR_STATUS+i,pData); // Page 4-11 mit '0' überschreiben
+			state = rf_ul_write(icdev,RFID_ADR_STATUS+i,pData); // Page 4-11 mit '0' Ã¼berschreiben
 		}
 
-		BEO_Timing::updateMessage("Page 4 - 11 der Karte zurückgesetzt.");
+		BEO_Timing::updateMessage("Page 4 - 11 der Karte zurÃ¼ckgesetzt.");
 
 		QMessageBox msgBox;
-		msgBox.setText("Page 4 - 11 der Karte \"" + serial + "\" wurde zurückgesetzt. Sie ist als unpersönlich Markiert!");
-		msgBox.setWindowTitle(QObject::tr("Tag zurückgesetzt"));
+		msgBox.setText("Page 4 - 11 der Karte \"" + serial + "\" wurde zurÃ¼ckgesetzt. Sie ist als unpersÃ¶nlich Markiert!");
+		msgBox.setWindowTitle(QObject::tr("Tag zurÃ¼ckgesetzt"));
 		msgBox.setIcon(QMessageBox::Information);
 		msgBox.exec();
 		QTimer::singleShot(2500,&msgBox, SLOT(close()));
@@ -364,22 +364,22 @@ bool RFID_CR500::readData() {
 	}
 
 
-	// Statusflags überprüfen
+	// Statusflags Ã¼berprÃ¼fen
     if(pData[0] == ((TAG_STATUS_STRECKENVALID | TAG_STATUS_STARTVALID | TAG_STATUS_ENDVALID) &
 					~TAG_STATUS_MANUALCLEARED &
 					~TAG_STATUS_REGISTERED)){
 		// --> Auswerten
     }else if(pData[0] == ((TAG_STATUS_STRECKENVALID | TAG_STATUS_STARTVALID | TAG_STATUS_ENDVALID | TAG_STATUS_MANUALCLEARED) &
 					~TAG_STATUS_REGISTERED)){
-		// --> Zeit manuell gelöscht
+		// --> Zeit manuell gelÃ¶scht
 		QMessageBox::critical(
 						0,
-						QObject::tr("Zeit wurde gelöscht"),
-						QObject::tr("Der Teilnehmer hat die Zeiten auf der Karte manuell gelöscht. ") +
+						QObject::tr("Zeit wurde gelÃ¶scht"),
+						QObject::tr("Der Teilnehmer hat die Zeiten auf der Karte manuell gelÃ¶scht. ") +
 						QObject::tr("Die Karte kann ohne weitere Massnahmen wieder verwendet werden."));
 		return false;
 	}else if(pData[0] & TAG_STATUS_REGISTERED && pData[1] == 0x00){
-		// --> Persönliche Karte
+		// --> PersÃ¶nliche Karte
 		QSqlQuery query;
 		query.exec("SELECT name, vorname, adresse, PLZ, ort, email, telefon, mobile "
 				   "FROM teilnehmer WHERE SNR_RFID='" + serial + "'");
@@ -396,8 +396,8 @@ bool RFID_CR500::readData() {
 
 		QMessageBox::critical(
 				0,
-				QObject::tr("Persönliche Karte"),
-				QObject::tr("Diese Karte ist als Persönlich registriert. ") + kontakt);
+				QObject::tr("PersÃ¶nliche Karte"),
+				QObject::tr("Diese Karte ist als PersÃ¶nlich registriert. ") + kontakt);
 		return false;
 
 
@@ -405,16 +405,16 @@ bool RFID_CR500::readData() {
 
 	}else if(pData[0] == 0xFF && pData[1] == 0xFF && settings->tag_init == Neu_persoenlich){
 		// In diesem Fall wurde eine neue Karte vorgehalten
-		// hier müssen die Statusbyte gelöscht werden!
+		// hier mÃ¼ssen die Statusbyte gelÃ¶scht werden!
 		memset(pData,0,4); // 4 Datenbytes auf '0x00' setzen
-		// Persönlich Flag setzen, da die Karte als erstes Persönlich ist, da sie noch keine Etikette trägt.
+		// PersÃ¶nlich Flag setzen, da die Karte als erstes PersÃ¶nlich ist, da sie noch keine Etikette trÃ¤gt.
 		*pData |= TAG_STATUS_REGISTERED;
-		state = rf_ul_write(icdev,RFID_ADR_STATUS,pData); // Page 4 mit '0' überschreiben
-		BEO_Timing::updateMessage("Page 4 einer neuen Karte gelöscht.");
+		state = rf_ul_write(icdev,RFID_ADR_STATUS,pData); // Page 4 mit '0' Ã¼berschreiben
+		BEO_Timing::updateMessage("Page 4 einer neuen Karte gelÃ¶scht.");
 
 		QMessageBox msgBox;
-		msgBox.setText("Page 4 der Karte \"" + serial + "\" gelöscht. Diese Karte war neu und wurde noch nie verwendet. Sie ist jetzt als persönlich Markiert!");
-		msgBox.setWindowTitle(QObject::tr("Page 4 gelöscht"));
+		msgBox.setText("Page 4 der Karte \"" + serial + "\" gelÃ¶scht. Diese Karte war neu und wurde noch nie verwendet. Sie ist jetzt als persÃ¶nlich Markiert!");
+		msgBox.setWindowTitle(QObject::tr("Page 4 gelÃ¶scht"));
 		msgBox.setIcon(QMessageBox::Information);
 		msgBox.exec();
 		QTimer::singleShot(2500,&msgBox, SLOT(close()));
@@ -424,15 +424,15 @@ bool RFID_CR500::readData() {
 
 	}else if(pData[0] == 0xFF && pData[1] == 0xFF && settings->tag_init == Neu_unpersoenlich){
 			// In diesem Fall wurde eine neue Karte vorgehalten
-			// hier müssen die Statusbyte gelöscht werden!
+			// hier mÃ¼ssen die Statusbyte gelÃ¶scht werden!
 			memset(pData,0,4); // 4 Datenbytes auf '0x00' setzen
-			// Persönlich Flag NICHT setzen, da die Karte eine Etikette trägt.
-			state = rf_ul_write(icdev,RFID_ADR_STATUS,pData); // Page 4 mit '0' überschreiben
-			BEO_Timing::updateMessage("Page 4 einer neuen Karte gelöscht.");
+			// PersÃ¶nlich Flag NICHT setzen, da die Karte eine Etikette trÃ¤gt.
+			state = rf_ul_write(icdev,RFID_ADR_STATUS,pData); // Page 4 mit '0' Ã¼berschreiben
+			BEO_Timing::updateMessage("Page 4 einer neuen Karte gelÃ¶scht.");
 
 			QMessageBox msgBox;
-			msgBox.setText("Page 4 der Karte \"" + serial + "\" gelöscht. Diese Karte war neu und wurde noch nie verwendet. Sie ist jetzt als unpersönlich Markiert!");
-			msgBox.setWindowTitle(QObject::tr("Page 4 gelöscht"));
+			msgBox.setText("Page 4 der Karte \"" + serial + "\" gelÃ¶scht. Diese Karte war neu und wurde noch nie verwendet. Sie ist jetzt als unpersÃ¶nlich Markiert!");
+			msgBox.setWindowTitle(QObject::tr("Page 4 gelÃ¶scht"));
 			msgBox.setIcon(QMessageBox::Information);
 			msgBox.exec();
 			QTimer::singleShot(2500,&msgBox, SLOT(close()));
@@ -443,7 +443,7 @@ bool RFID_CR500::readData() {
 				0,
 				QObject::tr("Lesefehler"),
 				QObject::tr("Die Daten auf der Karte konnten nicht gelesen werden,\n"
-					"oder sind nicht Gültig! Wahrscheinlich wurde diese Karte bereits ausgewertet."));
+					"oder sind nicht GÃ¼ltig! Wahrscheinlich wurde diese Karte bereits ausgewertet."));
 		return false;
 	}
 
@@ -457,7 +457,7 @@ bool RFID_CR500::readData() {
 					"die Karte ist eventuell defekt!"));
 	    return false;
 	} else {
-		// Gelesene Binärdaten in die Strukturen kopieren, um zu interpretieren
+		// Gelesene BinÃ¤rdaten in die Strukturen kopieren, um zu interpretieren
 		memcpy(&strecke,pData+4,2);
 		memcpy(&startdate, pData+8, 7);
 		memcpy(&enddate, pData+16, 7);
@@ -466,7 +466,7 @@ bool RFID_CR500::readData() {
 	return true;
 }
 /*!
- * \brief Löschen der Flags, um die Karte als ausgewertet kennzuzeichnen
+ * \brief LÃ¶schen der Flags, um die Karte als ausgewertet kennzuzeichnen
  */
 bool RFID_CR500::clearValidFlag(){
 	int state = 1;
@@ -491,14 +491,14 @@ bool RFID_CR500::clearValidFlag(){
 	if (state || cLen != 16) {
 		return false;
 	}
-	// Gewählte löschen und alle neu schreiben
-	*pData &= ~(TAG_STATUS_STRECKENVALID | TAG_STATUS_STARTVALID | TAG_STATUS_ENDVALID); // erstes Byte löschen (Valid Data Flag)
+	// GewÃ¤hlte lÃ¶schen und alle neu schreiben
+	*pData &= ~(TAG_STATUS_STRECKENVALID | TAG_STATUS_STARTVALID | TAG_STATUS_ENDVALID); // erstes Byte lÃ¶schen (Valid Data Flag)
 	state = rf_ul_write(icdev,RFID_ADR_STATUS,pData);
 	rf_light(icdev,GREEN_LED);
 	return true;
 }
 /*!
- * \brief Stellt die LED des Lesers auf Grün
+ * \brief Stellt die LED des Lesers auf GrÃ¼n
  */
 void RFID_CR500::greenLED(){
 	rf_light(icdev,GREEN_LED);

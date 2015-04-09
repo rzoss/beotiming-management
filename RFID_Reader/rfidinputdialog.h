@@ -1,9 +1,9 @@
-/**
+ï»¿/**
  *******************************************************************************
  * \file    rfidinputdialog.h
  ********************************************************************************
- * \brief    Stellt die Eingabemaske, sowie die benötigten Funktionen zum auswerten von
- * 			 RFID-Tags eines beliebigen Lesers zur Verfügung. 
+ * \brief    Stellt die Eingabemaske, sowie die benÃ¶tigten Funktionen zum auswerten von
+ * 			 RFID-Tags eines beliebigen Lesers zur VerfÃ¼gung. 
  * 
  * \version		1.0
  * \date		09.06.2008
@@ -41,8 +41,8 @@
 
 class RFID_CR500;
 /*!
- * \brief Stellt die Eingabemaske, sowie die benötigten Funktionen zum auswerten von
- * 			 RFID-Tags eines beliebigen Lesers zur Verfügung.  
+ * \brief Stellt die Eingabemaske, sowie die benÃ¶tigten Funktionen zum auswerten von
+ * 			 RFID-Tags eines beliebigen Lesers zur VerfÃ¼gung.  
  * 
  */
 class RFIDInputDialog : public QDialog

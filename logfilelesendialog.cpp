@@ -1,4 +1,4 @@
- /**
+ï»¿ /**
  *******************************************************************************
  * \file    logfilelesendialog.cpp
  *******************************************************************************
@@ -46,16 +46,16 @@ LogfileLesenDialog::LogfileLesenDialog(QWidget *parent)
 	ui.neuListWidget->setSelectionMode(QAbstractItemView::MultiSelection);
 	ui.delListWidget->setSelectionMode(QAbstractItemView::MultiSelection);
 	
-	// Log File auswählen
-	QString fileName = QFileDialog::getOpenFileName(this, tr("Log-Datei öffnen"),
+	// Log File auswÃ¤hlen
+	QString fileName = QFileDialog::getOpenFileName(this, tr("Log-Datei Ã¶ffnen"),
 	                                                     " ",
 	                                                     tr("Log-Datei (*.log)"));
 	int linecount=0;
 	if(!fileName.isEmpty()){
 		QFile file(fileName);
 		if(!file.open(QIODevice::ReadOnly)){
-			QMessageBox::warning(this, tr("Log-Datei öffnen"),
-									tr("Kann die Datei %1 nicht öffnen;\n%2")
+			QMessageBox::warning(this, tr("Log-Datei Ã¶ffnen"),
+									tr("Kann die Datei %1 nicht Ã¶ffnen;\n%2")
 									.arg(file.fileName()).arg(file.errorString()));
 			this->close();
 			return;
@@ -94,7 +94,7 @@ LogfileLesenDialog::LogfileLesenDialog(QWidget *parent)
 					// Zeit ist in der Datenbank nicht vorhanden
 					qDebug() << "Zeit ist in DB nicht vorhanden";
 					if(list.at(0).contains("TIMD")){
-						// Zeile ignorieren, da bereits gelöscht
+						// Zeile ignorieren, da bereits gelÃ¶scht
 					}else{
 						// Zeile in Liste eintragen und zur Auswahl bereitstellen
 						ui.neuListWidget->addItem(createItem(line));
@@ -112,10 +112,10 @@ LogfileLesenDialog::LogfileLesenDialog(QWidget *parent)
 			
 		}
 		file.close();
-		// Inforamtionen ausgeben, wenn keine Einträge vorhanden
+		// Inforamtionen ausgeben, wenn keine EintrÃ¤ge vorhanden
 		if(!linecount){
-			QMessageBox::warning(this, tr("Keine neuen Einträge"),
-							tr("In der Datei %1 hat es keine Einträge, die eine Anpassung "
+			QMessageBox::warning(this, tr("Keine neuen EintrÃ¤ge"),
+							tr("In der Datei %1 hat es keine EintrÃ¤ge, die eine Anpassung "
 									"der Datenbank erfordern.")
 							.arg(file.fileName()));
 			this->close();
@@ -162,18 +162,18 @@ QListWidgetItem* LogfileLesenDialog::createItem(QString line){
 		default: icon.addFile(":/images/unbekannt.png"); break;
 	}
 	item->setIcon(icon);
-	// Herausfinden, ob die Karte persönlich ist oder nicht
+	// Herausfinden, ob die Karte persÃ¶nlich ist oder nicht
 	query.exec("SELECT name, vorname FROM teilnehmer WHERE SNR_RFID='" + list.at(5) + "'");
 	if(query.next())
 		item->setText(query.value(0).toString() + " " + query.value(1).toString() + 
 				", Fahrzeit: " + list.at(4) + " (" + line + ")");
 	else 
 		item->setText("Unbekannt, Fahrzeit: " + list.at(4) + " (" + line + ")");
-	// ListenElement zurückgeben
+	// ListenElement zurÃ¼ckgeben
 	return item;
 }
 /*!
- * \brief Slot für die Reaktion auf Änderungen der CheckBox
+ * \brief Slot fÃ¼r die Reaktion auf Ã„nderungen der CheckBox
  * \param state Status der CheckBox
  */
 void LogfileLesenDialog::on_neuCheckBox_stateChanged ( int state ){
@@ -185,7 +185,7 @@ void LogfileLesenDialog::on_neuCheckBox_stateChanged ( int state ){
 }
 
 /*!
- * \brief Slot für die Reaktion auf Änderungen der CheckBox
+ * \brief Slot fÃ¼r die Reaktion auf Ã„nderungen der CheckBox
  * \param state Status der CheckBox
  */
 void LogfileLesenDialog::on_delCheckBox_stateChanged ( int state ){
@@ -197,15 +197,15 @@ void LogfileLesenDialog::on_delCheckBox_stateChanged ( int state ){
 }
 
 /*!
- * \brief Slot für den Ok-Button
+ * \brief Slot fÃ¼r den Ok-Button
  */
 void LogfileLesenDialog::on_okButton_released(){
 	// Falls eine Selektion gemacht wurde
 	if (ui.neuListWidget->selectionModel()->hasSelection()) {
 		QList<QListWidgetItem*> neulist = ui.neuListWidget->selectedItems();
-		// Ausgewählte eintragen
+		// AusgewÃ¤hlte eintragen
 		qDebug() << neulist.count();
-		// Liste für Neueintragungen abarbeiten
+		// Liste fÃ¼r Neueintragungen abarbeiten
 		for (int i=0; i<neulist.count() ; ++i) {
 			int TeilnehmerKey = 0;
 			QString str = neulist.at(i)->data(Qt::DisplayRole).toString();
@@ -253,12 +253,12 @@ void LogfileLesenDialog::on_okButton_released(){
 			ui.neuListWidget->removeItemWidget(neulist.at(i));
 		}
 	}
-	// Falls eine Auswahl gemacht wurde für das Löschen
+	// Falls eine Auswahl gemacht wurde fÃ¼r das LÃ¶schen
 	if (ui.delListWidget->selectionModel()->hasSelection()) {
 		QList<QListWidgetItem*> dellist = ui.delListWidget->selectedItems();
-		// Ausgewählte löschen
+		// AusgewÃ¤hlte lÃ¶schen
 		qDebug() << dellist.count();
-		// Abarbeiten der Liste für die zu Löschenden Einträge
+		// Abarbeiten der Liste fÃ¼r die zu LÃ¶schenden EintrÃ¤ge
 		for (int i=0; i<dellist.count() ; ++i) {
 			int TeilnehmerKey = 0;
 			QString str = dellist.at(i)->data(Qt::DisplayRole).toString();
@@ -271,7 +271,7 @@ void LogfileLesenDialog::on_okButton_released(){
 				"FROM teilnehmer"
 				"WHERE SNR_RFID = '" + list.at(5) + "' AND name!='(noch'");
 			if (!query.next()) {
-				// "(noch nicht ausgewertet)" - User in DB löschen
+				// "(noch nicht ausgewertet)" - User in DB lÃ¶schen
 				QString
 						sql = "SELECT TeilnehmerKey FROM zeiten WHERE Startzeit='"
 								+ list.at(2) + "' AND StreckenKey='"
@@ -285,7 +285,7 @@ void LogfileLesenDialog::on_okButton_released(){
 				qDebug() << sql;
 				query.exec(sql);
 			}
-			// Zeit löschen
+			// Zeit lÃ¶schen
 			QString sql = "DELETE FROM zeiten WHERE Startzeit='" + list.at(2)
 					+ "' AND StreckenKey='"+ list.at(1) + "' AND Endzeit='" + list.at(3) + "'" ;
 			qDebug() << sql;
@@ -298,7 +298,7 @@ void LogfileLesenDialog::on_okButton_released(){
 }
 
 /*!
- * \brief Slot für den Abbrechen-Button
+ * \brief Slot fÃ¼r den Abbrechen-Button
  */
 void LogfileLesenDialog::on_canButton_released(){
 	// Fenster schliessen

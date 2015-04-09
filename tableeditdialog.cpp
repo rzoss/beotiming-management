@@ -1,4 +1,4 @@
- /**
+Ôªø /**
  *******************************************************************************
  * \file    tableeditdialog.cpp
  *******************************************************************************
@@ -49,11 +49,11 @@ TableEditDialog::TableEditDialog(int TeilnehmerKeyParam, User* user, QWidget *pa
     : QDialog(parent)
 {
 	ui.setupUi(this);
-	// parent zu Pointer f¸r das Hauptfenster casten
+	// parent zu Pointer f√ºr das Hauptfenster casten
 	this->mainWindow=(BEO_Timing*)parent;
 	qDebug() << TeilnehmerKeyParam;
 	resultateView = ui.ResultateTable;
-	// Tabelle f¸r die Kontaktdaten mit dem QSqlTableModel erstellen
+	// Tabelle f√ºr die Kontaktdaten mit dem QSqlTableModel erstellen
 	kontaktView = ui.KontaktdatenTable;
 	kontaktModel = new QSqlTableModel(kontaktView);
 	kontaktModel->setTable("teilnehmer");
@@ -70,7 +70,7 @@ TableEditDialog::TableEditDialog(int TeilnehmerKeyParam, User* user, QWidget *pa
 	kontaktModel->setHeaderData(Ort, Qt::Horizontal, tr("Ort"));
 	kontaktModel->setHeaderData(Jahrgang, Qt::Horizontal, tr("Jahrgang"));
 	kontaktModel->setHeaderData(Geschlecht, Qt::Horizontal, tr("Geschlecht"));
-	kontaktModel->setHeaderData(Nationalitaet, Qt::Horizontal, tr("Nationalit‰t"));
+	kontaktModel->setHeaderData(Nationalitaet, Qt::Horizontal, tr("Nationalit√§t"));
 	kontaktModel->setHeaderData(Team_Club, Qt::Horizontal, tr("Team / Club"));
 	kontaktModel->setHeaderData(Email, Qt::Horizontal, tr("Email"));
 	kontaktModel->setHeaderData(Telefon, Qt::Horizontal, tr("Telefon"));
@@ -78,12 +78,12 @@ TableEditDialog::TableEditDialog(int TeilnehmerKeyParam, User* user, QWidget *pa
 	kontaktModel->setHeaderData(RFID_SNR, Qt::Horizontal, tr("RFID-Snr"));
 	// Ansicht mit Modell verbinden
 	kontaktView->setModel(kontaktModel);
-	// Auswahlmˆglichkeiten definieren
+	// Auswahlm√∂glichkeiten definieren
 	kontaktView->setSelectionMode(QAbstractItemView::SingleSelection);
 	kontaktView->setSelectionBehavior(QAbstractItemView::SelectItems);
 	// Spaltenbreite einstellen
 	kontaktView->resizeColumnsToContents();
-	// Bearbeitungsmˆglichkeiten einstellen
+	// Bearbeitungsm√∂glichkeiten einstellen
 	kontaktView->setEditTriggers(QAbstractItemView::DoubleClicked|QAbstractItemView::EditKeyPressed);
 	QHeaderView * header = kontaktView->horizontalHeader();
 	header->setStretchLastSection(true);
@@ -91,7 +91,7 @@ TableEditDialog::TableEditDialog(int TeilnehmerKeyParam, User* user, QWidget *pa
 	// siehe "KontaktDelegate.cpp"
 	kontaktView->setItemDelegate(new KontaktDelegate());
 	
-	// Erstellen der Tabelle f¸r die Fahrzeiten mit dem QSqlTableModel
+	// Erstellen der Tabelle f√ºr die Fahrzeiten mit dem QSqlTableModel
 	resultateModel = new QSqlTableModel(resultateView);
 	resultateModel->setTable("zeiten");
 	resultateModel->setFilter("TeilnehmerKey='" + QString::number(TeilnehmerKeyParam) + "'");
@@ -111,12 +111,12 @@ TableEditDialog::TableEditDialog(int TeilnehmerKeyParam, User* user, QWidget *pa
 	resultateModel->setHeaderData(TimeID, Qt::Horizontal, tr("TimeID"));
 	// Modell mit der Ansicht verbinden
 	resultateView->setModel(resultateModel);
-	// Auswahlmˆglichkeiten beschr‰nken
+	// Auswahlm√∂glichkeiten beschr√§nken
 	resultateView->setSelectionMode(QAbstractItemView::SingleSelection);
 	resultateView->setSelectionBehavior(QAbstractItemView::SelectItems);
 	// Spaltenbreite anpassen
 	resultateView->resizeColumnsToContents();
-	// Bearbeitungsmˆglichkeiten definieren
+	// Bearbeitungsm√∂glichkeiten definieren
 	resultateView->setEditTriggers(QAbstractItemView::DoubleClicked|QAbstractItemView::EditKeyPressed);
 	header = resultateView->horizontalHeader();
 	header->setStretchLastSection(true);
@@ -135,7 +135,7 @@ TableEditDialog::TableEditDialog(int TeilnehmerKeyParam, User* user, QWidget *pa
 		kontaktView->setColumnHidden(RFID_SNR,true);
 		resultateView->setColumnHidden(SNR_RFID,true);
 	}
-	// Ort der ƒnderungen speichern
+	// Ort der √Ñnderungen speichern
     kontakteChanged = new QModelIndexList();
     resultateChanged = new QModelIndexList();
 	connect(kontaktModel,
@@ -157,7 +157,7 @@ TableEditDialog::~TableEditDialog()
 	
 }
 /*!
- * \brief Slot f¸r Lˆschen-Button
+ * \brief Slot f√ºr L√∂schen-Button
  */
 void TableEditDialog::on_loeschenButton_released(){
 	int selected;
@@ -167,32 +167,32 @@ void TableEditDialog::on_loeschenButton_released(){
 	QPushButton *abortButton = msgBox.addButton(tr("Abbrechen"), QMessageBox::ActionRole);
 	msgBox.setDefaultButton(abortButton);
 	msgBox.setEscapeButton(abortButton);
-	msgBox.setText(tr("Die ausgew‰hlte Zeile wird gelˆscht. Diese Aktion kann nicht R¸ckg‰ngig gemacht werden!"));
-	msgBox.setWindowTitle(tr("Best‰tigen des Lˆschvorgangs"));
+	msgBox.setText(tr("Die ausgew√§hlte Zeile wird gel√∂scht. Diese Aktion kann nicht R√ºckg√§ngig gemacht werden!"));
+	msgBox.setWindowTitle(tr("Best√§tigen des L√∂schvorgangs"));
 	msgBox.setIcon(QMessageBox::Warning);
 	msgBox.exec();
-	// Zeile im Modell lˆschen, falls best‰tigt
+	// Zeile im Modell l√∂schen, falls best√§tigt
 	if(msgBox.clickedButton() == loeschenButton){
 		QItemSelectionModel* model = resultateView->selectionModel();
 		if(model->hasSelection()){
 			selected=model->selection().indexes().at(0).row();
 			resultateModel->removeRow(selected);
 		}
-		// ƒnderungen an die DB ¸bermitteln
+		// √Ñnderungen an die DB √ºbermitteln
 		resultateModel->submitAll();
 	}
 }
 /*!
- * \brief Slot f¸r Best‰tigen-Button
+ * \brief Slot f√ºr Best√§tigen-Button
  */
 void TableEditDialog::on_BestaetigenButton_released(){
-	// ƒnderungen anzeigen
+	// √Ñnderungen anzeigen
 	QMessageBox msgBox;
 	QPushButton *bestaetigenButton = msgBox.addButton(tr("OK"), QMessageBox::ActionRole);
 	QPushButton *abortButton = msgBox.addButton(tr("Abbrechen"), QMessageBox::ActionRole);
 	msgBox.setDefaultButton(abortButton);
 	msgBox.setEscapeButton(abortButton);
-	QString text = "Die folgenden ƒnderungen werden ¸bernommen:\n\n";
+	QString text = "Die folgenden √Ñnderungen werden √ºbernommen:\n\n";
 	text += "Kontaktinformationen (Zeile, Spalte):\n";
 	// (Kontakte) Anzeigen, falls nicht leer
 	if(!kontakteChanged->empty()){
@@ -201,7 +201,7 @@ void TableEditDialog::on_BestaetigenButton_released(){
 				QString::number(kontakteChanged->at(i).row()+1) + ", " +
 				QString::number(kontakteChanged->at(i).column()+1) + ")\n";
 		}
-		// Speicher zur¸cksetzen
+		// Speicher zur√ºcksetzen
 		kontakteChanged->clear();
 	}else{
 		text += "keine\n";
@@ -214,33 +214,33 @@ void TableEditDialog::on_BestaetigenButton_released(){
 				QString::number(resultateChanged->at(i).row()+1) + ", " +
 				QString::number(resultateChanged->at(i).column()+1) + ")\n";
 		}
-		// Speicher zur¸cksetzen
+		// Speicher zur√ºcksetzen
 		resultateChanged->clear();
 	}
-	text += "\nDiese Aktion kann nicht R¸ckg‰ngig gemacht werden!";
+	text += "\nDiese Aktion kann nicht R√ºckg√§ngig gemacht werden!";
 	msgBox.setText(text);
-	msgBox.setWindowTitle(tr("Best‰tigen der ƒnderungen"));
+	msgBox.setWindowTitle(tr("Best√§tigen der √Ñnderungen"));
 	msgBox.setIcon(QMessageBox::Question);
 	msgBox.exec();
-	// ‹bermitteln, falls best‰tigt
+	// √úbermitteln, falls best√§tigt
 	if(msgBox.clickedButton() == bestaetigenButton){
 		kontaktModel->submitAll();
 		resultateModel->submitAll();
 	}
-	// Argument '0' bedeutet in Baum ausgew‰hltes Rennen neu vom Server lesen
+	// Argument '0' bedeutet in Baum ausgew√§hltes Rennen neu vom Server lesen
 	mainWindow->Read_Race(0);
 }
 /*!
- * \brief Slot f¸r Verwerfen-Button
+ * \brief Slot f√ºr Verwerfen-Button
  */
 void TableEditDialog::on_VerwerfenButton_released(){
-	// ƒnderungen im Model verwerfen und Dialog schliessen
+	// √Ñnderungen im Model verwerfen und Dialog schliessen
 	kontaktModel->revertAll();
 	resultateModel->revertAll();
 	this->close();
 }
 /*!
- * \brief Slot um Daten‰nderungen im Model in einer Liste zu speichern
+ * \brief Slot um Daten√§nderungen im Model in einer Liste zu speichern
  * \param topLeft linke, obere Ecke der Auswahl
  * \param bottomRight rechte, untere Ecke der Auswahl
  */
@@ -248,7 +248,7 @@ void TableEditDialog::on_kontakte_dataChanged(const QModelIndex & topLeft, const
 	kontakteChanged->append(topLeft);
 }
 /*!
- * \brief Slot um Daten‰nderungen im Model in einer Liste zu speichern
+ * \brief Slot um Daten√§nderungen im Model in einer Liste zu speichern
  * \param topLeft linke, obere Ecke der Auswahl
  * \param bottomRight rechte, untere Ecke der Auswahl
  */

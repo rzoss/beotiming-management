@@ -1,4 +1,4 @@
- /**
+ï»¿ /**
  *******************************************************************************
  * \file    hardwarekonfiguration.cpp
  *******************************************************************************
@@ -43,7 +43,7 @@ HardwareKonfiguration::HardwareKonfiguration(User* user, QWidget *parent)
 {
 	ui.setupUi(this);
 	
-	// ComboBox mit verfügbaren Stationen füllen
+	// ComboBox mit verfÃ¼gbaren Stationen fÃ¼llen
 	QSqlQuery query;
 	QStringList list;
 	query.exec("SELECT funktion, sim_pin, sim_puk, sms_center, server_ip, "
@@ -57,7 +57,7 @@ HardwareKonfiguration::HardwareKonfiguration(User* user, QWidget *parent)
 	}
 	ui.stationComboBox->addItems(list);
 	
-	// Labels mit Daten füllen
+	// Labels mit Daten fÃ¼llen
 	ui.ftpserverLabel->setText(query.value(8).toString());
 	ui.ftpuserLabel->setText(query.value(9).toString());
 	
@@ -70,7 +70,7 @@ HardwareKonfiguration::HardwareKonfiguration(User* user, QWidget *parent)
     ui.streckenTreeWidget->header()->setSectionResizeMode(2, QHeaderView::ResizeToContents);
     ui.streckenTreeWidget->header()->setSectionResizeMode(3, QHeaderView::ResizeToContents);
 	
-	// ermögliche mehrfachauswahl
+	// ermÃ¶gliche mehrfachauswahl
 	ui.streckenTreeWidget->setSelectionMode(QAbstractItemView::MultiSelection);
 	
 	QString sql = "SELECT min(Jahr) FROM strecken";
@@ -92,7 +92,7 @@ HardwareKonfiguration::HardwareKonfiguration(User* user, QWidget *parent)
 			root= new QTreeWidgetItem(ui.streckenTreeWidget->invisibleRootItem());
 			root->setText(0, QString::number(jahr));
 			if(QString::number(jahr)==QDate::currentDate().toString("yyyy")){
-				// Pointer auf WidgetItem für aktuelles Jahr
+				// Pointer auf WidgetItem fÃ¼r aktuelles Jahr
 				act_year=root;
 			}
 			QTreeWidgetItem *item;
@@ -137,7 +137,7 @@ HardwareKonfiguration::HardwareKonfiguration(User* user, QWidget *parent)
 	// default GPRS verwenden
 	use_gprs=true;
 	
-	// SMS Nummer einschränken
+	// SMS Nummer einschrÃ¤nken
 	QRegExp telExp ("\\+[\\d]+");
 	ui.smsLineEdit->setValidator (new QRegExpValidator (telExp, this));
 	ui.smsLineEdit->setMaxLength (12);	
@@ -169,15 +169,15 @@ QStringList HardwareKonfiguration::getSommertime(){
 			   QString::number(year) + "' OR jahr='" + QString::number(year+1) + "'");
 	query.next();
 	// Sommerzeitwechsel schreiben
-	if(month>3){ // März ist vorbei, Sommerzeit vom nächsten Jahr schreiben
+	if(month>3){ // MÃ¤rz ist vorbei, Sommerzeit vom nÃ¤chsten Jahr schreiben
 		query.next();
 		list.append(query.value(0).toString());
 		query.previous();
-	}else{ // März ist noch nicht vorbei
+	}else{ // MÃ¤rz ist noch nicht vorbei
 		list.append(query.value(0).toString());
 	}
 	// Winterzeitwechsel schreiben
-	if(month>10){ // Oktober ist vorbei, Sommerzeit vom nächsten Jahr schreiben
+	if(month>10){ // Oktober ist vorbei, Sommerzeit vom nÃ¤chsten Jahr schreiben
 		query.next();
 		list.append(query.value(0).toString());
 		query.previous();
@@ -189,7 +189,7 @@ QStringList HardwareKonfiguration::getSommertime(){
 
 
 /*!
- * \brief ausgewählte Rennen im Baum bestimmen
+ * \brief ausgewÃ¤hlte Rennen im Baum bestimmen
  */
 QStringList HardwareKonfiguration::getSelectedRennen(){
 	QList<QTreeWidgetItem*> selected = ui.streckenTreeWidget->selectedItems ();
@@ -209,7 +209,7 @@ QStringList HardwareKonfiguration::getSelectedRennen(){
 
 
 /*!
- * \brief Slot für OK-Button
+ * \brief Slot fÃ¼r OK-Button
  */
 void HardwareKonfiguration::on_okButton_released(){
 	// Validierung
@@ -298,29 +298,29 @@ void HardwareKonfiguration::on_okButton_released(){
 	
 }
 /*!
- * \brief Slot für Abbrechen-Button
+ * \brief Slot fÃ¼r Abbrechen-Button
  */
 void HardwareKonfiguration::on_canButton_released(){
 	// Fenster schliessen
 	this->close();
 }
 /*!
- * \brief Slot für Änderungen in der Baumauswahl
+ * \brief Slot fÃ¼r Ã„nderungen in der Baumauswahl
  */
 void HardwareKonfiguration::on_streckenTreeWidget_currentItemChanged(QTreeWidgetItem * current, QTreeWidgetItem * previous){
 	qDebug() << ui.streckenTreeWidget->selectedItems ().count();
-	// Warnung, wenn mehr als 3 Rennen gewählt werden
+	// Warnung, wenn mehr als 3 Rennen gewÃ¤hlt werden
 	if(ui.streckenTreeWidget->selectedItems ().count()>=3){
-		QMessageBox::critical(this, QObject::tr("Zu viele Strecken"),QObject::tr("Sie können nicht mehr als 3 Strecken auf eine Anlage laden!"));
+		QMessageBox::critical(this, QObject::tr("Zu viele Strecken"),QObject::tr("Sie kÃ¶nnen nicht mehr als 3 Strecken auf eine Anlage laden!"));
 		ui.streckenTreeWidget->clearSelection();
 	}
 }
 /*!
- * \brief Validierung für den Dialog
+ * \brief Validierung fÃ¼r den Dialog
  */
 bool HardwareKonfiguration::validation(){
 	bool valid = true;
-	QString error = "Die folgenden Felder benötigen noch einen korrekten Inhalt:\n";
+	QString error = "Die folgenden Felder benÃ¶tigen noch einen korrekten Inhalt:\n";
 	if(getSelectedRennen().isEmpty()){
 		error += "Streckenauswahl, ";
 		valid = false;
@@ -332,6 +332,6 @@ bool HardwareKonfiguration::validation(){
 	// entfernt 2 Zeichen am Ende des Strings
 	error.chop(2);
 	if(!valid)
-		QMessageBox::critical(0,QObject::tr("Fehlende Einträge"),error);
+		QMessageBox::critical(0,QObject::tr("Fehlende EintrÃ¤ge"),error);
 	return valid;
 }

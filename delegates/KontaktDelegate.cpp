@@ -1,9 +1,9 @@
- /**
+Ôªø /**
  *******************************************************************************
  * \file    KontaktDelegate.cpp
  *******************************************************************************
  * \brief    Diese Klasse bildet die Schnittstelle zwischen der Kontakteditiertabelle
- * 				und der Datenbank. Sie schr‰nkt die Eingabemˆglichkeiten ein. 
+ * 				und der Datenbank. Sie schr√§nkt die Eingabem√∂glichkeiten ein. 
  * 
  * \version		1.0
  * \date		09.06.2008
@@ -41,19 +41,19 @@ KontaktDelegate::KontaktDelegate(QObject *parent)
 	: QItemDelegate(parent)  {}
 
 /*!
- * \brief Einstellungen f¸r die Anzeige und Manipulation
+ * \brief Einstellungen f√ºr die Anzeige und Manipulation
  */
 QWidget* KontaktDelegate::createEditor(QWidget *parent,
             const QStyleOptionViewItem &option,
             const QModelIndex &index) const
     {
-		// ComboBox f¸r Geschlecht
+		// ComboBox f√ºr Geschlecht
     	if(index.column() == Geschlecht){
     		QComboBox *editor = new QComboBox(parent);
     		editor->addItems(QStringList() << "Maennlich" << "Weiblich");
     		return editor;
     	}
-    	// ComboBox f¸r Nationalit‰t mit den Informationen aus der Datenbank erstellen 
+    	// ComboBox f√ºr Nationalit√§t mit den Informationen aus der Datenbank erstellen 
     	if(index.column() == Nationalitaet){
     		QComboBox *editor = new QComboBox(parent);
     		QStringList list;
@@ -66,7 +66,7 @@ QWidget* KontaktDelegate::createEditor(QWidget *parent,
     		editor->addItems(list);
     		return editor;
     	}
-    	// SpinBox f¸r den Jahrgang erstellen und den Wertebereich einschr‰nken
+    	// SpinBox f√ºr den Jahrgang erstellen und den Wertebereich einschr√§nken
     	if(index.column() == Jahrgang){
     		QSpinBox *editor = new QSpinBox(parent);
     		editor->setRange(1900,2050);
@@ -76,7 +76,7 @@ QWidget* KontaktDelegate::createEditor(QWidget *parent,
     	return editor;
     }
 /*!
- * \brief Setzen der spezifischen Typen gem‰ss den Daten im Modell
+ * \brief Setzen der spezifischen Typen gem√§ss den Daten im Modell
  */
    void KontaktDelegate::setEditorData(QWidget *editor,
 		const QModelIndex &index) const {

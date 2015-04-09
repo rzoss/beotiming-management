@@ -1,4 +1,4 @@
- /**
+ï»¿ /**
  *******************************************************************************
  * \file    Database.cpp
  *******************************************************************************
@@ -34,7 +34,7 @@
 #include "Database.h"
 
 /*!
- * \brief Konstruktor für standard DB
+ * \brief Konstruktor fÃ¼r standard DB
  */
 Database::Database()
 {
@@ -45,7 +45,7 @@ Database::Database()
     db.setDatabaseName("ricozo6_beotimingtime");
     db.setUserName("ricozo6_beotim");
     db.setPassword("KGloQyRd");
-	// Versuche eine SSL-Verschlüsselung zu initialisieren
+	// Versuche eine SSL-VerschlÃ¼sselung zu initialisieren
 	db.setConnectOptions("CLIENT_SSL");
 	// Daten Komprimiert senden
 	db.setConnectOptions("CLIENT_COMPRESS");
@@ -54,11 +54,11 @@ Database::Database()
 	}
 }
 /*!
- * \brief Konstruktor mit Paramtern für beliebige DB
+ * \brief Konstruktor mit Paramtern fÃ¼r beliebige DB
  * \param host Hostname der Datenbank
  * \param dbname Name der Datenbank
- * \param user Benutzer für die Datenbank
- * \param password Passwort für den Benutzer
+ * \param user Benutzer fÃ¼r die Datenbank
+ * \param password Passwort fÃ¼r den Benutzer
  */
 Database::Database(QString host, QString dbname, QString user, QString password)
 {
@@ -69,7 +69,7 @@ Database::Database(QString host, QString dbname, QString user, QString password)
 	db.setDatabaseName(dbname);
 	db.setUserName(user);
 	db.setPassword(password);
-	// Versuche eine SSL-Verschlüsselung zu initialisieren
+	// Versuche eine SSL-VerschlÃ¼sselung zu initialisieren
 	db.setConnectOptions("CLIENT_SSL");
 	// Daten Komprimiert senden
 	db.setConnectOptions("CLIENT_COMPRESS");

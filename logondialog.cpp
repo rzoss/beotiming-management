@@ -1,4 +1,4 @@
- /**
+ï»¿ /**
  *******************************************************************************
  * \file    logondialog.cpp
  *******************************************************************************
@@ -65,13 +65,13 @@ LogonDialog::~LogonDialog()
 }
 
 /*!
- * \brief Slot für Beenden-Button
+ * \brief Slot fÃ¼r Beenden-Button
  */
 void LogonDialog::on_BeendenButton_released() {
 	this->close();
 }
 /*!
- * \brief Slot für Logon-Button
+ * \brief Slot fÃ¼r Logon-Button
  */
 void LogonDialog::on_LogonButton_released() {
 	// Textfelder auslesen

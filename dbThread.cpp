@@ -1,4 +1,4 @@
- /**
+﻿ /**
  *******************************************************************************
  * \file    dbThread.cpp
  *******************************************************************************
@@ -66,7 +66,7 @@ int DB_Thread::getState(){
 }
 
 /*!
- * \brief �berschreiben der vererbten Funktion "run"
+ * \brief Überschreiben der vererbten Funktion "run"
  */
 void DB_Thread::run(){
 	while(!stopped){

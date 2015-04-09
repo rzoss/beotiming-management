@@ -1,4 +1,4 @@
- /**
+ï»¿ /**
  *******************************************************************************
  * \file    main.cpp
  *******************************************************************************
@@ -57,10 +57,10 @@ int main(int argc, char *argv[])
     //mainwindow->setWindowIcon(QPixmap(":/images/icon32_t.bmp"));
 	// Schliessen des Programms, wenn alle Fenster geschlossen werden, initialisieren
     a.connect(&a, SIGNAL(lastWindowClosed()), &a, SLOT(quit()));
-    // Splashscreen ausblenden und löschen
+    // Splashscreen ausblenden und lÃ¶schen
     splash->finish(mainwindow);
     delete splash;
-    // Hauptfenster Modal ausführen
+    // Hauptfenster Modal ausfÃ¼hren
     return a.exec();
 }
 

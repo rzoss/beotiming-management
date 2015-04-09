@@ -1,9 +1,9 @@
- /**
+ï»¿ /**
  *******************************************************************************
  * \file    ResultateDelegate.h
  *******************************************************************************
  * \brief    Diese Klasse bildet die Schnittstelle zwischen der Resultateeditiertabelle
- * 				und der Datenbank. Sie schränkt die Eingabemöglichkeiten ein. 
+ * 				und der Datenbank. Sie schrÃ¤nkt die EingabemÃ¶glichkeiten ein. 
  * 
  * \version		1.0
  * \date		09.06.2008
@@ -36,7 +36,7 @@
 
 /*!
  * \brief Diese Klasse bildet die Schnittstelle zwischen der Resultateeditiertabelle
- * 				und der Datenbank. Sie schränkt die Eingabemöglichkeiten ein. 
+ * 				und der Datenbank. Sie schrÃ¤nkt die EingabemÃ¶glichkeiten ein. 
  *  
  */
 class ResultateDelegate : public QItemDelegate

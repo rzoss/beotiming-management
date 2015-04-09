@@ -1,9 +1,9 @@
-/**
+ï»¿/**
  *******************************************************************************
  * \file    rfidinputdialog.cpp
  ********************************************************************************
- * \brief    Stellt die Eingabemaske, sowie die benötigten Funktionen zum auswerten von
- * 			 RFID-Tags eines beliebigen Lesers zur Verfügung.
+ * \brief    Stellt die Eingabemaske, sowie die benÃ¶tigten Funktionen zum auswerten von
+ * 			 RFID-Tags eines beliebigen Lesers zur VerfÃ¼gung.
  *
  * \version		1.0
  * \date		09.06.2008
@@ -44,7 +44,7 @@ RFIDInputDialog::RFIDInputDialog(RFID_CR500* pRfid, QWidget *parent)
 {
 	ui.setupUi(this);
 	this->pRfid=pRfid;
-	// ComboBox für Nationaliten aus der Datenbank heraus erstellen
+	// ComboBox fÃ¼r Nationaliten aus der Datenbank heraus erstellen
 	QStringList list;
 	QSqlQuery query("SELECT name FROM nationalitaeten ORDER BY name ASC");
 	query.exec();
@@ -56,7 +56,7 @@ RFIDInputDialog::RFIDInputDialog(RFID_CR500* pRfid, QWidget *parent)
 	ui.nationalitaetComboBox->setCurrentIndex(ui.nationalitaetComboBox->findText("Schweiz"));
 	list.clear();
 	query.clear();
-	// ComboBox mit den Kategorien aus der Datenbank auffüllen
+	// ComboBox mit den Kategorien aus der Datenbank auffÃ¼llen
 	query.exec("SELECT name FROM kategorien");
 	qDebug() << query.lastError();
 	for(int i=0;i<query.numRowsAffected();++i){
@@ -66,7 +66,7 @@ RFIDInputDialog::RFIDInputDialog(RFID_CR500* pRfid, QWidget *parent)
 	ui.KategoriecomboBox->addItems(list);
 	// Verschiedene Labels mit den Informationen versorgen
 	// Die Informationen der RFID-Karte stehen nach dem Lesen
-	// in verschiedenen Attributen der Klasse des Lesers zur Verfügung.
+	// in verschiedenen Attributen der Klasse des Lesers zur VerfÃ¼gung.
 	ui.StarttimeLabel->setText(toDateString(&pRfid->startdate));
 	ui.EndtimeLabel->setText(toDateString(&pRfid->enddate));
 	ui.FahrzeitLabel->setText(toDateString(&pRfid->racetime));
@@ -79,13 +79,13 @@ RFIDInputDialog::RFIDInputDialog(RFID_CR500* pRfid, QWidget *parent)
 	connect(ui.weiblichRadioButton,SIGNAL(pressed()),this,SLOT(checkSingularity()));
 
 	// Validators
-	// Nur Buchstaben und Leerschläge
+	// Nur Buchstaben und LeerschlÃ¤ge
 	QRegExp charExp ("[\\-\\w\\s]+");
 	// Nur Zahlen
 	QRegExp numbExp ("[\\d]+");
 	// Nur Zahlen
 	QRegExp telExp ("\\+[\\d]+");
-	// Nur Buchstaben, Zahlen und Leerschläge
+	// Nur Buchstaben, Zahlen und LeerschlÃ¤ge
 	QRegExp bothExp ("[\\w\\s]+");
 	// E-mail address is validated according to RFC2821, RFC2822,
 	// see http://en.wikipedia.org/wiki/E-mail_address.
@@ -124,7 +124,7 @@ RFIDInputDialog::RFIDInputDialog(RFID_CR500* pRfid, QWidget *parent)
 					calculateKategorie(ui.jahrgangSpinBox->value())
 			)
 	);
-	// automatisches Vervollständigen einschalten
+	// automatisches VervollstÃ¤ndigen einschalten
 	autoInsert = true;
 	TeilnehmerKeyInt=0;
 }
@@ -182,10 +182,10 @@ QStringList RFIDInputDialog::getStreckenNameTyp(int StreckenKey){
 	return temp;
 }
 /*!
- * \brief überprüfen, ob der bisherige Eintrag einzigartig ist.
+ * \brief Ã¼berprÃ¼fen, ob der bisherige Eintrag einzigartig ist.
  */
 void RFIDInputDialog::checkSingularity(){
-	if(!autoInsert) // Verlassen, wenn das automatische Vervollständigen ausgeschaltet ist
+	if(!autoInsert) // Verlassen, wenn das automatische VervollstÃ¤ndigen ausgeschaltet ist
 		return;
 	int count=0;
 	bool first=true;
@@ -256,17 +256,17 @@ void RFIDInputDialog::checkSingularity(){
 		query.exec(sql);
 		query.next();
 		QMessageBox msgBox;
-		QPushButton *eintragenButton = msgBox.addButton(QObject::tr("Teilnehmer übernehmen und eintragen"), QMessageBox::ActionRole);
-		QPushButton *uebernehmenButton = msgBox.addButton(QObject::tr("Teilnehmer übernehmen und verändern"), QMessageBox::ActionRole);
-		QPushButton *vorschlagButton = msgBox.addButton(QObject::tr("Vorschlag als Vorlage für neunen Teilnehmer benutzen"), QMessageBox::ActionRole);
+		QPushButton *eintragenButton = msgBox.addButton(QObject::tr("Teilnehmer Ã¼bernehmen und eintragen"), QMessageBox::ActionRole);
+		QPushButton *uebernehmenButton = msgBox.addButton(QObject::tr("Teilnehmer Ã¼bernehmen und verÃ¤ndern"), QMessageBox::ActionRole);
+		QPushButton *vorschlagButton = msgBox.addButton(QObject::tr("Vorschlag als Vorlage fÃ¼r neunen Teilnehmer benutzen"), QMessageBox::ActionRole);
 		QPushButton *abbrechenButton = msgBox.addButton(QObject::tr("Vorschlag verwerfen"), QMessageBox::ActionRole);
 		msgBox.setDefaultButton(uebernehmenButton);
 		msgBox.setEscapeButton(abbrechenButton);
 
-		msgBox.setText("In der Datenbank befindet sich nur ein Benutzer der mit der bisherigen Eingabe übereinstimmt:\n"
+		msgBox.setText("In der Datenbank befindet sich nur ein Benutzer der mit der bisherigen Eingabe Ã¼bereinstimmt:\n"
 				"\nName: " + query.value(Name).toString() + "\nVorname: " + query.value(Vorname).toString() +
 				"\nAdresse: " + query.value(Adresse).toString() + "\nPLZ: " + query.value(PLZ).toString() +
-				"\nWohnort: " + query.value(Ort).toString() + "\nNationalität: " + query.value(Nationalitaet).toString() +
+				"\nWohnort: " + query.value(Ort).toString() + "\nNationalitÃ¤t: " + query.value(Nationalitaet).toString() +
 				"\nJahrgang: " + query.value(Jahrgang).toString() + "\nGeschlecht: " + query.value(Geschlecht).toString() +
 				"\nTeam / Club: " + query.value(Team_Club).toString() + "\nEMail: " + query.value(Email).toString() +
 				"\nTelefon: " + query.value(Telefon).toString() + "\nMobile: " + query.value(Mobile).toString()
@@ -285,14 +285,14 @@ void RFIDInputDialog::checkSingularity(){
 			);
 			if(!clearValidFlag()) // Funktion beenden, falls nicht erfolgreich (Dialog bleibt)
 				return;
-			// Zeit für erkannten Teilnehmer in die Datenbank einfügen
+			// Zeit fÃ¼r erkannten Teilnehmer in die Datenbank einfÃ¼gen
 			insertRacetime(TeilnehmerKeyInt);
 			// Dialog schliessen
 			this->close();
 		}else if(msgBox.clickedButton() == uebernehmenButton){
 			// Teilnehmer ID speichern
 			TeilnehmerKeyInt = query.value(TeilnehmerKey).toInt();
-			// Dialogfelder ausfüllen
+			// Dialogfelder ausfÃ¼llen
 			fillForm(&query);
 			// AutoInsert ausschalten
 			ui.autoCheckBox->setChecked(false);
@@ -300,7 +300,7 @@ void RFIDInputDialog::checkSingularity(){
 		}else if(msgBox.clickedButton() == vorschlagButton){
 			// Teilnehmer ID !nicht! speichern
 			TeilnehmerKeyInt = 0;
-			// Dialogfelder ausfüllen
+			// Dialogfelder ausfÃ¼llen
 			fillForm(&query);
 			// AutoInsert ausschalten
 			ui.autoCheckBox->setChecked(false);
@@ -315,7 +315,7 @@ void RFIDInputDialog::checkSingularity(){
 
 }
 /*!
- * \brief Ausfüllen des gewählten Vorschlags in die Textfelder
+ * \brief AusfÃ¼llen des gewÃ¤hlten Vorschlags in die Textfelder
  */
 void RFIDInputDialog::fillForm(QSqlQuery* query){
 	ui.nameLineEdit->setText(query->value(Name).toString());
@@ -339,7 +339,7 @@ void RFIDInputDialog::fillForm(QSqlQuery* query){
 		ui.weiblichRadioButton->setChecked(true);
 }
 /*!
- * \brief Einfügen der Fahrzeit in die Datenbank
+ * \brief EinfÃ¼gen der Fahrzeit in die Datenbank
  * \param TeilnehmerKeyInt Nummer des Teilnehmers
  */
 bool RFIDInputDialog::insertRacetime(int TeilnehmerKeyInt){
@@ -351,8 +351,8 @@ bool RFIDInputDialog::insertRacetime(int TeilnehmerKeyInt){
 	qDebug() << sql;
 	query.exec(sql);
 	if(query.next()){
-		// Zeit wurde per FTP übermittelt
-		// "(Noch nicht ausgewertet)" Teilnehmer löschen
+		// Zeit wurde per FTP Ã¼bermittelt
+		// "(Noch nicht ausgewertet)" Teilnehmer lÃ¶schen
 		sql = "DELETE FROM teilnehmer WHERE TeilnehmerKey=" + query.value(0).toString();
 		qDebug() << sql;
 		query.exec(sql);
@@ -368,7 +368,7 @@ bool RFIDInputDialog::insertRacetime(int TeilnehmerKeyInt){
 		return false;
 
 	}else{
-		// Zeit wurde nicht übertragen
+		// Zeit wurde nicht Ã¼bertragen
 		sql = "INSERT INTO zeiten ("
 				"TimeKey, Eintrag, Startzeit, Endzeit, StreckenKey, TeilnehmerKey, Kategorie, Fahrzeit, SNR_RFID, TimeID "
 				")VALUES("
@@ -445,7 +445,7 @@ bool RFIDInputDialog::insertPersonAndTime(){
 }
 
 /*!
- * \brief Änderungen der Benutzerdaten in die Datenbank übertragen
+ * \brief Ã„nderungen der Benutzerdaten in die Datenbank Ã¼bertragen
  */
 bool RFIDInputDialog::updatePerson(int TeilnehmerKeyInt){
 	QString sql = "UPDATE teilnehmer SET ";
@@ -521,77 +521,77 @@ bool RFIDInputDialog::updatePerson(int TeilnehmerKeyInt){
 	return false;
 }
 /*!
- * \brief Slot für Textänderungen
+ * \brief Slot fÃ¼r TextÃ¤nderungen
  */
 void RFIDInputDialog::on_nameLineEdit_textEdited(){
 	qDebug() << "Name Edited";
 	checkSingularity();
 }
 /*!
- * \brief Slot für Textänderungen
+ * \brief Slot fÃ¼r TextÃ¤nderungen
  */
 void RFIDInputDialog::on_vornameLineEdit_textEdited(){
 	qDebug() << "Vorname Edited";
 	checkSingularity();
 }
 /*!
- * \brief Slot für Textänderungen
+ * \brief Slot fÃ¼r TextÃ¤nderungen
  */
 void RFIDInputDialog::on_adresseLineEdit_textEdited(){
 	qDebug() << "adresse Edited";
 	checkSingularity();
 }
 /*!
- * \brief Slot für Textänderungen
+ * \brief Slot fÃ¼r TextÃ¤nderungen
  */
 void RFIDInputDialog::on_plzLineEdit_textEdited(){
 	qDebug() << "PLZ Edited";
 	checkSingularity();
 }
 /*!
- * \brief Slot für Textänderungen
+ * \brief Slot fÃ¼r TextÃ¤nderungen
  */
 void RFIDInputDialog::on_ortLineEdit_textEdited(){
 	qDebug() << "Ort Edited";
 	checkSingularity();
 }
 /*!
- * \brief Slot für Textänderungen
+ * \brief Slot fÃ¼r TextÃ¤nderungen
  */
 void RFIDInputDialog::on_telephonLineEdit_textEdited(){
 	qDebug() << "telefon Edited";
 	checkSingularity();
 }
 /*!
- * \brief Slot für Textänderungen
+ * \brief Slot fÃ¼r TextÃ¤nderungen
  */
 void RFIDInputDialog::on_mobileLineEdit_textEdited(){
 	qDebug() << "mobile Edited";
 	checkSingularity();
 }
 /*!
- * \brief Slot für Textänderungen
+ * \brief Slot fÃ¼r TextÃ¤nderungen
  */
 void RFIDInputDialog::on_emailLineEdit_textEdited(){
 	qDebug() << "email Edited";
 	checkSingularity();
 }
 /*!
- * \brief Slot für Textänderungen
+ * \brief Slot fÃ¼r TextÃ¤nderungen
  */
 void RFIDInputDialog::on_clubLineEdit_textEdited(){
 	qDebug() << "club Edited";
 	checkSingularity();
 }
 /*!
- * \brief Slot für Textänderungen
+ * \brief Slot fÃ¼r TextÃ¤nderungen
  */
 void RFIDInputDialog::on_nationalitaetComboBox_currentIndexChanged(){
-	qDebug() << "Nationalität Edit";
+	qDebug() << "NationalitÃ¤t Edit";
 
 }
 /*!
- * \brief Slot für Jahrgangsänderungen (aktualisieren der Kategorie)
+ * \brief Slot fÃ¼r JahrgangsÃ¤nderungen (aktualisieren der Kategorie)
  */
 void RFIDInputDialog::on_jahrgangSpinBox_valueChanged() {
 	qDebug() << "Jahrgang Spin";
@@ -605,7 +605,7 @@ void RFIDInputDialog::on_jahrgangSpinBox_valueChanged() {
  * \brief Berechne die Kategorie aufgrund der Altersbereiche in der Datenbank
  */
 /*!
- * \brief Slot für CheckBox "automatisches Vervollständigen"
+ * \brief Slot fÃ¼r CheckBox "automatisches VervollstÃ¤ndigen"
  */
 QString RFIDInputDialog::calculateKategorie(int jahrgang){
 	QDate current(QDate::currentDate());
@@ -628,17 +628,17 @@ void RFIDInputDialog::on_autoCheckBox_stateChanged(){
 		checkSingularity();
 }
 /*!
- * \brief Slot für Ok-Button
+ * \brief Slot fÃ¼r Ok-Button
  */
 void RFIDInputDialog::on_okButton_released(){
 	qDebug() << "Ok Clicked";
-	if(!validation()) // Funktion beenden, falls nicht gültig (Dialog bleibt)
+	if(!validation()) // Funktion beenden, falls nicht gÃ¼ltig (Dialog bleibt)
 		return;
 	if(TeilnehmerKeyInt==0){
 		if(!clearValidFlag()) // Funktion beenden, falls nicht erfolgreich (Dialog bleibt)
 			return;
 		qDebug() << "neuer Teilnehmer erstellt";
-		// Neuer Teilnehmer und dessen Zeit hinzufügen
+		// Neuer Teilnehmer und dessen Zeit hinzufÃ¼gen
 		insertPersonAndTime();
 		this->close();
 	}else{
@@ -647,17 +647,17 @@ void RFIDInputDialog::on_okButton_released(){
 		qDebug() << "Teilnehmer " << TeilnehmerKeyInt << "updated";
 		// Teilnehmer Daten aktualisieren
 		updatePerson(TeilnehmerKeyInt);
-		// Zeit hinzufügen
+		// Zeit hinzufÃ¼gen
 		insertRacetime(TeilnehmerKeyInt);
 		this->close();
 	}
 }
 /*!
- * \brief Validierung der Einträge
+ * \brief Validierung der EintrÃ¤ge
  */
 bool RFIDInputDialog::validation(){
 	bool valid = true;
-	QString error = "Die folgenden Felder benötigen noch einen Inhalt:\n";
+	QString error = "Die folgenden Felder benÃ¶tigen noch einen Inhalt:\n";
 	if(ui.nameLineEdit->text()==""){
 		error += "Name, ";
 		valid = false;
@@ -686,23 +686,23 @@ bool RFIDInputDialog::validation(){
 	// entfernt 2 Zeichen am Ende des Strings
 	error.chop(2);
 	if(!valid)
-		QMessageBox::critical(0,QObject::tr("Fehlende Einträge"),error);
+		QMessageBox::critical(0,QObject::tr("Fehlende EintrÃ¤ge"),error);
 	return valid;
 }
 /*!
- * \brief Löschen der Statusbits der Karte nach dem Auswerten
+ * \brief LÃ¶schen der Statusbits der Karte nach dem Auswerten
  */
 bool RFIDInputDialog::clearValidFlag(){
 	if(!pRfid->clearValidFlag()){
-		qDebug() << "Valid Flag nicht gelöscht";
+		qDebug() << "Valid Flag nicht gelÃ¶scht";
 		return false;
 	}else{
-		qDebug() << "Valid Flag gelöscht";
+		qDebug() << "Valid Flag gelÃ¶scht";
 		return true;
 	}
 }
 /*!
- * \brief Slot für Abbrechen-Button
+ * \brief Slot fÃ¼r Abbrechen-Button
  */
 void RFIDInputDialog::on_canButton_released(){
 	qDebug() << "Abbrechen Clicked";

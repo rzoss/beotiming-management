@@ -1,4 +1,4 @@
- /**
+ï»¿ /**
  *******************************************************************************
  * \file    User.cpp
  *******************************************************************************
@@ -85,7 +85,7 @@ void User::Init(QString username, QString password) throw (QString)
 	logonSuccess=true;
 }
 /*!
- * \brief Initialisieren über den Benutzernamen
+ * \brief Initialisieren Ã¼ber den Benutzernamen
  */
 void User::Init(QString username)
  {
@@ -106,14 +106,14 @@ void User::Init(QString username)
 	qDebug() << query.lastError();
 }
 /*!
- * \brief LogonSuccess überprüfen
+ * \brief LogonSuccess Ã¼berprÃ¼fen
  */
 bool User::getLogonSuccess(){
 	return logonSuccess;
 }
 /*!
- * \brief Prüfen, ob der Benutzer die Berechtigung für ein Rennen hat.
- * \param race zu überprüfendes Rennen 
+ * \brief PrÃ¼fen, ob der Benutzer die Berechtigung fÃ¼r ein Rennen hat.
+ * \param race zu Ã¼berprÃ¼fendes Rennen 
  */
 bool User::getRaceAuthority(int race){
 	bool authority = false;
@@ -121,13 +121,13 @@ bool User::getRaceAuthority(int race){
 	for(int i=0;i<tokens.size();++i){
 		authority = authority || (tokens.at(i).toInt()==race);
 	}
-	// Berechtigung für alle Rennen
+	// Berechtigung fÃ¼r alle Rennen
 	if(rennen=="0")
 		return true;
 	return authority;
 }
 /*!
- * \brief Gibt den Usertype zurück
+ * \brief Gibt den Usertype zurÃ¼ck
  * \return Typ des Benutzers (int) 
  */
 int User::getUsertype(){

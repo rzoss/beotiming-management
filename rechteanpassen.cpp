@@ -1,4 +1,4 @@
- /**
+ï»¿ /**
  *******************************************************************************
  * \file    rechteanpassen.cpp
  *******************************************************************************
@@ -38,7 +38,7 @@
 #include <QInputDialog>
 
 /*!
- * \brief Slot für die Reaktion auf Änderungen der CheckBox
+ * \brief Slot fÃ¼r die Reaktion auf Ã„nderungen der CheckBox
  * \param user Pointer auf den angemeldeten Benutzer
  * \param parent Pointer auf das aufrufende Objekt
  */
@@ -48,7 +48,7 @@ RechteAnpassen::RechteAnpassen(User* user, QWidget *parent)
 	ui.setupUi(this);
 	this->pUser=user;
 	
-	// ComboBox mit aktuellen Benutzern abfüllen
+	// ComboBox mit aktuellen Benutzern abfÃ¼llen
 	QSqlQuery query;
 	QStringList list;
 	query.exec("SELECT username, user.name, usertype.name typ FROM "
@@ -69,7 +69,7 @@ RechteAnpassen::RechteAnpassen(User* user, QWidget *parent)
     ui.streckenTreeWidget->header()->setSectionResizeMode(2, QHeaderView::ResizeToContents);
     ui.streckenTreeWidget->header()->setSectionResizeMode(3, QHeaderView::ResizeToContents);
 	
-	// ermögliche mehrfachauswahl
+	// ermÃ¶gliche mehrfachauswahl
 	ui.streckenTreeWidget->setSelectionMode(QAbstractItemView::MultiSelection);
 	
 	QString sql = "SELECT min(Jahr) FROM strecken";
@@ -91,7 +91,7 @@ RechteAnpassen::RechteAnpassen(User* user, QWidget *parent)
 			root= new QTreeWidgetItem(ui.streckenTreeWidget->invisibleRootItem());
 			root->setText(0, QString::number(jahr));
 			if(QString::number(jahr)==QDate::currentDate().toString("yyyy")){
-				// Pointer auf WidgetItem für aktuelles Jahr
+				// Pointer auf WidgetItem fÃ¼r aktuelles Jahr
 				act_year=root;
 			}
 			QTreeWidgetItem *item;
@@ -142,15 +142,15 @@ RechteAnpassen::~RechteAnpassen()
 
 }
 /*!
- * \brief Slot für die Änderungen der Selektion der ComboBox
- * \param text Referenz auf den gewählten Text
+ * \brief Slot fÃ¼r die Ã„nderungen der Selektion der ComboBox
+ * \param text Referenz auf den gewÃ¤hlten Text
  */
 void RechteAnpassen::on_comboBox_currentIndexChanged ( const QString & text ){
 	ui.altCheckBox->setChecked(false);
 }
 
 /*!
- * \brief Slot für OK-Button
+ * \brief Slot fÃ¼r OK-Button
  */
 void RechteAnpassen::on_okButton_released(){
 	char md5_password_char [17];
@@ -159,12 +159,12 @@ void RechteAnpassen::on_okButton_released(){
 	QString pwd = QInputDialog::getText(this, tr("Identifizierung als Administrator"),
 		                                          tr("Passwort des angemeldeten Administrators:"), 
 		                                          QLineEdit::Password);
-	// überprüfen, falls eingegeben
+	// Ã¼berprÃ¼fen, falls eingegeben
 	if(!pwd.isEmpty()){
         md5_buffer(pwd.toLatin1().data(),pwd.length(),md5_password_char);
 		pwd = QByteArray::fromRawData(md5_password_char,16).toHex(); 
 		if(pUser->password.compare(pwd)!=0){
-			// Zurück zum Eingabe Dialog
+			// ZurÃ¼ck zum Eingabe Dialog
 			QMessageBox::critical(this, QObject::tr("Passwortabfrage"),QObject::tr("Das Passwort war nicht Korrekt!"));
 			return;
 		}
@@ -173,7 +173,7 @@ void RechteAnpassen::on_okButton_released(){
 		return;
 	}
 	
-	// Erstellen des Strings für die Berechtigungen
+	// Erstellen des Strings fÃ¼r die Berechtigungen
 	QList<QTreeWidgetItem*> list = ui.streckenTreeWidget->selectedItems();
 	QString newrights;
 	for(int i=0;i<list.count();++i){
@@ -182,7 +182,7 @@ void RechteAnpassen::on_okButton_released(){
 	newrights.chop(1); // letzter ';' wegschneiden
 	qDebug() << newrights;
 	
-	// Userobjekt für zu bearbeitenden User erstellen
+	// Userobjekt fÃ¼r zu bearbeitenden User erstellen
 	QString line = ui.comboBox->currentText();
 	QString username = line.mid(line.indexOf("(")+1,6);
 	pChangeUser = new User();
@@ -193,14 +193,14 @@ void RechteAnpassen::on_okButton_released(){
 	// Datenbank updaten
 	QSqlQuery query;
 	query.exec("UPDATE user SET Rennen = '" + newrights + "' WHERE username='" + username + "'");
-	// Userobjekt löschen
+	// Userobjekt lÃ¶schen
 	delete pChangeUser;
 	
 	// Fenster schliessen
 	this->close();	
 }
 /*!
- * \brief Slot für Abbrechen-Button
+ * \brief Slot fÃ¼r Abbrechen-Button
  */
 void RechteAnpassen::on_canButton_released(){
 	// Fenster schliessen 

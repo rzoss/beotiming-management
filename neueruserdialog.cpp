@@ -1,4 +1,4 @@
- /**
+ï»¿ /**
  *******************************************************************************
  * \file    neueruserdialog.cpp
  *******************************************************************************
@@ -49,7 +49,7 @@ NeuerUserDialog::NeuerUserDialog(User* user, QWidget *parent)
 	this->pUser=user;
 	
 	// Validators
-	// Nur Buchstaben und Leerschläge
+	// Nur Buchstaben und LeerschlÃ¤ge
 	QRegExp charExp ("[\\-\\w\\s]+");
 	// Nur 5 kleine Buchstaben und 1 Zahl
 	QRegExp userExp ("[a-z][a-z][a-z][a-z][a-z][0-9]");
@@ -84,7 +84,7 @@ NeuerUserDialog::NeuerUserDialog(User* user, QWidget *parent)
 	}
 	ui.typComboBox->addItems(list);
 	ui.typComboBox->setCurrentIndex(ui.typComboBox->findText("manager"));
-	// Offset für ComboBox setzen
+	// Offset fÃ¼r ComboBox setzen
 	if(user->getUsertype()==user->administrator)
 			usertype_offset=1;
 	else if(user->getUsertype()==user->manager)
@@ -98,7 +98,7 @@ NeuerUserDialog::NeuerUserDialog(User* user, QWidget *parent)
     ui.streckenTreeWidget->header()->setSectionResizeMode(2, QHeaderView::ResizeToContents);
     ui.streckenTreeWidget->header()->setSectionResizeMode(3, QHeaderView::ResizeToContents);
 	
-	// ermögliche mehrfachauswahl
+	// ermÃ¶gliche mehrfachauswahl
 	ui.streckenTreeWidget->setSelectionMode(QAbstractItemView::MultiSelection);
 	
 	sql = "SELECT min(Jahr) FROM strecken";
@@ -120,7 +120,7 @@ NeuerUserDialog::NeuerUserDialog(User* user, QWidget *parent)
 			root= new QTreeWidgetItem(ui.streckenTreeWidget->invisibleRootItem());
 			root->setText(0, QString::number(jahr));
 			if(QString::number(jahr)==QDate::currentDate().toString("yyyy")){
-				// Pointer auf WidgetItem für aktuelles Jahr
+				// Pointer auf WidgetItem fÃ¼r aktuelles Jahr
 				act_year=root;
 			}
 			QTreeWidgetItem *item;
@@ -171,11 +171,11 @@ NeuerUserDialog::~NeuerUserDialog()
 }
 
 /*!
- * \brief Slot für OK-Button
+ * \brief Slot fÃ¼r OK-Button
  */
 void NeuerUserDialog::on_okButton_released(){
 	char md5_password_char [17];
-	// Validieren der Einträge
+	// Validieren der EintrÃ¤ge
 	if(!validation())
 		return;
 	// Benutzername testen
@@ -183,13 +183,13 @@ void NeuerUserDialog::on_okButton_released(){
 	query.exec("SELECT username FROM user WHERE username='" + ui.usernameLineEdit->text() + "'");
 	if(query.numRowsAffected()!=0){
 		// Benutzername bereits vergeben
-		QMessageBox::critical(this, QObject::tr("Benutzername"),QObject::tr("Dieser Benutzername ist bereits vorhanden! Erhöhen Sie die Nummer am Ende des Namens."));
+		QMessageBox::critical(this, QObject::tr("Benutzername"),QObject::tr("Dieser Benutzername ist bereits vorhanden! ErhÃ¶hen Sie die Nummer am Ende des Namens."));
 		return;
 	}
-	// Passwörter vergleichen
+	// PasswÃ¶rter vergleichen
 	if(ui.pwdLineEdit->text().compare(ui.pwdwLineEdit->text())!=0){
 		QMessageBox::critical(this, QObject::tr("Fehler"),QObject::tr("Geben Sie zweimal dasselbe Passwort ein!"));
-		// zurück zum Eingabedialog
+		// zurÃ¼ck zum Eingabedialog
 		return;		
 	}
 	// Abfrage des Adminpasswortes
@@ -201,7 +201,7 @@ void NeuerUserDialog::on_okButton_released(){
         md5_buffer(pwd.toLatin1().data(),pwd.length(),md5_password_char);
 		pwd = QByteArray::fromRawData(md5_password_char,16).toHex(); 
 		if(pUser->password.compare(pwd)!=0){
-			// Zurück zum Eingabe Dialog
+			// ZurÃ¼ck zum Eingabe Dialog
 			QMessageBox::critical(this, QObject::tr("Passwortabfrage"),QObject::tr("Das Passwort war nicht Korrekt!"));
 			return;
 		}
@@ -210,7 +210,7 @@ void NeuerUserDialog::on_okButton_released(){
 		return;
 	}
 	
-	// Erstellen des Strings für die Berechtigungen
+	// Erstellen des Strings fÃ¼r die Berechtigungen
 	QList<QTreeWidgetItem*> list = ui.streckenTreeWidget->selectedItems();
 	QString rights;
 	for(int i=0;i<list.count();++i){
@@ -243,7 +243,7 @@ void NeuerUserDialog::on_okButton_released(){
 }
 
 /*!
- * \brief Slot für Abbrechen-Button
+ * \brief Slot fÃ¼r Abbrechen-Button
  */
 void NeuerUserDialog::on_canButton_released(){
 	// Fenster schliessen
@@ -251,11 +251,11 @@ void NeuerUserDialog::on_canButton_released(){
 }
 
 /*!
- * \brief Validierung der Einträge
+ * \brief Validierung der EintrÃ¤ge
  */
 bool NeuerUserDialog::validation(){
 	bool valid = true;
-	QString error = "Die folgenden Felder benötigen noch einen Inhalt:\n";
+	QString error = "Die folgenden Felder benÃ¶tigen noch einen Inhalt:\n";
 	if(ui.usernameLineEdit->text()==""){
 		error += "Benutzername, ";
 		valid = false;
@@ -279,7 +279,7 @@ bool NeuerUserDialog::validation(){
 	// entfernt 2 Zeichen am Ende des Strings
 	error.chop(2);
 	if(!valid)
-		QMessageBox::critical(0,QObject::tr("Fehlende Einträge"),error);
+		QMessageBox::critical(0,QObject::tr("Fehlende EintrÃ¤ge"),error);
 	return valid;
 }
 

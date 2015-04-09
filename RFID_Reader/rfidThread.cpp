@@ -1,8 +1,8 @@
-/**
+ï»¿/**
  *******************************************************************************
  * \file    rfidThread.cpp
  ********************************************************************************
- * \brief    Erstellt einen Thread, welcher alle 0.5 Sekunden prüft ob eine Karte im 
+ * \brief    Erstellt einen Thread, welcher alle 0.5 Sekunden prÃ¼ft ob eine Karte im 
  * 			 Feld des Lesers erscheint. 
  * 
  * \version		1.0
@@ -51,7 +51,7 @@ RFID_Thread::~RFID_Thread(){
 }
 
 /*!
- * \brief Setter für den State
+ * \brief Setter fÃ¼r den State
  */
 void RFID_Thread::setState(STATE state){
 	this->state=state;

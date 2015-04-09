@@ -1,4 +1,4 @@
- /**
+ï»¿ /**
  *******************************************************************************
  * \file    neuesrennendialog.cpp
  *******************************************************************************
@@ -40,21 +40,21 @@ NeuesRennenDialog::NeuesRennenDialog(QWidget *parent)
     : QDialog(parent)
 {
 	ui.setupUi(this);
-	// Nur Buchstaben und Leerschläge
+	// Nur Buchstaben und LeerschlÃ¤ge
 	QRegExp charExp ("[\\-\\w\\s]+");
 	ui.nameLineEdit->setValidator (new QRegExpValidator (charExp, this));
-	// Maximale Länge = 50 Zeichen
+	// Maximale LÃ¤nge = 50 Zeichen
 	ui.nameLineEdit->setMaxLength (50);
 	// Heutiges Datum setzen 
 	ui.startdatumDateEdit->setDate(QDate::currentDate());
 	ui.enddatumDateEdit->setDate(QDate::currentDate());
-	// Verfügbare Streckentypen aus der Datenbank lesen	
-	// und mit Icon in ComboBox zu Verfügung stellen
+	// VerfÃ¼gbare Streckentypen aus der Datenbank lesen	
+	// und mit Icon in ComboBox zu VerfÃ¼gung stellen
 	QSqlQuery query("SELECT StreckentypKey, Typ FROM streckentyp");
 	query.exec();
 	for(int i=0;i<query.numRowsAffected();++i){
 		query.next();
-		// Symbol auswählen
+		// Symbol auswÃ¤hlen
 		QIcon icon;
 		switch(query.value(0).toInt()){
 			case Rennvelo: icon.addFile(":/images/rennrad.png"); break;
@@ -82,10 +82,10 @@ NeuesRennenDialog::~NeuesRennenDialog()
 }
 
 /*!
- * \brief Slot für Ok-Button
+ * \brief Slot fÃ¼r Ok-Button
  */
 void NeuesRennenDialog::on_okButton_released(){
-	// Einträge überprüfen
+	// EintrÃ¤ge Ã¼berprÃ¼fen
 	if(!validation())
 		return;
 	// Rennen in Datenbank eintragen
@@ -120,7 +120,7 @@ void NeuesRennenDialog::on_okButton_released(){
 }
 
 /*!
- * \brief Slot für Abbrechen-Button
+ * \brief Slot fÃ¼r Abbrechen-Button
  */
 void NeuesRennenDialog::on_canButton_released(){
 	// Dialog schliessen
@@ -130,14 +130,14 @@ void NeuesRennenDialog::on_canButton_released(){
  * \brief Valisierung der Eingaben
  */
 bool NeuesRennenDialog::validation(){
-	// Überprüfen ob die nötigen Einträge gemacht wurden
+	// ÃœberprÃ¼fen ob die nÃ¶tigen EintrÃ¤ge gemacht wurden
 	bool valid = true;
-	QString error = "Die folgenden Felder benötigen noch einen Inhalt:\n";
+	QString error = "Die folgenden Felder benÃ¶tigen noch einen Inhalt:\n";
 	if(ui.nameLineEdit->text()==""){
 		error += "Name, ";
 		valid = false;
 	}
-	// überprüft, ob das Startdatum früher als das Enddatum ist
+	// Ã¼berprÃ¼ft, ob das Startdatum frÃ¼her als das Enddatum ist
 	if(ui.startdatumDateEdit->date() > ui.enddatumDateEdit->date() ){
 		error += "Datum (Startdatum > Enddatum), ";
 		valid = false;
@@ -146,6 +146,6 @@ bool NeuesRennenDialog::validation(){
 	error.chop(2);
 	
 	if(!valid)
-		QMessageBox::critical(0,QObject::tr("Fehlende Einträge"),error);
+		QMessageBox::critical(0,QObject::tr("Fehlende EintrÃ¤ge"),error);
 	return valid;
 }

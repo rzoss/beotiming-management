@@ -1,8 +1,8 @@
-/**
+ï»¿/**
  *******************************************************************************
  * \file    rfidThread.h
  ********************************************************************************
- * \brief    Erstellt einen Thread, welcher alle 0.5 Sekunden prüft ob eine Karte im 
+ * \brief    Erstellt einen Thread, welcher alle 0.5 Sekunden prÃ¼ft ob eine Karte im 
  * 			 Feld des Lesers erscheint. 
  * 
  * \version		1.0
@@ -38,7 +38,7 @@
 #define RFID_REFRESH_RATE_ms	500
 
 /*!
- * \brief Erstellt einen Thread, welcher alle 0.5 Sekunden prüft ob eine Karte im 
+ * \brief Erstellt einen Thread, welcher alle 0.5 Sekunden prÃ¼ft ob eine Karte im 
  * 			 Feld des Lesers erscheint. 
  * 
  */

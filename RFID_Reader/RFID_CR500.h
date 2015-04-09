@@ -1,8 +1,8 @@
-/**
+ï»¿/**
  *******************************************************************************
  * \file    RFID_CR500.h
  *******************************************************************************
- * \brief    Enthält alle Eigenschaften des RFID-Lesers CR500-USB.
+ * \brief    EnthÃ¤lt alle Eigenschaften des RFID-Lesers CR500-USB.
  *
  * \version		1.0
  * \date		09.06.2008
@@ -48,15 +48,15 @@
 #define RFID_ADR_RACETIME		10
 
 // Tag-Status Masks
-/**\brief Gültige Streckennr. aud der Karte*/
+/**\brief GÃ¼ltige Streckennr. aud der Karte*/
 #define TAG_STATUS_STRECKENVALID  (1<<0)
-/**\brief Gültige Startzeit auf der Karte*/
+/**\brief GÃ¼ltige Startzeit auf der Karte*/
 #define TAG_STATUS_STARTVALID  (1<<1)
-/**\brief Gültige Endzeit auf der Karte*/
+/**\brief GÃ¼ltige Endzeit auf der Karte*/
 #define TAG_STATUS_ENDVALID   (1<<2)
-/**\brief Karte ist Manuel gelöscht worden*/
+/**\brief Karte ist Manuel gelÃ¶scht worden*/
 #define TAG_STATUS_MANUALCLEARED (1<<3)
-/**\brief Karte ist Persönlich*/
+/**\brief Karte ist PersÃ¶nlich*/
 #define TAG_STATUS_REGISTERED  (1<<4)
 
 enum{NO_LED,RED_LED,GREEN_LED,YELLOW_LED};
@@ -85,7 +85,7 @@ struct MYDATE{
     unsigned char second;
 };
 /*!
- * \brief Enthält alle Eigenschaften des RFID-Lesers CR500-USB.
+ * \brief EnthÃ¤lt alle Eigenschaften des RFID-Lesers CR500-USB.
  *
  */
 class RFID_CR500

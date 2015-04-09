@@ -1,9 +1,9 @@
- /**
+ï»¿ /**
  *******************************************************************************
  * \file    ResultateDelegate.cpp
  *******************************************************************************
  * \brief    Diese Klasse bildet die Schnittstelle zwischen der Resultateeditiertabelle
- * 				und der Datenbank. Sie schränkt die Eingabemöglichkeiten ein. 
+ * 				und der Datenbank. Sie schrÃ¤nkt die EingabemÃ¶glichkeiten ein. 
  * 
  * \version		1.0
  * \date		09.06.2008
@@ -42,7 +42,7 @@ ResultateDelegate::ResultateDelegate(QObject *parent)
 	: QItemDelegate(parent)  {}
 
 /*!
- * \brief Einstellungen für die Anzeige und Manipulation
+ * \brief Einstellungen fÃ¼r die Anzeige und Manipulation
  */
 QWidget* ResultateDelegate::createEditor(QWidget *parent,
             const QStyleOptionViewItem &option,
@@ -78,7 +78,7 @@ QWidget* ResultateDelegate::createEditor(QWidget *parent,
     	return editor;
     }
 /*!
- * \brief Einstellungen für die Anzeige und Manipulation
+ * \brief Einstellungen fÃ¼r die Anzeige und Manipulation
  */
    void ResultateDelegate::setEditorData(QWidget *editor,
 		const QModelIndex &index) const {
@@ -100,7 +100,7 @@ QWidget* ResultateDelegate::createEditor(QWidget *parent,
     	}
     }
    /*!
-    * \brief Setzen der spezifischen Typen gemäss den Daten im Modell
+    * \brief Setzen der spezifischen Typen gemÃ¤ss den Daten im Modell
     */
     void ResultateDelegate::setModelData(QWidget *editor, QAbstractItemModel *model,
         const QModelIndex &index) const

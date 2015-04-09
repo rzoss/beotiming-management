@@ -1,4 +1,4 @@
- /**
+Ôªø /**
  *******************************************************************************
  * \file    passwordchangedialog.cpp
  *******************************************************************************
@@ -45,7 +45,7 @@ PasswordChangeDialog::PasswordChangeDialog(User* pUser, QWidget *parent)
 {
 	ui.setupUi(this);
 	this->pUser=pUser;
-	// Keine begrenzung der Eingabe nˆtig, da der MD5-hash immer 128-bit lang ist.
+	// Keine begrenzung der Eingabe n√∂tig, da der MD5-hash immer 128-bit lang ist.
 	
 	ui.staerkeProgressBar->setMaximum(20);
 	ui.staerkeProgressBar->setMinimum(0); 
@@ -60,7 +60,7 @@ PasswordChangeDialog::~PasswordChangeDialog()
 }
 
 /*!
- * \brief Slot f¸r Ok-Button
+ * \brief Slot f√ºr Ok-Button
  */
 void PasswordChangeDialog::on_okButton_released(){
 	// MD5-Hash aus altem Password erstellen 
@@ -73,7 +73,7 @@ void PasswordChangeDialog::on_okButton_released(){
 		QMessageBox::critical(this, QObject::tr("Fehler"),QObject::tr("Das alte Passwort ist falsch!"));
 		return;
 	}
-	// Beide neuen Passwˆrter vergleichen
+	// Beide neuen Passw√∂rter vergleichen
 	if(ui.newLineEdit->text().compare(ui.wiederLineEdit->text())!=0){
 		QMessageBox::critical(this, QObject::tr("Fehler"),QObject::tr("Geben Sie zweimal dasselbe Passwort ein!"));
 		return;		
@@ -88,17 +88,17 @@ void PasswordChangeDialog::on_okButton_released(){
 				  "' WHERE username = '" + pUser->username + "'";
 	qDebug() << sql;
 	query.exec(sql);
-	QMessageBox::information(this, QObject::tr("Passwort ge‰ndert"),QObject::tr("Das Passwort wurde erfolgreich ge‰ndert!"));
+	QMessageBox::information(this, QObject::tr("Passwort ge√§ndert"),QObject::tr("Das Passwort wurde erfolgreich ge√§ndert!"));
 	this->close();
 }
 /*!
- * \brief Slot f¸r den Abbrechen-Button
+ * \brief Slot f√ºr den Abbrechen-Button
  */
 void PasswordChangeDialog::on_canButton_released(){
 	this->close();
 }
 /*!
- * \brief Validierung der Eintr‰ge
+ * \brief Validierung der Eintr√§ge
  * \param pwd Neues Passwort
  */
 bool PasswordChangeDialog::validation(QString pwd){
@@ -106,14 +106,14 @@ bool PasswordChangeDialog::validation(QString pwd){
 	QString error = "Folgende Punkte wurden bei der Wahl des Passworts nicht eingehalten:\n";
 	// Midestens 6 Zeichen lang
 	if(pwd.length()<=6){
-		error += "- Die L‰nge betr‰gt mindestens 6 Zeichen\n";
+		error += "- Die L√§nge betr√§gt mindestens 6 Zeichen\n";
 		valid = false;
 	}
 	return valid;
 }
 
 /*!
- * \brief Slot f¸r die ƒnderungen im Texteingabefeld
+ * \brief Slot f√ºr die √Ñnderungen im Texteingabefeld
  * \param text aktueller Text im Feld
  */
 void PasswordChangeDialog::on_newLineEdit_textChanged(const QString& text)
@@ -122,8 +122,8 @@ void PasswordChangeDialog::on_newLineEdit_textChanged(const QString& text)
    int gb=text.count(QRegExp("[A-Z]+"));
    int kb=text.count(QRegExp("[a-z]+"));
    int zahl=text.count(QRegExp("[0-9]+"));
-   int fremd=text.count(QRegExp("[^∞!ß$%&=?`¥+*~#,.-_:;]+"));
-   // Einfacher Algorithmus, um die St‰rke des Passwortes zu definieren
+   int fremd=text.count(QRegExp("[^¬∞!¬ß$%&=?`¬¥+*~#,.-_:;]+"));
+   // Einfacher Algorithmus, um die St√§rke des Passwortes zu definieren
    int value = (int)(log10(pow(26,gb))+log10(pow(26,kb))+log10(pow(10,zahl))+log10(pow(20,fremd)));
    ui.staerkeProgressBar->setValue(value);
    qDebug() << value;
