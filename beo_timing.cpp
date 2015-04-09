@@ -1,4 +1,4 @@
-/**
+ï»¿/**
  *******************************************************************************
  * \file    beo_timing.cpp
  *******************************************************************************
@@ -72,24 +72,24 @@ BEO_Timing::BEO_Timing(QSplashScreen *splash, QApplication *a, QWidget *parent)
 	// Menue und Toolbar erstellen
 	createMenu();
 	createToolbar();
-	// Diese Initialisierungen müssen so früh stattfinden, damit die Aktionen
+	// Diese Initialisierungen mÃ¼ssen so frÃ¼h stattfinden, damit die Aktionen
 	// mit den jeweiligen Funktionen verbunden sind
 
 	// Datenbank Thread erstellen
 	pMySQL = new Database();
-	// Datenbankverbindung prüfen und Programmstart abbrechen, falls nicht verbunden.
+	// Datenbankverbindung prÃ¼fen und Programmstart abbrechen, falls nicht verbunden.
 	if(!pMySQL->getDb()->isOpen()){
 		// Popup-Meldung ausgeben und Programm schliessen
 		QMessageBox::critical(0,"Keine Verbindung zur Datenbank","Es besteht keine Verbindung zur Datenbank"
 				"Dies kann die folgenden Ursachen haben: <br><ol>"
-				"<li>Es kann keine Verbindung zum Webserver hergestellt werden. --> überprüfen der "
+				"<li>Es kann keine Verbindung zum Webserver hergestellt werden. --> Ã¼berprÃ¼fen der "
 				"Internetverbindung.</li>"
 				"<li>Die Anwendung wird von einer Firewall blockiert. --> Firewalleinstellungen "
-				"überprüfen und sicherstellen, dass der Port 3306 für die BEO-Timing Managementsoftware "
+				"Ã¼berprÃ¼fen und sicherstellen, dass der Port 3306 fÃ¼r die BEO-Timing Managementsoftware "
 				"offen ist.</li>"
-				"<li>Möglicherweise besteht ein Problem mit der Datenbank, was aber eher unwahrscheinlich ist. --> "
+				"<li>MÃ¶glicherweise besteht ein Problem mit der Datenbank, was aber eher unwahrscheinlich ist. --> "
 				"Kontaktaufnahme mit dem \"<a href=\"mailto:admin@beo-timing.ch\">Admin</a>\".</li>"
-				"</ol>Ohne die Verbindung zur Datenbank ist das Programm nicht lauffähig und wird deshalb mit"
+				"</ol>Ohne die Verbindung zur Datenbank ist das Programm nicht lauffÃ¤hig und wird deshalb mit"
 				"\"OK\" beendet.");
 		// Applikation beenden
 		QTimer::singleShot(500, this, SLOT(close()));
@@ -101,12 +101,12 @@ BEO_Timing::BEO_Timing(QSplashScreen *splash, QApplication *a, QWidget *parent)
 	pMySQL_thread = new DB_Thread();
 	pMySQL_thread->start();
 
-	// Versionscheck durchführen
-    // TODO: Version Check wieder einführen
+	// Versionscheck durchfÃ¼hren
+    // TODO: Version Check wieder einfÃ¼hren
 //	newVersion();
 //	if(version){
 //		QMessageBox::critical(0,"Neue Softwareversion","Auf dem Server ist eine neue "
-//				"Softwareversion verfügbar. Die vorliegende Software kann aus Sicherheitsgründen nicht "
+//				"Softwareversion verfÃ¼gbar. Die vorliegende Software kann aus SicherheitsgrÃ¼nden nicht "
 //				"mehr verwendet werden. Klicken Sie auf \"<a href=\"http://www.rrc-thun.ch/time/beo-timing.msi\">download</a>\" "
 //				"um die neue Version herunterzuladen. Mit \"OK\" wird das Programm beendet.");
 //		// Applikation beenden
@@ -140,9 +140,9 @@ BEO_Timing::BEO_Timing(QSplashScreen *splash, QApplication *a, QWidget *parent)
 	// Tree initialisieren
 	Tree_Settings();
 	Tree_Build();
-	// Aktiviert den RFID-Leser (Action löst ein Signal aus, welches mit der Funtkion
+	// Aktiviert den RFID-Leser (Action lÃ¶st ein Signal aus, welches mit der Funtkion
 	// rfidConnection(...) verbunden ist aufruft
-	// Thread zum Pollen des RFID-Lesers starten (Löst ein Signal aus)
+	// Thread zum Pollen des RFID-Lesers starten (LÃ¶st ein Signal aus)
 	thread = new RFID_Thread(NULL);
 	CR500_verbinden();
 	((RFID_Thread*)thread)->start();
@@ -172,46 +172,46 @@ BEO_Timing::~BEO_Timing()
  * \brief Verbindet die Aktionen mit dem Slots (Benutzermenue)
  */
 void BEO_Timing::createMenu(){
-	connect(ui.actionBeenden,SIGNAL(activated()),a, SLOT(quit()));
-	connect(ui.actionEintrag_Editieren,SIGNAL(activated()),this, SLOT(Table_Edit()));
-	connect(ui.actionNeues_Rennen_erfassen,SIGNAL(activated()),this,SLOT(NeuesRennen()));
-	connect(ui.actionExportieren_als_CSV,SIGNAL(activated()),this,SLOT(exportToCsv()));
-	connect(ui.actionPasswort_ndern,SIGNAL(activated()),this,SLOT(changePwd()));
-	connect(ui.actionNeuer_Benutzer_erstellen_3,SIGNAL(activated()),this,SLOT(neuerUser()));
-	connect(ui.actionKonfiguration_erstellen,SIGNAL(activated()),this,SLOT(buildConfiguration()));
-	connect(ui.actionLog_Datei_auslesen,SIGNAL(activated()),this,SLOT(readLogFile()));
-	connect(ui.actionBenutzerrechte_ndern,SIGNAL(activated()),this,SLOT(rechteAnpassen()));
-	connect(ui.actionAbout_Qt,SIGNAL(triggered()),qApp, SLOT(aboutQt()));
-	connect(ui.actionAbout,SIGNAL(triggered()),this, SLOT(about()));
-	connect(ui.actionRFID_Leser,SIGNAL(toggled(bool)),this, SLOT(rfidConnection(bool)));
-	connect(ui.actionRFID_Leser_verbinden,SIGNAL(activated()),this, SLOT(CR500_verbinden()));
-	connect(ui.actionDatenbank,SIGNAL(toggled(bool)),this, SLOT(mysqlConnection(bool)));
-	connect(ui.actionAktualisieren,SIGNAL(activated()),this,SLOT(Tree_Build()));
-	connect(ui.actionVerwaiste_Eintr_ge_entfernen,SIGNAL(activated()),this,SLOT(purge()));
-	connect(ui.actionDatenbank_optimieren,SIGNAL(activated()),this,SLOT(optimieren()));
-	connect(ui.actionKarten_zur_cksetzen_unpers_nlich,SIGNAL(toggled(bool)),this,SLOT(tag_clear_unpers(bool)));
-	connect(ui.actionKarten_zur_cksetzen_pers_nlich,SIGNAL(toggled(bool)),this,SLOT(tag_clear_pers(bool)));
-	connect(ui.actionDatenbank_optimieren,SIGNAL(activated()),this,SLOT(optimieren()));
-	connect(ui.actionNeue_Karten_initialisieren_unpers_nlich,SIGNAL(toggled(bool)),this,SLOT(tag_initialisieren_unpers(bool)));
-	connect(ui.actionNeue_Karten_initialisieren_pers_nlich,SIGNAL(toggled(bool)),this,SLOT(tag_initialisieren_pers(bool)));
+    connect(ui.actionBeenden,SIGNAL(triggered()),a, SLOT(quit()));
+    connect(ui.actionEintrag_Editieren,SIGNAL(triggered()),this, SLOT(Table_Edit()));
+    connect(ui.actionNeues_Rennen_erfassen,SIGNAL(triggered()),this,SLOT(NeuesRennen()));
+    connect(ui.actionExportieren_als_CSV,SIGNAL(triggered()),this,SLOT(exportToCsv()));
+    connect(ui.actionPasswort_ndern,SIGNAL(triggered()),this,SLOT(changePwd()));
+    connect(ui.actionNeuer_Benutzer_erstellen_3,SIGNAL(triggered()),this,SLOT(neuerUser()));
+    connect(ui.actionKonfiguration_erstellen,SIGNAL(triggered()),this,SLOT(buildConfiguration()));
+    connect(ui.actionLog_Datei_auslesen,SIGNAL(triggered()),this,SLOT(readLogFile()));
+    connect(ui.actionBenutzerrechte_ndern,SIGNAL(triggered()),this,SLOT(rechteAnpassen()));
+    connect(ui.actionAbout_Qt,SIGNAL(triggered()),qApp, SLOT(aboutQt()));
+    connect(ui.actionAbout,SIGNAL(triggered()),this, SLOT(about()));
+    connect(ui.actionRFID_Leser,SIGNAL(toggled(bool)),this, SLOT(rfidConnection(bool)));
+    connect(ui.actionRFID_Leser_verbinden,SIGNAL(triggered()),this, SLOT(CR500_verbinden()));
+    connect(ui.actionDatenbank,SIGNAL(toggled(bool)),this, SLOT(mysqlConnection(bool)));
+    connect(ui.actionAktualisieren,SIGNAL(triggered()),this,SLOT(Tree_Build()));
+    connect(ui.actionVerwaiste_Eintr_ge_entfernen,SIGNAL(triggered()),this,SLOT(purge()));
+    connect(ui.actionDatenbank_optimieren,SIGNAL(triggered()),this,SLOT(optimieren()));
+    connect(ui.actionKarten_zur_cksetzen_unpers_nlich,SIGNAL(toggled(bool)),this,SLOT(tag_clear_unpers(bool)));
+    connect(ui.actionKarten_zur_cksetzen_pers_nlich,SIGNAL(toggled(bool)),this,SLOT(tag_clear_pers(bool)));
+    connect(ui.actionDatenbank_optimieren,SIGNAL(triggered()),this,SLOT(optimieren()));
+    connect(ui.actionNeue_Karten_initialisieren_unpers_nlich,SIGNAL(toggled(bool)),this,SLOT(tag_initialisieren_unpers(bool)));
+    connect(ui.actionNeue_Karten_initialisieren_pers_nlich,SIGNAL(toggled(bool)),this,SLOT(tag_initialisieren_pers(bool)));
 
 
 }
 
 /*!
- * \brief Setzt die Benutzerrechte für die verschiedenen Aktionen
+ * \brief Setzt die Benutzerrechte fÃ¼r die verschiedenen Aktionen
  */
 void BEO_Timing::setUserRights(){
-	// Benutzerrechte für Actions einstellen
+	// Benutzerrechte fÃ¼r Actions einstellen
 
 	if(user->getUsertype()==user->superadministrator){
-		// keine Einschränkungen
+		// keine EinschrÃ¤nkungen
 
-		// Zusätzliche Rechte
+		// ZusÃ¤tzliche Rechte
 		ui.actionDatenbank->setEnabled(true);
 	}
 	if(user->getUsertype()==user->administrator){
-		// keine Einschränkungen
+		// keine EinschrÃ¤nkungen
 	}
 	if(user->getUsertype()==user->manager || user->getUsertype()==user->user){
 		ui.actionKonfiguration_erstellen->setDisabled(true);
@@ -219,7 +219,7 @@ void BEO_Timing::setUserRights(){
 		ui.actionBenutzerrechte_ndern->setDisabled(true);
 	}
 	if(user->getUsertype()==user->user){
-		// User --> keine Möglichkeiten zur Veränderung der Datenbank nur schauen!
+		// User --> keine MÃ¶glichkeiten zur VerÃ¤nderung der Datenbank nur schauen!
 		ui.actionNeuer_Benutzer_erstellen_3->setDisabled(true);
 		ui.actionDatenbank_optimieren->setDisabled(true);
 		ui.actionEintrag_Editieren->setDisabled(true);
@@ -235,7 +235,7 @@ void BEO_Timing::setUserRights(){
 }
 
 /*!
- * \brief Erstellt die Symbolliste mit den ausgewählten Aktionen
+ * \brief Erstellt die Symbolliste mit den ausgewÃ¤hlten Aktionen
  */
 void BEO_Timing::createToolbar(){
 	toolbar = addToolBar(tr("&Symbolliste"));
@@ -263,12 +263,12 @@ void BEO_Timing::Tree_Settings(){
     raceTree->header()->setSectionResizeMode(1, QHeaderView::ResizeToContents);
     raceTree->header()->setSectionResizeMode(2, QHeaderView::ResizeToContents);
     raceTree->header()->setSectionResizeMode(3, QHeaderView::ResizeToContents);
-	// Signal "Auswahländerung" mit Slot "Baum geändedert" verbinden
+	// Signal "AuswahlÃ¤nderung" mit Slot "Baum geÃ¤ndedert" verbinden
 	connect(raceTree,SIGNAL(itemSelectionChanged()),this,SLOT(Tree_Changed()));
 }
 
 /*!
- * \brief Füllt die Baumansicht mit Ihalt, entsprechend der Benutzerrechte
+ * \brief FÃ¼llt die Baumansicht mit Ihalt, entsprechend der Benutzerrechte
  */
 void BEO_Timing::Tree_Build(){
 	raceTree = ui.RennenTreeWidget;
@@ -286,18 +286,18 @@ void BEO_Timing::Tree_Build(){
 	query.exec();
 	query.next();
 	int max_jahr = query.value(0).toInt();
-	// Informationen aus dem gewählten Bereich abfragen und eintragen
+	// Informationen aus dem gewÃ¤hlten Bereich abfragen und eintragen
 	for(int jahr=min_jahr; jahr<=max_jahr; ++jahr){
-		// Daten für 1 Jahr lesen (anzahl)
+		// Daten fÃ¼r 1 Jahr lesen (anzahl)
 		query.exec("SELECT count(StreckenKey) FROM strecken WHERE Jahr='" + QString::number(jahr) + "'");
 		query.next();
-		// nächtes Jahr, falls keine Einträge
+		// nÃ¤chtes Jahr, falls keine EintrÃ¤ge
 		if(query.value(0).toBool()){
 			QTreeWidgetItem *root;
 			root= new QTreeWidgetItem(raceTree->invisibleRootItem());
 			root->setText(0, QString::number(jahr));
 			QTreeWidgetItem *item;
-			// Informationen für ein ganzes Jahr abrufen
+			// Informationen fÃ¼r ein ganzes Jahr abrufen
 			sql = "SELECT StreckenKey, Streckenname, Startdatum, Enddatum, Jahr, StreckentypKey "
 					"FROM strecken "
 					"WHERE Jahr='" + QString::number(jahr) + "'";
@@ -312,7 +312,7 @@ void BEO_Timing::Tree_Build(){
 					item->setText(1,query.value(2).toDate().toString("dd.MM.yyyy"));
 					item->setText(2,query.value(3).toDate().toString("dd.MM.yyyy"));
 					item->setText(3,QString::number(query.value(0).toInt()));
-					// Richtiges Symbol wählen
+					// Richtiges Symbol wÃ¤hlen
 					QIcon icon;
 					switch(query.value(5).toInt()){
 						case Rennvelo: icon.addFile(":/images/rennrad.png"); break;
@@ -337,7 +337,7 @@ void BEO_Timing::Tree_Build(){
 }
 
 /*!
- * \brief Reagiert auf eine Änderung der Auswahl im Baum
+ * \brief Reagiert auf eine Ã„nderung der Auswahl im Baum
  */
 void BEO_Timing::Tree_Changed(){
 	// Bestimmt die neue Position im Baum und ruft die Funktion Read_Race,
@@ -347,7 +347,7 @@ void BEO_Timing::Tree_Changed(){
 }
 
 /*!
- * \brief Bestimmt die Anzahl Fahrzeiten für eine Strecke
+ * \brief Bestimmt die Anzahl Fahrzeiten fÃ¼r eine Strecke
  * \param StreckenKey Streckennummer
  */
 QString BEO_Timing::getTimeCount(int StreckenKey){
@@ -364,11 +364,11 @@ QString BEO_Timing::getTimeCount(int StreckenKey){
  */
 void BEO_Timing::Read_Race(int StreckenNummer){
 	view = ui.RanglistenTableView;
-	// Falls keine StreckenNummer definiert wurde, wird die aktuell gewählte dargestellt
+	// Falls keine StreckenNummer definiert wurde, wird die aktuell gewÃ¤hlte dargestellt
 	if(StreckenNummer == 0){
 		StreckenNummer=ui.RennenTreeWidget->currentItem()->data(3,Qt::DisplayRole).toInt();
 	}
-	// Modell für die Daten bezogen auf die Tabelle
+	// Modell fÃ¼r die Daten bezogen auf die Tabelle
 	QStandardItemModel* model = new QStandardItemModel(view);
 	// 20 Spalten mit Namen versehen
 	model->insertColumns(0,20);
@@ -377,7 +377,7 @@ void BEO_Timing::Read_Race(int StreckenNummer){
 	model->setHeaderData(Adresse, Qt::Horizontal, tr("Adresse"));
 	model->setHeaderData(PLZ, Qt::Horizontal, tr("PLZ"));
 	model->setHeaderData(Ort, Qt::Horizontal, tr("Ort"));
-	model->setHeaderData(Nationalitaet, Qt::Horizontal, tr("Nationalität"));
+	model->setHeaderData(Nationalitaet, Qt::Horizontal, tr("NationalitÃ¤t"));
 	model->setHeaderData(Jahrgang, Qt::Horizontal, tr("Jahrgang"));
 	model->setHeaderData(Geschlecht, Qt::Horizontal, tr("Geschlecht"));
 	model->setHeaderData(Email, Qt::Horizontal, tr("Email"));
@@ -386,7 +386,7 @@ void BEO_Timing::Read_Race(int StreckenNummer){
 	model->setHeaderData(Team_Club, Qt::Horizontal, tr("Team / Club"));
 	model->setHeaderData(Kategorie, Qt::Horizontal, tr("Kategorie"));
 	model->setHeaderData(Fahrzeit, Qt::Horizontal, tr("Fahrzeit"));
-	model->setHeaderData(Rueckstand, Qt::Horizontal, tr("Rückstand"));
+	model->setHeaderData(Rueckstand, Qt::Horizontal, tr("RÃ¼ckstand"));
 	model->setHeaderData(RFID_SNR, Qt::Horizontal, tr("RFID-Snr"));
 	model->setHeaderData(StreckenKey, Qt::Horizontal, tr("Strecken-Nr"));
 	model->setHeaderData(TimeID, Qt::Horizontal, tr("TimeID"));
@@ -394,16 +394,16 @@ void BEO_Timing::Read_Race(int StreckenNummer){
 	model->setHeaderData(TeilnehmerKey, Qt::Horizontal, tr("TeilnehmerKey"));
 	// Model mit der Tabelle verbinden
 	view->setModel(model); // Modell der Tabelle zuweisen
-	// Auswahlmöglichkeiten einschränken
+	// AuswahlmÃ¶glichkeiten einschrÃ¤nken
 	view->setSelectionMode(QAbstractItemView::SingleSelection);
 	view->setSelectionBehavior(QAbstractItemView::SelectRows);
 	// Spaltenbreite auf automatisch
 	view->resizeColumnsToContents();
-	// Editiermöglichkeiten einschränken (keine)
+	// EditiermÃ¶glichkeiten einschrÃ¤nken (keine)
 	view->setEditTriggers(QAbstractItemView::NoEditTriggers);
 	QHeaderView * header = view->horizontalHeader();
 	header->setStretchLastSection(true);
-	// SQL-Statement für die Rangliste
+	// SQL-Statement fÃ¼r die Rangliste
 	QString sql = "SELECT teilnehmer.name, teilnehmer.vorname, teilnehmer.adresse, "
 			"teilnehmer.PLZ, teilnehmer.ort, teilnehmer.nationalitaet, "
 			"teilnehmer.jahrgang, teilnehmer.geschlecht, teilnehmer.email, teilnehmer.telefon, "
@@ -423,7 +423,7 @@ void BEO_Timing::Read_Race(int StreckenNummer){
 		query.exec();
 		qDebug() << model->insertRows(0,query.numRowsAffected());
 		qDebug() << "Rec.count(): " << query.numRowsAffected() << " -> " << model->rowCount();
-		// Einfügen der gelesenen Daten in das Modell
+		// EinfÃ¼gen der gelesenen Daten in das Modell
 		for(int j=0; j< query.numRowsAffected(); ++j){
 			query.next();
 			for(int i=0;i<20;++i){
@@ -448,15 +448,15 @@ QLabel* BEO_Timing::messageLabel;
  *
  */
 void BEO_Timing::createStatusBar(){
-	// Label für den Benutzernamen
+	// Label fÃ¼r den Benutzernamen
 	userLabel = new QLabel("Benutzer:      ");
 	userLabel->setAlignment(Qt::AlignHCenter);
 	userLabel->setMinimumSize(userLabel->sizeHint());
-	// Label für die Verbindungsanzeigen
+	// Label fÃ¼r die Verbindungsanzeigen
 	connectionLabel = new QLabel("RFID-Leser:      ");
 	connectionLabel->setAlignment(Qt::AlignLeft);
 	connectionLabel->setMinimumSize(connectionLabel->sizeHint());
-	// Label für diverse Informationen
+	// Label fÃ¼r diverse Informationen
 	messageLabel = new QLabel("Letzte Meldung:                  ");
 	messageLabel->setIndent(3);
 	// Labels mit der Statusliste verbinden
@@ -472,10 +472,10 @@ void BEO_Timing::createStatusBar(){
 void BEO_Timing::Table_Edit(){
 	int selected = 0;
 	QItemSelectionModel* model = view->selectionModel();
-	// Falls eine Zeile ausgewählt ist, wird der Dialog gestartet.
+	// Falls eine Zeile ausgewÃ¤hlt ist, wird der Dialog gestartet.
 	if(model->hasSelection()){
 		selected=view->selectionModel()->selection().indexes().at(0).row();
-		// Aufrufen des Konstruktors des Dialogs und übergabe der Parameter
+		// Aufrufen des Konstruktors des Dialogs und Ã¼bergabe der Parameter
 		TableEditDialog* tableEdit = new TableEditDialog(
 				view->model()->data(view->model()->index(selected,TeilnehmerKey)).toInt(),
 				user,this);
@@ -484,9 +484,9 @@ void BEO_Timing::Table_Edit(){
 		tableEdit->setWindowIcon(QPixmap(":/images/icon32_t.bmp"));
 		// Titel definieren
 		tableEdit->setWindowTitle(tr("Editieren der Daten"));
-		// Dialog modal ausführen
+		// Dialog modal ausfÃ¼hren
 		tableEdit->exec();
-		// Dialog löschen, speicher freigeben
+		// Dialog lÃ¶schen, speicher freigeben
 		delete tableEdit;
 	}
 }
@@ -497,28 +497,29 @@ void BEO_Timing::Table_Edit(){
  */
 void BEO_Timing::NeuesRennen(){
 	// Dialog erstellen
+    qDebug() << "Neues Rennen erfassen dialog starten";
 	neu = new NeuesRennenDialog(this);
 	// Singal aus den Dialog mit dem Baum-Update verbinden
 	connect(neu,SIGNAL(tree_update()),this,SLOT(Tree_Build()));
 //	neu->setWindowIcon(QPixmap(":/images/icon32_t.bmp"));
 	neu->setWindowTitle(tr("Neues Rennen erfassen"));
-	// Dialog modal ausführen
+	// Dialog modal ausfÃ¼hren
 	neu->exec();
 	// Die Verbindung zum Signal aufheben
 	disconnect(neu,SIGNAL(tree_update()),this,SLOT(Tree_Build()));
-	// Dialog löschen
+	// Dialog lÃ¶schen
 	delete neu;
 }
 
 /*!
- * \brief Prüfen ob eine RFID-Karte im Feld ist.
+ * \brief PrÃ¼fen ob eine RFID-Karte im Feld ist.
  *
  */
 void BEO_Timing::checkRFID(){
-	qDebug() << "Signal ausgelöst";
-	// Variable zum Blockieren der RFID-Thread aktivitäten, während der Dialog aktiv ist.
+	qDebug() << "Signal ausgelÃ¶st";
+	// Variable zum Blockieren der RFID-Thread aktivitÃ¤ten, wÃ¤hrend der Dialog aktiv ist.
 	static bool active = false;
-	// Verbindung prüfen
+	// Verbindung prÃ¼fen
 	// Falls OK, Karte suchen
 	// Falls OK, Karte lesen
 	// Falls OK, Dialog erstellen
@@ -530,11 +531,11 @@ void BEO_Timing::checkRFID(){
 		rfidDialog->setWindowIcon(QPixmap(":/images/icon32_t.bmp"));
 		// Titel definieren
 		rfidDialog->setWindowTitle("RFID-Karte auswerten");
-		// Dialog modal öffnen
+		// Dialog modal Ã¶ffnen
 		rfidDialog->exec();
-		// Dialog löschen
+		// Dialog lÃ¶schen
 		delete rfidDialog;
-		// Funktion freigeben für RFID-Thread
+		// Funktion freigeben fÃ¼r RFID-Thread
 		active = false;
 	}
 }
@@ -556,8 +557,8 @@ void BEO_Timing::checkDB(){
 				// Versuchen die Verbindung aufzubauen
 				if(pMySQL->getDb()->open())
 					QMessageBox::critical(0, QObject::tr("Database Error"),
-								"Die Verbindung zur Datenbank ist abgebrochen. Bitte überprüfen Sie Ihre Internetverbindung "
-								"und bestätigen Sie mit Ok.\n\n" + pMySQL->getDb()->lastError().text());
+								"Die Verbindung zur Datenbank ist abgebrochen. Bitte Ã¼berprÃ¼fen Sie Ihre Internetverbindung "
+								"und bestÃ¤tigen Sie mit Ok.\n\n" + pMySQL->getDb()->lastError().text());
 				active=false;
 			}
 			break;
@@ -578,9 +579,9 @@ void BEO_Timing::checkDB(){
 void BEO_Timing::exportToCsv(){
 	QAbstractItemModel* model = view->model();
 	// Headerdaten schreiben
-	QString csv = "Name;Vorname;Adresse;PLZ;Wohnort;Nationalität;"
+	QString csv = "Name;Vorname;Adresse;PLZ;Wohnort;NationalitÃ¤t;"
 		          "Jahrgang;Geschlecht;Email;Telefon;Mobile;Club-Team;"
-		          "Kategorie;Fahrzeit;Rückstand;RFID_SNR;\n";
+		          "Kategorie;Fahrzeit;RÃ¼ckstand;RFID_SNR;\n";
 	// Tabelle auslesen: Spaltentrennung mit ';' und Zeilen mit '\n'
 	for (int row = 0; row < model->rowCount(); ++row) {
 	 for (int field = 0; field < model->columnCount(); ++field) {
@@ -589,7 +590,7 @@ void BEO_Timing::exportToCsv(){
 	 csv += "\n";
 	}
 	qDebug() << csv;
-	// Speichern unter - Dialog öffnen
+	// Speichern unter - Dialog Ã¶ffnen
 	QString fileName = QFileDialog::getSaveFileName(this,
 							tr("Speichere Rangliste"), ".",
 							tr("Comma separated value Datei (*.csv)"));
@@ -601,7 +602,7 @@ void BEO_Timing::exportToCsv(){
 									.arg(file.fileName()).arg(file.errorString()));
 			return;
 		}
-		// Stream für ASCII-File öffnen
+		// Stream fÃ¼r ASCII-File Ã¶ffnen
 		QTextStream out(&file);
 		// Daten schreiben
 		out << csv;
@@ -611,22 +612,22 @@ void BEO_Timing::exportToCsv(){
 }
 
 /*!
- * \brief Passwort ändern Dialog öffnen
+ * \brief Passwort Ã¤ndern Dialog Ã¶ffnen
  *
  */
 void BEO_Timing::changePwd(){
 	// Dialog erstellen mit dem Parameter user
 	pwd = new PasswordChangeDialog(user, this);
 //	pwd->setWindowIcon(QPixmap(":/images/icon32_t.bmp"));
-	pwd->setWindowTitle(tr("Password ändern"));
+	pwd->setWindowTitle(tr("Password Ã¤ndern"));
 	// Dialog modal starten
 	pwd->exec();
-	// Dialog löschen
+	// Dialog lÃ¶schen
 	delete pwd;
 }
 
 /*!
- * \brief Neuer Benutzer - Dialog öffnen
+ * \brief Neuer Benutzer - Dialog Ã¶ffnen
  *
  */
 void BEO_Timing::neuerUser(){
@@ -640,22 +641,22 @@ void BEO_Timing::neuerUser(){
 }
 
 /*!
- * \brief Konfiguration erstellen - Dialog öffnen
+ * \brief Konfiguration erstellen - Dialog Ã¶ffnen
  *
  */
 void BEO_Timing::buildConfiguration(){
 	// Dialog erstellen
 	config = new HardwareKonfiguration(user, this);
 	config->setWindowIcon(QPixmap(":/images/icon32_t.bmp"));
-	config->setWindowTitle(tr("Neue Konfiguration für eine Station erstellen"));
-	// Dialog modal öffnen
+	config->setWindowTitle(tr("Neue Konfiguration fÃ¼r eine Station erstellen"));
+	// Dialog modal Ã¶ffnen
 	config->exec();
-	// Dialog löschen
+	// Dialog lÃ¶schen
 	delete config;
 }
 
 /*!
- * \brief Log-Datei Lesen - Dialog öffnen
+ * \brief Log-Datei Lesen - Dialog Ã¶ffnen
  *
  */
 void BEO_Timing::readLogFile(){
@@ -664,12 +665,12 @@ void BEO_Timing::readLogFile(){
 	logfile->setWindowTitle(tr("Zeiten aus der Log-Datei interpretieren"));
 	// Dialog modal starten
 	logfile->exec();
-	// Dialog löschen
+	// Dialog lÃ¶schen
 	delete logfile;
 }
 
 /*!
- * \brief Benutzerreche anpassen - Dialog öffnen
+ * \brief Benutzerreche anpassen - Dialog Ã¶ffnen
  *
  */
 void BEO_Timing::rechteAnpassen(){
@@ -678,7 +679,7 @@ void BEO_Timing::rechteAnpassen(){
 	rechte->setWindowTitle(tr("Rechte eines Benutzer anpassen"));
 	// Dialog modal starten
 	rechte->exec();
-	// Dialog löschen
+	// Dialog lÃ¶schen
 	delete rechte;
 }
 
@@ -691,9 +692,9 @@ void BEO_Timing::about(){
 							tr("<h2>BEO-Timing Management-Software 1.0 </h2>"
 							   "<p>Copyright &copy; 2008 <a href=\"http://www.rrc-thun.ch/\">RRC-Thun</a> "
 							   "und <a href=\"http://www.rc-steffisburg.ch/\">RC-Steffisburg</a> "
-							   "<p>Diese Software bietet die Möglichkeiten zur Auswertung von RFID-Karten, "
+							   "<p>Diese Software bietet die MÃ¶glichkeiten zur Auswertung von RFID-Karten, "
 							   "der Konfiguration der Stationen, Wartung und Administration der Datenbank und stellt "
-							   "eine Benutzerverwaltung zur Verfügung."
+							   "eine Benutzerverwaltung zur VerfÃ¼gung."
 							   "<p>Diese Software wurde im Rahmen der Bachelor-Thesis von Rico Zoss und "
 							   "Moritz Leiser an der Berner Fachhochschule Technik und Informatik im Fachbereich "
 							   "Elektrotechnik erstellt."));
@@ -740,12 +741,12 @@ void BEO_Timing::newVersion(){
 }
 
 /*!
- * \brief Datenbank bereinigen. Alle "(Noch nicht ausgewertet)"-Einträge entfernen.
+ * \brief Datenbank bereinigen. Alle "(Noch nicht ausgewertet)"-EintrÃ¤ge entfernen.
  *
  */
 void BEO_Timing::purge(){
 	QSqlQuery query;
-	// Alle Einträge, die älter sind als Heute um Mitternacht, darstellen.
+	// Alle EintrÃ¤ge, die Ã¤lter sind als Heute um Mitternacht, darstellen.
 	query.exec("SELECT zeiten.TeilnehmerKey FROM zeiten, teilnehmer WHERE "
 			   "Eintrag < '" + QDate::currentDate().toString("yyyy-MM-dd") + " 00:00:00' "
 			   "AND zeiten.TeilnehmerKey=teilnehmer.TeilnehmerKey AND name='(noch'");
@@ -756,19 +757,19 @@ void BEO_Timing::purge(){
 		keylist.append(query.value(0).toString());
 	}
 	qDebug() << keylist;
-	// Warnung ausgeben und den Vorgang bestätigen lassen
+	// Warnung ausgeben und den Vorgang bestÃ¤tigen lassen
 	QMessageBox msgBox;
-	QPushButton *loeschenButton = msgBox.addButton(tr("Löschen"), QMessageBox::ActionRole);
+	QPushButton *loeschenButton = msgBox.addButton(tr("LÃ¶schen"), QMessageBox::ActionRole);
 	QPushButton *canButton = msgBox.addButton(tr("Abbrechen"), QMessageBox::ActionRole);
 	msgBox.setDefaultButton(canButton);
 	msgBox.setEscapeButton(canButton);
-	msgBox.setText(tr("Alle unzugeordneten Einträge, welche vor dem heutigen Datum gemacht wurden, "
-					  "werden gelöscht. Diese Aktion sollte nur ausgeführt werden, wenn alle Karten "
-					  "bis zum heutigen Tag ausgewertet sind.\n\n Diese Aktion kann nicht Rückgängig gemacht werden!"));
-	msgBox.setWindowTitle(tr("Bestätigen des Löschvorgangs"));
+	msgBox.setText(tr("Alle unzugeordneten EintrÃ¤ge, welche vor dem heutigen Datum gemacht wurden, "
+					  "werden gelÃ¶scht. Diese Aktion sollte nur ausgefÃ¼hrt werden, wenn alle Karten "
+					  "bis zum heutigen Tag ausgewertet sind.\n\n Diese Aktion kann nicht RÃ¼ckgÃ¤ngig gemacht werden!"));
+	msgBox.setWindowTitle(tr("BestÃ¤tigen des LÃ¶schvorgangs"));
 	msgBox.setIcon(QMessageBox::Warning);
 	msgBox.exec();
-	// Löschen der Einträge, falls bestätigt
+	// LÃ¶schen der EintrÃ¤ge, falls bestÃ¤tigt
 	if(msgBox.clickedButton() == loeschenButton){
 		for(int i=0;i<keylist.count();++i)
 			query.exec("DELETE FROM zeiten WHERE TeilnehmerKey=" + keylist.at(i));
@@ -783,7 +784,7 @@ void BEO_Timing::purge(){
  */
 void BEO_Timing::optimieren(){
 	QSqlQuery query;
-	// SQL-Statement für die Optimierung
+	// SQL-Statement fÃ¼r die Optimierung
 	query.exec("OPTIMIZE TABLE kategorien, nationalitaeten, sommerzeit, stationen, "
 			   "strecken, streckentyp, teilnehmer, user, usertype, version, zeiten");
 	QString feedback;
