@@ -33,6 +33,9 @@
 #include "User.h"
 #include <QtSql>
 #include <QtGui>
+#include <QHeaderView>
+#include <QMessageBox>
+
 
 
 

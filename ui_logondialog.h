@@ -11,17 +11,17 @@
 #define UI_LOGONDIALOG_H
 
 #include <QtCore/QVariant>
-#include <QtGui/QAction>
-#include <QtGui/QApplication>
-#include <QtGui/QButtonGroup>
-#include <QtGui/QDialog>
-#include <QtGui/QGridLayout>
-#include <QtGui/QHBoxLayout>
-#include <QtGui/QLabel>
-#include <QtGui/QLineEdit>
-#include <QtGui/QPushButton>
-#include <QtGui/QSpacerItem>
-#include <QtGui/QVBoxLayout>
+#include <QAction>
+#include <QApplication>
+#include <QButtonGroup>
+#include <QDialog>
+#include <QGridLayout>
+#include <QHBoxLayout>
+#include <QLabel>
+#include <QLineEdit>
+#include <QPushButton>
+#include <QSpacerItem>
+#include <QVBoxLayout>
 
 QT_BEGIN_NAMESPACE
 
@@ -149,13 +149,13 @@ public:
 
     void retranslateUi(QDialog *LogonDialogClass)
     {
-    LogonDialogClass->setWindowTitle(QApplication::translate("LogonDialogClass", "LogonDialog", 0, QApplication::UnicodeUTF8));
-    LoginTextlabel->setText(QApplication::translate("LogonDialogClass", "Login f\303\274r die BEO-Sport-Timing", 0, QApplication::UnicodeUTF8));
-    LoginTextlabel_2->setText(QApplication::translate("LogonDialogClass", "Management-Software", 0, QApplication::UnicodeUTF8));
-    BenutzernameLabel->setText(QApplication::translate("LogonDialogClass", "Benutzername", 0, QApplication::UnicodeUTF8));
-    PasswortLabel->setText(QApplication::translate("LogonDialogClass", "Passwort", 0, QApplication::UnicodeUTF8));
-    LogonButton->setText(QApplication::translate("LogonDialogClass", "Login", 0, QApplication::UnicodeUTF8));
-    BeendenButton->setText(QApplication::translate("LogonDialogClass", "Beenden", 0, QApplication::UnicodeUTF8));
+    LogonDialogClass->setWindowTitle(QApplication::translate("LogonDialogClass", "LogonDialog", 0));
+    LoginTextlabel->setText(QApplication::translate("LogonDialogClass", "Login f\303\274r die BEO-Sport-Timing", 0));
+    LoginTextlabel_2->setText(QApplication::translate("LogonDialogClass", "Management-Software", 0));
+    BenutzernameLabel->setText(QApplication::translate("LogonDialogClass", "Benutzername", 0));
+    PasswortLabel->setText(QApplication::translate("LogonDialogClass", "Passwort", 0));
+    LogonButton->setText(QApplication::translate("LogonDialogClass", "Login", 0));
+    BeendenButton->setText(QApplication::translate("LogonDialogClass", "Beenden", 0));
     Q_UNUSED(LogonDialogClass);
     } // retranslateUi
 

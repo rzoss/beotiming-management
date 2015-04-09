@@ -11,16 +11,16 @@
 #define UI_TABLEEDITDIALOG_H
 
 #include <QtCore/QVariant>
-#include <QtGui/QAction>
-#include <QtGui/QApplication>
-#include <QtGui/QButtonGroup>
-#include <QtGui/QDialog>
-#include <QtGui/QGridLayout>
-#include <QtGui/QGroupBox>
-#include <QtGui/QHBoxLayout>
-#include <QtGui/QPushButton>
-#include <QtGui/QSpacerItem>
-#include <QtGui/QTableView>
+#include <QAction>
+#include <QApplication>
+#include <QButtonGroup>
+#include <QDialog>
+#include <QGridLayout>
+#include <QGroupBox>
+#include <QHBoxLayout>
+#include <QPushButton>
+#include <QSpacerItem>
+#include <QTableView>
 
 QT_BEGIN_NAMESPACE
 
@@ -115,12 +115,12 @@ public:
 
     void retranslateUi(QDialog *TableEditDialogClass)
     {
-    TableEditDialogClass->setWindowTitle(QApplication::translate("TableEditDialogClass", "TableEditDialog", 0, QApplication::UnicodeUTF8));
-    groupBox->setTitle(QApplication::translate("TableEditDialogClass", "Kontaktdaten", 0, QApplication::UnicodeUTF8));
-    groupBox_2->setTitle(QApplication::translate("TableEditDialogClass", "Resultate", 0, QApplication::UnicodeUTF8));
-    BestaetigenButton->setText(QApplication::translate("TableEditDialogClass", "\303\204nderungen speichern", 0, QApplication::UnicodeUTF8));
-    loeschenButton->setText(QApplication::translate("TableEditDialogClass", "Eintrag l\303\266schen", 0, QApplication::UnicodeUTF8));
-    VerwerfenButton->setText(QApplication::translate("TableEditDialogClass", "Schliessen", 0, QApplication::UnicodeUTF8));
+    TableEditDialogClass->setWindowTitle(QApplication::translate("TableEditDialogClass", "TableEditDialog", 0));
+    groupBox->setTitle(QApplication::translate("TableEditDialogClass", "Kontaktdaten", 0));
+    groupBox_2->setTitle(QApplication::translate("TableEditDialogClass", "Resultate", 0));
+    BestaetigenButton->setText(QApplication::translate("TableEditDialogClass", "\303\204nderungen speichern", 0));
+    loeschenButton->setText(QApplication::translate("TableEditDialogClass", "Eintrag l\303\266schen", 0));
+    VerwerfenButton->setText(QApplication::translate("TableEditDialogClass", "Schliessen", 0));
     Q_UNUSED(TableEditDialogClass);
     } // retranslateUi
 

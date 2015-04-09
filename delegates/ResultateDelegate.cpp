@@ -31,6 +31,9 @@
 #include "ResultateDelegate.h"
 #include <QtSql>
 #include <QtGui>
+#include <QDateTime>
+#include <QTimeEdit>
+#include <QLineEdit>
 
 /*!
  * \brief Konstruktor

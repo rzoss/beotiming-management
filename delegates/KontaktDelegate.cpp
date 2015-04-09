@@ -32,6 +32,7 @@
 #include <QtSql>
 #include <QtGui>
 #include <QSpinBox>
+#include <QLineEdit>
 
 /*!
  * \brief Konstruktor

@@ -31,6 +31,9 @@
 #include <QtGui>
 #include <QtSql>
 #include "User.h"
+#include <QHeaderView>
+#include <QFileDialog>
+#include <QMessageBox>
 
 /*!
  * \brief Konstruktor
@@ -62,10 +65,10 @@ HardwareKonfiguration::HardwareKonfiguration(User* user, QWidget *parent)
 	ui.streckenTreeWidget->setColumnCount(4);
 	ui.streckenTreeWidget->setHeaderLabels(QStringList() << tr("Rennen") << tr("Startdatum")
 			<< tr("Enddatum") << tr("Streckennummer"));
-	ui.streckenTreeWidget->header()->setResizeMode(0, QHeaderView::ResizeToContents);
-	ui.streckenTreeWidget->header()->setResizeMode(1, QHeaderView::ResizeToContents);
-	ui.streckenTreeWidget->header()->setResizeMode(2, QHeaderView::ResizeToContents);
-	ui.streckenTreeWidget->header()->setResizeMode(3, QHeaderView::ResizeToContents);
+    ui.streckenTreeWidget->header()->setSectionResizeMode(0, QHeaderView::ResizeToContents);
+    ui.streckenTreeWidget->header()->setSectionResizeMode(1, QHeaderView::ResizeToContents);
+    ui.streckenTreeWidget->header()->setSectionResizeMode(2, QHeaderView::ResizeToContents);
+    ui.streckenTreeWidget->header()->setSectionResizeMode(3, QHeaderView::ResizeToContents);
 	
 	// ermögliche mehrfachauswahl
 	ui.streckenTreeWidget->setSelectionMode(QAbstractItemView::MultiSelection);

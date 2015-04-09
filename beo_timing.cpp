@@ -46,6 +46,11 @@
 #include "RFID_Reader/rfidThread.h"
 #include <QtSql>
 #include <QtGui>
+#include <QMessageBox>
+#include <QSplashScreen>
+#include <QToolBar>
+#include <QHeaderView>
+#include <QFileDialog>
 
 struct TAG_SETTINGS tag_settings = {0,0};
 
@@ -97,17 +102,18 @@ BEO_Timing::BEO_Timing(QSplashScreen *splash, QApplication *a, QWidget *parent)
 	pMySQL_thread->start();
 
 	// Versionscheck durchführen
-	newVersion();
-	if(version){
-		QMessageBox::critical(0,"Neue Softwareversion","Auf dem Server ist eine neue "
-				"Softwareversion verfügbar. Die vorliegende Software kann aus Sicherheitsgründen nicht "
-				"mehr verwendet werden. Klicken Sie auf \"<a href=\"http://www.rrc-thun.ch/time/beo-timing.msi\">download</a>\" "
-				"um die neue Version herunterzuladen. Mit \"OK\" wird das Programm beendet.");
-		// Applikation beenden
-		QTimer::singleShot(500, this, SLOT(close()));
-		QTimer::singleShot(1000, a, SLOT(quit()));
-		return;
-	}
+    // TODO: Version Check wieder einführen
+//	newVersion();
+//	if(version){
+//		QMessageBox::critical(0,"Neue Softwareversion","Auf dem Server ist eine neue "
+//				"Softwareversion verfügbar. Die vorliegende Software kann aus Sicherheitsgründen nicht "
+//				"mehr verwendet werden. Klicken Sie auf \"<a href=\"http://www.rrc-thun.ch/time/beo-timing.msi\">download</a>\" "
+//				"um die neue Version herunterzuladen. Mit \"OK\" wird das Programm beendet.");
+//		// Applikation beenden
+//		QTimer::singleShot(500, this, SLOT(close()));
+//		QTimer::singleShot(1000, a, SLOT(quit()));
+//		return;
+//	}
 
 
 	// Titel des Fensters setzen
@@ -253,10 +259,10 @@ void BEO_Timing::Tree_Settings(){
 	raceTree->setHeaderLabels(QStringList() << tr("Rennen") << tr("Startdatum")
 			<< tr("Enddatum") << tr("Streckennummer"));
 	// Spaltenbreite auf automatisch stellen
-	raceTree->header()->setResizeMode(0, QHeaderView::ResizeToContents);
-	raceTree->header()->setResizeMode(1, QHeaderView::ResizeToContents);
-	raceTree->header()->setResizeMode(2, QHeaderView::ResizeToContents);
-	raceTree->header()->setResizeMode(3, QHeaderView::ResizeToContents);
+    raceTree->header()->setSectionResizeMode(0, QHeaderView::ResizeToContents);
+    raceTree->header()->setSectionResizeMode(1, QHeaderView::ResizeToContents);
+    raceTree->header()->setSectionResizeMode(2, QHeaderView::ResizeToContents);
+    raceTree->header()->setSectionResizeMode(3, QHeaderView::ResizeToContents);
 	// Signal "Auswahländerung" mit Slot "Baum geändedert" verbinden
 	connect(raceTree,SIGNAL(itemSelectionChanged()),this,SLOT(Tree_Changed()));
 }

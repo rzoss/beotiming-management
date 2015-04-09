@@ -32,6 +32,11 @@
 #include <QtGui>
 #include "User.h"
 #include "md5/md5.h"
+#include <QHeaderView>
+#include <QLineEdit>
+#include <QMessageBox>
+#include <QInputDialog>
+
 /*!
  * \brief Slot für die Reaktion auf Änderungen der CheckBox
  * \param user Pointer auf den angemeldeten Benutzer
@@ -59,10 +64,10 @@ RechteAnpassen::RechteAnpassen(User* user, QWidget *parent)
 	ui.streckenTreeWidget->setColumnCount(4);
 	ui.streckenTreeWidget->setHeaderLabels(QStringList() << tr("Rennen") << tr("Startdatum")
 			<< tr("Enddatum") << tr("Streckennummer"));
-	ui.streckenTreeWidget->header()->setResizeMode(0, QHeaderView::ResizeToContents);
-	ui.streckenTreeWidget->header()->setResizeMode(1, QHeaderView::ResizeToContents);
-	ui.streckenTreeWidget->header()->setResizeMode(2, QHeaderView::ResizeToContents);
-	ui.streckenTreeWidget->header()->setResizeMode(3, QHeaderView::ResizeToContents);
+    ui.streckenTreeWidget->header()->setSectionResizeMode(0, QHeaderView::ResizeToContents);
+    ui.streckenTreeWidget->header()->setSectionResizeMode(1, QHeaderView::ResizeToContents);
+    ui.streckenTreeWidget->header()->setSectionResizeMode(2, QHeaderView::ResizeToContents);
+    ui.streckenTreeWidget->header()->setSectionResizeMode(3, QHeaderView::ResizeToContents);
 	
 	// ermögliche mehrfachauswahl
 	ui.streckenTreeWidget->setSelectionMode(QAbstractItemView::MultiSelection);
@@ -156,7 +161,7 @@ void RechteAnpassen::on_okButton_released(){
 		                                          QLineEdit::Password);
 	// überprüfen, falls eingegeben
 	if(!pwd.isEmpty()){
-		md5_buffer(pwd.toAscii().data(),pwd.length(),md5_password_char);
+        md5_buffer(pwd.toLatin1().data(),pwd.length(),md5_password_char);
 		pwd = QByteArray::fromRawData(md5_password_char,16).toHex(); 
 		if(pUser->password.compare(pwd)!=0){
 			// Zurück zum Eingabe Dialog

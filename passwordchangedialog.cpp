@@ -33,6 +33,7 @@
 #include <QtGui>
 #include "md5/md5.h"
 #include <math.h>
+#include <QMessageBox>
 
 /*!
  * \brief Konstruktor
@@ -65,7 +66,7 @@ void PasswordChangeDialog::on_okButton_released(){
 	// MD5-Hash aus altem Password erstellen 
 	QString oldPassword = ui.oldLineEdit->text();
 	char md5_password_char [17];
-	md5_buffer(oldPassword.toAscii().data(),oldPassword.length(),md5_password_char);
+    md5_buffer(oldPassword.toLatin1().data(),oldPassword.length(),md5_password_char);
 	oldPassword = QByteArray::fromRawData(md5_password_char,16).toHex(); 
 	// Altes Passwort vergleichen
 	if(pUser->password.compare(oldPassword)!=0){
@@ -79,7 +80,7 @@ void PasswordChangeDialog::on_okButton_released(){
 	}
 	// MD5-Hash aus neuem Passwort erstellen
 	QString newPassword = ui.newLineEdit->text();
-	md5_buffer(newPassword.toAscii().data(),newPassword.length(),md5_password_char);
+    md5_buffer(newPassword.toLatin1().data(),newPassword.length(),md5_password_char);
 	newPassword = QByteArray::fromRawData(md5_password_char,16).toHex(); 
 	// Passwort in der Datenbank akualisieren
 	QSqlQuery query;

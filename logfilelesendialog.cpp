@@ -31,6 +31,8 @@
 #include "logfilelesendialog.h"
 #include <QtGui>
 #include <QtSql>
+#include <QFileDialog>
+#include <QMessageBox>
 
 /*!
  * \brief Konstruktor

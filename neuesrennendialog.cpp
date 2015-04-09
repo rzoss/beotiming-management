@@ -32,6 +32,7 @@
 #include <QtSql>
 #include <QtGui>
 #include "beo_timing.h"
+#include <QMessageBox>
 /*!
  * \brief Konstruktor
  */

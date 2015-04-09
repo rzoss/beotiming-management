@@ -35,6 +35,7 @@
 #include "User.h"
 #include <QtGui>
 #include "md5/md5.h"
+#include <QMessageBox>
 
 /*!
  * \brief Konstruktor
@@ -80,7 +81,7 @@ void LogonDialog::on_LogonButton_released() {
 	char md5_password_char [17];
 	md5_t md5_struct;
 	md5_init(&md5_struct);
-	md5_buffer(password.toAscii().data(),password.length(),md5_password_char);
+    md5_buffer(password.toLatin1().data(),password.length(),md5_password_char);
 	QString md5_password = QByteArray::fromRawData(md5_password_char,16).toHex(); 
 	password=md5_password; 
 	qDebug() << md5_password;

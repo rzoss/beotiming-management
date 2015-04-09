@@ -33,6 +33,9 @@
 #include <QtGui>
 #include "User.h"
 #include "md5/md5.h"
+#include <QHeaderView>
+#include <QMessageBox>
+#include <QInputDialog>
 
 /*!
  * \brief Konstruktor
@@ -90,10 +93,10 @@ NeuerUserDialog::NeuerUserDialog(User* user, QWidget *parent)
 	ui.streckenTreeWidget->setColumnCount(4);
 	ui.streckenTreeWidget->setHeaderLabels(QStringList() << tr("Rennen") << tr("Startdatum")
 			<< tr("Enddatum") << tr("Streckennummer"));
-	ui.streckenTreeWidget->header()->setResizeMode(0, QHeaderView::ResizeToContents);
-	ui.streckenTreeWidget->header()->setResizeMode(1, QHeaderView::ResizeToContents);
-	ui.streckenTreeWidget->header()->setResizeMode(2, QHeaderView::ResizeToContents);
-	ui.streckenTreeWidget->header()->setResizeMode(3, QHeaderView::ResizeToContents);
+    ui.streckenTreeWidget->header()->setSectionResizeMode(0, QHeaderView::ResizeToContents);
+    ui.streckenTreeWidget->header()->setSectionResizeMode(1, QHeaderView::ResizeToContents);
+    ui.streckenTreeWidget->header()->setSectionResizeMode(2, QHeaderView::ResizeToContents);
+    ui.streckenTreeWidget->header()->setSectionResizeMode(3, QHeaderView::ResizeToContents);
 	
 	// ermögliche mehrfachauswahl
 	ui.streckenTreeWidget->setSelectionMode(QAbstractItemView::MultiSelection);
@@ -195,7 +198,7 @@ void NeuerUserDialog::on_okButton_released(){
 	                                          QLineEdit::Password);
 	// Passwortabfrage zur Identifikation - MD5-Hash
 	if(!pwd.isEmpty()){
-		md5_buffer(pwd.toAscii().data(),pwd.length(),md5_password_char);
+        md5_buffer(pwd.toLatin1().data(),pwd.length(),md5_password_char);
 		pwd = QByteArray::fromRawData(md5_password_char,16).toHex(); 
 		if(pUser->password.compare(pwd)!=0){
 			// Zurück zum Eingabe Dialog
@@ -218,7 +221,7 @@ void NeuerUserDialog::on_okButton_released(){
 	
 	// MD5-hash vom Passwort des Users erstellen
 	QString userpwd = ui.pwdLineEdit->text();
-	md5_buffer(userpwd.toAscii().data(),userpwd.length(),md5_password_char);
+    md5_buffer(userpwd.toLatin1().data(),userpwd.length(),md5_password_char);
 	userpwd = QByteArray::fromRawData(md5_password_char,16).toHex(); 
 	
 	// Eintragen der neuen Daten
