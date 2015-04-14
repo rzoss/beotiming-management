@@ -33,6 +33,7 @@
 
 #include <windows.h>
 #include <QtGui>
+#include <QLibrary>
 #include "rfidinputdialog.h"
 #include "../beo_timing.h"
 
@@ -61,7 +62,30 @@
 
 enum{NO_LED,RED_LED,GREEN_LED,YELLOW_LED};
 
-
+// Get DLL Version
+typedef int (*fp_lib_ver)(unsigned int*);
+// Connect
+typedef int (*fp_rf_init_com)(int, long);
+// Disconnect
+typedef int (*fp_rf_ClosePort)(void);
+// Get Device Type
+typedef int (*fp_rf_get_model)(unsigned short, unsigned char*, unsigned char*);
+// Read Device ID
+typedef int (*fp_rf_get_device_number)(unsigned short*);
+// Manage LED
+typedef int (*fp_rf_light)(unsigned short, unsigned char);
+// Beep
+typedef int (*fp_rf_beep)(unsigned short, unsigned char);
+// ReqA
+typedef int (*fp_rf_request)(unsigned short, unsigned char, unsigned short*);
+// select ultralight
+typedef int (*fp_rf_ul_select)(unsigned short, unsigned char*, unsigned char*);
+// MifareOne read
+typedef int (*fp_rf_M1_read)(unsigned short, unsigned char, unsigned char*, unsigned char*);
+// UltraLight Write
+typedef int (*fp_rf_ul_write)(unsigned short, unsigned char, unsigned char*);
+// Mifre card anticollision
+typedef int (*fp_rf_anticoll)(unsigned short, unsigned char, unsigned char*, unsigned char*);
 
 /**
  * @brief Struktur fuer die Fahrzeit (Groesse 4 Byte)
@@ -104,16 +128,28 @@ public:
 
 private:
 	enum tag_action {Nichts, Neu_persoenlich, Neu_unpersoenlich, Res_persoenlich, Res_unpersoenlich};
-	void myStrcat (TCHAR * op, int size);
-	void myCout (TCHAR * op, int size);
-	void init_RFID();
-	bool connected;
-	unsigned short icdev;
+    void init_RFID();
+    bool m_bConnected;
+    unsigned short m_icdev;
 	QString serial;
 	QString oldSerial;
 	qint16 strecke;
 	struct MYDATE startdate, enddate;
 	struct MYTIME racetime;
+    QLibrary* MasterRD;
+    fp_lib_ver lib_ver;
+    fp_rf_init_com rf_init_com;
+    fp_rf_ClosePort rf_ClosePort;
+    fp_rf_get_model rf_get_model;
+    fp_rf_get_device_number rf_get_device_number;
+    fp_rf_light rf_light;
+    fp_rf_beep rf_beep;
+    fp_rf_request rf_request;
+    fp_rf_ul_select rf_ul_select;
+    fp_rf_M1_read rf_M1_read;
+    fp_rf_ul_write rf_ul_write;
+    fp_rf_anticoll rf_anticoll;
+
 	friend class RFIDInputDialog;
 };
 

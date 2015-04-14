@@ -3,7 +3,8 @@ TARGET = BEO_Timing
 QT += core \
     gui \
     sql \
-    widgets
+    widgets \
+    testlib
 HEADERS += Database.h \
     RFID_Reader/MasterRD.h \
     RFID_Reader/RFID_CR500.h \

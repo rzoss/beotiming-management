@@ -35,6 +35,8 @@
 #include <QtGui>
 #include <QtSql>
 #include <QMessageBox>
+#include <QLibrary>
+#include <QtTest/QtTest>
 #include "RFID_CR500.h"
 
 
@@ -45,16 +47,22 @@ RFID_CR500::RFID_CR500(struct TAG_SETTINGS * tag_settings)
 {
 	settings=tag_settings;
 	init_RFID();
-	connected=false;
+    m_bConnected=false;
+    m_icdev = 0;
 	// auf allen 8 COM-Port versuchen zu Verbinden
-	while(!connected){
+    while(!m_bConnected){
 		int state = 1;
-		int i = 1;
-		while(state != 0 && i<8){
-			state = rf_init_com(i,19200);
+        int i = 1;
+        while(state != 0 && i<8)
+        {
+            rf_init_com = (fp_rf_init_com) MasterRD->resolve("rf_init_com");
+            qDebug() << "rf_init_com before " + QString::number(i) + " address " + QString::number((int)rf_init_com);
+            state = rf_init_com(i,19200);
+            qDebug() << "rf_init_com after: " + QString::number(state);
 			i++;
 		}
-		if(state != LIB_SUCCESS){
+        if(state != LIB_SUCCESS)
+        {
 			rf_ClosePort();
 			qDebug() << "Nicht im Bereich von COM1...8!" << endl;
 			QMessageBox msgBox;
@@ -70,23 +78,29 @@ RFID_CR500::RFID_CR500(struct TAG_SETTINGS * tag_settings)
 			msgBox.setWindowTitle(QObject::tr("Verbindungsfehler (RFID-Leser)"));
 			msgBox.setIcon(QMessageBox::Warning);
 			msgBox.exec();
-			if (msgBox.clickedButton()==abbrechenButton) {
+            if (msgBox.clickedButton()==abbrechenButton)
+            {
 				break;
 			}
-		}else{
-			connected=true;
+        }
+        else
+        {
+            qDebug() << "connected";
+            m_bConnected=true;
 		}
 	}
+    qDebug() << "get device number";
 	// Devicenummer abrufen
-	rf_get_device_number(&icdev);
-	qDebug() << "Nummer des Lesers: " + icdev;
-	// Piepsem mit dem Leser
-	rf_beep(icdev,10);
-	// Licht auf Grün
-	rf_light(icdev,GREEN_LED);
-	// Statusleiste aktualisieren
-	BEO_Timing::updateRFID("CR500");
-	BEO_Timing::updateMessage("RFID-Leser verbunden");
+    rf_get_device_number(&m_icdev);
+    qDebug() << "Nummer des Lesers: " + QString::number(m_icdev);
+    // Piepsen mit dem Leser
+    rf_beep(m_icdev,10);
+    // Licht auf Grün
+    rf_light(m_icdev,GREEN_LED);
+    // Statusleiste aktualisieren
+    BEO_Timing::updateRFID("CR500");
+    BEO_Timing::updateMessage("RFID-Leser verbunden");
+    qDebug() << "end 4";
 }
 /*!
  * \brief Destruktor
@@ -96,166 +110,78 @@ RFID_CR500::~RFID_CR500()
 	rf_ClosePort();
 }
 /*!
- * \brief Strcat für UTF-8
- */
-void RFID_CR500::myStrcat (TCHAR * op, int size) {
-	int i;
-	for (i=size-1;i>=0;i--) {
-		if (op[i]== (TCHAR)'\\')
-			break;
-	}
-	op[i++]=(TCHAR)'\\';
-	op[i++]=(TCHAR)'M';
-	op[i++]=(TCHAR)'a';
-	op[i++]=(TCHAR)'s';
-	op[i++]=(TCHAR)'t';
-	op[i++]=(TCHAR)'e';
-	op[i++]=(TCHAR)'r';
-	op[i++]=(TCHAR)'R';
-	op[i++]=(TCHAR)'D';
-	op[i++]=(TCHAR)'.';
-	op[i++]=(TCHAR)'d';
-	op[i++]=(TCHAR)'l';
-	op[i++]=(TCHAR)'l';
-	op[i++]=(TCHAR)'\0';
-}
-/*!
- * \brief Ausgabe für UTF-8 String
- */
-void RFID_CR500::myCout (TCHAR * op, int size){
-	char out[1000];
-	for(int i=0; i<size;i++){
-		out[i]=(char)op[i];
-		if(op[i]==0)
-			break;
-	}
-	qDebug() << QString::fromWCharArray(op);
-	qDebug() << out << endl;
-}
-/*!
  * \brief Initialisieren des RFID-Lesers
  */
 void RFID_CR500::init_RFID(){
-	HINSTANCE m_hInstMaster;
-	TCHAR szBuf[1000];
-	GetModuleFileName(NULL, (LPTSTR)szBuf, 1000);
-	qDebug() << sizeof(szBuf) << endl;
+    MasterRD = new QLibrary();
+    MasterRD->setFileName("MasterRD");
+    MasterRD->setLoadHints(QLibrary::ResolveAllSymbolsHint | QLibrary::ExportExternalSymbolsHint);
+    MasterRD->load();
+    lib_ver = (fp_lib_ver) MasterRD->resolve("lib_ver");
+    rf_init_com = (fp_rf_init_com) MasterRD->resolve("rf_init_com");
+    rf_ClosePort = (fp_rf_ClosePort) MasterRD->resolve("rf_ClosePort");
+    rf_get_model = (fp_rf_get_model) MasterRD->resolve("rf_get_model");
+    rf_get_device_number = (fp_rf_get_device_number) MasterRD->resolve("rf_get_device_number");
+    rf_light = (fp_rf_light) MasterRD->resolve("rf_light");
+    rf_beep = (fp_rf_beep) MasterRD->resolve("rf_beep");
+    rf_request = (fp_rf_request) MasterRD->resolve("rf_request");
+    rf_ul_select = (fp_rf_ul_select) MasterRD->resolve("rf_ul_select");
+    rf_M1_read = (fp_rf_M1_read) MasterRD->resolve("rf_M1_read");
+    rf_ul_write = (fp_rf_ul_write) MasterRD->resolve("rf_ul_write");
+    rf_anticoll = (fp_rf_anticoll) MasterRD->resolve("rf_anticoll");
 
-	myStrcat(szBuf, sizeof(szBuf)/sizeof(TCHAR));
-	myCout(szBuf, sizeof(szBuf)/sizeof(TCHAR));
-	// Laden der "MasterRD.dll" über die Windows-API
-	m_hInstMaster = LoadLibrary((LPTSTR)szBuf);
-	// Bereitstellen der Adressen für die Funktionen in der DLL
-	if(m_hInstMaster){
-        /*  System Functions */
-		(FARPROC&)lib_ver               = GetProcAddress(m_hInstMaster,("lib_ver"));
-		(FARPROC&)rf_init_com           = GetProcAddress(m_hInstMaster,("rf_init_com"));
-		(FARPROC&)rf_init_device_number = GetProcAddress(m_hInstMaster,("rf_init_device_number"));
-		(FARPROC&)rf_get_device_number  = GetProcAddress(m_hInstMaster,("rf_get_device_number"));
-		(FARPROC&)rf_get_model          = GetProcAddress(m_hInstMaster,("rf_get_model"));
-		(FARPROC&)rf_beep               = GetProcAddress(m_hInstMaster,("rf_beep"));
-		(FARPROC&)rf_init_type          = GetProcAddress(m_hInstMaster,("rf_init_type"));
-		(FARPROC&)rf_antenna_sta        = GetProcAddress(m_hInstMaster,("rf_antenna_sta"));
-		(FARPROC&)rf_light              = GetProcAddress(m_hInstMaster,("rf_light"));
-		(FARPROC&)rf_ClosePort          = GetProcAddress(m_hInstMaster,("rf_ClosePort"));
-		(FARPROC&)rf_get_snr            = GetProcAddress(m_hInstMaster,("rf_get_snr"));
-		(FARPROC&)rf_init_sam           = GetProcAddress(m_hInstMaster,("rf_init_sam"));
-		(FARPROC&)rf_sam_rst            = GetProcAddress(m_hInstMaster,("rf_sam_rst"));
-		(FARPROC&)rf_sam_cos            = GetProcAddress(m_hInstMaster,("rf_sam_cos"));
-		(FARPROC&)rf_GetErrorMessage    = GetProcAddress(m_hInstMaster,("rf_GetErrorMessage"));
-		/* DES Functions */
-		(FARPROC&)des_encrypt           = GetProcAddress(m_hInstMaster,("des_encrypt"));
-		(FARPROC&)des_decrypt           = GetProcAddress(m_hInstMaster,("des_decrypt"));
-		/* ISO14443A FUNCTION -  Mifare UltraLight */
-		(FARPROC&)rf_request            = GetProcAddress(m_hInstMaster,("rf_request"));
-		(FARPROC&)rf_ul_select          = GetProcAddress(m_hInstMaster,("rf_ul_select"));
-		(FARPROC&)rf_M1_read            = GetProcAddress(m_hInstMaster,("rf_M1_read"));
-		(FARPROC&)rf_ul_write           = GetProcAddress(m_hInstMaster,("rf_ul_write"));
-		(FARPROC&)rf_halt               = GetProcAddress(m_hInstMaster,("rf_halt"));
-		/* ISO14443A FUNCTION -  Mifare Std*/
-		(FARPROC&)rf_anticoll           = GetProcAddress(m_hInstMaster,("rf_anticoll"));
-		(FARPROC&)rf_select             = GetProcAddress(m_hInstMaster,("rf_select"));
-		(FARPROC&)rf_download_key       = GetProcAddress(m_hInstMaster,("rf_download_key"));
-		(FARPROC&)rf_M1_authentication1 = GetProcAddress(m_hInstMaster,("rf_M1_authentication1"));
-		(FARPROC&)rf_M1_authentication2 = GetProcAddress(m_hInstMaster,("rf_M1_authentication2"));
-		(FARPROC&)rf_M1_write           = GetProcAddress(m_hInstMaster,("rf_M1_write"));
-		(FARPROC&)rf_M1_initval         = GetProcAddress(m_hInstMaster,("rf_M1_initval"));
-		(FARPROC&)rf_M1_readval         = GetProcAddress(m_hInstMaster,("rf_M1_readval"));
-		(FARPROC&)rf_M1_decrement       = GetProcAddress(m_hInstMaster,("rf_M1_decrement"));
-		(FARPROC&)rf_M1_increment       = GetProcAddress(m_hInstMaster,("rf_M1_increment"));
-		(FARPROC&)rf_M1_restore         = GetProcAddress(m_hInstMaster,("rf_M1_restore"));
-		(FARPROC&)rf_M1_transfer        = GetProcAddress(m_hInstMaster,("rf_M1_transfer"));
-		(FARPROC&)rf_typea_rst          = GetProcAddress(m_hInstMaster,("rf_typea_rst"));
-		(FARPROC&)rf_cos_command        = GetProcAddress(m_hInstMaster,("rf_cos_command"));
-		(FARPROC&)rf_atqb               = GetProcAddress(m_hInstMaster,("rf_atqb"));
-		(FARPROC&)rf_attrib             = GetProcAddress(m_hInstMaster,("rf_attrib"));
-		(FARPROC&)rf_typeb_cos          = GetProcAddress(m_hInstMaster,("rf_typeb_cos"));
-		(FARPROC&)rf_hltb               = GetProcAddress(m_hInstMaster,("rf_hltb"));
-		(FARPROC&)rf_at020_check        = GetProcAddress(m_hInstMaster,("rf_at020_check"));
-		(FARPROC&)rf_at020_read         = GetProcAddress(m_hInstMaster,("rf_at020_read"));
-		(FARPROC&)rf_at020_write        = GetProcAddress(m_hInstMaster,("rf_at020_write"));
-		(FARPROC&)rf_at020_lock         = GetProcAddress(m_hInstMaster,("rf_at020_lock"));
-		(FARPROC&)rf_at020_count        = GetProcAddress(m_hInstMaster,("rf_at020_count"));
-		(FARPROC&)rf_at020_deselect     = GetProcAddress(m_hInstMaster,("rf_at020_deselect"));
-		// Testen der Adressen
-		if( /* System Functions */
-		    NULL == lib_ver               ||
-			NULL == rf_init_com           ||
-			NULL == rf_init_device_number ||
-			NULL == rf_get_device_number  ||
-			NULL == rf_get_model		  ||
-			NULL == rf_beep				  ||
-			NULL == rf_antenna_sta        ||
-			NULL == rf_light              ||
-			NULL == rf_ClosePort          ||
-			NULL == rf_get_snr            ||
-			NULL == rf_init_type          ||
-			NULL == rf_init_sam           ||
-			NULL == rf_sam_rst            ||
-			NULL == rf_sam_cos            ||
-			NULL == rf_GetErrorMessage	  ||
-			/* DES Functions */
-			NULL == des_encrypt           ||
-			NULL == des_decrypt           ||
-			/* ISO14443A FUNCTION -  Mifare UltraLight */
-			NULL == rf_request            ||
-			NULL == rf_ul_select          ||
-			NULL == rf_M1_read            ||
-			NULL == rf_ul_write           ||
-			NULL == rf_halt               ||
-			/* ISO14443A FUNCTION -  Mifare Std */
-			NULL == rf_anticoll           ||
-			NULL == rf_select             ||
-			NULL == rf_download_key       ||
-			NULL == rf_M1_authentication1 ||
-			NULL == rf_M1_authentication2 ||
-			NULL == rf_M1_write           ||
-			NULL == rf_M1_initval         ||
-			NULL == rf_M1_readval         ||
-			NULL == rf_M1_decrement       ||
-			NULL == rf_M1_increment       ||
-			NULL == rf_M1_restore         ||
-			NULL == rf_M1_transfer        ||
-			NULL == rf_typea_rst          ||
-			NULL == rf_cos_command        ||
-			NULL == rf_atqb               ||
-			NULL == rf_attrib             ||
-			NULL == rf_typeb_cos          ||
-			NULL == rf_hltb               ||
-			NULL == rf_at020_check        ||
-			NULL == rf_at020_read         ||
-			NULL == rf_at020_write        ||
-			NULL == rf_at020_lock         ||
-			NULL == rf_at020_count        ||
-			NULL == rf_at020_deselect){
-			qDebug() << "Load MasterRD.dll failed !";
-		}
-	}
-	else{
-		qDebug() << "Load MasterRD.dll failed !";
+    if(NULL != lib_ver              ||
+       NULL != rf_init_com          ||
+       NULL != rf_ClosePort         ||
+       NULL != rf_get_model         ||
+       NULL != rf_get_device_number ||
+       NULL != rf_light             ||
+       NULL != rf_beep              ||
+       NULL != rf_request           ||
+       NULL != rf_ul_select         ||
+       NULL != rf_M1_read           ||
+       NULL != rf_ul_write          ||
+       NULL != rf_anticoll)
+    {
+        unsigned int ver = 0;
+        unsigned int state = 0;
+        lib_ver(&ver);
 
-	}
+        lib_ver(&ver);
+        lib_ver(&ver);
+        lib_ver(&ver);
+        lib_ver(&ver);
+        lib_ver(&ver);
+        lib_ver(&ver);
+        lib_ver(&ver);
+        lib_ver(&ver);
+        lib_ver(&ver);
+        lib_ver(&ver);
+        qDebug() << "1";
+        state = rf_init_com(1,19200);
+        qDebug() << "2";
+        state = rf_init_com(2,19200);
+        qDebug() << "3";
+        state = rf_init_com(3,19200);
+        qDebug() << "4";
+        state = rf_init_com(4,19200);
+        qDebug() << "5";
+        state = rf_init_com(5,19200);
+        qDebug() << "6";
+        state = rf_init_com(6,19200);
+        qDebug() << "7";
+        state = rf_init_com(7,19200);
+        qDebug() << "8";
+        state = rf_init_com(8,19200);
+
+        qDebug() << "Load MasterRD.dll with QLibrary successfull. Version: " << QString::number(ver);
+    }
+    else
+    {
+        qDebug() << "Load MasterRD.dll with QLibrary failed !";
+    }
 }
+
 /*!
  * \brief Karte im Feld suchen
  */
@@ -267,24 +193,24 @@ bool RFID_CR500::findCard(){
 	unsigned char Snr[7];
 	unsigned char len;
 
-	if(!connected) // keine Verbindung
+    if(!m_bConnected) // keine Verbindung
 		return false;
 
-	status = rf_request(icdev,mode,&TagType);//search all card
+    status = rf_request(m_icdev,mode,&TagType);//search all card
 	if(status){//error
-		rf_light(icdev,GREEN_LED);
+        rf_light(m_icdev,GREEN_LED);
 		return false;
 	}
-	status = rf_anticoll(icdev,bcnt,Snr,&len);//return serial number of card
+    status = rf_anticoll(m_icdev,bcnt,Snr,&len);//return serial number of card
 	if(status || len != 4)  //error
 		return false;
 
 
-	status = rf_ul_select(icdev,Snr,&len);//lock ISO14443-3 TYPE_A
+    status = rf_ul_select(m_icdev,Snr,&len);//lock ISO14443-3 TYPE_A
 	if(status) //error
 		return false;
-	rf_light(icdev,NO_LED);
-	rf_light(icdev,YELLOW_LED);
+    rf_light(m_icdev,NO_LED);
+    rf_light(m_icdev,YELLOW_LED);
 	oldSerial = serial;
 	serial = QByteArray::fromRawData((const char*)Snr,len).toHex();
 	BEO_Timing::updateMessage("RFID-Karte gefunden (" + serial + ")");
@@ -305,7 +231,7 @@ bool RFID_CR500::readData() {
 	unsigned char pData[64];
 	unsigned char cLen;
 
-	if (!connected) // keine Verbindung
+    if (!m_bConnected) // keine Verbindung
 		return false;
 
 	if(oldSerial.compare(serial)==0){
@@ -313,7 +239,7 @@ bool RFID_CR500::readData() {
 		return false;
 	}
 	// Lesen der Statusbits
-	state = rf_M1_read(icdev, RFID_ADR_STATUS, pData, &cLen);
+    state = rf_M1_read(m_icdev, RFID_ADR_STATUS, pData, &cLen);
 	if (state || cLen != 16) {
 		QMessageBox::critical(
 				0,
@@ -329,10 +255,10 @@ bool RFID_CR500::readData() {
 		memset(pData,0,16); // 16 Datenbytes auf '0x00' setzen
 		// Persönlich Flag setzen
 		*pData |= TAG_STATUS_REGISTERED;
-		state = rf_ul_write(icdev,RFID_ADR_STATUS,pData); // Page 4 mit '0' + Personal überschreiben
+        state = rf_ul_write(m_icdev,RFID_ADR_STATUS,pData); // Page 4 mit '0' + Personal überschreiben
 		*pData &= ~TAG_STATUS_REGISTERED;
 		for(int i=1; i<9;i++){
-			state = rf_ul_write(icdev,RFID_ADR_STATUS+i,pData); // Page 5-11 mit '0' überschreiben
+            state = rf_ul_write(m_icdev,RFID_ADR_STATUS+i,pData); // Page 5-11 mit '0' überschreiben
 		}
 		BEO_Timing::updateMessage("Page 4 - 11 der Karte zurückgesetzt.");
 
@@ -348,7 +274,7 @@ bool RFID_CR500::readData() {
 		// hier muss das Statusbyte gelöscht werden!
 		memset(pData,0,16); // 16 Datenbytes auf '0x00' setzen
 		for(int i=0; i<9;i++){
-			state = rf_ul_write(icdev,RFID_ADR_STATUS+i,pData); // Page 4-11 mit '0' überschreiben
+            state = rf_ul_write(m_icdev,RFID_ADR_STATUS+i,pData); // Page 4-11 mit '0' überschreiben
 		}
 
 		BEO_Timing::updateMessage("Page 4 - 11 der Karte zurückgesetzt.");
@@ -409,7 +335,7 @@ bool RFID_CR500::readData() {
 		memset(pData,0,4); // 4 Datenbytes auf '0x00' setzen
 		// Persönlich Flag setzen, da die Karte als erstes Persönlich ist, da sie noch keine Etikette trägt.
 		*pData |= TAG_STATUS_REGISTERED;
-		state = rf_ul_write(icdev,RFID_ADR_STATUS,pData); // Page 4 mit '0' überschreiben
+        state = rf_ul_write(m_icdev,RFID_ADR_STATUS,pData); // Page 4 mit '0' überschreiben
 		BEO_Timing::updateMessage("Page 4 einer neuen Karte gelöscht.");
 
 		QMessageBox msgBox;
@@ -427,7 +353,7 @@ bool RFID_CR500::readData() {
 			// hier müssen die Statusbyte gelöscht werden!
 			memset(pData,0,4); // 4 Datenbytes auf '0x00' setzen
 			// Persönlich Flag NICHT setzen, da die Karte eine Etikette trägt.
-			state = rf_ul_write(icdev,RFID_ADR_STATUS,pData); // Page 4 mit '0' überschreiben
+            state = rf_ul_write(m_icdev,RFID_ADR_STATUS,pData); // Page 4 mit '0' überschreiben
 			BEO_Timing::updateMessage("Page 4 einer neuen Karte gelöscht.");
 
 			QMessageBox msgBox;
@@ -448,7 +374,7 @@ bool RFID_CR500::readData() {
 	}
 
 	// Weitere Daten aus der Karte lesen, falls die Statusbits dies zulassen
-	state = rf_M1_read(icdev, RFID_ADR_ENDTIME, pData+16, &cLen);
+    state = rf_M1_read(m_icdev, RFID_ADR_ENDTIME, pData+16, &cLen);
 	if (state || cLen != 16) {
 		QMessageBox::critical(
 				0,
@@ -473,7 +399,7 @@ bool RFID_CR500::clearValidFlag(){
 	unsigned char pData[64];
 	unsigned char cLen;
 
-	if (!connected) // keine Verbindung
+    if (!m_bConnected) // keine Verbindung
 		return false;
 
 	if(!findCard()){// Keine Karte gefunden
@@ -487,21 +413,21 @@ bool RFID_CR500::clearValidFlag(){
 		return false;
 	}
 	// Andere Statusbits lesen
-	state = rf_M1_read(icdev, RFID_ADR_STATUS, pData, &cLen);
+    state = rf_M1_read(m_icdev, RFID_ADR_STATUS, pData, &cLen);
 	if (state || cLen != 16) {
 		return false;
 	}
 	// Gewählte löschen und alle neu schreiben
 	*pData &= ~(TAG_STATUS_STRECKENVALID | TAG_STATUS_STARTVALID | TAG_STATUS_ENDVALID); // erstes Byte löschen (Valid Data Flag)
-	state = rf_ul_write(icdev,RFID_ADR_STATUS,pData);
-	rf_light(icdev,GREEN_LED);
+    state = rf_ul_write(m_icdev,RFID_ADR_STATUS,pData);
+    rf_light(m_icdev,GREEN_LED);
 	return true;
 }
 /*!
  * \brief Stellt die LED des Lesers auf Grün
  */
 void RFID_CR500::greenLED(){
-	rf_light(icdev,GREEN_LED);
+    rf_light(m_icdev,GREEN_LED);
 }
 
 /*!
@@ -511,12 +437,12 @@ bool RFID_CR500::isConnected(){
 	unsigned char version[100];
 	unsigned char len;
 	char error;
-	error = rf_get_model(icdev,version, &len);
+    error = rf_get_model(m_icdev,version, &len);
 	if(error)
-		connected = false;
+        m_bConnected = false;
 	else
-		connected = true;
-	return connected;
+        m_bConnected = true;
+    return m_bConnected;
 }
 
 
