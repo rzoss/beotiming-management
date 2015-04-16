@@ -1,3 +1,30 @@
+TODO:
+- Regex lockern für Club / Team.
+- Bei Registrieren von Karten, Konfusion betreffend der Grundkonfiguration 
+- Reihenfolge "tab" bei der Angabe von Personaldaten korrigieren (Jahrgang).
+- ESC mit Abbrechen verknüpfen in RFID-Connect Dialog
+
+BUGS:
+- (LOW) Beim Erstellen der Konfiguration wird ein falscher FTP-Benutzer im GUI angezeigt.
+  Die Erstellung der Konfigurationsdatei erfolgt aber korrekt.
+- (HIGH) Auslesen der LOG-Datei funktioniert nicht.
+
+19-03-2009
+- Release mit neuer Funktion zur Registrierung persönlicher Karten.
+
+10-03-2009
+- Hinzufügen der Funktion Karte registrieren.
+- Anpassen des GUI und Erweiterung mit QDockWidget's. Hinzufügen eines Logbereichs
+  (noch ohne Funktion). Erweiterung des Menüs, damit die Docks wiederhergestellt
+  werden können. 
+
+11-02-2009
+- Hinzufügen der Funktion "Enter Tag into Database" zum auffüllen der Datenbank.
+  beo_timing.cpp : Neue Funktion "tag_into_database()", neuer Menüpunkt im Menü 
+  				   "Verbindung". Neuer bool Variable enter_tag_intoDB (Ziel: Gleichzeitig
+  				   löschen und Eintragen).
+- Herauslösen des Projekts aus der Bachelor Thesis in einen eigenen Workspace.
+
 25-08-2008:
 - Funktionen für Reset und Initialisierung von RFID-Tags ausgebaut. Neu kann gewählt
   werden, ob die Karte als Persönlich oder Unpersönlich zurückgesetzt werden soll.

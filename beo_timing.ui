@@ -1,7 +1,8 @@
-<ui version="4.0" >
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
  <class>BEO_TimingClass</class>
- <widget class="QMainWindow" name="BEO_TimingClass" >
-  <property name="geometry" >
+ <widget class="QMainWindow" name="BEO_TimingClass">
+  <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
@@ -9,61 +10,96 @@
     <height>593</height>
    </rect>
   </property>
-  <property name="windowTitle" >
+  <property name="windowTitle">
    <string>MainWindow</string>
   </property>
-  <widget class="QWidget" name="centralwidget" >
-   <layout class="QGridLayout" >
-    <item row="0" column="0" >
-     <layout class="QVBoxLayout" >
-      <item>
-       <widget class="QTreeWidget" name="RennenTreeWidget" >
-        <column>
-         <property name="text" >
-          <string>1</string>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QGridLayout" name="gridLayout_2">
+    <item row="0" column="1">
+     <widget class="QGroupBox" name="groupBox_2">
+      <property name="title">
+       <string>Rangliste</string>
+      </property>
+      <layout class="QGridLayout">
+       <item row="0" column="0">
+        <widget class="QTableView" name="RanglistenTableView">
+         <property name="minimumSize">
+          <size>
+           <width>500</width>
+           <height>0</height>
+          </size>
          </property>
-        </column>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item row="0" column="0">
+     <layout class="QVBoxLayout" name="verticalLayout">
+      <item>
+       <widget class="QDockWidget" name="dockRennen">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>100</width>
+          <height>250</height>
+         </size>
+        </property>
+        <property name="baseSize">
+         <size>
+          <width>0</width>
+          <height>0</height>
+         </size>
+        </property>
+        <widget class="QWidget" name="dockWidgetContents">
+         <layout class="QGridLayout" name="gridLayout">
+          <item row="0" column="0">
+           <widget class="QTreeWidget" name="RennenTreeWidget">
+            <column>
+             <property name="text">
+              <string>1</string>
+             </property>
+            </column>
+           </widget>
+          </item>
+         </layout>
+        </widget>
        </widget>
       </item>
       <item>
-       <spacer>
-        <property name="orientation" >
-         <enum>Qt::Horizontal</enum>
-        </property>
-        <property name="sizeHint" >
-         <size>
-          <width>131</width>
-          <height>20</height>
-         </size>
-        </property>
-       </spacer>
-      </item>
-     </layout>
-    </item>
-    <item row="0" column="1" >
-     <layout class="QVBoxLayout" >
-      <item>
-       <widget class="QTableView" name="RanglistenTableView" />
-      </item>
-      <item>
-       <spacer>
-        <property name="orientation" >
-         <enum>Qt::Horizontal</enum>
-        </property>
-        <property name="sizeHint" >
-         <size>
-          <width>651</width>
-          <height>20</height>
-         </size>
-        </property>
-       </spacer>
+       <widget class="QDockWidget" name="dockLog">
+        <widget class="QWidget" name="dockWidgetContents_2">
+         <layout class="QGridLayout">
+          <item row="0" column="0">
+           <widget class="QGroupBox" name="groupBox">
+            <property name="title">
+             <string>Log</string>
+            </property>
+            <layout class="QGridLayout">
+             <item row="0" column="0">
+              <widget class="QListWidget" name="listWidget"/>
+             </item>
+             <item row="1" column="0">
+              <widget class="QTextEdit" name="textEdit"/>
+             </item>
+            </layout>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </widget>
       </item>
      </layout>
     </item>
    </layout>
   </widget>
-  <widget class="QMenuBar" name="menubar" >
-   <property name="geometry" >
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
@@ -71,254 +107,320 @@
      <height>21</height>
     </rect>
    </property>
-   <widget class="QMenu" name="menuDatei" >
-    <property name="title" >
+   <widget class="QMenu" name="menuDatei">
+    <property name="title">
      <string>Datei</string>
     </property>
-    <addaction name="actionAktualisieren" />
-    <addaction name="actionExportieren_als_CSV" />
-    <addaction name="separator" />
-    <addaction name="actionBeenden" />
+    <addaction name="actionAktualisieren"/>
+    <addaction name="actionExportieren_als_CSV"/>
+    <addaction name="separator"/>
+    <addaction name="actionBeenden"/>
    </widget>
-   <widget class="QMenu" name="menuRennadministration" >
-    <property name="title" >
+   <widget class="QMenu" name="menuRennadministration">
+    <property name="title">
      <string>Rennadministration</string>
     </property>
-    <addaction name="actionNeues_Rennen_erfassen" />
-    <addaction name="actionEintrag_Editieren" />
-    <addaction name="separator" />
-    <addaction name="actionKonfiguration_erstellen" />
-    <addaction name="actionLog_Datei_auslesen" />
-    <addaction name="separator" />
-    <addaction name="actionVerwaiste_Eintr_ge_entfernen" />
-    <addaction name="actionDatenbank_optimieren" />
+    <addaction name="actionNeues_Rennen_erfassen"/>
+    <addaction name="actionEintrag_Editieren"/>
+    <addaction name="separator"/>
+    <addaction name="actionKonfiguration_erstellen"/>
+    <addaction name="actionLog_Datei_auslesen"/>
+    <addaction name="separator"/>
+    <addaction name="actionVerwaiste_Eintr_ge_entfernen"/>
+    <addaction name="actionDatenbank_optimieren"/>
    </widget>
-   <widget class="QMenu" name="menuHilfe" >
-    <property name="title" >
+   <widget class="QMenu" name="menuHilfe">
+    <property name="title">
      <string>Hilfe</string>
     </property>
-    <addaction name="actionAbout" />
-    <addaction name="actionAbout_Qt" />
+    <addaction name="actionAbout"/>
+    <addaction name="actionAbout_Qt"/>
    </widget>
-   <widget class="QMenu" name="menuVerbindungen" >
-    <property name="title" >
+   <widget class="QMenu" name="menuVerbindungen">
+    <property name="title">
      <string>Verbindungen</string>
     </property>
-    <addaction name="actionRFID_Leser_verbinden" />
-    <addaction name="actionRFID_Leser" />
-    <addaction name="actionDatenbank" />
-    <addaction name="separator" />
-    <addaction name="actionKarten_zur_cksetzen_unpers_nlich" />
-    <addaction name="actionKarten_zur_cksetzen_pers_nlich" />
-    <addaction name="separator" />
-    <addaction name="actionNeue_Karten_initialisieren_unpers_nlich" />
-    <addaction name="actionNeue_Karten_initialisieren_pers_nlich" />
+    <addaction name="actionRFID_Leser_verbinden"/>
+    <addaction name="actionRFID_Leser"/>
+    <addaction name="actionDatenbank"/>
+    <addaction name="separator"/>
+    <addaction name="actionKarten_zur_cksetzen_unpers_nlich"/>
+    <addaction name="actionKarten_zur_cksetzen_pers_nlich"/>
+    <addaction name="separator"/>
+    <addaction name="actionNeue_Karten_initialisieren_unpers_nlich"/>
+    <addaction name="actionNeue_Karten_initialisieren_pers_nlich"/>
+    <addaction name="separator"/>
+    <addaction name="actionEintragen_der_Karte_in_die_Datenbank"/>
    </widget>
-   <widget class="QMenu" name="menuBenutzerverwaltung" >
-    <property name="title" >
+   <widget class="QMenu" name="menuBenutzerverwaltung">
+    <property name="title">
      <string>Benutzerverwaltung</string>
     </property>
-    <addaction name="actionNeuer_Benutzer_erstellen_3" />
-    <addaction name="actionBenutzerrechte_ndern" />
-    <addaction name="actionPasswort_ndern" />
+    <addaction name="actionNeuer_Benutzer_erstellen_3"/>
+    <addaction name="actionBenutzerrechte_ndern"/>
+    <addaction name="actionPasswort_ndern"/>
+    <addaction name="separator"/>
+    <addaction name="actionKarte_registrieren"/>
    </widget>
-   <addaction name="menuDatei" />
-   <addaction name="menuRennadministration" />
-   <addaction name="menuBenutzerverwaltung" />
-   <addaction name="menuVerbindungen" />
-   <addaction name="menuHilfe" />
+   <widget class="QMenu" name="menuAnsicht">
+    <property name="title">
+     <string>Ansicht</string>
+    </property>
+    <addaction name="actionRennen"/>
+    <addaction name="actionLog"/>
+   </widget>
+   <addaction name="menuDatei"/>
+   <addaction name="menuAnsicht"/>
+   <addaction name="menuRennadministration"/>
+   <addaction name="menuBenutzerverwaltung"/>
+   <addaction name="menuVerbindungen"/>
+   <addaction name="menuHilfe"/>
   </widget>
-  <widget class="QStatusBar" name="statusbar" />
-  <action name="actionAktualisieren" >
-   <property name="icon" >
-    <iconset resource="beo_timing.qrc" >:/images/reload.png</iconset>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionAktualisieren">
+   <property name="icon">
+    <iconset resource="beo_timing.qrc">
+     <normaloff>:/images/reload.png</normaloff>:/images/reload.png</iconset>
    </property>
-   <property name="text" >
+   <property name="text">
     <string>Ansicht aktualisieren</string>
    </property>
   </action>
-  <action name="actionBeenden" >
-   <property name="icon" >
-    <iconset resource="beo_timing.qrc" >:/images/beenden.png</iconset>
+  <action name="actionBeenden">
+   <property name="icon">
+    <iconset resource="beo_timing.qrc">
+     <normaloff>:/images/beenden.png</normaloff>:/images/beenden.png</iconset>
    </property>
-   <property name="text" >
+   <property name="text">
     <string>Beenden</string>
    </property>
   </action>
-  <action name="actionNeues_Rennen_erfassen" >
-   <property name="icon" >
-    <iconset resource="beo_timing.qrc" >:/images/new.png</iconset>
+  <action name="actionNeues_Rennen_erfassen">
+   <property name="icon">
+    <iconset resource="beo_timing.qrc">
+     <normaloff>:/images/new.png</normaloff>:/images/new.png</iconset>
    </property>
-   <property name="text" >
+   <property name="text">
     <string>Neues Rennen erfassen</string>
    </property>
   </action>
-  <action name="actionAbout" >
-   <property name="icon" >
-    <iconset resource="beo_timing.qrc" >:/images/info.png</iconset>
+  <action name="actionAbout">
+   <property name="icon">
+    <iconset resource="beo_timing.qrc">
+     <normaloff>:/images/info.png</normaloff>:/images/info.png</iconset>
    </property>
-   <property name="text" >
+   <property name="text">
     <string>About</string>
    </property>
   </action>
-  <action name="actionEintrag_Editieren" >
-   <property name="icon" >
-    <iconset resource="beo_timing.qrc" >:/images/b_edit.png</iconset>
+  <action name="actionEintrag_Editieren">
+   <property name="icon">
+    <iconset resource="beo_timing.qrc">
+     <normaloff>:/images/b_edit.png</normaloff>:/images/b_edit.png</iconset>
    </property>
-   <property name="text" >
+   <property name="text">
     <string>Eintrag Editieren</string>
    </property>
   </action>
-  <action name="actionExportieren_als_CSV" >
-   <property name="icon" >
-    <iconset resource="beo_timing.qrc" >:/images/export.png</iconset>
+  <action name="actionExportieren_als_CSV">
+   <property name="icon">
+    <iconset resource="beo_timing.qrc">
+     <normaloff>:/images/export.png</normaloff>:/images/export.png</iconset>
    </property>
-   <property name="text" >
+   <property name="text">
     <string>Exportieren als CSV</string>
    </property>
   </action>
-  <action name="actionPasswort_ndern" >
-   <property name="icon" >
-    <iconset resource="beo_timing.qrc" >:/images/pwd.png</iconset>
+  <action name="actionPasswort_ndern">
+   <property name="icon">
+    <iconset resource="beo_timing.qrc">
+     <normaloff>:/images/pwd.png</normaloff>:/images/pwd.png</iconset>
    </property>
-   <property name="text" >
+   <property name="text">
     <string>Passwort ändern</string>
    </property>
   </action>
-  <action name="actionNeuer_Benutzer_erstellen" >
-   <property name="text" >
+  <action name="actionNeuer_Benutzer_erstellen">
+   <property name="text">
     <string>Neuer Benutzer erstellen</string>
    </property>
   </action>
-  <action name="actionNeuer_Benutzer_erstellen_2" >
-   <property name="icon" >
-    <iconset/>
+  <action name="actionNeuer_Benutzer_erstellen_2">
+   <property name="icon">
+    <iconset>
+     <normaloff/>
+    </iconset>
    </property>
-   <property name="text" >
+   <property name="text">
     <string>Neuer Benutzer erstellen</string>
    </property>
   </action>
-  <action name="actionKonfiguration_erstellen" >
-   <property name="icon" >
-    <iconset resource="beo_timing.qrc" >:/images/config.png</iconset>
+  <action name="actionKonfiguration_erstellen">
+   <property name="icon">
+    <iconset resource="beo_timing.qrc">
+     <normaloff>:/images/config.png</normaloff>:/images/config.png</iconset>
    </property>
-   <property name="text" >
+   <property name="text">
     <string>Konfiguration erstellen</string>
    </property>
   </action>
-  <action name="actionLog_Datei_auslesen" >
-   <property name="icon" >
-    <iconset resource="beo_timing.qrc" >:/images/log.png</iconset>
+  <action name="actionLog_Datei_auslesen">
+   <property name="icon">
+    <iconset resource="beo_timing.qrc">
+     <normaloff>:/images/log.png</normaloff>:/images/log.png</iconset>
    </property>
-   <property name="text" >
+   <property name="text">
     <string>Log-Datei auslesen</string>
    </property>
   </action>
-  <action name="actionBenutzerrechte_ndern" >
-   <property name="text" >
+  <action name="actionBenutzerrechte_ndern">
+   <property name="text">
     <string>Benutzerrechte ändern</string>
    </property>
   </action>
-  <action name="actionRFID_Leser" >
-   <property name="checkable" >
+  <action name="actionRFID_Leser">
+   <property name="checkable">
     <bool>true</bool>
    </property>
-   <property name="checked" >
+   <property name="checked">
     <bool>true</bool>
    </property>
-   <property name="icon" >
-    <iconset resource="beo_timing.qrc" >:/images/icon16_t.bmp</iconset>
+   <property name="icon">
+    <iconset resource="beo_timing.qrc">
+     <normaloff>:/images/icon16_t.bmp</normaloff>:/images/icon16_t.bmp</iconset>
    </property>
-   <property name="text" >
+   <property name="text">
     <string>RFID-Leser Verbindung</string>
    </property>
   </action>
-  <action name="actionDatenbank" >
-   <property name="checkable" >
+  <action name="actionDatenbank">
+   <property name="checkable">
     <bool>true</bool>
    </property>
-   <property name="checked" >
+   <property name="checked">
     <bool>true</bool>
    </property>
-   <property name="enabled" >
+   <property name="enabled">
     <bool>false</bool>
    </property>
-   <property name="text" >
+   <property name="text">
     <string>Datenbank</string>
    </property>
   </action>
-  <action name="actionAbout_Qt" >
-   <property name="icon" >
-    <iconset resource="beo_timing.qrc" >:/images/qt.png</iconset>
+  <action name="actionAbout_Qt">
+   <property name="icon">
+    <iconset resource="beo_timing.qrc">
+     <normaloff>:/images/qt.png</normaloff>:/images/qt.png</iconset>
    </property>
-   <property name="text" >
+   <property name="text">
     <string>About Qt</string>
    </property>
   </action>
-  <action name="actionVerwaiste_Eintr_ge_entfernen" >
-   <property name="icon" >
-    <iconset resource="beo_timing.qrc" >:/images/papierkorb.png</iconset>
+  <action name="actionVerwaiste_Eintr_ge_entfernen">
+   <property name="icon">
+    <iconset resource="beo_timing.qrc">
+     <normaloff>:/images/papierkorb.png</normaloff>:/images/papierkorb.png</iconset>
    </property>
-   <property name="text" >
+   <property name="text">
     <string>Verwaiste Einträge entfernen</string>
    </property>
   </action>
-  <action name="actionDatenbank_optimieren" >
-   <property name="icon" >
-    <iconset resource="beo_timing.qrc" >:/images/optimieren.png</iconset>
+  <action name="actionDatenbank_optimieren">
+   <property name="icon">
+    <iconset resource="beo_timing.qrc">
+     <normaloff>:/images/optimieren.png</normaloff>:/images/optimieren.png</iconset>
    </property>
-   <property name="text" >
+   <property name="text">
     <string>Datenbank optimieren</string>
    </property>
   </action>
-  <action name="actionNeuer_Benutzer_erstellen_3" >
-   <property name="icon" >
-    <iconset resource="beo_timing.qrc" >:/images/newuser.png</iconset>
+  <action name="actionNeuer_Benutzer_erstellen_3">
+   <property name="icon">
+    <iconset resource="beo_timing.qrc">
+     <normaloff>:/images/newuser.png</normaloff>:/images/newuser.png</iconset>
    </property>
-   <property name="text" >
+   <property name="text">
     <string>Neuer Benutzer erstellen</string>
    </property>
   </action>
-  <action name="actionRFID_Leser_verbinden" >
-   <property name="text" >
+  <action name="actionRFID_Leser_verbinden">
+   <property name="text">
     <string>RFID-Leser verbinden</string>
    </property>
   </action>
-  <action name="actionKarten_zur_cksetzen_unpers_nlich" >
-   <property name="checkable" >
+  <action name="actionKarten_zur_cksetzen_unpers_nlich">
+   <property name="checkable">
     <bool>true</bool>
    </property>
-   <property name="text" >
+   <property name="text">
     <string>Karten zurücksetzen (unpersönlich)</string>
    </property>
   </action>
-  <action name="actionKarten_zur_cksetzen_pers_nlich" >
-   <property name="checkable" >
+  <action name="actionKarten_zur_cksetzen_pers_nlich">
+   <property name="checkable">
     <bool>true</bool>
    </property>
-   <property name="text" >
+   <property name="text">
     <string>Karten zurücksetzen (persönlich)</string>
    </property>
   </action>
-  <action name="actionNeue_Karten_initialisieren_unpers_nlich" >
-   <property name="checkable" >
+  <action name="actionNeue_Karten_initialisieren_unpers_nlich">
+   <property name="checkable">
     <bool>true</bool>
    </property>
-   <property name="text" >
+   <property name="text">
     <string>Neue Karten initialisieren (unpersönlich)</string>
    </property>
   </action>
-  <action name="actionNeue_Karten_initialisieren_pers_nlich" >
-   <property name="checkable" >
+  <action name="actionNeue_Karten_initialisieren_pers_nlich">
+   <property name="checkable">
     <bool>true</bool>
    </property>
-   <property name="text" >
+   <property name="text">
     <string>Neue Karten initialisieren (persönlich)</string>
+   </property>
+  </action>
+  <action name="actionEintragen_der_Karte_in_die_Datenbank">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Eintragen der Karte in die Datenbank</string>
+   </property>
+  </action>
+  <action name="actionKarte_registrieren">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Karte registrieren</string>
+   </property>
+  </action>
+  <action name="actionRennen">
+   <property name="checkable">
+    <bool>false</bool>
+   </property>
+   <property name="checked">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>Rennen Dock einblenden</string>
+   </property>
+  </action>
+  <action name="actionLog">
+   <property name="checkable">
+    <bool>false</bool>
+   </property>
+   <property name="checked">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>Log Dock Einblenden</string>
    </property>
   </action>
  </widget>
  <resources>
-  <include location="beo_timing.qrc" />
+  <include location="beo_timing.qrc"/>
  </resources>
  <connections/>
 </ui>

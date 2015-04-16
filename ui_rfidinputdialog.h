@@ -33,7 +33,7 @@ class Ui_RFIDInputDialogClass
 {
 public:
     QGridLayout *gridLayout_2;
-    QGroupBox *groupBox_2;
+    QGroupBox *groupRenndaten;
     QGridLayout *gridLayout;
     QLabel *StarttimeLabel;
     QLabel *EndtimeLabel;
@@ -86,54 +86,54 @@ public:
     gridLayout_2->setSpacing(6);
     gridLayout_2->setMargin(11);
     gridLayout_2->setObjectName(QString::fromUtf8("gridLayout_2"));
-    groupBox_2 = new QGroupBox(RFIDInputDialogClass);
-    groupBox_2->setObjectName(QString::fromUtf8("groupBox_2"));
-    gridLayout = new QGridLayout(groupBox_2);
+    groupRenndaten = new QGroupBox(RFIDInputDialogClass);
+    groupRenndaten->setObjectName(QString::fromUtf8("groupRenndaten"));
+    gridLayout = new QGridLayout(groupRenndaten);
     gridLayout->setSpacing(6);
     gridLayout->setMargin(11);
     gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
-    StarttimeLabel = new QLabel(groupBox_2);
+    StarttimeLabel = new QLabel(groupRenndaten);
     StarttimeLabel->setObjectName(QString::fromUtf8("StarttimeLabel"));
 
     gridLayout->addWidget(StarttimeLabel, 0, 0, 1, 1);
 
-    EndtimeLabel = new QLabel(groupBox_2);
+    EndtimeLabel = new QLabel(groupRenndaten);
     EndtimeLabel->setObjectName(QString::fromUtf8("EndtimeLabel"));
 
     gridLayout->addWidget(EndtimeLabel, 0, 1, 1, 1);
 
-    FahrzeitLabel = new QLabel(groupBox_2);
+    FahrzeitLabel = new QLabel(groupRenndaten);
     FahrzeitLabel->setObjectName(QString::fromUtf8("FahrzeitLabel"));
 
     gridLayout->addWidget(FahrzeitLabel, 1, 0, 1, 1);
 
-    rfidsnrLabel = new QLabel(groupBox_2);
+    rfidsnrLabel = new QLabel(groupRenndaten);
     rfidsnrLabel->setObjectName(QString::fromUtf8("rfidsnrLabel"));
 
     gridLayout->addWidget(rfidsnrLabel, 1, 1, 1, 1);
 
-    StreckennameLabel = new QLabel(groupBox_2);
+    StreckennameLabel = new QLabel(groupRenndaten);
     StreckennameLabel->setObjectName(QString::fromUtf8("StreckennameLabel"));
 
     gridLayout->addWidget(StreckennameLabel, 2, 0, 1, 1);
 
-    StreckenTypLabel = new QLabel(groupBox_2);
+    StreckenTypLabel = new QLabel(groupRenndaten);
     StreckenTypLabel->setObjectName(QString::fromUtf8("StreckenTypLabel"));
 
     gridLayout->addWidget(StreckenTypLabel, 2, 1, 1, 1);
 
-    label_14 = new QLabel(groupBox_2);
+    label_14 = new QLabel(groupRenndaten);
     label_14->setObjectName(QString::fromUtf8("label_14"));
 
     gridLayout->addWidget(label_14, 3, 0, 1, 1);
 
-    KategoriecomboBox = new QComboBox(groupBox_2);
+    KategoriecomboBox = new QComboBox(groupRenndaten);
     KategoriecomboBox->setObjectName(QString::fromUtf8("KategoriecomboBox"));
 
     gridLayout->addWidget(KategoriecomboBox, 3, 1, 1, 1);
 
 
-    gridLayout_2->addWidget(groupBox_2, 0, 0, 1, 1);
+    gridLayout_2->addWidget(groupRenndaten, 0, 0, 1, 1);
 
     groupBox = new QGroupBox(RFIDInputDialogClass);
     groupBox->setObjectName(QString::fromUtf8("groupBox"));
@@ -315,7 +315,7 @@ public:
     void retranslateUi(QDialog *RFIDInputDialogClass)
     {
     RFIDInputDialogClass->setWindowTitle(QApplication::translate("RFIDInputDialogClass", "RFIDInputDialog", 0));
-    groupBox_2->setTitle(QApplication::translate("RFIDInputDialogClass", "Renndaten", 0));
+    groupRenndaten->setTitle(QApplication::translate("RFIDInputDialogClass", "Renndaten", 0));
 
 #ifndef QT_NO_WHATSTHIS
     StarttimeLabel->setWhatsThis(QApplication::translate("RFIDInputDialogClass", "Startzeit", 0));

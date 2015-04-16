@@ -37,6 +37,7 @@
 #include <QtSql>
 #include "ui_rfidinputdialog.h"
 #include "RFID_Reader/RFID_CR500.h"
+#include "../beo_timing.h"
 
 
 class RFID_CR500;
@@ -61,6 +62,7 @@ private:
     bool insertRacetime(int TeilnehmerKeyInt);
     bool insertPersonAndTime();
     bool updatePerson(int TeilnehmerKeyInt);
+    bool updateRFIDSNR(int TeilnehmerKeyInt);
     void fillForm(QSqlQuery* query);
     QString calculateKategorie(int jahrgang);
     bool validation();

@@ -103,17 +103,17 @@ BEO_Timing::BEO_Timing(QSplashScreen *splash, QApplication *a, QWidget *parent)
 
 	// Versionscheck durchführen
     // TODO: Version Check wieder einführen
-//	newVersion();
-//	if(version){
-//		QMessageBox::critical(0,"Neue Softwareversion","Auf dem Server ist eine neue "
-//				"Softwareversion verfügbar. Die vorliegende Software kann aus Sicherheitsgründen nicht "
-//				"mehr verwendet werden. Klicken Sie auf \"<a href=\"http://www.rrc-thun.ch/time/beo-timing.msi\">download</a>\" "
-//				"um die neue Version herunterzuladen. Mit \"OK\" wird das Programm beendet.");
-//		// Applikation beenden
-//		QTimer::singleShot(500, this, SLOT(close()));
-//		QTimer::singleShot(1000, a, SLOT(quit()));
-//		return;
-//	}
+    newVersion();
+    if(version){
+        QMessageBox::critical(0,"Neue Softwareversion","Auf dem Server ist eine neue "
+                "Softwareversion verfügbar. Die vorliegende Software kann aus Sicherheitsgründen nicht "
+                "mehr verwendet werden. Klicken Sie auf \"<a href=\"http://www.rrc-thun.ch/time/beo-timing.msi\">download</a>\" "
+                "um die neue Version herunterzuladen. Mit \"OK\" wird das Programm beendet.");
+        // Applikation beenden
+        QTimer::singleShot(500, this, SLOT(close()));
+        QTimer::singleShot(1000, a, SLOT(quit()));
+        return;
+    }
 
 
 	// Titel des Fensters setzen
@@ -194,6 +194,10 @@ void BEO_Timing::createMenu(){
     connect(ui.actionDatenbank_optimieren,SIGNAL(triggered()),this,SLOT(optimieren()));
     connect(ui.actionNeue_Karten_initialisieren_unpers_nlich,SIGNAL(toggled(bool)),this,SLOT(tag_initialisieren_unpers(bool)));
     connect(ui.actionNeue_Karten_initialisieren_pers_nlich,SIGNAL(toggled(bool)),this,SLOT(tag_initialisieren_pers(bool)));
+	connect(ui.actionEintragen_der_Karte_in_die_Datenbank, SIGNAL(toggled(bool)), this, SLOT(tag_into_database(bool)));
+    connect(ui.actionLog, SIGNAL(triggered()), this, SLOT(showLogDock()));
+    connect(ui.actionRennen, SIGNAL(triggered()), this, SLOT(showTreeDock()));
+	connect(ui.actionKarte_registrieren, SIGNAL(toggled(bool)), this, SLOT(tag_user_reg(bool)));
 
 
 }
@@ -689,7 +693,7 @@ void BEO_Timing::rechteAnpassen(){
  */
 void BEO_Timing::about(){
 	QMessageBox::about(this, tr("BEO-Timing Management-Software"),
-							tr("<h2>BEO-Timing Management-Software 1.0 </h2>"
+                            tr("<h2>BEO-Timing Management-Software 1.1 </h2>"
 							   "<p>Copyright &copy; 2008 <a href=\"http://www.rrc-thun.ch/\">RRC-Thun</a> "
 							   "und <a href=\"http://www.rc-steffisburg.ch/\">RC-Steffisburg</a> "
 							   "<p>Diese Software bietet die Möglichkeiten zur Auswertung von RFID-Karten, "
@@ -870,4 +874,17 @@ void BEO_Timing::tag_clear_unpers(bool checked){
 	qDebug() << "tag_init: " << tag_settings.tag_reset;
 }
 
+void BEO_Timing::tag_into_database(bool checked) {
+	if (checked) {
+		tag_settings.tag_enterDB = true;
+	} else {
+		tag_settings.tag_enterDB = false;
+	}
+	qDebug() << "tag_enterDB: " << tag_settings.tag_enterDB;
+}
+
+void BEO_Timing::tag_user_reg(bool checked) {
+	checked ? tag_settings.register_in_DB = true : tag_settings.register_in_DB
+			= false;
+}
 

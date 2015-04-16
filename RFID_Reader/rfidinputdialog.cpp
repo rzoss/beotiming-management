@@ -127,6 +127,19 @@ RFIDInputDialog::RFIDInputDialog(RFID_CR500* pRfid, QWidget *parent)
 	// automatisches Vervollständigen einschalten
 	autoInsert = true;
 	TeilnehmerKeyInt=0;
+
+	// Dialog an Registrieren anpassen
+	if (pRfid->settings->register_in_DB) {
+		ui.groupRenndaten->setTitle("Karten Informationen");
+		ui.StarttimeLabel->hide();
+		ui.EndtimeLabel->hide();
+		ui.StreckennameLabel->hide();
+		ui.StreckenTypLabel->hide();
+		ui.label_14->hide();
+		ui.KategoriecomboBox->hide();
+		ui.FahrzeitLabel->setText("RFID-Snr.:");
+	}
+
 }
 /*!
  * \brief Destruktor
@@ -285,8 +298,12 @@ void RFIDInputDialog::checkSingularity(){
 			);
 			if(!clearValidFlag()) // Funktion beenden, falls nicht erfolgreich (Dialog bleibt)
 				return;
-			// Zeit für erkannten Teilnehmer in die Datenbank einfügen
-			insertRacetime(TeilnehmerKeyInt);
+			if(!pRfid->settings->register_in_DB)
+				// Zeit für erkannten Teilnehmer in die Datenbank einfügen
+				insertRacetime(TeilnehmerKeyInt);
+			else
+				// RFID Serial updaten
+				updateRFIDSNR(TeilnehmerKeyInt);
 			// Dialog schliessen
 			this->close();
 		}else if(msgBox.clickedButton() == uebernehmenButton){
@@ -422,25 +439,33 @@ bool RFIDInputDialog::insertPersonAndTime(){
 		sql += "'" + ui.mobileLineEdit->text() + "', ";
 	else
 		sql += "NULL, ";
-	sql += "NULL)";
+	if (pRfid->settings->register_in_DB)
+		// Eintragen der Serienummer, falls gewünscht
+		sql += "'" + pRfid->serial + "') ";
+	else
+		sql += "NULL)";
 	qDebug() << sql;
 	QSqlQuery query;
 	query.exec("LOCK TABLES teilnehmer WRITE");
 	query.exec(sql);
 	query.exec("UNLOCK TABLES");
-	// TeilnehmerKey des soeben erstellten Benutzers finden
-	sql = "SELECT TeilnehmerKey FROM teilnehmer WHERE ";
-	sql += "name ='" + ui.nameLineEdit->text() + "' AND ";
-	sql += "vorname ='" + ui.vornameLineEdit->text() + "' AND ";
-	sql += "adresse ='" + ui.adresseLineEdit->text() + "' AND ";
-	sql += "plz ='" + ui.plzLineEdit->text() + "' AND ";
-	sql += "ort ='" + ui.ortLineEdit->text() + "' ";
 
-	qDebug() << sql;
-	query.exec(sql);
-	query.next();
-	// Fahrzeit mit zuordnung zum erstellten Teilnehmers eintragen
-	insertRacetime(query.value(0).toInt());
+	// Nur wenn keine Karte registriert wird
+	if (!pRfid->settings->register_in_DB) {
+		// TeilnehmerKey des soeben erstellten Benutzers finden
+		sql = "SELECT TeilnehmerKey FROM teilnehmer WHERE ";
+		sql += "name ='" + ui.nameLineEdit->text() + "' AND ";
+		sql += "vorname ='" + ui.vornameLineEdit->text() + "' AND ";
+		sql += "adresse ='" + ui.adresseLineEdit->text() + "' AND ";
+		sql += "plz ='" + ui.plzLineEdit->text() + "' AND ";
+		sql += "ort ='" + ui.ortLineEdit->text() + "' ";
+
+		qDebug() << sql;
+		query.exec(sql);
+		query.next();
+		// Fahrzeit mit zuordnung zum erstellten Teilnehmers eintragen
+		insertRacetime(query.value(0).toInt());
+	}
 	return true;
 }
 
@@ -502,6 +527,12 @@ bool RFIDInputDialog::updatePerson(int TeilnehmerKeyInt){
 		sql += "Mobile = '" + ui.mobileLineEdit->text() + "' ";
 		first=false;
 	}
+	if(pRfid->settings->register_in_DB){
+		if (!first)
+			sql += ", ";
+		sql += "SNR_RFID = '" + pRfid->serial + "' ";
+		first = false;
+	}
 	if(!first)
 		sql += ", ";
 	sql += "Nationalitaet = '" + ui.nationalitaetComboBox->itemText(ui.nationalitaetComboBox->currentIndex()) + "' ";
@@ -521,9 +552,26 @@ bool RFIDInputDialog::updatePerson(int TeilnehmerKeyInt){
 	return false;
 }
 /*!
+ * \brief Update RFID-Serial number
+ */
+bool RFIDInputDialog::updateRFIDSNR(int TeilnehmerKeyInt) {
+	if(!pRfid->setPersonalFlag())
+		return false; // Ende falls nicht erfolgreich!
+	QString sql = "UPDATE teilnehmer SET ";
+	sql += "SNR_RFID = '" + pRfid->serial + "' ";
+	sql += "WHERE TeilnehmerKey = " + QString::number(TeilnehmerKeyInt);
+
+	qDebug() << sql;
+	QSqlQuery query;
+	if (query.exec(sql))
+		return true;
+	qDebug() << query.lastError();
+	return false;
+}
+/*!
  * \brief Slot für Textänderungen
  */
-void RFIDInputDialog::on_nameLineEdit_textEdited(){
+void RFIDInputDialog::on_nameLineEdit_textEdited() {
 	qDebug() << "Name Edited";
 	checkSingularity();
 }
@@ -637,6 +685,10 @@ void RFIDInputDialog::on_okButton_released(){
 	if(TeilnehmerKeyInt==0){
 		if(!clearValidFlag()) // Funktion beenden, falls nicht erfolgreich (Dialog bleibt)
 			return;
+		if(pRfid->settings->register_in_DB){
+			if(!pRfid->setPersonalFlag())
+				return; // Ende falls nicht erfolgreich!
+		}
 		qDebug() << "neuer Teilnehmer erstellt";
 		// Neuer Teilnehmer und dessen Zeit hinzufügen
 		insertPersonAndTime();
@@ -646,9 +698,13 @@ void RFIDInputDialog::on_okButton_released(){
 			return;
 		qDebug() << "Teilnehmer " << TeilnehmerKeyInt << "updated";
 		// Teilnehmer Daten aktualisieren
+		if(!pRfid->setPersonalFlag())
+			return; // Ende falls nicht erfolgreich!
 		updatePerson(TeilnehmerKeyInt);
-		// Zeit hinzufügen
-		insertRacetime(TeilnehmerKeyInt);
+		if(!pRfid->settings->register_in_DB)
+			// Zeit hinzufügen wenn nicht eine Karte registriert wird
+			insertRacetime(TeilnehmerKeyInt);
+
 		this->close();
 	}
 }

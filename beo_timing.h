@@ -50,12 +50,13 @@
 //#include "RFID_Reader/rfidThread.h"
 #include <QtSql>
 
-
-#define 	VERSION 	"1.0"
+#define 	VERSION 	"1.1"
 
 struct TAG_SETTINGS {
  	int tag_reset;
    	int tag_init;
+	bool tag_enterDB;
+	bool register_in_DB;
 };
 
 
@@ -89,58 +90,61 @@ protected:
 	NeuesRennenDialog* neu;
 
 
-private:
-	enum streckentypen {Rennvelo=1, Mountainbike=2, Laufen=3, Walking=4, Langlauf=5, Inline=6};
-    enum teilnehmer {Name, Vorname, Adresse, PLZ, Ort, Nationalitaet,
-    	 Jahrgang, Geschlecht, Email, Telefon, Mobile,
-    	 Team_Club, Kategorie, Fahrzeit, Rueckstand, RFID_SNR,
-    	 StreckenKey, TimeID, TimeKey, TeilnehmerKey};
-    enum tag_action {Nichts, Neu_persoenlich, Neu_unpersoenlich, Res_persoenlich, Res_unpersoenlich};
-    Ui::BEO_TimingClass ui;
-    User* user;
-    QApplication* a;
-    void* thread; // cast to "RFID_Thread"
-    void createStatusBar();
-    void createMenu();
-    void createToolbar();
-    void setUserRights();
-    void newVersion();
-    static QLabel* userLabel;
-    static QLabel* connectionLabel;
-    static QLabel* messageLabel;
-    QTableView* view;
-    QTreeWidget* raceTree;
-    Database* pMySQL;
-    DB_Thread* pMySQL_thread;
-    QToolBar* toolbar;
-    void* pRfid;	// cast to "RFID_CR500"
-    bool version;
+		private:
+			enum streckentypen {Rennvelo=1, Mountainbike=2, Laufen=3, Walking=4, Langlauf=5, Inline=6};
+			enum teilnehmer {Name, Vorname, Adresse, PLZ, Ort, Nationalitaet,
+				Jahrgang, Geschlecht, Email, Telefon, Mobile,
+				Team_Club, Kategorie, Fahrzeit, Rueckstand, RFID_SNR,
+				StreckenKey, TimeID, TimeKey, TeilnehmerKey};
+			enum tag_action {Nichts, Neu_persoenlich, Neu_unpersoenlich, Res_persoenlich, Res_unpersoenlich};
+			Ui::BEO_TimingClass ui;
+			User* user;
+			QApplication* a;
+			void* thread; // cast to "RFID_Thread"
+			void createStatusBar();
+			void createMenu();
+			void createToolbar();
+			void setUserRights();
+			void newVersion();
+			static QLabel* userLabel;
+			static QLabel* connectionLabel;
+			static QLabel* messageLabel;
+			QTableView* view;
+			QTreeWidget* raceTree;
+			Database* pMySQL;
+			DB_Thread* pMySQL_thread;
+			QToolBar* toolbar;
+			void* pRfid; // cast to "RFID_CR500"
+			bool version;
 
-public slots:
-	void Tree_Build();
-
-private slots:
-    void Tree_Changed();
-	void Table_Edit();
-	void checkRFID();
-	void checkDB();
-	void NeuesRennen();
-	void exportToCsv();
-	void changePwd();
-	void neuerUser();
-	void buildConfiguration();
-	void readLogFile();
-	void rechteAnpassen();
-	void about();
-	void rfidConnection(bool);
-	void mysqlConnection(bool);
-	void purge();
-	void optimieren();
-	void CR500_verbinden();
-	void tag_initialisieren_pers(bool);
-	void tag_clear_pers(bool);
-	void tag_initialisieren_unpers(bool);
-	void tag_clear_unpers(bool);
+		public slots:
+			void Tree_Build();
+		private slots:
+			void Tree_Changed();
+			void Table_Edit();
+			void checkRFID();
+			void checkDB();
+			void NeuesRennen();
+			void exportToCsv();
+			void changePwd();
+			void neuerUser();
+			void buildConfiguration();
+			void readLogFile();
+			void rechteAnpassen();
+			void about();
+			void rfidConnection(bool);
+			void mysqlConnection(bool);
+			void purge();
+			void optimieren();
+			void CR500_verbinden();
+			void tag_initialisieren_pers(bool);
+			void tag_clear_pers(bool);
+			void tag_initialisieren_unpers(bool);
+			void tag_clear_unpers(bool);
+			void tag_into_database(bool);
+			void showTreeDock() {ui.dockRennen->show();};
+			void showLogDock() {ui.dockLog->show();};
+			void tag_user_reg(bool);
 
 };
 

@@ -322,6 +322,34 @@ bool RFID_CR500::readData() {
 							"die Karte ist eventuell defekt!"));
 		return false;
 	}
+	
+	// Karte in DB eintragen
+	if (settings->tag_enterDB) {
+		// Aktuelle Softwareversion aus der Datenbank lesen
+		QSqlQuery query;
+		query.exec("SELECT id FROM rfidtags WHERE SNR_RFID='" + serial + "'");
+		//qDebug() << query.lastError();
+		if (!query.next()) { // Falls die Serienummer noch nicht eingetragen wurde:
+			query.exec("INSERT INTO rfidtags ("
+				"id, "
+				"SNR_RFID, "
+				"active "
+				")"
+				"VALUES ("
+				"NULL , '" + serial + "', '1'"
+				");");
+		}
+	}
+
+	// Starte den Dialog zum Registrieren
+	qDebug() << "tag_init: " << settings->register_in_DB;
+	if (settings->register_in_DB) {
+		// Karte Persönlich machen und true zurücksenden.
+		// Rest wird in BEO_Timing::checkRFID() und RFIDInputDialog
+		// gemacht.
+		setPersonalFlag();
+	}
+
 	qDebug() << "tag_init: " << settings->tag_reset;
 	if(settings->tag_reset == Res_persoenlich){
 		// In diesem Fall soll die Karte zurückgesetzt werden
@@ -384,21 +412,66 @@ bool RFID_CR500::readData() {
 		query.exec("SELECT name, vorname, adresse, PLZ, ort, email, telefon, mobile "
 				   "FROM teilnehmer WHERE SNR_RFID='" + serial + "'");
 		QString kontakt;
-		if(query.next()){
-			kontakt = "Der Inhaber ist: \n" + query.value(0).toString() + " " +
-			query.value(1).toString() + ", " + query.value(2).toString() +
-			", " + query.value(3).toString() + " " + query.value(4).toString() +
-			", " + query.value(5).toString() + ", " + query.value(6).toString() +
-			", " + query.value(7).toString();
-		}else{
-			kontakt = "Kein Teilnehmer in der Datenbank. \nRetournieren Sie diese Karte an den Administrator.";
+		bool registred = false;
+		if (query.next()) {
+			kontakt = "Der Inhaber ist: \n" + query.value(0).toString() + " "
+					+ query.value(1).toString() + ", "
+					+ query.value(2).toString() + ", "
+					+ query.value(3).toString() + " "
+					+ query.value(4).toString() + ", "
+					+ query.value(5).toString() + ", "
+					+ query.value(6).toString() + ", "
+					+ query.value(7).toString();
+			registred = true;
+		} else {
+			kontakt
+					= "Kein Teilnehmer in der Datenbank. \nRetournieren Sie diese Karte an den Administrator.";
+			registred = false;
 		}
 
-		QMessageBox::critical(
-				0,
-				QObject::tr("Persönliche Karte"),
-				QObject::tr("Diese Karte ist als Persönlich registriert. ") + kontakt);
-		return false;
+		if (!registred) {
+			QMessageBox::critical(0, QObject::tr("Persönliche Karte"),
+
+
+					QObject::tr("Diese Karte ist als Persönlich registriert. ")
+							+ kontakt);
+			if (settings->register_in_DB)
+				return true;
+			else
+				return false;
+		} else if (registred) {
+			QMessageBox msgBox;
+			QPushButton *entfernenButton = msgBox.addButton(QObject::tr(
+					"Registrierung Entfernen"), QMessageBox::ActionRole);
+			QPushButton *okButton = msgBox.addButton(QObject::tr(
+					"Registrierung bestehen lassen"), QMessageBox::ActionRole);
+			msgBox.setDefaultButton(entfernenButton);
+			msgBox.setEscapeButton(okButton);
+
+			msgBox.setText("Diese Karte ist als Persönlich registriert. "
+					+ kontakt);
+			msgBox.setWindowTitle("Persönliche Karte");
+			msgBox.setIcon(QMessageBox::Question);
+			msgBox.exec();
+			if (msgBox.clickedButton() == entfernenButton) {
+				// Registrierung entfernen
+				QSqlQuery query(
+						"SELECT TeilnehmerKey FROM teilnehmer WHERE SNR_RFID='"
+								+ serial + "'");
+				query.exec();
+				query.next();
+				query.exec(
+						"UPDATE teilnehmer SET SNR_RFID = NULL WHERE TeilnehmerKey="
+								+ query.value(0).toString());
+				if (settings->register_in_DB)
+					return true;
+				else
+					return false;
+			} else {
+				// Registrierung bestehen lassen
+				return false;
+			}
+		}
 
 
 	// TODO: Reagieren auf Auswahl im Menue "Verbindung"
@@ -465,10 +538,12 @@ bool RFID_CR500::readData() {
 	}
 	return true;
 }
+
 /*!
- * \brief Löschen der Flags, um die Karte als ausgewertet kennzuzeichnen
+
+ * \brief Setzen des Persönlich Flags und löschen aller andern
  */
-bool RFID_CR500::clearValidFlag(){
+bool RFID_CR500::setPersonalFlag() {
 	int state = 1;
 	unsigned char pData[64];
 	unsigned char cLen;
@@ -476,14 +551,19 @@ bool RFID_CR500::clearValidFlag(){
 	if (!connected) // keine Verbindung
 		return false;
 
-	if(!findCard()){// Keine Karte gefunden
-		QMessageBox::critical(0,QObject::tr("Keine RFID-Karte"),
-				QObject::tr("Es liegt keine Karte im Feld des Lesers. Legen Sie die Karte mit der Seriennummer \"") + oldSerial + "\" auf!");
+	if (!findCard()) {// Keine Karte gefunden
+		QMessageBox::critical(
+				0,
+				QObject::tr("Keine RFID-Karte"),
+				QObject::tr(
+						"Es liegt keine Karte im Feld des Lesers. Legen Sie die Karte mit der Seriennummer \"")
+						+ oldSerial + "\" auf!");
 		return false;
 	}
-	if(oldSerial.compare(serial)!=0){ // Falsche Karte
-		QMessageBox::critical(0,QObject::tr("Falsche RFID-Karte"),
-				QObject::tr("Es liegt nicht die Karte mit der Seriennummer \"") + oldSerial + "\" auf!");
+	if (oldSerial.compare(serial) != 0) { // Falsche Karte
+		QMessageBox::critical(0, QObject::tr("Falsche RFID-Karte"),
+				QObject::tr("Es liegt nicht die Karte mit der Seriennummer \"")
+						+ oldSerial + "\" auf!");
 		return false;
 	}
 	// Andere Statusbits lesen
@@ -492,16 +572,57 @@ bool RFID_CR500::clearValidFlag(){
 		return false;
 	}
 	// Gewählte löschen und alle neu schreiben
-	*pData &= ~(TAG_STATUS_STRECKENVALID | TAG_STATUS_STARTVALID | TAG_STATUS_ENDVALID); // erstes Byte löschen (Valid Data Flag)
-	state = rf_ul_write(icdev,RFID_ADR_STATUS,pData);
-	rf_light(icdev,GREEN_LED);
+	*pData = 0; // Alle Flags löschen und Registred setzen
+	*pData |= TAG_STATUS_REGISTERED; // erstes Byte löschen (Valid Data Flag)
+	state = rf_ul_write(icdev, RFID_ADR_STATUS, pData);
+	rf_light(icdev, GREEN_LED);
+	return true;
+}
+
+/*!
+
+ * \brief Löschen der Flags, um die Karte als ausgewertet kennzuzeichnen
+ */
+bool RFID_CR500::clearValidFlag() {
+	int state = 1;
+	unsigned char pData[64];
+	unsigned char cLen;
+
+	if (!connected) // keine Verbindung
+		return false;
+
+	if (!findCard()) {// Keine Karte gefunden
+		QMessageBox::critical(
+				0,
+				QObject::tr("Keine RFID-Karte"),
+				QObject::tr(
+						"Es liegt keine Karte im Feld des Lesers. Legen Sie die Karte mit der Seriennummer \"")
+						+ oldSerial + "\" auf!");
+		return false;
+	}
+	if (oldSerial.compare(serial) != 0) { // Falsche Karte
+		QMessageBox::critical(0, QObject::tr("Falsche RFID-Karte"),
+				QObject::tr("Es liegt nicht die Karte mit der Seriennummer \"")
+						+ oldSerial + "\" auf!");
+		return false;
+	}
+	// Andere Statusbits lesen
+	state = rf_M1_read(icdev, RFID_ADR_STATUS, pData, &cLen);
+	if (state || cLen != 16) {
+		return false;
+	}
+	// Gewählte löschen und alle neu schreiben
+	*pData &= ~(TAG_STATUS_STRECKENVALID | TAG_STATUS_STARTVALID
+			| TAG_STATUS_ENDVALID); // erstes Byte löschen (Valid Data Flag)
+	state = rf_ul_write(icdev, RFID_ADR_STATUS, pData);
+	rf_light(icdev, GREEN_LED);
 	return true;
 }
 /*!
  * \brief Stellt die LED des Lesers auf Grün
  */
-void RFID_CR500::greenLED(){
-	rf_light(icdev,GREEN_LED);
+void RFID_CR500::greenLED() {
+	rf_light(icdev, GREEN_LED);
 }
 
 /*!

@@ -97,6 +97,7 @@ public:
 	bool findCard();
 	bool readData();
 	bool clearValidFlag();
+	bool setPersonalFlag();
 	void greenLED();
 	bool isConnected();
 
