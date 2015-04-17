@@ -50,7 +50,7 @@
 //#include "RFID_Reader/rfidThread.h"
 #include <QtSql>
 
-#define 	VERSION 	"1.1"
+#define 	VERSION 	"1.2"
 
 struct TAG_SETTINGS {
  	int tag_reset;

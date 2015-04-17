@@ -52,7 +52,7 @@
 #include <QHeaderView>
 #include <QFileDialog>
 
-struct TAG_SETTINGS tag_settings = {0,0};
+struct TAG_SETTINGS tag_settings = {0,0,0,0};
 
 
 
@@ -693,7 +693,7 @@ void BEO_Timing::rechteAnpassen(){
  */
 void BEO_Timing::about(){
 	QMessageBox::about(this, tr("BEO-Timing Management-Software"),
-                            tr("<h2>BEO-Timing Management-Software 1.1 </h2>"
+                            tr("<h2>BEO-Timing Management-Software 1.2 </h2>"
 							   "<p>Copyright &copy; 2008 <a href=\"http://www.rrc-thun.ch/\">RRC-Thun</a> "
 							   "und <a href=\"http://www.rc-steffisburg.ch/\">RC-Steffisburg</a> "
 							   "<p>Diese Software bietet die Möglichkeiten zur Auswertung von RFID-Karten, "
