@@ -26,3 +26,6 @@
 *.exe
 *.out
 *.app
+
+# Qt Qreator files
+*pro.user.*
