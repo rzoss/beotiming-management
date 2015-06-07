@@ -283,13 +283,15 @@ void BEO_Timing::Tree_Build(){
 	QSqlQuery query(sql);
 	query.exec();
 	query.next();
-	int min_jahr = query.value(0).toInt();
+    // TODO: RiZo 07-06-2015: Do a better data loading.
+    // int min_jahr = query.value(0).toInt();
+    int min_jahr = 2015;
 	// Letztes Jahr mit einem Rennen finden
 	sql = "SELECT max(Jahr) FROM strecken";
 	query.prepare(sql);
 	query.exec();
-	query.next();
-	int max_jahr = query.value(0).toInt();
+    query.next();
+    int max_jahr = query.value(0).toInt();
 	// Informationen aus dem gewählten Bereich abfragen und eintragen
 	for(int jahr=min_jahr; jahr<=max_jahr; ++jahr){
 		// Daten für 1 Jahr lesen (anzahl)
