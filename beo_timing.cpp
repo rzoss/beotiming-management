@@ -102,9 +102,7 @@ BEO_Timing::BEO_Timing(QSplashScreen *splash, QApplication *a, QWidget *parent)
 	pMySQL_thread->start();
 
 	// Versionscheck durchführen
-    // TODO: Version Check wieder einführen
-    newVersion();
-    if(version){
+    if(newVersion()){
         QMessageBox::critical(0,"Neue Softwareversion","Auf dem Server ist eine neue "
                 "Softwareversion verfügbar. Die vorliegende Software kann aus Sicherheitsgründen nicht "
                 "mehr verwendet werden. Klicken Sie auf \"<a href=\"http://www.rrc-thun.ch/time/beo-timing.msi\">download</a>\" "
@@ -695,15 +693,12 @@ void BEO_Timing::rechteAnpassen(){
  */
 void BEO_Timing::about(){
 	QMessageBox::about(this, tr("BEO-Timing Management-Software"),
-                            tr("<h2>BEO-Timing Management-Software 1.2 </h2>"
-							   "<p>Copyright &copy; 2008 <a href=\"http://www.rrc-thun.ch/\">RRC-Thun</a> "
-							   "und <a href=\"http://www.rc-steffisburg.ch/\">RC-Steffisburg</a> "
+                            tr("<h2>BEO-Timing Management-Software 1.2.1 </h2>"
+                               "<p>Copyright &copy; 2015 <a href=\"http://www.beo-timing.ch/\">BEO-Timing</a> "
 							   "<p>Diese Software bietet die Möglichkeiten zur Auswertung von RFID-Karten, "
 							   "der Konfiguration der Stationen, Wartung und Administration der Datenbank und stellt "
 							   "eine Benutzerverwaltung zur Verfügung."
-							   "<p>Diese Software wurde im Rahmen der Bachelor-Thesis von Rico Zoss und "
-							   "Moritz Leiser an der Berner Fachhochschule Technik und Informatik im Fachbereich "
-							   "Elektrotechnik erstellt."));
+                               ""));
 }
 
 /*!
@@ -737,13 +732,24 @@ void BEO_Timing::mysqlConnection(bool checked){
  * \brief Versionscheck
  *
  */
-void BEO_Timing::newVersion(){
+bool BEO_Timing::newVersion(){
 	// Aktuelle Softwareversion aus der Datenbank lesen
 	QSqlQuery query;
 	query.exec("SELECT nummer FROM version");
 	query.next();
 	// und mit der Definition im Sourcecode vergleichen
-	version = (query.value(0).toString().compare(VERSION)!=0);
+    QString dbVersion = query.value(0).toString();
+    QStringList dbList = dbVersion.split(".");
+    QStringList swList = QString(VERSION).split(".");
+    if(QString::compare(dbList.at(0), swList.at(0), Qt::CaseInsensitive) != 0 &&
+       QString::compare(dbList.at(1), swList.at(1), Qt::CaseInsensitive) != 0)
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
 }
 
 /*!

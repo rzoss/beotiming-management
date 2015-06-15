@@ -50,7 +50,7 @@
 //#include "RFID_Reader/rfidThread.h"
 #include <QtSql>
 
-#define 	VERSION 	"1.2"
+#define 	VERSION 	"1.2.1"
 
 struct TAG_SETTINGS {
  	int tag_reset;
@@ -105,7 +105,7 @@ protected:
 			void createMenu();
 			void createToolbar();
 			void setUserRights();
-			void newVersion();
+            bool newVersion();
 			static QLabel* userLabel;
 			static QLabel* connectionLabel;
 			static QLabel* messageLabel;
@@ -115,7 +115,6 @@ protected:
 			DB_Thread* pMySQL_thread;
 			QToolBar* toolbar;
 			void* pRfid; // cast to "RFID_CR500"
-			bool version;
 
 		public slots:
 			void Tree_Build();
